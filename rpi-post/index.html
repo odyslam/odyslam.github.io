@@ -5,31 +5,30 @@
 <!--[if gt IE 8]><!--> <html class="no-js" lang="en"><!--<![endif]-->
 <head>
 <meta charset="utf-8">
-<title>About me &#8211; Project L</title>
-<meta name="description" content="A personal blog about tecnhology and stuffz">
-
+<title>Raspberry pi 2 &#8211; Project L</title>
+<meta name="description" content="a small introduction">
+<meta name="keywords" content="raspberry pi">
 
 <!-- Twitter Cards -->
-<meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:image" content="/images/cv1.jpg">
-
-<meta name="twitter:title" content="About me">
-<meta name="twitter:description" content="A personal blog about tecnhology and stuffz">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="/images/">
+<meta name="twitter:title" content="Raspberry pi 2">
+<meta name="twitter:description" content="a small introduction">
 <meta name="twitter:creator" content="@CynicOdys">
 
 <!-- Open Graph -->
 <meta property="og:locale" content="en_US">
 <meta property="og:type" content="article">
-<meta property="og:title" content="About me">
-<meta property="og:description" content="A personal blog about tecnhology and stuffz">
-<meta property="og:url" content="/about/">
+<meta property="og:title" content="Raspberry pi 2">
+<meta property="og:description" content="a small introduction">
+<meta property="og:url" content="/rpi-post/">
 <meta property="og:site_name" content="Project L">
 
 
 
 
 
-<link rel="canonical" href="/about/">
+<link rel="canonical" href="/rpi-post/">
 <link href="/feed.xml" type="application/atom+xml" rel="alternate" title="Project L Feed">
 
 <!-- http://t.co/dKP3o1e -->
@@ -69,7 +68,7 @@
 
 </head>
 
-<body id="page" class="feature">
+<body id="post" >
 
 <!--[if lt IE 9]><div class="upgrade"><strong><a href="http://whatbrowser.org/">Your browser is quite old!</strong> Why not upgrade to a different browser to better enjoy this site?</a></div><![endif]-->
 <nav id="dl-menu" class="dl-menuwrapper" role="navigation">
@@ -127,44 +126,100 @@ In love with marketing and entrepreneurship</p>
 
 
 
-<div class="entry-header">
-  <div class="image-credit">Image source: <a href="">freepik</a></div><!-- /.image-credit -->
-  <div class="entry-image">
-    <img src="/images/cv1.jpg" alt="About me">
-  </div><!-- /.entry-image -->
-</div><!-- /.entry-header -->
-
 
 <div id="main" role="main">
   <article class="hentry">
     <header class="header-title">
       <div class="header-title-wrap">
-        <h1 class="entry-title">About me</h1>
+        
+          <h1 class="entry-title" ><a href="/rpi-post/" rel="bookmark" title="Raspberry pi 2">Raspberry pi 2</a></h1>
+        
+        <h2><span class="entry-date date published"><time datetime="2016-03-21T00:00:00+02:00">March 21, 2016</time></span></h2>
         
       </div><!-- /.header-title-wrap -->
     </header>
     <div class="entry-content">
-      <p>Hey,</p>
+      <h2 id="raspberry-pi-2">Raspberry pi 2</h2>
 
-<p>My name is Odysseas, and I study electrical engineering in the University of Patras,Greece, currently in the second year. I try to be as active as possible both in the student community and in my personal time, which I spend doing personal projects or promoting entrepreneurship in Patras.Ooh, I forgot, I am deeply in love with entrepreneurship, with being active and creative in any way possible.I believe that being productive can deeply change a person from within, having experienced it, I try to make the student community to be productive and engage in extra-curiculum activities that are realated to the field of their particular studies.</p>
+<p><img src="/images/rpilogo.png" alt="logo" /></p>
 
-<p>I chose to study electrical engineering because I was always keen in technology and electronics.Moreover, the more I researched the area, the more I was fascinated by the nearly endless possibilities of the field,giving me more than a handful of ideas of what to pursue later. Mostly in robotics,nanotechnology and microprocessors and generally all things small.</p>
+<p>As you propably arleady know, Rpi is a small computer running a version of linux called Debian.Although it can run several more version of linux, including custom ones that are made for specific purposes (i.e Voice Control) or Windows 10, Debian is by far the most common and versatile one.</p>
 
-<p>Lastly I am also very interested in public relations and marketing, as I constantly try to hone my people and communication skills.I firmly believe that social skills provide solid foundations and are critical in success, no matter the field.</p>
+<p>It’s setup is fairly easy thanks to <a href="https://www.raspberrypi.org/help/noobs-setup/">Noob Setup</a> and you can get it up and running in no time.</p>
+
+<p class="notice"><strong>Pro-Tip</strong>
+It’s important that after you setup it and connect it to the internet(via cable or <a href="https://www.raspberrypi.org/documentation/configuration/wireless/wireless-cli.md">wi-fi dongle</a>), you configure <a href="https://www.raspberrypi.org/documentation/remote-access/ssh/">ssh</a> so you gain access to it’s command line remotely, through OS X terminal, linux command line or <a href="https://www.raspberrypi.org/documentation/remote-access/ssh/windows.md">ssh client</a> for windows.</p>
+
+<p>So, now that..</p>
+<figure>
+	<a href="http://49.media.tumblr.com/6719493c95b322c8373afb6ccef98e23/tumblr_n8os443A2Q1sl21koo1_500.gif"><img src="http://49.media.tumblr.com/6719493c95b322c8373afb6ccef98e23/tumblr_n8os443A2Q1sl21koo1_500.gif" alt="" /></a>
+</figure>
+
+<p>Let’s continue with what makes Raspberry Pi so special. It houses a wealth of hardware for a fairly limited price. It ranges from a camera display to the most important piece, the 40 GPIO pins that transform rpi from a simple micro-computer to a versatile controler of electronic components.</p>
+
+<ul>
+  <li>4 USB ports</li>
+  <li>40 GPIO pins</li>
+  <li>Full HDMI port</li>
+  <li>Ethernet port</li>
+  <li>Combined 3.5mm audio jack and composite video</li>
+  <li>Camera interface (CSI)</li>
+  <li>Display interface (DSI)</li>
+  <li>Micro SD card slot</li>
+  <li>VideoCore IV 3D graphics core</li>
+</ul>
+
+<p>I am not going to explain more at this point as it’s better to explain the various capabilities with examples from my project. It’s worth though to display  the pinout diagram as it’s very important for any project.</p>
+
+<figure>
+	<a href="http://www.toptechboy.com/wp-content/uploads/2015/06/raspberry-pi-2-pinout.jpg"><img src="http://www.toptechboy.com/wp-content/uploads/2015/06/raspberry-pi-2-pinout.jpg" alt="" /></a>
+	<figcaption><a href="http://www.toptechboy.com/wp-content/uploads/2015/06/raspberry-pi-2-pinout.jpg" title="GPIO Pinout">GPIO Pinout</a>.</figcaption>
+</figure>
+
+<h2 id="but-what-are-those-pesky--gpio-anyhow">But what are those pesky  GPIO anyhow?</h2>
+
+<p>That’s a fair question, GPIO stands for “General Purpose Input Output” meaning that these pins can be used as digital inputs or digital outputs. There are also pins that act as power supply(providing either 5v or 3.3v) or as ground. Some GPIO also have special functions (like <a href="https://learn.sparkfun.com/tutorials/pulse-width-modulation">pulse width modulation</a>)</p>
+
+<p class="notice"><strong>REMEMBER</strong>: Rpi use 3.3v as logical 1 and 0v as logical 0, unlike other microcontrolers,like <em>Arduino</em> which use 5v.</p>
+
+<h2 id="gpio-control">GPIO control?</h2>
+
+<p>As you propably have guess arleady, gpio can be controlled through scripts in various languages that use specific libraries that do most of the dirty work. My personal favorite is python as it’s easily understandable and ridiculously versatile and for these reason our main focus will be python.</p>
+
+<h3 id="thats-all-folks">That’s all folks</h3>
+
+<p>I think that you have the all the neaded material to understand the rudimentary level of my project, next will follow an overview of the project and slowly we will start geting into the software side of it.</p>
+
+<p>Cheers!</p>
 
       <footer class="entry-meta">
-        <span>Updated on <span class="entry-date date published updated"><time datetime="2016-04-19">April 19, 2016</time></span></span>
+        <span class="entry-tags"><a href="/tags/#raspberry pi" title="Pages tagged raspberry pi" class="tag"><span class="term">raspberry pi</span></a></span>
+        <span>Updated on <span class="entry-date date updated"><time datetime="2016-04-21">April 21, 2016</time></span></span>
         <span class="author vcard"><span class="fn">Odysseas Lamtzidis</span></span>
         <div class="social-share">
   <ul class="socialcount socialcount-small inline-list">
-    <li class="facebook"><a href="https://www.facebook.com/sharer/sharer.php?u=/about/" title="Share on Facebook"><span class="count"><i class="fa fa-facebook-square"></i> Like</span></a></li>
-    <li class="twitter"><a href="https://twitter.com/intent/tweet?text=/about/" title="Share on Twitter"><span class="count"><i class="fa fa-twitter-square"></i> Tweet</span></a></li>
-    <li class="googleplus"><a href="https://plus.google.com/share?url=/about/" title="Share on Google Plus"><span class="count"><i class="fa fa-google-plus-square"></i> +1</span></a></li>
+    <li class="facebook"><a href="https://www.facebook.com/sharer/sharer.php?u=/rpi-post/" title="Share on Facebook"><span class="count"><i class="fa fa-facebook-square"></i> Like</span></a></li>
+    <li class="twitter"><a href="https://twitter.com/intent/tweet?text=/rpi-post/" title="Share on Twitter"><span class="count"><i class="fa fa-twitter-square"></i> Tweet</span></a></li>
+    <li class="googleplus"><a href="https://plus.google.com/share?url=/rpi-post/" title="Share on Google Plus"><span class="count"><i class="fa fa-google-plus-square"></i> +1</span></a></li>
   </ul>
 </div><!-- /.social-share -->
       </footer>
     </div><!-- /.entry-content -->
     <section id="disqus_thread"></section><!-- /#disqus_thread -->
+    <div class="read-more">
+  
+    <div class="read-more-header">
+      <a href="/the-project-post/" class="read-more-btn">Read More</a>
+    </div><!-- /.read-more-header -->
+    <div class="read-more-content">
+      <h3><a href="/the-project-post/" title="The Project">The Project</a></h3>
+      <p>Raspberry + IoT = <3 <a href="/the-project-post/">Continue reading</a></p>
+    </div><!-- /.read-more-content -->
+  
+  <div class="read-more-list">
+    
+  </div><!-- /.read-more-list -->
+</div><!-- /.read-more -->
   </article>
 </div><!-- /#main -->
 
@@ -202,7 +257,7 @@ In love with marketing and entrepreneurship</p>
     </script>
     <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
     <a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
-          
+	        
 
 </body>
 </html>
