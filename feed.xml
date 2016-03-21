@@ -4,7 +4,7 @@
 <generator uri="https://github.com/mojombo/jekyll">Jekyll</generator>
 <link rel="self" type="application/atom+xml" href="/feed.xml" />
 <link rel="alternate" type="text/html" href="" />
-<updated>2016-03-20T17:59:54+02:00</updated>
+<updated>2016-03-21T18:24:49+02:00</updated>
 <id>/</id>
 <author>
   <name>Odysseas Lamtzidis</name>
@@ -30,19 +30,13 @@
 
 &lt;p&gt;&lt;img src=&quot;/images/rpilogo.png&quot; alt=&quot;logo&quot; /&gt;&lt;/p&gt;
 
-&lt;p&gt;As you propably arleady know, Rpi is a small computer running a version of linux called Debian.Although it can run several more version of linux, including custom ones that are made for specific purposes (i.e Voice Control) or Windows 10, Debian is by far the most common and versatile one.&lt;/p&gt;
+&lt;p&gt;As you propably arleady know, Rpi is a small computer running a version of linux called Debian.Although it can run several more versions of linux, including custom ones that are made for specific purposes (i.e Voice Control), or Windows 10, Debian is by far the most common and versatile one.&lt;/p&gt;
 
-&lt;p&gt;It’s setup is fairly easy thanks to &lt;a href=&quot;https://www.raspberrypi.org/help/noobs-setup/&quot;&gt;Noob Setup&lt;/a&gt; and you can get it up and running in no time.&lt;/p&gt;
+&lt;h4 id=&quot;we-are-going-to-cover-the-setup-later-in-the-blog&quot;&gt;We are going to cover the setup later in the blog.&lt;/h4&gt;
 
-&lt;p class=&quot;notice&quot;&gt;&lt;strong&gt;Pro-Tip&lt;/strong&gt;
-It’s important that after you setup it and connect it to the internet(via cable or &lt;a href=&quot;https://www.raspberrypi.org/documentation/configuration/wireless/wireless-cli.md&quot;&gt;wi-fi dongle&lt;/a&gt;), you configure &lt;a href=&quot;https://www.raspberrypi.org/documentation/remote-access/ssh/&quot;&gt;ssh&lt;/a&gt; so you gain access to it’s command line remotely, through OS X terminal, linux command line or &lt;a href=&quot;https://www.raspberrypi.org/documentation/remote-access/ssh/windows.md&quot;&gt;ssh client&lt;/a&gt; for windows.&lt;/p&gt;
+&lt;p&gt;It houses a wealth of hardware for a fairly limited price. Ranging from a camera display interface to 40 GPIO pin interface that transform rpi from a simple micro-computer to a versatile controler of electronic components.&lt;/p&gt;
 
-&lt;p&gt;So, now that..&lt;/p&gt;
-&lt;figure&gt;
-	&lt;a href=&quot;http://49.media.tumblr.com/6719493c95b322c8373afb6ccef98e23/tumblr_n8os443A2Q1sl21koo1_500.gif&quot;&gt;&lt;img src=&quot;http://49.media.tumblr.com/6719493c95b322c8373afb6ccef98e23/tumblr_n8os443A2Q1sl21koo1_500.gif&quot; alt=&quot;&quot; /&gt;&lt;/a&gt;
-&lt;/figure&gt;
-
-&lt;p&gt;Let’s continue with what makes Raspberry Pi so special. It houses a wealth of hardware for a fairly limited price. It ranges from a camera display to the most important piece, the 40 GPIO pins that transform rpi from a simple micro-computer to a versatile controler of electronic components.&lt;/p&gt;
+&lt;h3 id=&quot;more-specifically&quot;&gt;More specifically:&lt;/h3&gt;
 
 &lt;ul&gt;
   &lt;li&gt;4 USB ports&lt;/li&gt;
@@ -56,7 +50,7 @@ It’s important that after you setup it and connect it to the internet(via cabl
   &lt;li&gt;VideoCore IV 3D graphics core&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;p&gt;I am not going to explain more at this point as it’s better to explain the various capabilities with examples from my project. It’s worth though to display  the pinout diagram as it’s very important for any project.&lt;/p&gt;
+&lt;p&gt;I am not going to explain more at this point as it’s better to explain the various capabilities with examples from my project. It’s worth though to mention the pinout diagram as it’s very important for any project.&lt;/p&gt;
 
 &lt;figure&gt;
 	&lt;a href=&quot;http://www.toptechboy.com/wp-content/uploads/2015/06/raspberry-pi-2-pinout.jpg&quot;&gt;&lt;img src=&quot;http://www.toptechboy.com/wp-content/uploads/2015/06/raspberry-pi-2-pinout.jpg&quot; alt=&quot;&quot; /&gt;&lt;/a&gt;
@@ -71,11 +65,11 @@ It’s important that after you setup it and connect it to the internet(via cabl
 
 &lt;h2 id=&quot;gpio-control&quot;&gt;GPIO control?&lt;/h2&gt;
 
-&lt;p&gt;As you propably have guess arleady, gpio can be controlled through scripts in various languages that use specific libraries that do most of the dirty work. My personal favorite is python as it’s easily understandable and ridiculously versatile and for these reason our main focus will be python.&lt;/p&gt;
+&lt;p&gt;As you propably have guessed arleady,a gpio can be controlled through scripts in various languages that use specific libraries that do most of the dirty work. My personal favorite is python as it’s easily understandable and ridiculously versatile. For these reasonons our main focus will be python although we will need some linux scripting as well. For the web interface we will need some basic html/css/javascript.&lt;/p&gt;
 
 &lt;h3 id=&quot;thats-all-folks&quot;&gt;That’s all folks&lt;/h3&gt;
 
-&lt;p&gt;I think that you have the all the neaded material to understand the rudimentary level of my project, next will follow an overview of the project and slowly we will start geting into the software side of it.&lt;/p&gt;
+&lt;p&gt;I think that you have the all the neaded material to understand the basics of the raspberry pi 2 next will follow an overview of the project and slowly we will start geting into the software side of it.&lt;/p&gt;
 
 &lt;p&gt;Cheers!&lt;/p&gt;
 
