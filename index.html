@@ -147,6 +147,56 @@ In love with marketing and entrepreneurship</p>
   <header>
     
     <div class="entry-meta">
+      <span class="entry-date date published updated"><time datetime="2016-04-22T00:00:00+03:00"><a href="/rpi-setup/">April 22, 2016</a></time></span><span class="author vcard"><span class="fn"><a href="/about/" title="About Odysseas Lamtzidis">Odysseas Lamtzidis</a></span></span>
+      
+    </div><!-- /.entry-meta -->
+    
+      <h1 class="entry-title"><a href="/rpi-setup/" rel="bookmark" title="Setting up the Raspberry" itemprop="url">Setting up the Raspberry</a></h1>
+    
+  </header>
+  <div class="entry-content">
+    <h2 id="get-rpi-rolling">Get Rpi rolling</h2>
+
+<p>To do that you have to firstly install Raspbian according to this <a href="https://www.raspberrypi.org/help/noobs-setup/">Noob Guide.</a></p>
+
+<p>Now that you have your system up and running let’s make our life a bit <em>easier</em>.</p>
+
+<p>Since it’s not easy to have rpi always connected to a screen and a keyboard, we are going to run it <strong>headless</strong>. It means that we are going to use it’s terminal through the internet, from our computer. All we need is for the rpi to be connected to the internet and we also need to know it’s ip address.</p>
+
+<ol>
+  <li>
+    <p>Connect Rpi to the internet, either via ethernet or <a href="https://www.raspberrypi.org/documentation/configuration/wireless/wireless-cli.md">wi-fi dongle</a></p>
+  </li>
+  <li>
+    <p>Since it’s not cool to search and find the ip adress each time you want to fiddle with rpi, let’s make it have static ip according to this <a href="http://www.modmypi.com/blog/tutorial-how-to-give-your-raspberry-pi-a-static-ip-address">guide</a></p>
+  </li>
+  <li>
+    <p>Configure <a href="https://www.raspberrypi.org/documentation/remote-access/ssh/">ssh</a> to gain command line control.</p>
+  </li>
+  <li>
+    <p>To gain easy access to your files and folders in rpi from your pc, download <a href="https://filezilla-project.org/">filezilla</a> to your computer and then<a href="https://www.raspberrypi.org/documentation/remote-access/ssh/sftp.md">configure</a> it for Rpi. it’s much easier to manipulate folders and files from this graphic design than from linux command line.</p>
+  </li>
+  <li>
+    <p><strong>Optional</strong>: Check this <a href="https://www.raspberrypi.org/documentation/linux/usage/commands.md">page</a> as it contains a lot of useful commands. Thankfuly after some hours of Rpi experience you will start memorising the various commands, remember that command line is A-Z in Unix operating systems,like Lynux a.k.a Raspbian.</p>
+  </li>
+</ol>
+
+<h2 id="so-now-that">So, now that..</h2>
+<figure>
+	<a href="http://49.media.tumblr.com/6719493c95b322c8373afb6ccef98e23/tumblr_n8os443A2Q1sl21koo1_500.gif"><img src="http://49.media.tumblr.com/6719493c95b322c8373afb6ccef98e23/tumblr_n8os443A2Q1sl21koo1_500.gif" alt="" /></a>
+</figure>
+
+<p>We can safely start talking about the libraries we are going to use in the next post,</p>
+
+<p>Cheers!</p>
+
+  </div><!-- /.entry-content -->
+</article><!-- /.hentry -->
+
+<article class="hentry">
+  <header>
+    
+    <div class="entry-meta">
       <span class="entry-date date published updated"><time datetime="2016-03-21T00:00:00+02:00"><a href="/rpi-post/">March 21, 2016</a></time></span><span class="author vcard"><span class="fn"><a href="/about/" title="About Odysseas Lamtzidis">Odysseas Lamtzidis</a></span></span>
       
     </div><!-- /.entry-meta -->
@@ -161,7 +211,7 @@ In love with marketing and entrepreneurship</p>
 
 <p>As you propably arleady know, Rpi is a small computer running a version of linux called Debian.Although it can run several more versions of linux, including custom ones that are made for specific purposes (i.e Voice Control), or Windows 10, Debian is by far the most common and versatile one.</p>
 
-<h4 id="we-are-going-to-cover-the-setup-later-in-the-blog">We are going to cover the setup later in the blog.</h4>
+<p class="notice">We are going to cover the setup later in the blog.</p>
 
 <p>It houses a wealth of hardware for a fairly limited price. Ranging from a camera display interface to 40 GPIO pin interface that transform rpi from a simple micro-computer to a versatile controler of electronic components.</p>
 
@@ -186,7 +236,7 @@ In love with marketing and entrepreneurship</p>
 	<figcaption><a href="http://www.toptechboy.com/wp-content/uploads/2015/06/raspberry-pi-2-pinout.jpg" title="GPIO Pinout">GPIO Pinout</a>.</figcaption>
 </figure>
 
-<h2 id="but-what-are-those-pesky--gpio-anyhow">But what are those pesky  GPIO anyhow?</h2>
+<h2 id="but-what-are-those-pesky-gpio-anyhow">But what are those pesky GPIO anyhow?</h2>
 
 <p>That’s a fair question, GPIO stands for “General Purpose Input Output” meaning that these pins can be used as digital inputs or digital outputs. There are also pins that act as power supply(providing either 5v or 3.3v) or as ground. Some GPIO also have special functions (like <a href="https://learn.sparkfun.com/tutorials/pulse-width-modulation">pulse width modulation</a>)</p>
 

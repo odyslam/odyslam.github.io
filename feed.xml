@@ -4,13 +4,66 @@
 <generator uri="https://github.com/mojombo/jekyll">Jekyll</generator>
 <link rel="self" type="application/atom+xml" href="/feed.xml" />
 <link rel="alternate" type="text/html" href="" />
-<updated>2016-03-21T18:56:02+02:00</updated>
+<updated>2016-03-22T21:53:14+02:00</updated>
 <id>/</id>
 <author>
   <name>Odysseas Lamtzidis</name>
   <uri>/</uri>
   <email>odyslam@gmail.com</email>
 </author>
+
+
+<entry>
+  <title type="html"><![CDATA[Setting up the Raspberry]]></title>
+ <link rel="alternate" type="text/html" href="/rpi-setup/" />
+  <id>/rpi-setup</id>
+  <updated>2016-04-24T00:00:00-00:00</updated>
+  <published>2016-04-22T00:00:00+03:00</published>
+  
+  <author>
+    <name>Odysseas Lamtzidis</name>
+    <uri></uri>
+    <email>odyslam@gmail.com</email>
+  </author>
+  <content type="html">
+    &lt;h2 id=&quot;get-rpi-rolling&quot;&gt;Get Rpi rolling&lt;/h2&gt;
+
+&lt;p&gt;To do that you have to firstly install Raspbian according to this &lt;a href=&quot;https://www.raspberrypi.org/help/noobs-setup/&quot;&gt;Noob Guide.&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;Now that you have your system up and running let’s make our life a bit &lt;em&gt;easier&lt;/em&gt;.&lt;/p&gt;
+
+&lt;p&gt;Since it’s not easy to have rpi always connected to a screen and a keyboard, we are going to run it &lt;strong&gt;headless&lt;/strong&gt;. It means that we are going to use it’s terminal through the internet, from our computer. All we need is for the rpi to be connected to the internet and we also need to know it’s ip address.&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;
+    &lt;p&gt;Connect Rpi to the internet, either via ethernet or &lt;a href=&quot;https://www.raspberrypi.org/documentation/configuration/wireless/wireless-cli.md&quot;&gt;wi-fi dongle&lt;/a&gt;&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Since it’s not cool to search and find the ip adress each time you want to fiddle with rpi, let’s make it have static ip according to this &lt;a href=&quot;http://www.modmypi.com/blog/tutorial-how-to-give-your-raspberry-pi-a-static-ip-address&quot;&gt;guide&lt;/a&gt;&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Configure &lt;a href=&quot;https://www.raspberrypi.org/documentation/remote-access/ssh/&quot;&gt;ssh&lt;/a&gt; to gain command line control.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;To gain easy access to your files and folders in rpi from your pc, download &lt;a href=&quot;https://filezilla-project.org/&quot;&gt;filezilla&lt;/a&gt; to your computer and then&lt;a href=&quot;https://www.raspberrypi.org/documentation/remote-access/ssh/sftp.md&quot;&gt;configure&lt;/a&gt; it for Rpi. it’s much easier to manipulate folders and files from this graphic design than from linux command line.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;strong&gt;Optional&lt;/strong&gt;: Check this &lt;a href=&quot;https://www.raspberrypi.org/documentation/linux/usage/commands.md&quot;&gt;page&lt;/a&gt; as it contains a lot of useful commands. Thankfuly after some hours of Rpi experience you will start memorising the various commands, remember that command line is A-Z in Unix operating systems,like Lynux a.k.a Raspbian.&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h2 id=&quot;so-now-that&quot;&gt;So, now that..&lt;/h2&gt;
+&lt;figure&gt;
+	&lt;a href=&quot;http://49.media.tumblr.com/6719493c95b322c8373afb6ccef98e23/tumblr_n8os443A2Q1sl21koo1_500.gif&quot;&gt;&lt;img src=&quot;http://49.media.tumblr.com/6719493c95b322c8373afb6ccef98e23/tumblr_n8os443A2Q1sl21koo1_500.gif&quot; alt=&quot;&quot; /&gt;&lt;/a&gt;
+&lt;/figure&gt;
+
+&lt;p&gt;We can safely start talking about the libraries we are going to use in the next post,&lt;/p&gt;
+
+&lt;p&gt;Cheers!&lt;/p&gt;
+
+    &lt;p&gt;&lt;a href=&quot;/rpi-setup/&quot;&gt;Setting up the Raspberry&lt;/a&gt; was originally published by Odysseas Lamtzidis at &lt;a href=&quot;&quot;&gt;Project L&lt;/a&gt; on April 22, 2016.&lt;/p&gt;
+  </content>
+</entry>
 
 
 <entry>
@@ -32,7 +85,7 @@
 
 &lt;p&gt;As you propably arleady know, Rpi is a small computer running a version of linux called Debian.Although it can run several more versions of linux, including custom ones that are made for specific purposes (i.e Voice Control), or Windows 10, Debian is by far the most common and versatile one.&lt;/p&gt;
 
-&lt;h4 id=&quot;we-are-going-to-cover-the-setup-later-in-the-blog&quot;&gt;We are going to cover the setup later in the blog.&lt;/h4&gt;
+&lt;p class=&quot;notice&quot;&gt;We are going to cover the setup later in the blog.&lt;/p&gt;
 
 &lt;p&gt;It houses a wealth of hardware for a fairly limited price. Ranging from a camera display interface to 40 GPIO pin interface that transform rpi from a simple micro-computer to a versatile controler of electronic components.&lt;/p&gt;
 
@@ -57,7 +110,7 @@
 	&lt;figcaption&gt;&lt;a href=&quot;http://www.toptechboy.com/wp-content/uploads/2015/06/raspberry-pi-2-pinout.jpg&quot; title=&quot;GPIO Pinout&quot;&gt;GPIO Pinout&lt;/a&gt;.&lt;/figcaption&gt;
 &lt;/figure&gt;
 
-&lt;h2 id=&quot;but-what-are-those-pesky--gpio-anyhow&quot;&gt;But what are those pesky  GPIO anyhow?&lt;/h2&gt;
+&lt;h2 id=&quot;but-what-are-those-pesky-gpio-anyhow&quot;&gt;But what are those pesky GPIO anyhow?&lt;/h2&gt;
 
 &lt;p&gt;That’s a fair question, GPIO stands for “General Purpose Input Output” meaning that these pins can be used as digital inputs or digital outputs. There are also pins that act as power supply(providing either 5v or 3.3v) or as ground. Some GPIO also have special functions (like &lt;a href=&quot;https://learn.sparkfun.com/tutorials/pulse-width-modulation&quot;&gt;pulse width modulation&lt;/a&gt;)&lt;/p&gt;
 
