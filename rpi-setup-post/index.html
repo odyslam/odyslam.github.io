@@ -5,30 +5,30 @@
 <!--[if gt IE 8]><!--> <html class="no-js" lang="en"><!--<![endif]-->
 <head>
 <meta charset="utf-8">
-<title>All Posts &#8211; Project L</title>
-<meta name="description" content="An archive of posts.">
-
+<title>Setting up the Raspberry &#8211; Project L</title>
+<meta name="description" content="The first steps">
+<meta name="keywords" content="Raspberry pi, software, Raspbian">
 
 <!-- Twitter Cards -->
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="/images/">
-<meta name="twitter:title" content="All Posts">
-<meta name="twitter:description" content="An archive of posts.">
+<meta name="twitter:title" content="Setting up the Raspberry">
+<meta name="twitter:description" content="The first steps">
 <meta name="twitter:creator" content="@CynicOdys">
 
 <!-- Open Graph -->
 <meta property="og:locale" content="en_US">
 <meta property="og:type" content="article">
-<meta property="og:title" content="All Posts">
-<meta property="og:description" content="An archive of posts.">
-<meta property="og:url" content="/posts/">
+<meta property="og:title" content="Setting up the Raspberry">
+<meta property="og:description" content="The first steps">
+<meta property="og:url" content="/rpi-setup-post/">
 <meta property="og:site_name" content="Project L">
 
 
 
 
 
-<link rel="canonical" href="/posts/">
+<link rel="canonical" href="/rpi-setup-post/">
 <link href="/feed.xml" type="application/atom+xml" rel="alternate" title="Project L Feed">
 
 <!-- http://t.co/dKP3o1e -->
@@ -68,7 +68,7 @@
 
 </head>
 
-<body id="post-index" >
+<body id="post" >
 
 <!--[if lt IE 9]><div class="upgrade"><strong><a href="http://whatbrowser.org/">Your browser is quite old!</strong> Why not upgrade to a different browser to better enjoy this site?</a></div><![endif]-->
 <nav id="dl-menu" class="dl-menuwrapper" role="navigation">
@@ -125,57 +125,89 @@ In love with marketing and entrepreneurship</p>
 </nav><!-- /.dl-menuwrapper -->
 
 
-<div class="entry-header">
-  
-  
-  <div class="header-title">
-    <div class="header-title-wrap">
-      <h1>Project L</h1>
-      <h2>All Posts</h2>
-    </div><!-- /.header-title-wrap -->
-  </div><!-- /.header-title -->
-</div><!-- /.entry-header -->
+
 
 <div id="main" role="main">
+  <article class="hentry">
+    <header class="header-title">
+      <div class="header-title-wrap">
+        
+          <h1 class="entry-title" ><a href="/rpi-setup-post/" rel="bookmark" title="Setting up the Raspberry">Setting up the Raspberry</a></h1>
+        
+        <h2><span class="entry-date date published"><time datetime="2016-04-22T00:00:00+03:00">April 22, 2016</time></span></h2>
+        
+      </div><!-- /.header-title-wrap -->
+    </header>
+    <div class="entry-content">
+      <h2 id="get-rpi-rolling">Get Rpi rolling</h2>
+
+<p>To do that you have to firstly install Raspbian according to this <a href="https://www.raspberrypi.org/help/noobs-setup/">Noob Guide.</a></p>
+
+<p>Now that you have your system up and running let’s make our life a bit <em>easier</em>.</p>
+
+<p>Since it’s not easy to have rpi always connected to a screen and a keyboard, we are going to run it <strong>headless</strong>. It means that we are going to use it’s terminal through the internet, from our computer. All we need is for the rpi to be connected to the internet and we also need to know it’s ip address.</p>
+
+<ol>
+  <li>
+    <p>Connect Rpi to the internet, either via ethernet or <a href="https://www.raspberrypi.org/documentation/configuration/wireless/wireless-cli.md">wi-fi dongle</a></p>
+  </li>
+  <li>
+    <p>Since it’s not cool to search and find the ip adress each time you want to fiddle with rpi, let’s make it have static ip according to this <a href="http://www.modmypi.com/blog/tutorial-how-to-give-your-raspberry-pi-a-static-ip-address">guide</a></p>
+  </li>
+  <li>
+    <p>Configure <a href="https://www.raspberrypi.org/documentation/remote-access/ssh/">ssh</a> to gain command line control.</p>
+  </li>
+  <li>
+    <p>To gain easy access to your files and folders in rpi from your pc, download <a href="https://filezilla-project.org/">filezilla</a> to your computer and then<a href="https://www.raspberrypi.org/documentation/remote-access/ssh/sftp.md">configure</a> it for Rpi. it’s much easier to manipulate folders and files from this graphic design than from linux command line.</p>
+  </li>
+  <li>
+    <p><strong>Optional</strong>: Check this <a href="https://www.raspberrypi.org/documentation/linux/usage/commands.md">page</a> as it contains a lot of useful commands. Thankfuly after some hours of Rpi experience you will start memorising the various commands, remember that command line is A-Z in Unix operating systems,like Lynux a.k.a Raspbian.</p>
+  </li>
+</ol>
+
+<h2 id="so-now-that">So, now that..</h2>
+<figure>
+	<a href="http://49.media.tumblr.com/6719493c95b322c8373afb6ccef98e23/tumblr_n8os443A2Q1sl21koo1_500.gif"><img src="http://49.media.tumblr.com/6719493c95b322c8373afb6ccef98e23/tumblr_n8os443A2Q1sl21koo1_500.gif" alt="" /></a>
+</figure>
+
+<p>We can safely start talking about the libraries we are going to use in the next post,</p>
+
+<p>Cheers!</p>
+
+      <footer class="entry-meta">
+        <span class="entry-tags"><a href="/tags/#Raspberry pi" title="Pages tagged Raspberry pi" class="tag"><span class="term">Raspberry pi</span></a><a href="/tags/#software" title="Pages tagged software" class="tag"><span class="term">software</span></a><a href="/tags/#Raspbian" title="Pages tagged Raspbian" class="tag"><span class="term">Raspbian</span></a></span>
+        <span>Updated on <span class="entry-date date updated"><time datetime="2016-04-24">April 24, 2016</time></span></span>
+        <span class="author vcard"><span class="fn">Odysseas Lamtzidis</span></span>
+        <div class="social-share">
+  <ul class="socialcount socialcount-small inline-list">
+    <li class="facebook"><a href="https://www.facebook.com/sharer/sharer.php?u=/rpi-setup-post/" title="Share on Facebook"><span class="count"><i class="fa fa-facebook-square"></i> Like</span></a></li>
+    <li class="twitter"><a href="https://twitter.com/intent/tweet?text=/rpi-setup-post/" title="Share on Twitter"><span class="count"><i class="fa fa-twitter-square"></i> Tweet</span></a></li>
+    <li class="googleplus"><a href="https://plus.google.com/share?url=/rpi-setup-post/" title="Share on Google Plus"><span class="count"><i class="fa fa-google-plus-square"></i> +1</span></a></li>
+  </ul>
+</div><!-- /.social-share -->
+      </footer>
+    </div><!-- /.entry-content -->
+    <section id="disqus_thread"></section><!-- /#disqus_thread -->
+    <div class="read-more">
   
+    <div class="read-more-header">
+      <a href="/rpi-post/" class="read-more-btn">Read More</a>
+    </div><!-- /.read-more-header -->
+    <div class="read-more-content">
+      <h3><a href="/rpi-post/" title="Raspberry pi 2">Raspberry pi 2</a></h3>
+      <p>a small introduction <a href="/rpi-post/">Continue reading</a></p>
+    </div><!-- /.read-more-content -->
+  
+  <div class="read-more-list">
     
+      <div class="list-item">
+        <h4><a href="/the-project-post/" title="The Project">The Project</a></h4>
+        <span>Published on March 20, 2016</span>
+      </div><!-- /.list-item -->
     
-
-    
-    <article>
-      <h2 id="2016-ref">2016</h2>
-      <ul>
-    
-
-        <li class="entry-title"><a href="/rpi-setup-post/" title="Setting up the Raspberry">Setting up the Raspberry</a></li>
-
-    
-        
-    
-
-    
-    
-
-    
-
-        <li class="entry-title"><a href="/rpi-post/" title="Raspberry pi 2">Raspberry pi 2</a></li>
-
-    
-        
-    
-
-    
-    
-
-    
-
-        <li class="entry-title"><a href="/the-project-post/" title="The Project">The Project</a></li>
-
-    
-      </ul>
-    </article>
-    
-
+  </div><!-- /.read-more-list -->
+</div><!-- /.read-more -->
+  </article>
 </div><!-- /#main -->
 
 <div class="footer-wrapper">
@@ -212,7 +244,7 @@ In love with marketing and entrepreneurship</p>
     </script>
     <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
     <a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
-          
+	        
 
 </body>
 </html>
