@@ -2,27 +2,27 @@
 <feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en">
 <title type="text">Project L</title>
 <generator uri="https://github.com/mojombo/jekyll">Jekyll</generator>
-<link rel="self" type="application/atom+xml" href="/feed.xml" />
-<link rel="alternate" type="text/html" href="" />
-<updated>2016-03-23T22:11:20+02:00</updated>
-<id>/</id>
+<link rel="self" type="application/atom+xml" href="http://odyslam.github.io/feed.xml" />
+<link rel="alternate" type="text/html" href="http://odyslam.github.io" />
+<updated>2016-03-23T22:31:16+02:00</updated>
+<id>http://odyslam.github.io/</id>
 <author>
   <name>Odysseas Lamtzidis</name>
-  <uri>/</uri>
+  <uri>http://odyslam.github.io/</uri>
   <email>odyslam@gmail.com</email>
 </author>
 
 
 <entry>
   <title type="html"><![CDATA[Setting up the Raspberry]]></title>
- <link rel="alternate" type="text/html" href="/rpi-setup-post/" />
-  <id>/rpi-setup-post</id>
+ <link rel="alternate" type="text/html" href="http://odyslam.github.io/rpi-setup-post/" />
+  <id>http://odyslam.github.io/rpi-setup-post</id>
   <updated>2016-04-24T00:00:00-00:00</updated>
   <published>2016-04-22T00:00:00+03:00</published>
   
   <author>
     <name>Odysseas Lamtzidis</name>
-    <uri></uri>
+    <uri>http://odyslam.github.io</uri>
     <email>odyslam@gmail.com</email>
   </author>
   <content type="html">
@@ -61,21 +61,21 @@
 
 &lt;p&gt;Cheers!&lt;/p&gt;
 
-    &lt;p&gt;&lt;a href=&quot;/rpi-setup-post/&quot;&gt;Setting up the Raspberry&lt;/a&gt; was originally published by Odysseas Lamtzidis at &lt;a href=&quot;&quot;&gt;Project L&lt;/a&gt; on April 22, 2016.&lt;/p&gt;
+    &lt;p&gt;&lt;a href=&quot;http://odyslam.github.io/rpi-setup-post/&quot;&gt;Setting up the Raspberry&lt;/a&gt; was originally published by Odysseas Lamtzidis at &lt;a href=&quot;http://odyslam.github.io&quot;&gt;Project L&lt;/a&gt; on April 22, 2016.&lt;/p&gt;
   </content>
 </entry>
 
 
 <entry>
   <title type="html"><![CDATA[Raspberry pi 2]]></title>
- <link rel="alternate" type="text/html" href="/rpi-post/" />
-  <id>/rpi-post</id>
+ <link rel="alternate" type="text/html" href="http://odyslam.github.io/rpi-post/" />
+  <id>http://odyslam.github.io/rpi-post</id>
   <updated>2016-04-21T00:00:00-00:00</updated>
   <published>2016-03-21T00:00:00+02:00</published>
   
   <author>
     <name>Odysseas Lamtzidis</name>
-    <uri></uri>
+    <uri>http://odyslam.github.io</uri>
     <email>odyslam@gmail.com</email>
   </author>
   <content type="html">
@@ -124,21 +124,21 @@
 
 &lt;p&gt;Cheers!&lt;/p&gt;
 
-    &lt;p&gt;&lt;a href=&quot;/rpi-post/&quot;&gt;Raspberry pi 2&lt;/a&gt; was originally published by Odysseas Lamtzidis at &lt;a href=&quot;&quot;&gt;Project L&lt;/a&gt; on March 21, 2016.&lt;/p&gt;
+    &lt;p&gt;&lt;a href=&quot;http://odyslam.github.io/rpi-post/&quot;&gt;Raspberry pi 2&lt;/a&gt; was originally published by Odysseas Lamtzidis at &lt;a href=&quot;http://odyslam.github.io&quot;&gt;Project L&lt;/a&gt; on March 21, 2016.&lt;/p&gt;
   </content>
 </entry>
 
 
 <entry>
   <title type="html"><![CDATA[The Project]]></title>
- <link rel="alternate" type="text/html" href="/the-project-post/" />
-  <id>/the-project-post</id>
+ <link rel="alternate" type="text/html" href="http://odyslam.github.io/the-project-post/" />
+  <id>http://odyslam.github.io/the-project-post</id>
   <updated>2016-04-20T00:00:00-00:00</updated>
   <published>2016-03-20T00:00:00+02:00</published>
   
   <author>
     <name>Odysseas Lamtzidis</name>
-    <uri></uri>
+    <uri>http://odyslam.github.io</uri>
     <email>odyslam@gmail.com</email>
   </author>
   <content type="html">
@@ -169,7 +169,7 @@
 
 &lt;p&gt;Until then, cheers!&lt;/p&gt;
 
-    &lt;p&gt;&lt;a href=&quot;/the-project-post/&quot;&gt;The Project&lt;/a&gt; was originally published by Odysseas Lamtzidis at &lt;a href=&quot;&quot;&gt;Project L&lt;/a&gt; on March 20, 2016.&lt;/p&gt;
+    &lt;p&gt;&lt;a href=&quot;http://odyslam.github.io/the-project-post/&quot;&gt;The Project&lt;/a&gt; was originally published by Odysseas Lamtzidis at &lt;a href=&quot;http://odyslam.github.io&quot;&gt;Project L&lt;/a&gt; on March 20, 2016.&lt;/p&gt;
   </content>
 </entry>
 
