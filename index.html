@@ -147,6 +147,96 @@ In love with marketing and entrepreneurship</p>
   <header>
     
       <div class="entry-image-index">
+        <a href="http://odyslam.github.io/GlaDOS-post/" title="GlaDOS"><img src="http://odyslam.github.io/images/glados.png" alt="GlaDOS"></a>
+      </div><!-- /.entry-image -->
+    
+    <div class="entry-meta">
+      <span class="entry-date date published updated"><time datetime="2016-04-24T00:00:00+03:00"><a href="http://odyslam.github.io/GlaDOS-post/">April 24, 2016</a></time></span><span class="author vcard"><span class="fn"><a href="http://odyslam.github.io/about/" title="About Odysseas Lamtzidis">Odysseas Lamtzidis</a></span></span>
+      
+    </div><!-- /.entry-meta -->
+    
+      <h1 class="entry-title"><a href="http://odyslam.github.io/GlaDOS-post/" rel="bookmark" title="GlaDOS" itemprop="url">GlaDOS</a></h1>
+    
+  </header>
+  <div class="entry-content">
+    ##Let's get into detail
+
+In this post I am going to explain thoroughly all the parts of the project so as you have an idea of what to come
+
+
+##Finally! What does it do? (°ロ°)☝
+
+As I have said a thousand times it's a smart-home project which aims at automating and facilitating a number of tasks, everything is controlled from a central web-page that is run locally on the Raspberry pi from a python server.
+
+###Tasks:
+
+* Lock/Unlock of both the buildings door and the appartment's. The first is done with the help of a releay and the second with the help of a servo and some 3D printed gears.
+
+* Control of 3 RF remote suko switches, by broadcasting a specific binary code I can turn on/off each switch remotely.
+
+* Control of Boilder. A power relay that uses AC as control signal is connected to an RF remote suko switch, same function as above. Bonus points for a software timer to fix the "Ooooh SHIT I forgot to turn off the boiler again".
+
+*Remote turn on of my computer by magic (packet).
+
+###Software:
+
+To create the Interface, I built a simple '.html' page using html-css-javascript. In javascript I used the Jquery and webiopi libraries aswell.
+
+To complete the tasks in the script file I use a number of python libraries (or the python library version of programs), namely:
+
+1. *Webiopi*
+2. *wakeonlan*
+3. *vncdotool*
+4. *Pi_switch*
+
+Which we will get into detail when we examine the python code later in the guide.
+
+In the end, the Interface looks something like this: 
+![Interface](http://odyslam.github.io/images/interface.png)
+
+###Hardware
+
+We will closely examine the hardware as we analyse each task, but namely I am using:
+
+1. [This Servo](http://grobotronics.com/servo-standard-15kg.cm-metal-gears-feetech-fs5115m.html) to turn the appartment's door lock.
+
+2.Common Relay.
+
+<figure>
+	<a href="http://img.dxcdn.com/productimages/sku_121354_2.jpg"><img src="http://img.dxcdn.com/productimages/sku_121354_2.jpg" alt=""></a>
+</figure>
+
+3.RF 434Mhz Link Transmitter, like [this one](https://www.sparkfun.com/products/10534) to signal the switches and a receiver to "listen" to the signal that turns them on/off,like [this one](https://www.sparkfun.com/products/10532).
+
+4.Remotely controlled power switch, it usually works with 434Mhz radiowaves,but not always.
+<figure>
+	<a href="http://vladsgadgets.com/wp-content/uploads/2010/09/Efergy_Standby_Eliminator_4_pack-e1284970166178.jpg"><img src="http://vladsgadgets.com/wp-content/uploads/2010/09/Efergy_Standby_Eliminator_4_pack-e1284970166178.jpg" alt=""></a>
+</figure>
+
+5.Power relay on rail, installed in the electrical panel.
+<figure>
+	<a href="http://e-damianakis.gr/images/detailed/6/1411452914.jpg"><img src="http://e-damianakis.gr/images/detailed/6/1411452914.jpg" alt=""></a>
+</figure>	
+
+6.Electronic Components(cables,regulators, etc)
+
+
+Now that you have a concise idea of what to follow, we are going to start examining the software, more specifically the webiopi framework that is the A-Z of our project. 
+
+See you in the next post! ☜(˚▽˚)☞
+
+
+
+
+
+
+  </div><!-- /.entry-content -->
+</article><!-- /.hentry -->
+
+<article class="hentry">
+  <header>
+    
+      <div class="entry-image-index">
         <a href="http://odyslam.github.io/rpi-setup-post/" title="Setting up the Raspberry"><img src="http://odyslam.github.io/images/rpisetup.png" alt="Setting up the Raspberry"></a>
       </div><!-- /.entry-image -->
     
