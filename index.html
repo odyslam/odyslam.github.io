@@ -162,6 +162,8 @@ In love with marketing and entrepreneurship</p>
 
 <p>In this post I am going to explain thoroughly all the parts of the project so as you have an idea of what to come</p>
 
+<h4 id="glados-its-just-the-name-i-have-given-to-my-project-since-she-is-one-of-my-favorite-villains-in-one-of-the-best-series-i-have-every-playedit-would-be-wise-to-avoid-building-the-actual-glados-since-it-might-cause-severe-painor-even-death">GLaDOS it’s just the name I have given to my project since she is one of my favorite villains in one of the best series I have every played.It would be wise to avoid building the actual GLaDOS since it might cause severe pain,or even death.</h4>
+
 <h2 id="finally-what-does-it-do-">Finally! What does it do? (°ロ°)☝</h2>
 
 <p>As I have said a thousand times it’s a smart-home project which aims at automating and facilitating a number of tasks, everything is controlled from a central web-page that is run locally on the Raspberry pi from a python server.</p>
@@ -184,7 +186,7 @@ In love with marketing and entrepreneurship</p>
 
 <h3 id="software">Software:</h3>
 
-<p>To create the Interface, I built a simple ‘.html’ page using html-css-javascript. In javascript I used the Jquery and webiopi libraries aswell.</p>
+<p>To create the Interface, I built a simple <code class="highlighter-rouge">.html</code> page using html-css-javascript. In javascript I used the Jquery and webiopi libraries aswell.</p>
 
 <p>To complete the tasks in the script file I use a number of python libraries (or the python library version of programs), namely:</p>
 
@@ -205,32 +207,48 @@ In love with marketing and entrepreneurship</p>
 <p>We will closely examine the hardware as we analyse each task, but namely I am using:</p>
 
 <ol>
-  <li><a href="http://grobotronics.com/servo-standard-15kg.cm-metal-gears-feetech-fs5115m.html">This Servo</a> to turn the appartment’s door lock.</li>
+  <li>
+    <p><a href="http://grobotronics.com/servo-standard-15kg.cm-metal-gears-feetech-fs5115m.html">This Servo</a> to turn the appartment’s door lock.</p>
+  </li>
+  <li>
+    <p>Common Relay.</p>
+  </li>
 </ol>
-
-<p>2.Common Relay.</p>
 
 <figure>
 	<a href="http://img.dxcdn.com/productimages/sku_121354_2.jpg"><img src="http://img.dxcdn.com/productimages/sku_121354_2.jpg" alt="" /></a>
 </figure>
 
-<p>3.RF 434Mhz Link Transmitter, like <a href="https://www.sparkfun.com/products/10534">this one</a> to signal the switches and a receiver to “listen” to the signal that turns them on/off,like <a href="https://www.sparkfun.com/products/10532">this one</a>.</p>
+<ol>
+  <li>
+    <p>RF 434Mhz Link Transmitter, like <a href="https://www.sparkfun.com/products/10534">this one</a> to signal the switches and a receiver to “listen” to the signal that turns them on/off,like <a href="https://www.sparkfun.com/products/10532">this one</a>.</p>
+  </li>
+  <li>
+    <p>Remotely controlled power switch, it usually works with 434Mhz radiowaves,but not always.</p>
+  </li>
+</ol>
 
-<p>4.Remotely controlled power switch, it usually works with 434Mhz radiowaves,but not always.</p>
 <figure>
 	<a href="http://vladsgadgets.com/wp-content/uploads/2010/09/Efergy_Standby_Eliminator_4_pack-e1284970166178.jpg"><img src="http://vladsgadgets.com/wp-content/uploads/2010/09/Efergy_Standby_Eliminator_4_pack-e1284970166178.jpg" alt="" /></a>
 </figure>
 
-<p>5.Power relay on rail, installed in the electrical panel.</p>
+<ol>
+  <li>Power relay on rail, installed in the electrical panel.</li>
+</ol>
+
 <figure>
 	<a href="http://e-damianakis.gr/images/detailed/6/1411452914.jpg"><img src="http://e-damianakis.gr/images/detailed/6/1411452914.jpg" alt="" /></a>
 </figure>
 
-<p>6.Electronic Components(cables,regulators, etc)</p>
+<ol>
+  <li>Electronic Components(cables,regulators, etc)</li>
+</ol>
 
 <p>Now that you have a concise idea of what to follow, we are going to start examining the software, more specifically the webiopi framework that is the A-Z of our project.</p>
 
-<p>See you in the next post! ☜(˚▽˚)☞</p>
+<blockquote>
+  <p>See you in the next post! ☜(˚▽˚)☞</p>
+</blockquote>
 
 
   </div><!-- /.entry-content -->
