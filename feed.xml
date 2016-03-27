@@ -4,13 +4,65 @@
 <generator uri="https://github.com/mojombo/jekyll">Jekyll</generator>
 <link rel="self" type="application/atom+xml" href="http://odyslam.github.io/feed.xml" />
 <link rel="alternate" type="text/html" href="http://odyslam.github.io" />
-<updated>2016-03-26T20:25:55+02:00</updated>
+<updated>2016-03-27T20:38:55+03:00</updated>
 <id>http://odyslam.github.io/</id>
 <author>
   <name>Odysseas Lamtzidis</name>
   <uri>http://odyslam.github.io/</uri>
   <email>odyslam@gmail.com</email>
 </author>
+
+
+<entry>
+  <title type="html"><![CDATA[Are you talking to me?]]></title>
+ <link rel="alternate" type="text/html" href="http://odyslam.github.io/languages-post/" />
+  <id>http://odyslam.github.io/languages-post</id>
+  <updated>2016-04-24T00:00:00-00:00</updated>
+  <published>2016-04-26T00:00:00+03:00</published>
+  
+  <author>
+    <name>Odysseas Lamtzidis</name>
+    <uri>http://odyslam.github.io</uri>
+    <email>odyslam@gmail.com</email>
+  </author>
+  <content type="html">
+    &lt;h2 id=&quot;know-your-language&quot;&gt;Know your language:&lt;/h2&gt;
+
+&lt;h3 id=&quot;python&quot;&gt;Python&lt;/h3&gt;
+
+&lt;p&gt;&lt;img src=&quot;http://odyslam.github.io/images/pilogo.png&quot; alt=&quot;python&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;It’s important to know a set of programming languages in order to be able to understand the project.&lt;/p&gt;
+
+&lt;p&gt;The most important is python, not only for this project, but for any raspberry pi project since it’s the main programming language. Python is a very easy-to-learn language as it has a very straight forward syntax and it’s ideal for beginners who just started learning programming. Also, it houses a shit-tone of libraries, which means that it’s very easy to do a lot of different things since others have done all the dirty programming work for you.&lt;/p&gt;
+
+&lt;p&gt;As far as our project is concerned,for any possible upgrade or addition to the project that I have came up with (and they are a lot!) I still haven’t been able to find the appropriate library.&lt;/p&gt;
+
+&lt;p&gt;I suggest you visit &lt;a href=&quot;https://www.codecademy.com/learn/python&quot;&gt;Code Academy&lt;/a&gt; to get a basic idea of how the language work.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;http://odyslam.github.io/images/weblogo.png&quot; alt=&quot;Interface&quot; /&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;html--css&quot;&gt;HTML &amp;amp; CSS&lt;/h3&gt;
+
+&lt;p&gt;They are the basis for any webpage, and in our case, the web interface is no exception. It’s important that you are able to write basic &lt;code class=&quot;highlighter-rouge&quot;&gt;html/css&lt;/code&gt; code. Also, as most of the interface objects(buttons,menus, etc) can be found ready online, it’s important that you can read a piece of code, understand it and then take the part you want to apply to our interface.&lt;/p&gt;
+
+&lt;p&gt;Also visit the appropriate &lt;a href=&quot;https://www.codecademy.com/learn/web&quot;&gt;course&lt;/a&gt; in Code Academy, it’s really worth the time.&lt;/p&gt;
+
+&lt;h3 id=&quot;javascript&quot;&gt;Javascript&lt;/h3&gt;
+
+&lt;p&gt;By far the hardest language of them all, I tried to teach my-self from webiopi tutorials and random searching, it’s really not worth the time. You can cut the learning time by half if you visit again this &lt;a href=&quot;https://www.codecademy.com/learn/javascript&quot;&gt;course&lt;/a&gt; in Code Academy and learn the basics. I strongly recccomend that you do that before you dwelve into webiopi because of the lack of documentation.&lt;/p&gt;
+
+&lt;h2 id=&quot;lastly&quot;&gt;Lastly&lt;/h2&gt;
+
+&lt;p&gt;Keep in mind that the more you know about web front-end development, the more sofisticated your interface will be, both in terms of beauty and usability. Also, I personally believe that being able to create a simple landing page is very a very important tool no matter the field of studies.&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;No affiliation with Code Academy, I just find it ridiculously useful.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+    &lt;p&gt;&lt;a href=&quot;http://odyslam.github.io/languages-post/&quot;&gt;Are you talking to me?&lt;/a&gt; was originally published by Odysseas Lamtzidis at &lt;a href=&quot;http://odyslam.github.io&quot;&gt;Project L&lt;/a&gt; on April 26, 2016.&lt;/p&gt;
+  </content>
+</entry>
 
 
 <entry>
