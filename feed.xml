@@ -4,13 +4,137 @@
 <generator uri="https://github.com/mojombo/jekyll">Jekyll</generator>
 <link rel="self" type="application/atom+xml" href="http://odyslam.github.io/feed.xml" />
 <link rel="alternate" type="text/html" href="http://odyslam.github.io" />
-<updated>2016-03-29T13:56:33+03:00</updated>
+<updated>2016-03-29T14:43:40+03:00</updated>
 <id>http://odyslam.github.io/</id>
 <author>
   <name>Odysseas Lamtzidis</name>
   <uri>http://odyslam.github.io/</uri>
   <email>odyslam@gmail.com</email>
 </author>
+
+
+<entry>
+  <title type="html"><![CDATA[In webiopi we trust]]></title>
+ <link rel="alternate" type="text/html" href="http://odyslam.github.io/webiopi-post/" />
+  <id>http://odyslam.github.io/webiopi-post</id>
+  <updated>2016-04-25T00:00:00-00:00</updated>
+  <published>2016-04-26T00:00:00+03:00</published>
+  
+  <author>
+    <name>Odysseas Lamtzidis</name>
+    <uri>http://odyslam.github.io</uri>
+    <email>odyslam@gmail.com</email>
+  </author>
+  <content type="html">
+    &lt;h2 id=&quot;glados-framework&quot;&gt;GLaDOS Framework&lt;/h2&gt;
+
+&lt;p&gt;Ok, you have your Raspberry up and running as it’s sits quietly somewhere in the house. Now let’s examine the software framework of GLaDOS.&lt;/p&gt;
+
+&lt;p&gt;The main library-framework we are going to use is called &lt;a href=&quot;http://webiopi.trouch.com/&quot;&gt;Webiopi&lt;/a&gt; and it’s a wonderful, yet quite hard and suprisingly undocumented, tool.&lt;/p&gt;
+
+&lt;p class=&quot;notice&quot;&gt;&lt;em&gt;From the site:&lt;/em&gt;
+WebIOPi includes an HTTP server that provides both HTML resources and a REST API to control things. Your browser will first load a HTML file, then the included Javascript will make Asynchronous calls to the REST API to control and update the UI. This method is very efficient, because it don’t need to refresh and download the whole page.&lt;/p&gt;
+
+&lt;h3 id=&quot;that-doesnt-seem-that-simple&quot;&gt;That doesn’t seem that simple&lt;/h3&gt;
+
+&lt;p&gt;Well, actually it’s not &lt;em&gt;that&lt;/em&gt; hard if you have some basic knowledge on how websites and servers work. The most straight-forward approach is the following:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;Script file that is run by the python server and handles all Raspberry pi’s actions.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Website that uses Javascript to call functions that are defined and run by the python script file. It means that all you have to do with js is to call the appropriate function in the script.
+&lt;em&gt;using python as much as possible makes the project much easier.&lt;/em&gt;&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Weaved IoT suite(3rd party program intergrated into webiopi) to be able to access the Rpi server(where the site is hosted) outside of the lan (without port-forwarding ,etc).&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;figure&gt;
+	&lt;figcaption&gt;&lt;a href=&quot;http://trouch.com/wp-content/uploads/2014/01/webiopi-rest.png&quot; title=&quot;Framework overview&quot;&gt;GPIO Pinout&lt;/a&gt;.&lt;/figcaption&gt;
+&lt;/figure&gt;
+
+&lt;p&gt;As you can see from the overview, you can control Rpi gpios as well with various Javascript functions,without going through the python script, but I believe it’s both impractical (going to explain later in the blog) and hard for beginners since Javascript isn’t particularly easy.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Important&lt;/strong&gt;: It works both on Rpi 1 and 2,  it just needs an update-fix and it works like a charm(going into detail later).&lt;/p&gt;
+
+&lt;h2 id=&quot;installation&quot;&gt;Installation:&lt;/h2&gt;
+
+&lt;p&gt;Firstly, let’s &lt;code class=&quot;highlighter-rouge&quot;&gt;ssha&lt;/code&gt;to our Raspberry pi.&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;
+    &lt;p&gt;open Terminal/Command line and type &lt;code class=&quot;highlighter-rouge&quot;&gt;ssh pi@Rpi-Ip&lt;/code&gt;, where Rpi-Ip is the ip of your Raspberry pi,after it prompts for password, type it and hit enter.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Go &lt;a href=&quot;http://webiopi.trouch.com/DOWNLOADS.html&quot;&gt;here&lt;/a&gt; and download the latest version of webiopi to your computer.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;With filezilla put the file in the default directory of Rpi as shown bellow:
+&lt;img src=&quot;http://i.imgur.com/ERiSEun.png&quot; alt=&quot;filezilla&quot; /&gt;&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Run these commands, where x.y.z is the version of WebIOPI you downloaded.&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span class=&quot;gp&quot;&gt;$ &lt;/span&gt;tar xvzf WebIOPi-x.y.z.tar.gz
+&lt;span class=&quot;gp&quot;&gt;$ &lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;cd &lt;/span&gt;WebIOPi-x.y.z
+&lt;span class=&quot;gp&quot;&gt;$ &lt;/span&gt;sudo ./setup.sh&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;p&gt;5.????(profit)&lt;/p&gt;
+
+&lt;p&gt;6.Congratulations, you just installed Webiopi successfully, now let’s change the password(better get rid of it) with this &lt;a href=&quot;http://webiopi.trouch.com/PASSWORD.html&quot;&gt;guide&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;7.Don’t do anything just yet, just open this &lt;a href=&quot;http://webiopi.trouch.com/INSTALL.html&quot;&gt;page&lt;/a&gt; and keep it open for future reference to run the appropriate commands.&lt;/p&gt;
+
+&lt;p&gt;8.If you own a Raspberry pi 2, please visit this &lt;a href=&quot;https://github.com/doublebind/raspi&quot;&gt;github page&lt;/a&gt; and follow the instrutions to patch your webiopi. Don’t try to test webiopi examples/ready pages as they might not work.We are going to avoid using webiopi’s JS library as much as possible. 
+In reality we are going to use only this command &lt;code class=&quot;highlighter-rouge&quot;&gt;webiopi.callmacro()&lt;/code&gt; which calls a function from the python script.&lt;/p&gt;
+
+&lt;p&gt;If you own a Raspberry pi 3, this guide might work, might not. Webiopi is a bit old,undocumented and I am a beginner.
+If it doesn’t, try this &lt;a href=&quot;https://groups.google.com/forum/#!forum/webiopi&quot;&gt;forum&lt;/a&gt; to find answers.&lt;/p&gt;
+
+&lt;h2 id=&quot;lets-get-into-the-basics&quot;&gt;Let’s get into the basics.&lt;/h2&gt;
+
+&lt;p&gt;As you can see from this &lt;a href=&quot;http://webiopi.trouch.com/Tutorial_Basis.html&quot;&gt;tutorial&lt;/a&gt;, the webiopi uses a certain skeleton structure:&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;home
+- pi
+  - myproject
+    - python
+    - html
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p class=&quot;notice&quot;&gt;&lt;em&gt;Important:&lt;/em&gt;
+In this simple example, there are only a couple of lines of css/javascript so it’s easy to put them in the &lt;code class=&quot;highlighter-rouge&quot;&gt;.html&lt;/code&gt; file. It’s heavily advised that you create different folders and store each script in it’s own file. It’s a &lt;em&gt;VERY&lt;/em&gt; good programming practice(some would say necessary).&lt;/p&gt;
+
+&lt;p&gt;There is a specific folder for your main python script and your &lt;code class=&quot;highlighter-rouge&quot;&gt;index.html&lt;/code&gt; file, aka the mainpage.&lt;/p&gt;
+
+&lt;p&gt;Now, try to test the tutorial, it’s a very good first test to see how this particular library works.I am not going to explain all the code in detail, just some parts that I believe are important and/or hard to understand.&lt;/p&gt;
+
+&lt;h3 id=&quot;that-setup-loop-destroy-thingy-looks-familliar&quot;&gt;That setup-loop-destroy thingy looks familliar?&lt;/h3&gt;
+
+&lt;p&gt;Yeah! Webiopi uses the same 3 function core as &lt;em&gt;arduino&lt;/em&gt; to facilitate us. We are definately going to use the setup function. Loop is kinda optional since I prefer to create my own loops whenever that’s necessary, so as to keep the stress to the cpu as low as possible.(we need this project to be stable &lt;em&gt;af&lt;/em&gt;)&lt;/p&gt;
+
+&lt;h3 id=&quot;that-javascript-code-seems-strange&quot;&gt;That Javascript code seems strange&lt;/h3&gt;
+
+&lt;p&gt;That because it is, it’s an old javascript library inside the webiopi which can be used to create very simple, but extremely ugly, buttons and slides that by default can control various gpios. It’s of no use as we going to control the gpio through python functions that are going to be called from the javascript, that way we can use whatever element we want, it’s customisable 100%.&lt;/p&gt;
+
+&lt;h3 id=&quot;webiopi-sleep&quot;&gt;Webiopi sleep?&lt;/h3&gt;
+
+&lt;p&gt;Well, that’s a way to slow-down loops. I prefer using the &lt;code class=&quot;highlighter-rouge&quot;&gt;threading.timer&lt;/code&gt; which is part of the &lt;code class=&quot;highlighter-rouge&quot;&gt;threading&lt;/code&gt; library. This way while you wait for the timer , the script can still execute commands in contrst with the &lt;code class=&quot;highlighter-rouge&quot;&gt;webiopi.sleep&lt;/code&gt; function that totally freezes our script.&lt;/p&gt;
+
+&lt;p&gt;In the next post we are going to see how to transfer data from our js script to our python server.&lt;/p&gt;
+
+&lt;p&gt;Until then, cheers!&lt;/p&gt;
+
+
+    &lt;p&gt;&lt;a href=&quot;http://odyslam.github.io/webiopi-post/&quot;&gt;In webiopi we trust&lt;/a&gt; was originally published by Odysseas Lamtzidis at &lt;a href=&quot;http://odyslam.github.io&quot;&gt;Project L&lt;/a&gt; on April 26, 2016.&lt;/p&gt;
+  </content>
+</entry>
 
 
 <entry>

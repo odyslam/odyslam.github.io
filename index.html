@@ -146,6 +146,127 @@ In love with marketing and entrepreneurship</p>
   <header>
     
     <div class="entry-meta">
+      <span class="entry-date date published updated"><time datetime="2016-04-26T00:00:00+03:00"><a href="http://odyslam.github.io/webiopi-post/">April 26, 2016</a></time></span><span class="author vcard"><span class="fn"><a href="http://odyslam.github.io/about/" title="About Odysseas Lamtzidis">Odysseas Lamtzidis</a></span></span>
+      
+    </div><!-- /.entry-meta -->
+    
+      <h1 class="entry-title"><a href="http://odyslam.github.io/webiopi-post/" rel="bookmark" title="In webiopi we trust" itemprop="url">In webiopi we trust</a></h1>
+    
+  </header>
+  <div class="entry-content">
+    <h2 id="glados-framework">GLaDOS Framework</h2>
+
+<p>Ok, you have your Raspberry up and running as it’s sits quietly somewhere in the house. Now let’s examine the software framework of GLaDOS.</p>
+
+<p>The main library-framework we are going to use is called <a href="http://webiopi.trouch.com/">Webiopi</a> and it’s a wonderful, yet quite hard and suprisingly undocumented, tool.</p>
+
+<p class="notice"><em>From the site:</em>
+WebIOPi includes an HTTP server that provides both HTML resources and a REST API to control things. Your browser will first load a HTML file, then the included Javascript will make Asynchronous calls to the REST API to control and update the UI. This method is very efficient, because it don’t need to refresh and download the whole page.</p>
+
+<h3 id="that-doesnt-seem-that-simple">That doesn’t seem that simple</h3>
+
+<p>Well, actually it’s not <em>that</em> hard if you have some basic knowledge on how websites and servers work. The most straight-forward approach is the following:</p>
+
+<ul>
+  <li>
+    <p>Script file that is run by the python server and handles all Raspberry pi’s actions.</p>
+  </li>
+  <li>
+    <p>Website that uses Javascript to call functions that are defined and run by the python script file. It means that all you have to do with js is to call the appropriate function in the script.
+<em>using python as much as possible makes the project much easier.</em></p>
+  </li>
+  <li>
+    <p>Weaved IoT suite(3rd party program intergrated into webiopi) to be able to access the Rpi server(where the site is hosted) outside of the lan (without port-forwarding ,etc).</p>
+  </li>
+</ul>
+
+<figure>
+	<figcaption><a href="http://trouch.com/wp-content/uploads/2014/01/webiopi-rest.png" title="Framework overview">GPIO Pinout</a>.</figcaption>
+</figure>
+
+<p>As you can see from the overview, you can control Rpi gpios as well with various Javascript functions,without going through the python script, but I believe it’s both impractical (going to explain later in the blog) and hard for beginners since Javascript isn’t particularly easy.</p>
+
+<p><strong>Important</strong>: It works both on Rpi 1 and 2,  it just needs an update-fix and it works like a charm(going into detail later).</p>
+
+<h2 id="installation">Installation:</h2>
+
+<p>Firstly, let’s <code class="highlighter-rouge">ssha</code>to our Raspberry pi.</p>
+
+<ol>
+  <li>
+    <p>open Terminal/Command line and type <code class="highlighter-rouge">ssh pi@Rpi-Ip</code>, where Rpi-Ip is the ip of your Raspberry pi,after it prompts for password, type it and hit enter.</p>
+  </li>
+  <li>
+    <p>Go <a href="http://webiopi.trouch.com/DOWNLOADS.html">here</a> and download the latest version of webiopi to your computer.</p>
+  </li>
+  <li>
+    <p>With filezilla put the file in the default directory of Rpi as shown bellow:
+<img src="http://i.imgur.com/ERiSEun.png" alt="filezilla" /></p>
+  </li>
+  <li>
+    <p>Run these commands, where x.y.z is the version of WebIOPI you downloaded.</p>
+  </li>
+</ol>
+
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="gp">$ </span>tar xvzf WebIOPi-x.y.z.tar.gz
+<span class="gp">$ </span><span class="nb">cd </span>WebIOPi-x.y.z
+<span class="gp">$ </span>sudo ./setup.sh</code></pre></figure>
+
+<p>5.????(profit)</p>
+
+<p>6.Congratulations, you just installed Webiopi successfully, now let’s change the password(better get rid of it) with this <a href="http://webiopi.trouch.com/PASSWORD.html">guide</a></p>
+
+<p>7.Don’t do anything just yet, just open this <a href="http://webiopi.trouch.com/INSTALL.html">page</a> and keep it open for future reference to run the appropriate commands.</p>
+
+<p>8.If you own a Raspberry pi 2, please visit this <a href="https://github.com/doublebind/raspi">github page</a> and follow the instrutions to patch your webiopi. Don’t try to test webiopi examples/ready pages as they might not work.We are going to avoid using webiopi’s JS library as much as possible. 
+In reality we are going to use only this command <code class="highlighter-rouge">webiopi.callmacro()</code> which calls a function from the python script.</p>
+
+<p>If you own a Raspberry pi 3, this guide might work, might not. Webiopi is a bit old,undocumented and I am a beginner.
+If it doesn’t, try this <a href="https://groups.google.com/forum/#!forum/webiopi">forum</a> to find answers.</p>
+
+<h2 id="lets-get-into-the-basics">Let’s get into the basics.</h2>
+
+<p>As you can see from this <a href="http://webiopi.trouch.com/Tutorial_Basis.html">tutorial</a>, the webiopi uses a certain skeleton structure:</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>home
+- pi
+  - myproject
+    - python
+    - html
+</code></pre>
+</div>
+
+<p class="notice"><em>Important:</em>
+In this simple example, there are only a couple of lines of css/javascript so it’s easy to put them in the <code class="highlighter-rouge">.html</code> file. It’s heavily advised that you create different folders and store each script in it’s own file. It’s a <em>VERY</em> good programming practice(some would say necessary).</p>
+
+<p>There is a specific folder for your main python script and your <code class="highlighter-rouge">index.html</code> file, aka the mainpage.</p>
+
+<p>Now, try to test the tutorial, it’s a very good first test to see how this particular library works.I am not going to explain all the code in detail, just some parts that I believe are important and/or hard to understand.</p>
+
+<h3 id="that-setup-loop-destroy-thingy-looks-familliar">That setup-loop-destroy thingy looks familliar?</h3>
+
+<p>Yeah! Webiopi uses the same 3 function core as <em>arduino</em> to facilitate us. We are definately going to use the setup function. Loop is kinda optional since I prefer to create my own loops whenever that’s necessary, so as to keep the stress to the cpu as low as possible.(we need this project to be stable <em>af</em>)</p>
+
+<h3 id="that-javascript-code-seems-strange">That Javascript code seems strange</h3>
+
+<p>That because it is, it’s an old javascript library inside the webiopi which can be used to create very simple, but extremely ugly, buttons and slides that by default can control various gpios. It’s of no use as we going to control the gpio through python functions that are going to be called from the javascript, that way we can use whatever element we want, it’s customisable 100%.</p>
+
+<h3 id="webiopi-sleep">Webiopi sleep?</h3>
+
+<p>Well, that’s a way to slow-down loops. I prefer using the <code class="highlighter-rouge">threading.timer</code> which is part of the <code class="highlighter-rouge">threading</code> library. This way while you wait for the timer , the script can still execute commands in contrst with the <code class="highlighter-rouge">webiopi.sleep</code> function that totally freezes our script.</p>
+
+<p>In the next post we are going to see how to transfer data from our js script to our python server.</p>
+
+<p>Until then, cheers!</p>
+
+
+  </div><!-- /.entry-content -->
+</article><!-- /.hentry -->
+
+<article class="hentry">
+  <header>
+    
+    <div class="entry-meta">
       <span class="entry-date date published updated"><time datetime="2016-04-26T00:00:00+03:00"><a href="http://odyslam.github.io/languages-post/">April 26, 2016</a></time></span><span class="author vcard"><span class="fn"><a href="http://odyslam.github.io/about/" title="About Odysseas Lamtzidis">Odysseas Lamtzidis</a></span></span>
       
     </div><!-- /.entry-meta -->
@@ -426,49 +547,40 @@ In love with marketing and entrepreneurship</p>
   </div><!-- /.entry-content -->
 </article><!-- /.hentry -->
 
-<article class="hentry">
-  <header>
+
+
+<div class="pagination">
+  <ul class="inline-list">
     
-    <div class="entry-meta">
-      <span class="entry-date date published updated"><time datetime="2016-03-20T00:00:00+02:00"><a href="http://odyslam.github.io/the-project-post/">March 20, 2016</a></time></span><span class="author vcard"><span class="fn"><a href="http://odyslam.github.io/about/" title="About Odysseas Lamtzidis">Odysseas Lamtzidis</a></span></span>
-      
-    </div><!-- /.entry-meta -->
     
-      <h1 class="entry-title"><a href="http://odyslam.github.io/the-project-post/" rel="bookmark" title="The Project" itemprop="url">The Project</a></h1>
+
     
-  </header>
-  <div class="entry-content">
-    <h2 id="the-idea">The Idea</h2>
+    
+      <li><strong class="current-page">1</strong></li>
+    
 
-<p>All started when I wanted to start exploring the world of electronics, which afterall is one of the subjects of my studies. Moreoever I wanted to start a usable project, something that would not only be <em>educative</em>, but also <em>usefull</em> . I also found IoT quite fancinating, something that is going to dominate the technology market in the next few decafed allong with-or in conjuction with - VR.</p>
+    
+    
 
-<p>I was starting from absolute 0, so <em>Arduino</em> was the obvious choice because of it’s easy and straight-forward approach. The project did not evolve much as Arduino is fairly limited, especially if you want web capabilities.</p>
+    
+    
+    
 
-<p>At this point, <em>Raspberry</em> creeped in and suddenly everything turned green and shiny. It was able to do what I wanted and the best part? it’s codable in python, one of the easiest and most versatile programming languages I know.</p>
+    
 
-<h2 id="so-what-is-that-fracking-project">So what is that fracking project?</h2>
+    
+    
 
-<p>As I said it’s IoT related and more specifically in the area of smart-home. I have automated some tasks, like locking and unlocking my door, and I plan to add many features, all controlled via a Web Interface.I plan to explaing everything I have done in detail, and I hope that it serves as an easy guide for starters in order to dwelve into both the world of IoT and the world of Raspberry.</p>
+    
+      <li><a href="http://odyslam.github.io/page2/">2</a></li>
+    
 
-<p>So, in the next posts I will <em>explain</em>:</p>
-
-<p>1)What I have accomplished thus far.</p>
-
-<p>2)What software I use, libraries and scripts.</p>
-
-<p>3)What’s my hardware.</p>
-
-<p>4)Future plans.</p>
-
-<h1 id="sonow-what">So..now what?</h1>
-<p>The project is currently frozen at ver 0.1 as I want to bring the blog up to date and then continue with it. At the next blog I will btiefly explain raspberry pi, just to make sure we are at the same page.</p>
-
-<p>Until then, cheers!</p>
-
-  </div><!-- /.entry-content -->
-</article><!-- /.hentry -->
-
-
+    
+    
+      <li><a href="http://odyslam.github.io/page2/" class="btn">Next</a></li>
+    
+  </ul>
+</div>
 
 </div><!-- /#main -->
 
