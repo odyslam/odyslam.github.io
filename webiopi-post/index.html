@@ -166,7 +166,7 @@ WebIOPi includes an HTTP server that provides both HTML resources and a REST API
 
 <p><img src="http://trouch.com/wp-content/uploads/2014/01/webiopi-rest.png" alt="overview" /></p>
 
-<p>As you can see from the overview, you can control Rpi gpios as well with various Javascript functions,without going through the python script, but I believe it’s both impractical (going to explain later in the blog) and hard for beginners since Javascript isn’t particularly easy.</p>
+<p>As you can see from the image, you can control the gpios using directly Javascript functions. It’s both impractical and hard for beginners. We are going to exclusively python functions that will be called from Javascript(i.e pressing a button,executes python function “A”).</p>
 
 <p><strong>Important</strong>: It works both on Rpi 1 and 2,  it just needs an update-fix and it works like a charm(going into detail later).</p>
 
@@ -233,7 +233,7 @@ In this simple example, there are only a couple of lines of css/javascript so it
 
 <p>That because it is, it’s an old javascript library inside the webiopi which can be used to create very simple, but extremely ugly, buttons and slides that by default can control various gpios. It’s of no use as we going to control the gpio through python functions that are going to be called from the javascript, that way we can use whatever element we want, it’s customisable 100%.</p>
 
-<h3 id="webiopi-sleep">Webiopi sleep?</h3>
+<h3 id="webiopisleep">Webiopi.sleep?</h3>
 
 <p>Well, that’s a way to slow-down loops. I prefer using the <code class="highlighter-rouge">threading.timer</code> which is part of the <code class="highlighter-rouge">threading</code> library. This way while you wait for the timer , the script can still execute commands in contrst with the <code class="highlighter-rouge">webiopi.sleep</code> function that totally freezes our script.</p>
 

@@ -182,7 +182,7 @@ WebIOPi includes an HTTP server that provides both HTML resources and a REST API
 
 <p><img src="http://trouch.com/wp-content/uploads/2014/01/webiopi-rest.png" alt="overview" /></p>
 
-<p>As you can see from the overview, you can control Rpi gpios as well with various Javascript functions,without going through the python script, but I believe it’s both impractical (going to explain later in the blog) and hard for beginners since Javascript isn’t particularly easy.</p>
+<p>As you can see from the image, you can control the gpios using directly Javascript functions. It’s both impractical and hard for beginners. We are going to exclusively python functions that will be called from Javascript(i.e pressing a button,executes python function “A”).</p>
 
 <p><strong>Important</strong>: It works both on Rpi 1 and 2,  it just needs an update-fix and it works like a charm(going into detail later).</p>
 
@@ -249,7 +249,7 @@ In this simple example, there are only a couple of lines of css/javascript so it
 
 <p>That because it is, it’s an old javascript library inside the webiopi which can be used to create very simple, but extremely ugly, buttons and slides that by default can control various gpios. It’s of no use as we going to control the gpio through python functions that are going to be called from the javascript, that way we can use whatever element we want, it’s customisable 100%.</p>
 
-<h3 id="webiopi-sleep">Webiopi sleep?</h3>
+<h3 id="webiopisleep">Webiopi.sleep?</h3>
 
 <p>Well, that’s a way to slow-down loops. I prefer using the <code class="highlighter-rouge">threading.timer</code> which is part of the <code class="highlighter-rouge">threading</code> library. This way while you wait for the timer , the script can still execute commands in contrst with the <code class="highlighter-rouge">webiopi.sleep</code> function that totally freezes our script.</p>
 
@@ -281,7 +281,8 @@ In this simple example, there are only a couple of lines of css/javascript so it
 
 <p><img src="http://odyslam.github.io/images/pilogo.png" alt="python" /></p>
 
-<p>The most important is python, not only for this project, but for any raspberry pi project since it’s the main programming language. Python is a very easy-to-learn language as it has a very straight forward syntax and it’s ideal for beginners who just started learning programming. Also, it houses a shit-tone of libraries, which means that it’s very easy to do a lot of different things since others have done all the dirty programming work for you.</p>
+<p>The most important is python, not only for this project, but for any raspberry pi project since it’s the main programming language. Python is a very easy-to-learn language as it has a very straight forward syntax ideal for beginners who just started learning programming. 
+Also, it houses a shit-tone of libraries, which means that it’s very easy to do a lot of different things since others have done all the dirty programming work for you.</p>
 
 <p>As far as our project is concerned,for any possible upgrade or addition to the project that I have came up with (and they are a lot!) I still haven’t been able to find the appropriate library.</p>
 
@@ -297,7 +298,8 @@ In this simple example, there are only a couple of lines of css/javascript so it
 
 <h3 id="javascript">Javascript</h3>
 
-<p>By far the hardest language of them all, I tried to teach my-self from webiopi tutorials and random searching, it’s really not worth the time. You can cut the learning time by half if you visit again this <a href="https://www.codecademy.com/learn/javascript">course</a> in Code Academy and learn the basics. I strongly recccomend that you do that before you dwelve into webiopi because of the lack of documentation.</p>
+<p>By far the hardest language of them all, I tried to teach my-self from webiopi tutorials and random searching, it’s really not worth the time. 
+You can cut the learning time by half if you visit again this <a href="https://www.codecademy.com/learn/javascript">course</a> in Code Academy and learn the basics. I strongly recccomend that you do that before you dwelve into webiopi because of the lack of documentation.</p>
 
 <h2 id="lastly">Lastly</h2>
 
@@ -330,7 +332,8 @@ In this simple example, there are only a couple of lines of css/javascript so it
 
 <p>In this post I am going to explain thoroughly all the parts of the project so as you have an idea of what to come</p>
 
-<h4 id="glados-its-just-the-name-i-have-given-to-my-project-since-she-is-one-of-my-favorite-villains-in-one-of-the-best-series-i-have-every-playedit-would-be-wise-to-avoid-building-the-actual-glados-since-it-might-cause-severe-painor-even-death">GLaDOS it’s just the name I have given to my project since she is one of my favorite villains in one of the best series I have every played.It would be wise to avoid building the actual GLaDOS since it might cause severe pain,or even death.</h4>
+<h4 id="glados-its-just-the-name-i-have-given-to-my-project-since-she-is-one-of-my-favorite-villains">GLaDOS it’s just the name I have given to my project since she is one of my favorite villains.</h4>
+<p>####It would be wise to avoid building the actual GLaDOS since it might cause severe pain,or even death.</p>
 
 <h2 id="finally-what-does-it-do-">Finally! What does it do? (°ロ°)☝</h2>
 
@@ -339,18 +342,24 @@ In this simple example, there are only a couple of lines of css/javascript so it
 <h3 id="tasks">Tasks:</h3>
 
 <ul>
-  <li>
-    <p>Lock/Unlock of both the buildings door and the appartment’s. The first is done with the help of a releay and the second with the help of a servo and some 3D printed gears.</p>
-  </li>
+  <li>Lock/Unlock of both the buildings door and the appartment’s. The first is done with the help of a releay and the second with the help of a servo and some 3D printed gears.</li>
+</ul>
+
+<iframe width="560" height="315" src="https://www.youtube.com/watch?v=3AqNrtK_Wmw" frameborder="0"> </iframe>
+
+<p><em>Disclaimer</em>: I was still testing the script, that’s why I had set the lock/unlock time 2 sec.Now it’s automatically locks after 10-30-60 seconds depending on what button I press.</p>
+
+<ul>
   <li>
     <p>Control of 3 RF remote suko switches, by broadcasting a specific binary code I can turn on/off each switch remotely.</p>
   </li>
   <li>
     <p>Control of Boilder. A power relay that uses AC as control signal is connected to an RF remote suko switch, same function as above. Bonus points for a software timer to fix the “Ooooh SHIT I forgot to turn off the boiler again”.</p>
   </li>
+  <li>
+    <p>Remote turn on of my computer by magic (packet).</p>
+  </li>
 </ul>
-
-<p>*Remote turn on of my computer by magic (packet).</p>
 
 <h3 id="software">Software:</h3>
 
