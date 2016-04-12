@@ -4,7 +4,7 @@
 <generator uri="https://github.com/mojombo/jekyll">Jekyll</generator>
 <link rel="self" type="application/atom+xml" href="http://odyslam.github.io/feed.xml" />
 <link rel="alternate" type="text/html" href="http://odyslam.github.io" />
-<updated>2016-03-29T23:18:59+03:00</updated>
+<updated>2016-04-12T17:38:52+03:00</updated>
 <id>http://odyslam.github.io/</id>
 <author>
   <name>Odysseas Lamtzidis</name>
@@ -14,11 +14,164 @@
 
 
 <entry>
+  <title type="html"><![CDATA[Some Python code at last]]></title>
+ <link rel="alternate" type="text/html" href="http://odyslam.github.io/python-post/" />
+  <id>http://odyslam.github.io/python-post</id>
+  <updated>2016-04-25T00:00:00-00:00</updated>
+  <published>2016-04-03T00:00:00+03:00</published>
+  
+  <author>
+    <name>Odysseas Lamtzidis</name>
+    <uri>http://odyslam.github.io</uri>
+    <email>odyslam@gmail.com</email>
+  </author>
+  <content type="html">
+    &lt;h2 id=&quot;python-code&quot;&gt;Python code&lt;/h2&gt;
+
+&lt;p&gt;As I mentioned before, we are going to start with examining the python code, later we will move to javascript and html.&lt;/p&gt;
+
+&lt;p&gt;You can find the full code uploaded to github &lt;em&gt;&lt;a href=&quot;https://github.com/OdysLam/GLaDOS-project/blob/master/script.py&quot;&gt;here&lt;/a&gt;&lt;/em&gt;&lt;/p&gt;
+
+&lt;p&gt;But let’s take things from the start:&lt;/p&gt;
+
+&lt;p&gt;Firstly, I do my imports:&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-python&quot; data-lang=&quot;python&quot;&gt;&lt;span class=&quot;kn&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;webiopi&lt;/span&gt;
+&lt;span class=&quot;kn&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;time&lt;/span&gt;
+&lt;span class=&quot;kn&quot;&gt;from&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;threading&lt;/span&gt; &lt;span class=&quot;kn&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Timer&lt;/span&gt;
+&lt;span class=&quot;kn&quot;&gt;from&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;wakeonlan&lt;/span&gt; &lt;span class=&quot;kn&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;wol&lt;/span&gt; 
+&lt;span class=&quot;kn&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;pi_switch&lt;/span&gt;
+&lt;span class=&quot;kn&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;json&lt;/span&gt;
+&lt;span class=&quot;kn&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;os&lt;/span&gt;
+&lt;span class=&quot;kn&quot;&gt;from&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;vncdotool&lt;/span&gt; &lt;span class=&quot;kn&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;api&lt;/span&gt;
+&lt;span class=&quot;kn&quot;&gt;from&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;subprocess&lt;/span&gt; &lt;span class=&quot;kn&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;call&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;p&gt;As you can see I import a number of libraries, I am going to get into detail in later posts so as to keep this post nice and clean. I will explain where each and every library that is neaded.&lt;/p&gt;
+
+&lt;p&gt;The next important part is where I define the  pins I am going to use. This way, I can easily change the pins by just changing the variable.&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-python&quot; data-lang=&quot;python&quot;&gt;&lt;span class=&quot;n&quot;&gt;SERVO&lt;/span&gt;  &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;18&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;OutDoor&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;25&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;p&gt;Here is the GPIO pinout again, you can see the corresponding number of each pin as well.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;http://www.toptechboy.com/wp-content/uploads/2015/06/raspberry-pi-2-pinout.jpg&quot; alt=&quot;GPIO PINOUT&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;As I said before, we have 3 basic functions that are defined by webiopi: &lt;em&gt;loop&lt;/em&gt;-&lt;em&gt;setup&lt;/em&gt;-&lt;em&gt;destroy&lt;/em&gt;. &lt;code class=&quot;highlighter-rouge&quot;&gt;Loop&lt;/code&gt; is self explanatory, &lt;code class=&quot;highlighter-rouge&quot;&gt;setup&lt;/code&gt; is run once when the webiopi service starts and &lt;code class=&quot;highlighter-rouge&quot;&gt;detroy&lt;/code&gt; when we shut it down.&lt;/p&gt;
+
+&lt;h4 id=&quot;setup&quot;&gt;Setup:&lt;/h4&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-python&quot; data-lang=&quot;python&quot;&gt;&lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;setup&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;():&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;webiopi&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;debug&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;Script with macros - Setup&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;global&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Servo&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;Servo&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;GPIO&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;setFunction&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;OutDoor&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;GPIO&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;OUT&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;GPIO&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;setFunction&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;SERVO&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;GPIO&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;PWM&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;CloseUDoor&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;   &lt;span class=&quot;c&quot;&gt;# set to 0 (neutral)&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;GPIO&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;digitalWrite&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;OutDoor&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;GPIO&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;LOW&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;global&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Heater&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;global&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;hostname&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;global&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;sender&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;Heater&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;hostname&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;192.168.1.20&quot;&lt;/span&gt; &lt;span class=&quot;c&quot;&gt;#example&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;sender&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;pi_switch&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;RCSwitchSender&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;sender&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;enableTransmit&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;p&gt;First good programming advice is to &lt;em&gt;always&lt;/em&gt; include debuging output functions so as you can monitor the program when you run it in debuging mode.&lt;/p&gt;
+
+&lt;p&gt;Now, as far as webiopi is concerned, the &lt;code class=&quot;highlighter-rouge&quot;&gt;GPIO.setFunction(pin_number,type)&lt;/code&gt; it’s the first step, as it informs webiopi on what &lt;em&gt;kind&lt;/em&gt; of pin each pin is . For example, here I have set  we &lt;code class=&quot;highlighter-rouge&quot;&gt;OutDoor&lt;/code&gt; pin to be a &lt;code class=&quot;highlighter-rouge&quot;&gt;GPIO.OUT&lt;/code&gt;, in other words, a simple digital output (either 0v or 3.3v).&lt;/p&gt;
+
+&lt;p&gt;The servo pin must be set as pwm(pulse width modulation), for which you can read more about &lt;a href=&quot;http://www.jameco.com/jameco/workshop/howitworks/how-servo-motors-work.html&quot;&gt;here&lt;/a&gt;.
+Webiopi has it’s own library to deal with servos, meaning that the needed pulse will be generated by the library and we don’t need to code it(you can code it by just setting a loop for the pin to turn on/off rappidly).We are just going to call the appropriate webiopi function and set the needed angle.&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;CloseUdoor&lt;/code&gt; is the function responsible for locking the door.(more later)&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;GPIO.digitalWrite(a,b)&lt;/code&gt; produces an output at the “a” pin,the output can be either logic HIGH or LOW (3,3v or 0v)&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Next we have some library-specific functions that as I have said will be covered later when we speak about the various libraries.&lt;/p&gt;
+
+&lt;h2 id=&quot;some-custom-functions&quot;&gt;Some custom functions:&lt;/h2&gt;
+
+&lt;p&gt;The first function that we are going to cover is an easy one:&lt;/p&gt;
+
+&lt;h3 id=&quot;lockingunlocking-buildings-door&quot;&gt;Locking/Unlocking building’s door:&lt;/h3&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-python&quot; data-lang=&quot;python&quot;&gt;&lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;DownDoor&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;():&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;webiopi&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;debug&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;OpenDdoor&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;GPIO&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;digitalWrite&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;OutDoor&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;GPIO&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;HIGH&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;Timer&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;3&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;CloseDDoor&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;start&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;p&gt;It’s job is to to unlock my building’s door. By setting the pin either HIGH or LOW I enable or not current through a simple relay. The door would normaly unlock as long as I press a button, instead of that, I have connected the appropriate wires to a relay that will play the button’s role.&lt;/p&gt;
+
+&lt;p&gt;In order to turn it off again (and stop unlocking the door) I use the &lt;code class=&quot;highlighter-rouge&quot;&gt;threading.Timer(seconds,function)&lt;/code&gt; function that is defined along with it’s library &lt;code class=&quot;highlighter-rouge&quot;&gt;threading&lt;/code&gt; &lt;a href=&quot;https://docs.python.org/2/library/threading.html#timer-objects&quot;&gt;here&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;The wonderful thing about this timer it’s that not only it does not freeze our program while waiting for it to execute (like webiopi.sleep), but we can also stop the Timer with the appropriate function. This way we can make sure that accidently executing a command won’t end in overlapping Timers that will both run the function.&lt;/p&gt;
+
+&lt;p class=&quot;notice&quot;&gt;Although I have not used them in the current version, it’s an addition that has to be made.&lt;/p&gt;
+
+&lt;h3 id=&quot;lockingunlocking-appartments-door&quot;&gt;Locking/Unlocking appartment’s door:&lt;/h3&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-python&quot; data-lang=&quot;python&quot;&gt;&lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;UpDoor&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;status&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;):&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;webiopi&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;debug&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;OpenUdoor=&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;global&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Servo&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;webiopi&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;debug&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Servo&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Servo&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;==&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;
+        &lt;span class=&quot;n&quot;&gt;notify_status&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;Door Unlocked&quot;&lt;/span&gt;
+        &lt;span class=&quot;n&quot;&gt;alert&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;notify_status&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+        &lt;span class=&quot;k&quot;&gt;for&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;angle&lt;/span&gt; &lt;span class=&quot;ow&quot;&gt;in&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;range&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;90&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;90&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;):&lt;/span&gt;
+            &lt;span class=&quot;n&quot;&gt;webiopi&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;debug&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;angle&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+            &lt;span class=&quot;c&quot;&gt;#webiopi.sleep(0.01)&lt;/span&gt;
+            &lt;span class=&quot;n&quot;&gt;GPIO&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;pwmWriteAngle&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;SERVO&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;angle&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+            &lt;span class=&quot;n&quot;&gt;Servo&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;
+        &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;status&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;==&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;enter&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;
+            &lt;span class=&quot;n&quot;&gt;Timer&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;30&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;CloseUDoor&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;start&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;
+        &lt;span class=&quot;k&quot;&gt;elif&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;status&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;==&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;leave&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;
+            &lt;span class=&quot;n&quot;&gt;Timer&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;10&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;CloseUDoor&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;start&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;
+        &lt;span class=&quot;k&quot;&gt;elif&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;status&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;==&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;knock&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;
+            &lt;span class=&quot;n&quot;&gt;Timer&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;60&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;CloseUDoor&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;start&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;p&gt;Ok, don’t panic, it’s actually fairly straight forward.&lt;/p&gt;
+
+&lt;p&gt;Firstly, I use a global variable named Servo so as to track whether my door is locked or unlocked. This way I can prevent the servo from trying turn the gears while it’s arleady locked and thus potentially damage it.&lt;/p&gt;
+
+&lt;p&gt;Then, I check wether it’s locked &lt;code class=&quot;highlighter-rouge&quot;&gt;Servo==0&lt;/code&gt; and if it is, I send an alert to my weaved app on my iphone.(more later)&lt;/p&gt;
+
+&lt;h3 id=&quot;stop-right-there-you-criminal-scum&quot;&gt;Stop right there you criminal scum!&lt;/h3&gt;
+
+&lt;p&gt;Before we go any further we need to understand some basic principles about servo because they tend to have an &lt;em&gt;arcane&lt;/em&gt; behaviour.&lt;/p&gt;
+
+&lt;p&gt;As you have read already,the servo position is defined by the length of the pulse or in other words it’s duty cycle. Every servo has it’s own default settings. For example,mine works in the range of &lt;em&gt;500μs το 2500μs&lt;/em&gt;, meaning that 1500μs is the &lt;code class=&quot;highlighter-rouge&quot;&gt;0&lt;/code&gt; degrees. Moreover, for every 45 degrees, either + or -, the duty cycle is + or - 500μs.&lt;/p&gt;
+
+&lt;p&gt;Webiopi’s servo library uses the futaba standard, meaning that 0 is defined as 1520μs with a 400μs per 45 degrees.&lt;/p&gt;
+
+&lt;p&gt;Thus, in my code, my servo will go &lt;code class=&quot;highlighter-rouge&quot;&gt;from -90 to +90 degrees&lt;/code&gt;. This is very important, because depending on the servo you may need to adjust the code to &lt;code class=&quot;highlighter-rouge&quot;&gt;from 0 to 180 degrees&lt;/code&gt; if for example your servo works in the area of (1500μs-3500μs).&lt;/p&gt;
+
+&lt;h3 id=&quot;so&quot;&gt;So..&lt;/h3&gt;
+&lt;p&gt;I want the servo to turn as smoothly as possible, to accomplish that, I use a loop to set the angle to a range of (-90,+90). I could just set it straight to +90, but it wouldn’t be that smooth and may cause problems with the lock.&lt;/p&gt;
+
+&lt;p&gt;Lastly, depending on the button I press on my interface, I run the function with a different argument which determines how much time it will take to run the function that locks the door again.(for example, if I am leaving, I just need a 10 sec window to open the door, exit my appartment and then close it so it locks again)&lt;/p&gt;
+
+&lt;p&gt;Cool, by now you should have started getting comfortable with the python code, in the next posts we will be covering more libraries and functions.&lt;/p&gt;
+
+&lt;p&gt;Stay tuned!&lt;/p&gt;
+
+
+    &lt;p&gt;&lt;a href=&quot;http://odyslam.github.io/python-post/&quot;&gt;Some Python code at last&lt;/a&gt; was originally published by Odysseas Lamtzidis at &lt;a href=&quot;http://odyslam.github.io&quot;&gt;Project L&lt;/a&gt; on April 03, 2016.&lt;/p&gt;
+  </content>
+</entry>
+
+
+<entry>
   <title type="html"><![CDATA[In webiopi we trust]]></title>
  <link rel="alternate" type="text/html" href="http://odyslam.github.io/webiopi-post/" />
   <id>http://odyslam.github.io/webiopi-post</id>
   <updated>2016-04-25T00:00:00-00:00</updated>
-  <published>2016-04-26T00:00:00+03:00</published>
+  <published>2016-03-26T00:00:00+02:00</published>
   
   <author>
     <name>Odysseas Lamtzidis</name>
@@ -123,14 +276,16 @@ In this simple example, there are only a couple of lines of css/javascript so it
 
 &lt;h3 id=&quot;webiopisleep&quot;&gt;Webiopi.sleep?&lt;/h3&gt;
 
-&lt;p&gt;Well, that’s a way to slow-down loops. I prefer using the &lt;code class=&quot;highlighter-rouge&quot;&gt;threading.timer&lt;/code&gt; which is part of the &lt;code class=&quot;highlighter-rouge&quot;&gt;threading&lt;/code&gt; library. This way while you wait for the timer , the script can still execute commands in contrst with the &lt;code class=&quot;highlighter-rouge&quot;&gt;webiopi.sleep&lt;/code&gt; function that totally freezes our script.&lt;/p&gt;
+&lt;p&gt;Well, that’s a way to slow-down loops. I prefer using the &lt;code class=&quot;highlighter-rouge&quot;&gt;threading.timer&lt;/code&gt; which is part of the &lt;code class=&quot;highlighter-rouge&quot;&gt;threading&lt;/code&gt; library. This way while you wait for the timer , the script can still execute commands in contrast with the &lt;code class=&quot;highlighter-rouge&quot;&gt;webiopi.sleep&lt;/code&gt; function that totally freezes our script for the specified time.&lt;/p&gt;
 
-&lt;p&gt;In the next post we are going to see how to transfer data from our js script to our python server.&lt;/p&gt;
+&lt;p&gt;Now that we understand the structure of webiopi, it’s time to dwelve deeper into the code. We are going to take  a look at the python script in the next post.&lt;/p&gt;
+
+&lt;p&gt;Remember that if you want to follow this project from the first post, go to the posts tab and click All Posts.&lt;/p&gt;
 
 &lt;p&gt;Until then, cheers!&lt;/p&gt;
 
 
-    &lt;p&gt;&lt;a href=&quot;http://odyslam.github.io/webiopi-post/&quot;&gt;In webiopi we trust&lt;/a&gt; was originally published by Odysseas Lamtzidis at &lt;a href=&quot;http://odyslam.github.io&quot;&gt;Project L&lt;/a&gt; on April 26, 2016.&lt;/p&gt;
+    &lt;p&gt;&lt;a href=&quot;http://odyslam.github.io/webiopi-post/&quot;&gt;In webiopi we trust&lt;/a&gt; was originally published by Odysseas Lamtzidis at &lt;a href=&quot;http://odyslam.github.io&quot;&gt;Project L&lt;/a&gt; on March 26, 2016.&lt;/p&gt;
   </content>
 </entry>
 
@@ -140,7 +295,7 @@ In this simple example, there are only a couple of lines of css/javascript so it
  <link rel="alternate" type="text/html" href="http://odyslam.github.io/languages-post/" />
   <id>http://odyslam.github.io/languages-post</id>
   <updated>2016-04-24T00:00:00-00:00</updated>
-  <published>2016-04-26T00:00:00+03:00</published>
+  <published>2016-03-25T00:00:00+02:00</published>
   
   <author>
     <name>Odysseas Lamtzidis</name>
@@ -184,7 +339,7 @@ You can cut the learning time by half if you visit again this &lt;a href=&quot;h
   &lt;p&gt;No affiliation with Code Academy, I just find it ridiculously useful.&lt;/p&gt;
 &lt;/blockquote&gt;
 
-    &lt;p&gt;&lt;a href=&quot;http://odyslam.github.io/languages-post/&quot;&gt;Are you talking to me?&lt;/a&gt; was originally published by Odysseas Lamtzidis at &lt;a href=&quot;http://odyslam.github.io&quot;&gt;Project L&lt;/a&gt; on April 26, 2016.&lt;/p&gt;
+    &lt;p&gt;&lt;a href=&quot;http://odyslam.github.io/languages-post/&quot;&gt;Are you talking to me?&lt;/a&gt; was originally published by Odysseas Lamtzidis at &lt;a href=&quot;http://odyslam.github.io&quot;&gt;Project L&lt;/a&gt; on March 25, 2016.&lt;/p&gt;
   </content>
 </entry>
 
@@ -194,7 +349,7 @@ You can cut the learning time by half if you visit again this &lt;a href=&quot;h
  <link rel="alternate" type="text/html" href="http://odyslam.github.io/GlaDOS-post/" />
   <id>http://odyslam.github.io/GlaDOS-post</id>
   <updated>2016-04-26T00:00:00-00:00</updated>
-  <published>2016-04-24T00:00:00+03:00</published>
+  <published>2016-03-24T00:00:00+02:00</published>
   
   <author>
     <name>Odysseas Lamtzidis</name>
@@ -301,7 +456,7 @@ You can cut the learning time by half if you visit again this &lt;a href=&quot;h
 &lt;/blockquote&gt;
 
 
-    &lt;p&gt;&lt;a href=&quot;http://odyslam.github.io/GlaDOS-post/&quot;&gt;GlaDOS&lt;/a&gt; was originally published by Odysseas Lamtzidis at &lt;a href=&quot;http://odyslam.github.io&quot;&gt;Project L&lt;/a&gt; on April 24, 2016.&lt;/p&gt;
+    &lt;p&gt;&lt;a href=&quot;http://odyslam.github.io/GlaDOS-post/&quot;&gt;GlaDOS&lt;/a&gt; was originally published by Odysseas Lamtzidis at &lt;a href=&quot;http://odyslam.github.io&quot;&gt;Project L&lt;/a&gt; on March 24, 2016.&lt;/p&gt;
   </content>
 </entry>
 
@@ -311,7 +466,7 @@ You can cut the learning time by half if you visit again this &lt;a href=&quot;h
  <link rel="alternate" type="text/html" href="http://odyslam.github.io/rpi-setup-post/" />
   <id>http://odyslam.github.io/rpi-setup-post</id>
   <updated>2016-04-24T00:00:00-00:00</updated>
-  <published>2016-04-22T00:00:00+03:00</published>
+  <published>2016-03-22T00:00:00+02:00</published>
   
   <author>
     <name>Odysseas Lamtzidis</name>
@@ -359,7 +514,7 @@ You can cut the learning time by half if you visit again this &lt;a href=&quot;h
 
 &lt;p&gt;Cheers!&lt;/p&gt;
 
-    &lt;p&gt;&lt;a href=&quot;http://odyslam.github.io/rpi-setup-post/&quot;&gt;Setting up the Raspberry&lt;/a&gt; was originally published by Odysseas Lamtzidis at &lt;a href=&quot;http://odyslam.github.io&quot;&gt;Project L&lt;/a&gt; on April 22, 2016.&lt;/p&gt;
+    &lt;p&gt;&lt;a href=&quot;http://odyslam.github.io/rpi-setup-post/&quot;&gt;Setting up the Raspberry&lt;/a&gt; was originally published by Odysseas Lamtzidis at &lt;a href=&quot;http://odyslam.github.io&quot;&gt;Project L&lt;/a&gt; on March 22, 2016.&lt;/p&gt;
   </content>
 </entry>
 

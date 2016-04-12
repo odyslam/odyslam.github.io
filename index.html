@@ -146,7 +146,157 @@ In love with marketing and entrepreneurship</p>
   <header>
     
     <div class="entry-meta">
-      <span class="entry-date date published updated"><time datetime="2016-04-26T00:00:00+03:00"><a href="http://odyslam.github.io/webiopi-post/">April 26, 2016</a></time></span><span class="author vcard"><span class="fn"><a href="http://odyslam.github.io/about/" title="About Odysseas Lamtzidis">Odysseas Lamtzidis</a></span></span>
+      <span class="entry-date date published updated"><time datetime="2016-04-03T00:00:00+03:00"><a href="http://odyslam.github.io/python-post/">April 03, 2016</a></time></span><span class="author vcard"><span class="fn"><a href="http://odyslam.github.io/about/" title="About Odysseas Lamtzidis">Odysseas Lamtzidis</a></span></span>
+      
+    </div><!-- /.entry-meta -->
+    
+      <h1 class="entry-title"><a href="http://odyslam.github.io/python-post/" rel="bookmark" title="Some Python code at last" itemprop="url">Some Python code at last</a></h1>
+    
+  </header>
+  <div class="entry-content">
+    <h2 id="python-code">Python code</h2>
+
+<p>As I mentioned before, we are going to start with examining the python code, later we will move to javascript and html.</p>
+
+<p>You can find the full code uploaded to github <em><a href="https://github.com/OdysLam/GLaDOS-project/blob/master/script.py">here</a></em></p>
+
+<p>But let’s take things from the start:</p>
+
+<p>Firstly, I do my imports:</p>
+
+<figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="kn">import</span> <span class="nn">webiopi</span>
+<span class="kn">import</span> <span class="nn">time</span>
+<span class="kn">from</span> <span class="nn">threading</span> <span class="kn">import</span> <span class="n">Timer</span>
+<span class="kn">from</span> <span class="nn">wakeonlan</span> <span class="kn">import</span> <span class="n">wol</span> 
+<span class="kn">import</span> <span class="nn">pi_switch</span>
+<span class="kn">import</span> <span class="nn">json</span>
+<span class="kn">import</span> <span class="nn">os</span>
+<span class="kn">from</span> <span class="nn">vncdotool</span> <span class="kn">import</span> <span class="n">api</span>
+<span class="kn">from</span> <span class="nn">subprocess</span> <span class="kn">import</span> <span class="n">call</span></code></pre></figure>
+
+<p>As you can see I import a number of libraries, I am going to get into detail in later posts so as to keep this post nice and clean. I will explain where each and every library that is neaded.</p>
+
+<p>The next important part is where I define the  pins I am going to use. This way, I can easily change the pins by just changing the variable.</p>
+
+<figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="n">SERVO</span>  <span class="o">=</span> <span class="mi">18</span>
+<span class="n">OutDoor</span> <span class="o">=</span> <span class="mi">25</span></code></pre></figure>
+
+<p>Here is the GPIO pinout again, you can see the corresponding number of each pin as well.</p>
+
+<p><img src="http://www.toptechboy.com/wp-content/uploads/2015/06/raspberry-pi-2-pinout.jpg" alt="GPIO PINOUT" /></p>
+
+<p>As I said before, we have 3 basic functions that are defined by webiopi: <em>loop</em>-<em>setup</em>-<em>destroy</em>. <code class="highlighter-rouge">Loop</code> is self explanatory, <code class="highlighter-rouge">setup</code> is run once when the webiopi service starts and <code class="highlighter-rouge">detroy</code> when we shut it down.</p>
+
+<h4 id="setup">Setup:</h4>
+
+<figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="k">def</span> <span class="nf">setup</span><span class="p">():</span>
+    <span class="n">webiopi</span><span class="o">.</span><span class="n">debug</span><span class="p">(</span><span class="s">"Script with macros - Setup"</span><span class="p">)</span>
+    <span class="k">global</span> <span class="n">Servo</span>
+    <span class="n">Servo</span> <span class="o">=</span> <span class="mi">1</span>
+    <span class="n">GPIO</span><span class="o">.</span><span class="n">setFunction</span><span class="p">(</span><span class="n">OutDoor</span><span class="p">,</span> <span class="n">GPIO</span><span class="o">.</span><span class="n">OUT</span><span class="p">)</span>
+    <span class="n">GPIO</span><span class="o">.</span><span class="n">setFunction</span><span class="p">(</span><span class="n">SERVO</span><span class="p">,</span> <span class="n">GPIO</span><span class="o">.</span><span class="n">PWM</span><span class="p">)</span>
+    <span class="n">CloseUDoor</span><span class="p">()</span>   <span class="c"># set to 0 (neutral)</span>
+    <span class="n">GPIO</span><span class="o">.</span><span class="n">digitalWrite</span><span class="p">(</span><span class="n">OutDoor</span><span class="p">,</span> <span class="n">GPIO</span><span class="o">.</span><span class="n">LOW</span><span class="p">)</span>
+    <span class="k">global</span> <span class="n">Heater</span>
+    <span class="k">global</span> <span class="n">hostname</span>
+    <span class="k">global</span> <span class="n">sender</span>
+    <span class="n">Heater</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="n">hostname</span> <span class="o">=</span> <span class="s">"192.168.1.20"</span> <span class="c">#example</span>
+    <span class="n">sender</span> <span class="o">=</span> <span class="n">pi_switch</span><span class="o">.</span><span class="n">RCSwitchSender</span><span class="p">()</span>
+    <span class="n">sender</span><span class="o">.</span><span class="n">enableTransmit</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span> </code></pre></figure>
+
+<p>First good programming advice is to <em>always</em> include debuging output functions so as you can monitor the program when you run it in debuging mode.</p>
+
+<p>Now, as far as webiopi is concerned, the <code class="highlighter-rouge">GPIO.setFunction(pin_number,type)</code> it’s the first step, as it informs webiopi on what <em>kind</em> of pin each pin is . For example, here I have set  we <code class="highlighter-rouge">OutDoor</code> pin to be a <code class="highlighter-rouge">GPIO.OUT</code>, in other words, a simple digital output (either 0v or 3.3v).</p>
+
+<p>The servo pin must be set as pwm(pulse width modulation), for which you can read more about <a href="http://www.jameco.com/jameco/workshop/howitworks/how-servo-motors-work.html">here</a>.
+Webiopi has it’s own library to deal with servos, meaning that the needed pulse will be generated by the library and we don’t need to code it(you can code it by just setting a loop for the pin to turn on/off rappidly).We are just going to call the appropriate webiopi function and set the needed angle.</p>
+
+<ul>
+  <li>
+    <p><code class="highlighter-rouge">CloseUdoor</code> is the function responsible for locking the door.(more later)</p>
+  </li>
+  <li>
+    <p><code class="highlighter-rouge">GPIO.digitalWrite(a,b)</code> produces an output at the “a” pin,the output can be either logic HIGH or LOW (3,3v or 0v)</p>
+  </li>
+</ul>
+
+<p>Next we have some library-specific functions that as I have said will be covered later when we speak about the various libraries.</p>
+
+<h2 id="some-custom-functions">Some custom functions:</h2>
+
+<p>The first function that we are going to cover is an easy one:</p>
+
+<h3 id="lockingunlocking-buildings-door">Locking/Unlocking building’s door:</h3>
+
+<figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="k">def</span> <span class="nf">DownDoor</span><span class="p">():</span>
+    <span class="n">webiopi</span><span class="o">.</span><span class="n">debug</span><span class="p">(</span><span class="s">"OpenDdoor"</span><span class="p">)</span>
+    <span class="n">GPIO</span><span class="o">.</span><span class="n">digitalWrite</span><span class="p">(</span><span class="n">OutDoor</span><span class="p">,</span> <span class="n">GPIO</span><span class="o">.</span><span class="n">HIGH</span><span class="p">)</span>
+    <span class="n">Timer</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="n">CloseDDoor</span><span class="p">)</span><span class="o">.</span><span class="n">start</span><span class="p">()</span></code></pre></figure>
+
+<p>It’s job is to to unlock my building’s door. By setting the pin either HIGH or LOW I enable or not current through a simple relay. The door would normaly unlock as long as I press a button, instead of that, I have connected the appropriate wires to a relay that will play the button’s role.</p>
+
+<p>In order to turn it off again (and stop unlocking the door) I use the <code class="highlighter-rouge">threading.Timer(seconds,function)</code> function that is defined along with it’s library <code class="highlighter-rouge">threading</code> <a href="https://docs.python.org/2/library/threading.html#timer-objects">here</a>.</p>
+
+<p>The wonderful thing about this timer it’s that not only it does not freeze our program while waiting for it to execute (like webiopi.sleep), but we can also stop the Timer with the appropriate function. This way we can make sure that accidently executing a command won’t end in overlapping Timers that will both run the function.</p>
+
+<p class="notice">Although I have not used them in the current version, it’s an addition that has to be made.</p>
+
+<h3 id="lockingunlocking-appartments-door">Locking/Unlocking appartment’s door:</h3>
+
+<figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="k">def</span> <span class="nf">UpDoor</span><span class="p">(</span><span class="n">status</span><span class="p">):</span>
+    <span class="n">webiopi</span><span class="o">.</span><span class="n">debug</span><span class="p">(</span><span class="s">"OpenUdoor="</span><span class="p">)</span>
+    <span class="k">global</span> <span class="n">Servo</span>
+    <span class="n">webiopi</span><span class="o">.</span><span class="n">debug</span><span class="p">(</span><span class="n">Servo</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">Servo</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="n">notify_status</span> <span class="o">=</span> <span class="s">"Door Unlocked"</span>
+        <span class="n">alert</span><span class="p">(</span><span class="n">notify_status</span><span class="p">)</span>
+        <span class="k">for</span> <span class="n">angle</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="o">-</span><span class="mi">90</span><span class="p">,</span><span class="mi">90</span><span class="p">):</span>
+            <span class="n">webiopi</span><span class="o">.</span><span class="n">debug</span><span class="p">(</span><span class="o">-</span><span class="n">angle</span><span class="p">)</span>
+            <span class="c">#webiopi.sleep(0.01)</span>
+            <span class="n">GPIO</span><span class="o">.</span><span class="n">pwmWriteAngle</span><span class="p">(</span><span class="n">SERVO</span><span class="p">,</span><span class="o">-</span><span class="n">angle</span><span class="p">)</span>
+            <span class="n">Servo</span> <span class="o">=</span> <span class="mi">1</span>
+        <span class="k">if</span> <span class="n">status</span> <span class="o">==</span> <span class="s">"enter"</span><span class="p">:</span>
+            <span class="n">Timer</span><span class="p">(</span><span class="mi">30</span><span class="p">,</span><span class="n">CloseUDoor</span><span class="p">)</span><span class="o">.</span><span class="n">start</span><span class="p">()</span>
+        <span class="k">elif</span> <span class="n">status</span> <span class="o">==</span> <span class="s">"leave"</span><span class="p">:</span>
+            <span class="n">Timer</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span><span class="n">CloseUDoor</span><span class="p">)</span><span class="o">.</span><span class="n">start</span><span class="p">()</span>
+        <span class="k">elif</span> <span class="n">status</span> <span class="o">==</span> <span class="s">"knock"</span><span class="p">:</span>
+            <span class="n">Timer</span><span class="p">(</span><span class="mi">60</span><span class="p">,</span><span class="n">CloseUDoor</span><span class="p">)</span><span class="o">.</span><span class="n">start</span><span class="p">()</span></code></pre></figure>
+
+<p>Ok, don’t panic, it’s actually fairly straight forward.</p>
+
+<p>Firstly, I use a global variable named Servo so as to track whether my door is locked or unlocked. This way I can prevent the servo from trying turn the gears while it’s arleady locked and thus potentially damage it.</p>
+
+<p>Then, I check wether it’s locked <code class="highlighter-rouge">Servo==0</code> and if it is, I send an alert to my weaved app on my iphone.(more later)</p>
+
+<h3 id="stop-right-there-you-criminal-scum">Stop right there you criminal scum!</h3>
+
+<p>Before we go any further we need to understand some basic principles about servo because they tend to have an <em>arcane</em> behaviour.</p>
+
+<p>As you have read already,the servo position is defined by the length of the pulse or in other words it’s duty cycle. Every servo has it’s own default settings. For example,mine works in the range of <em>500μs το 2500μs</em>, meaning that 1500μs is the <code class="highlighter-rouge">0</code> degrees. Moreover, for every 45 degrees, either + or -, the duty cycle is + or - 500μs.</p>
+
+<p>Webiopi’s servo library uses the futaba standard, meaning that 0 is defined as 1520μs with a 400μs per 45 degrees.</p>
+
+<p>Thus, in my code, my servo will go <code class="highlighter-rouge">from -90 to +90 degrees</code>. This is very important, because depending on the servo you may need to adjust the code to <code class="highlighter-rouge">from 0 to 180 degrees</code> if for example your servo works in the area of (1500μs-3500μs).</p>
+
+<h3 id="so">So..</h3>
+<p>I want the servo to turn as smoothly as possible, to accomplish that, I use a loop to set the angle to a range of (-90,+90). I could just set it straight to +90, but it wouldn’t be that smooth and may cause problems with the lock.</p>
+
+<p>Lastly, depending on the button I press on my interface, I run the function with a different argument which determines how much time it will take to run the function that locks the door again.(for example, if I am leaving, I just need a 10 sec window to open the door, exit my appartment and then close it so it locks again)</p>
+
+<p>Cool, by now you should have started getting comfortable with the python code, in the next posts we will be covering more libraries and functions.</p>
+
+<p>Stay tuned!</p>
+
+
+  </div><!-- /.entry-content -->
+</article><!-- /.hentry -->
+
+<article class="hentry">
+  <header>
+    
+    <div class="entry-meta">
+      <span class="entry-date date published updated"><time datetime="2016-03-26T00:00:00+02:00"><a href="http://odyslam.github.io/webiopi-post/">March 26, 2016</a></time></span><span class="author vcard"><span class="fn"><a href="http://odyslam.github.io/about/" title="About Odysseas Lamtzidis">Odysseas Lamtzidis</a></span></span>
       
     </div><!-- /.entry-meta -->
     
@@ -251,9 +401,11 @@ In this simple example, there are only a couple of lines of css/javascript so it
 
 <h3 id="webiopisleep">Webiopi.sleep?</h3>
 
-<p>Well, that’s a way to slow-down loops. I prefer using the <code class="highlighter-rouge">threading.timer</code> which is part of the <code class="highlighter-rouge">threading</code> library. This way while you wait for the timer , the script can still execute commands in contrst with the <code class="highlighter-rouge">webiopi.sleep</code> function that totally freezes our script.</p>
+<p>Well, that’s a way to slow-down loops. I prefer using the <code class="highlighter-rouge">threading.timer</code> which is part of the <code class="highlighter-rouge">threading</code> library. This way while you wait for the timer , the script can still execute commands in contrast with the <code class="highlighter-rouge">webiopi.sleep</code> function that totally freezes our script for the specified time.</p>
 
-<p>In the next post we are going to see how to transfer data from our js script to our python server.</p>
+<p>Now that we understand the structure of webiopi, it’s time to dwelve deeper into the code. We are going to take  a look at the python script in the next post.</p>
+
+<p>Remember that if you want to follow this project from the first post, go to the posts tab and click All Posts.</p>
 
 <p>Until then, cheers!</p>
 
@@ -265,7 +417,7 @@ In this simple example, there are only a couple of lines of css/javascript so it
   <header>
     
     <div class="entry-meta">
-      <span class="entry-date date published updated"><time datetime="2016-04-26T00:00:00+03:00"><a href="http://odyslam.github.io/languages-post/">April 26, 2016</a></time></span><span class="author vcard"><span class="fn"><a href="http://odyslam.github.io/about/" title="About Odysseas Lamtzidis">Odysseas Lamtzidis</a></span></span>
+      <span class="entry-date date published updated"><time datetime="2016-03-25T00:00:00+02:00"><a href="http://odyslam.github.io/languages-post/">March 25, 2016</a></time></span><span class="author vcard"><span class="fn"><a href="http://odyslam.github.io/about/" title="About Odysseas Lamtzidis">Odysseas Lamtzidis</a></span></span>
       
     </div><!-- /.entry-meta -->
     
@@ -320,7 +472,7 @@ You can cut the learning time by half if you visit again this <a href="https://w
       </div><!-- /.entry-image -->
     
     <div class="entry-meta">
-      <span class="entry-date date published updated"><time datetime="2016-04-24T00:00:00+03:00"><a href="http://odyslam.github.io/GlaDOS-post/">April 24, 2016</a></time></span><span class="author vcard"><span class="fn"><a href="http://odyslam.github.io/about/" title="About Odysseas Lamtzidis">Odysseas Lamtzidis</a></span></span>
+      <span class="entry-date date published updated"><time datetime="2016-03-24T00:00:00+02:00"><a href="http://odyslam.github.io/GlaDOS-post/">March 24, 2016</a></time></span><span class="author vcard"><span class="fn"><a href="http://odyslam.github.io/about/" title="About Odysseas Lamtzidis">Odysseas Lamtzidis</a></span></span>
       
     </div><!-- /.entry-meta -->
     
@@ -438,7 +590,7 @@ You can cut the learning time by half if you visit again this <a href="https://w
       </div><!-- /.entry-image -->
     
     <div class="entry-meta">
-      <span class="entry-date date published updated"><time datetime="2016-04-22T00:00:00+03:00"><a href="http://odyslam.github.io/rpi-setup-post/">April 22, 2016</a></time></span><span class="author vcard"><span class="fn"><a href="http://odyslam.github.io/about/" title="About Odysseas Lamtzidis">Odysseas Lamtzidis</a></span></span>
+      <span class="entry-date date published updated"><time datetime="2016-03-22T00:00:00+02:00"><a href="http://odyslam.github.io/rpi-setup-post/">March 22, 2016</a></time></span><span class="author vcard"><span class="fn"><a href="http://odyslam.github.io/about/" title="About Odysseas Lamtzidis">Odysseas Lamtzidis</a></span></span>
       
     </div><!-- /.entry-meta -->
     
@@ -483,70 +635,6 @@ You can cut the learning time by half if you visit again this <a href="https://w
 </figure>
 
 <p>We can safely start talking about the libraries we are going to use in the next post,</p>
-
-<p>Cheers!</p>
-
-  </div><!-- /.entry-content -->
-</article><!-- /.hentry -->
-
-<article class="hentry">
-  <header>
-    
-      <div class="entry-image-index">
-        <a href="http://odyslam.github.io/rpi-post/" title="Raspberry pi 2"><img src="http://odyslam.github.io/images/rpilogo.png" alt="Raspberry pi 2"></a>
-      </div><!-- /.entry-image -->
-    
-    <div class="entry-meta">
-      <span class="entry-date date published updated"><time datetime="2016-03-21T00:00:00+02:00"><a href="http://odyslam.github.io/rpi-post/">March 21, 2016</a></time></span><span class="author vcard"><span class="fn"><a href="http://odyslam.github.io/about/" title="About Odysseas Lamtzidis">Odysseas Lamtzidis</a></span></span>
-      
-    </div><!-- /.entry-meta -->
-    
-      <h1 class="entry-title"><a href="http://odyslam.github.io/rpi-post/" rel="bookmark" title="Raspberry pi 2" itemprop="url">Raspberry pi 2</a></h1>
-    
-  </header>
-  <div class="entry-content">
-    <h2 id="hello-its-me-raspberry">Hello, it’s me, Raspberry!</h2>
-
-<p>As you propably arleady know, Rpi is a small computer running a version of linux called Debian.Although it can run several more versions of linux, including custom ones that are made for specific purposes (i.e Voice Control), or Windows 10, Debian is by far the most common and versatile one.</p>
-
-<p class="notice">We are going to cover the setup later in the blog.</p>
-
-<p>It houses a wealth of hardware for a fairly limited price. Ranging from a camera display interface to 40 GPIO pin interface that transform rpi from a simple micro-computer to a versatile controler of electronic components.</p>
-
-<h3 id="more-specifically">More specifically:</h3>
-
-<ul>
-  <li>4 USB ports</li>
-  <li>40 GPIO pins</li>
-  <li>Full HDMI port</li>
-  <li>Ethernet port</li>
-  <li>Combined 3.5mm audio jack and composite video</li>
-  <li>Camera interface (CSI)</li>
-  <li>Display interface (DSI)</li>
-  <li>Micro SD card slot</li>
-  <li>VideoCore IV 3D graphics core</li>
-</ul>
-
-<p>I am not going to explain more at this point as it’s better to explain the various capabilities with examples from my project. It’s worth though to mention the pinout diagram as it’s very important for any project.</p>
-
-<figure>
-	<a href="http://www.toptechboy.com/wp-content/uploads/2015/06/raspberry-pi-2-pinout.jpg"><img src="http://www.toptechboy.com/wp-content/uploads/2015/06/raspberry-pi-2-pinout.jpg" alt="" /></a>
-	<figcaption><a href="http://www.toptechboy.com/wp-content/uploads/2015/06/raspberry-pi-2-pinout.jpg" title="GPIO Pinout">GPIO Pinout</a>.</figcaption>
-</figure>
-
-<h2 id="but-what-are-those-pesky-gpio-anyhow">But what are those pesky GPIO anyhow?</h2>
-
-<p>That’s a fair question, GPIO stands for “General Purpose Input Output” meaning that these pins can be used as digital inputs or digital outputs. There are also pins that act as power supply(providing either 5v or 3.3v) or as ground. Some GPIO also have special functions (like <a href="https://learn.sparkfun.com/tutorials/pulse-width-modulation">pulse width modulation</a>)</p>
-
-<p class="notice"><strong>REMEMBER</strong>: Rpi use 3.3v as logical 1 and 0v as logical 0, unlike other microcontrolers,like <em>Arduino</em> which use 5v.</p>
-
-<h2 id="gpio-control">GPIO control?</h2>
-
-<p>As you propably have guessed arleady,a gpio can be controlled through scripts in various languages that use specific libraries that do most of the dirty work. My personal favorite is python as it’s easily understandable and ridiculously versatile. For these reasonons our main focus will be python although we will need some linux scripting as well. For the web interface we will need some basic html/css/javascript.</p>
-
-<h3 id="thats-all-folks">That’s all folks</h3>
-
-<p>I think that you have the all the neaded material to understand the basics of the raspberry pi 2 next will follow an overview of the project and slowly we will start geting into the software side of it.</p>
 
 <p>Cheers!</p>
 
