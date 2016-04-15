@@ -4,7 +4,7 @@
 <generator uri="https://github.com/mojombo/jekyll">Jekyll</generator>
 <link rel="self" type="application/atom+xml" href="http://odyslam.github.io/feed.xml" />
 <link rel="alternate" type="text/html" href="http://odyslam.github.io" />
-<updated>2016-04-12T17:38:52+03:00</updated>
+<updated>2016-04-15T14:01:38+03:00</updated>
 <id>http://odyslam.github.io/</id>
 <author>
   <name>Odysseas Lamtzidis</name>
@@ -14,7 +14,7 @@
 
 
 <entry>
-  <title type="html"><![CDATA[Some Python code at last]]></title>
+  <title type="html"><![CDATA[Let's get into (Monty) Python]]></title>
  <link rel="alternate" type="text/html" href="http://odyslam.github.io/python-post/" />
   <id>http://odyslam.github.io/python-post</id>
   <updated>2016-04-25T00:00:00-00:00</updated>
@@ -26,11 +26,11 @@
     <email>odyslam@gmail.com</email>
   </author>
   <content type="html">
-    &lt;h2 id=&quot;python-code&quot;&gt;Python code&lt;/h2&gt;
+    &lt;h2 id=&quot;the-script&quot;&gt;The script:&lt;/h2&gt;
 
 &lt;p&gt;As I mentioned before, we are going to start with examining the python code, later we will move to javascript and html.&lt;/p&gt;
 
-&lt;p&gt;You can find the full code uploaded to github &lt;em&gt;&lt;a href=&quot;https://github.com/OdysLam/GLaDOS-project/blob/master/script.py&quot;&gt;here&lt;/a&gt;&lt;/em&gt;&lt;/p&gt;
+&lt;p class=&quot;notice&quot;&gt;You can find the full code uploaded to github &lt;em&gt;&lt;a href=&quot;https://github.com/OdysLam/GLaDOS-project/blob/master/script.py&quot;&gt;here&lt;/a&gt;&lt;/em&gt;&lt;/p&gt;
 
 &lt;p&gt;But let’s take things from the start:&lt;/p&gt;
 
@@ -158,10 +158,13 @@ Webiopi has it’s own library to deal with servos, meaning that the needed puls
 
 &lt;p&gt;Cool, by now you should have started getting comfortable with the python code, in the next posts we will be covering more libraries and functions.&lt;/p&gt;
 
+&lt;h3 id=&quot;important&quot;&gt;Important!&lt;/h3&gt;
+&lt;p&gt;Remember that if you want to follow this project from the first post, go to the posts tab and click All Posts.&lt;/p&gt;
+
 &lt;p&gt;Stay tuned!&lt;/p&gt;
 
 
-    &lt;p&gt;&lt;a href=&quot;http://odyslam.github.io/python-post/&quot;&gt;Some Python code at last&lt;/a&gt; was originally published by Odysseas Lamtzidis at &lt;a href=&quot;http://odyslam.github.io&quot;&gt;Project L&lt;/a&gt; on April 03, 2016.&lt;/p&gt;
+    &lt;p&gt;&lt;a href=&quot;http://odyslam.github.io/python-post/&quot;&gt;Let&#39;s get into (Monty) Python&lt;/a&gt; was originally published by Odysseas Lamtzidis at &lt;a href=&quot;http://odyslam.github.io&quot;&gt;Project L&lt;/a&gt; on April 03, 2016.&lt;/p&gt;
   </content>
 </entry>
 
@@ -213,7 +216,7 @@ WebIOPi includes an HTTP server that provides both HTML resources and a REST API
 
 &lt;h2 id=&quot;installation&quot;&gt;Installation:&lt;/h2&gt;
 
-&lt;p&gt;Firstly, let’s &lt;code class=&quot;highlighter-rouge&quot;&gt;ssha&lt;/code&gt;to our Raspberry pi.&lt;/p&gt;
+&lt;p&gt;Firstly, let’s &lt;code class=&quot;highlighter-rouge&quot;&gt;ssh&lt;/code&gt;to our Raspberry pi.&lt;/p&gt;
 
 &lt;ol&gt;
   &lt;li&gt;
@@ -312,7 +315,7 @@ In this simple example, there are only a couple of lines of css/javascript so it
 &lt;p&gt;&lt;img src=&quot;http://odyslam.github.io/images/pilogo.png&quot; alt=&quot;python&quot; /&gt;&lt;/p&gt;
 
 &lt;p&gt;The most important is python, not only for this project, but for any raspberry pi project since it’s the main programming language. Python is a very easy-to-learn language as it has a very straight forward syntax ideal for beginners who just started learning programming. 
-Also, it houses a shit-tone of libraries, which means that it’s very easy to do a lot of different things since others have done all the dirty programming work for you.&lt;/p&gt;
+Also, it houses a shit-ton of libraries, which means that it’s very easy to do a lot of different things since others have done all the dirty programming work for you.&lt;/p&gt;
 
 &lt;p&gt;As far as our project is concerned,for any possible upgrade or addition to the project that I have came up with (and they are a lot!) I still haven’t been able to find the appropriate library.&lt;/p&gt;
 
