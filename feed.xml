@@ -4,7 +4,7 @@
 <generator uri="https://github.com/mojombo/jekyll">Jekyll</generator>
 <link rel="self" type="application/atom+xml" href="http://odyslam.github.io/feed.xml" />
 <link rel="alternate" type="text/html" href="http://odyslam.github.io" />
-<updated>2016-04-15T14:01:38+03:00</updated>
+<updated>2016-04-15T14:46:28+03:00</updated>
 <id>http://odyslam.github.io/</id>
 <author>
   <name>Odysseas Lamtzidis</name>
@@ -46,7 +46,7 @@
 &lt;span class=&quot;kn&quot;&gt;from&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;vncdotool&lt;/span&gt; &lt;span class=&quot;kn&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;api&lt;/span&gt;
 &lt;span class=&quot;kn&quot;&gt;from&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;subprocess&lt;/span&gt; &lt;span class=&quot;kn&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;call&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 
-&lt;p&gt;As you can see I import a number of libraries, I am going to get into detail in later posts so as to keep this post nice and clean. I will explain where each and every library that is neaded.&lt;/p&gt;
+&lt;p&gt;As you can see I import a number of libraries, I am going to get into detail in later posts so as to keep this post nice and clean. I will explain where each and every library that is needed.&lt;/p&gt;
 
 &lt;p&gt;The next important part is where I define the  pins I am going to use. This way, I can easily change the pins by just changing the variable.&lt;/p&gt;
 
