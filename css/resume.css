@@ -1,0 +1,33 @@
+body {
+    background-color: #000000;
+}
+
+p {
+    display: inline;
+}
+
+a,
+a:hover {
+    color: white;
+    text-decoration: none;
+}
+
+.console {
+    font-family: monospace;
+    font-size: 9pt;
+    color: white;
+    border: none;
+    padding: 0px;
+    outline: none;
+}
+
+#terminal {
+    font-family: monospace;
+    font-size: 9pt;
+    color: white;
+    background: #000000;
+    border: none;
+    padding: 0px;
+    outline: none;
+}
+
