@@ -30,13 +30,8 @@ a:hover {
     padding: 0px;
     outline: none;
 }
-
-@media only screen and (max-device-width: 500px) {
-    #terminal .console {
-        font-size: 16px;
-    }
-    input, select, textarea {
+input, select, textarea {
         font-size: 16px;
     }
 
-}
+
