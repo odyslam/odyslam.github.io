@@ -9,50 +9,49 @@ $(document).keyup(
     function(e) {
         if (e.keyCode == 13) {
             var result = $('#label').html();
-            var root = "odys@rasberry ~ $ ";
-            var tmp = $("#terminal").val();
+            var root = "guest@rasberry ~ $ ";
+            var tmp = $("#terminal").val().toLowerCase();
             root = root + tmp;
             $('#terminal').val('');
             result = result + root;
 
             switch (tmp) {
-                case '-help':
-                    result = result + '<br>	-help &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp Show a list of available commands<br>\
+                case 'help':
+                    result = result + '<br>	help &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp Show a list of available commands<br>\
 										contact &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp Show contact information<br>\
 										skills &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp Show a list available skills.<br>\
-										degrees  &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp Show a list of available Degrees<br>\
+										education  &nbsp&nbsp&nbsp&nbsp Show a list of available Degrees<br>\
 										info &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp Show general info about the creator<br>\
 										experience &nbsp&nbsp&nbsp Show a list of available experience<br>\
-										Clear &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp clear the console<br>\
+										clear &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp Clear the console<br>\
 										social &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp Show a list of available social media accounts<br>\
 										projects &nbsp&nbsp&nbsp&nbsp&nbsp Show a list of the available past projects<br>\
-										about &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp Sho info about this site ';
+										about &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp Show info about this site ';
                     break;
 
                 case 'contact':
                     result = result + '<br>	25 Martiou str 112,Patras,Greece<br>\ ' +
-                        'Tel: (+30)6980950995<br>\
-                        Skype: odys_lamtzidis<br>\
-                        Mail: <a href="mailto:odyslam@gmail.com">odyslam@gmail.com</a><br> ';
+                       'Tel: &nbsp&nbsp&nbsp(+30)6980950995<br>\
+                        Skype: &nbspodys_lamtzidis<br>\
+                        Mail: <a href="mailto:odyslam@gmail.com">&nbsp&nbspodyslam@gmail.com</a><br> ';
 
 
 
                     break;
 
-                case 'skils':
+                case 'skills':
                     result = result + '<br>	Languages:<br>\
-											&nbsp&nbspFrench: Conversational (B2)<br>\
-											&nbsp&nbspAnglais: Profficient (C2)<br>\
-											&nbsp&nbspGreek: Native <br>\
+											&nbsp&nbspFrench:&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbspConversational (B2)<br>\
+											&nbsp&nbspEnglish:&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbspProfficient (C2)<br>\
+											&nbsp&nbspGreek:&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbspNative <br>\
 										Techical Skills:<br>\
-											&nbsp&nbspPython:&nbsp&nbsp|##########|<br>\
-											&nbsp&nbspC:&nbsp&nbsp|######&nbsp&nbsp&nbsp&nbsp|<br>\
-                                            &nbsp&nbspHTML&CSS:&nbsp&nbsp|#####&nbsp&nbsp&nbsp&nbsp|<br>\
-                                            &nbsp&nbspJavascript:&nbsp&nbsp|######&nbsp&nbsp&nbsp&nbsp|<br>\
-                                            &nbsp&nbspPhotoshop/Illustrator|#####&nbsp&nbsp&nbsp&nbsp&nbsp<br>\
-                                            &nbsp&nbspJekyll&nbsp&nbsp&nbsp&nbsp|#####&nbsp&nbsp&nbsp&nbsp&nbsp<br>\
+											&nbsp&nbspPython:&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp|########&nbsp&nbsp|80%<br>\
+											&nbsp&nbspC:&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp|######&nbsp&nbsp&nbsp&nbsp|50%<br>\
+                                            &nbsp&nbspHTML&CSS:&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp|#####&nbsp&nbsp&nbsp&nbsp&nbsp|50%<br>\
+                                            &nbsp&nbspJavascript:&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp|######&nbsp&nbsp&nbsp&nbsp|60%<br>\
+                                            &nbsp&nbspPhotoshop/Illustrator|#####&nbsp&nbsp&nbsp&nbsp&nbsp|40%<br>\
+                                            &nbsp&nbspJekyll&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp|#####&nbsp&nbsp&nbsp&nbsp&nbsp|50%<br>\
                                         Attributes:<br>\
-                                            &nbsp&nbs<br>\
                                   <br>';
                     break;
 
@@ -90,12 +89,13 @@ $(document).keyup(
 
                 case 'social':
                     result = result + '<br> <a href="https://gr.linkedin.com/in/lamtzidisodysseas" onclick="window.open(this.href); return false;">LinkedIn &larr;</a><br>\
-										<a href="https://github.com/OdysLam" onclick="window.open(this.href); return false;">GitHub &larr;</a><br>\
+										<a href="https://github.com/OdysLam" onclick="window.open(this.href); return false;">GitHub&larr;</a><br>\
 										<a href="https://www.facebook.com/odysseas.lamtzidis" onclick="window.open(this.href); return false;">facebook&larr;</a><br>';
                     break;
 
                 case 'projects':
-                    result = result + '<br> <a href ="/assets/glados.pdf">Glados:A personal smart-home project&larr</a><br>';
+                    result = result + '<br>&nbsp&nbspGlados: A personal smart-home project | <a href ="/assets/glados.pdf">Presentation&larr;</a> , <a href="https://github.com/OdysLam/GLaDOS-project" onclick="window.open(this.href); return false;">Github&larr; |</a><br>\
+                                           &nbsp&nbspThis site | Github&larr;<br>';
 
                     break;
 

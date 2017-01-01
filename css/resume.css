@@ -14,7 +14,7 @@ a:hover {
 
 .console {
     font-family: monospace;
-    font-size: 9pt;
+    font-size: 11pt;
     color: white;
     border: none;
     padding: 0px;
@@ -23,7 +23,7 @@ a:hover {
 
 #terminal {
     font-family: monospace;
-    font-size: 9pt;
+    font-size: 11pt;
     color: white;
     background: #000000;
     border: none;
@@ -31,3 +31,9 @@ a:hover {
     outline: none;
 }
 
+@media only screen and (max-device-width: 480px) {
+    #terminal .console {
+        font-size: 18px;
+    }
+
+}
