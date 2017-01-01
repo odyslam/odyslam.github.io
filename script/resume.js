@@ -52,7 +52,6 @@ $(document).keyup(
                                             &nbsp&nbspPhotoshop/Illustrator|#####&nbsp&nbsp&nbsp&nbsp&nbsp|40%<br>\
                                             &nbsp&nbspJekyll&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp|#####&nbsp&nbsp&nbsp&nbsp&nbsp|50%<br>\
                                         Attributes:<br>\
-                                            &nbsp&&nbsp&Initiative:
                                   <br>';
                     break;
 
@@ -73,7 +72,8 @@ $(document).keyup(
 										Profession: Electrical Engineering Student<br>\
 										Age: ' + age.toFixed() + '<br>\
 										Nationality: Greek<br>\
-										Permits: B<br>';
+										Permits: B<br>\
+										Resume: <a href="assets/cv.pdf" target = "_blank">pdf&larr;</a><br>';
                     break;
 
                 case 'experience':
@@ -89,14 +89,14 @@ $(document).keyup(
                     break;
 
                 case 'social':
-                    result = result + '<br> <a href="https://gr.linkedin.com/in/lamtzidisodysseas" onclick="window.open(this.href); return false;">LinkedIn &larr;</a><br>\
-										<a href="https://github.com/OdysLam" onclick="window.open(this.href); return false;">GitHub&larr;</a><br>\
-										<a href="https://www.facebook.com/odysseas.lamtzidis" onclick="window.open(this.href); return false;">facebook&larr;</a><br>';
+                    result = result + '<br> <a href="https://gr.linkedin.com/in/lamtzidisodysseas" target = "_blank">LinkedIn &larr;</a><br>\
+										<a href="https://github.com/OdysLam" target = "_blank">GitHub &larr;</a><br>\
+										<a href="https://www.facebook.com/odysseas.lamtzidis" target = "_blank">facebook &larr;</a><br>';
                     break;
 
                 case 'projects':
-                    result = result + '<br>&nbsp&nbspGlados: A personal smart-home project | <a href ="/assets/glados.pdf">Presentation&larr;</a> , <a href="https://github.com/OdysLam/GLaDOS-project" onclick="window.open(this.href); return false;">Github&larr; |</a><br>\
-                                           &nbsp&nbspThis site | Github&larr;<br>';
+                    result = result + '<br>&nbsp&nbspGlados: A personal smart-home project | <a href ="/assets/glados.pdf" target = "_blank">Presentation&larr;</a> , <a href="https://github.com/OdysLam/GLaDOS-project" target = "_blank">Github&larr; |</a><br>\
+                                           &nbsp&nbspThis site | <a href = "https://github.com/OdysLam/odyslam.github.io" target = "_blank">Github&larr;</a><br>';
 
                     break;
 
