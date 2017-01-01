@@ -17,20 +17,20 @@ $(document).keyup(
 
             switch (tmp) {
                 case 'help':
-                    result = result + '<br> help &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp Show a list of available commands<br>\
-                                        contact &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp Show contact information<br>\
-                                        skills &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp Show a list available skills.<br>\
-                                        education  &nbsp&nbsp&nbsp&nbsp Show a list of available Degrees<br>\
-                                        info &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp Show general info about the creator<br>\
-                                        experience &nbsp&nbsp&nbsp Show a list of available experience<br>\
-                                        clear &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp Clear the console<br>\
-                                        social &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp Show a list of available social media accounts<br>\
-                                        projects &nbsp&nbsp&nbsp&nbsp&nbsp Show a list of the available past projects<br>\
-                                        about &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp Show info about this site ';
+                    result = result + '<br>	help &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp Show a list of available commands<br>\
+										contact &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp Show contact information<br>\
+										skills &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp Show a list available skills.<br>\
+										education  &nbsp&nbsp&nbsp&nbsp Show a list of available Degrees<br>\
+										info &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp Show general info about the creator<br>\
+										experience &nbsp&nbsp&nbsp Show a list of available experience<br>\
+										clear &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp Clear the console<br>\
+										social &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp Show a list of available social media accounts<br>\
+										projects &nbsp&nbsp&nbsp&nbsp&nbsp Show a list of the available past projects<br>\
+										about &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp Show info about this site ';
                     break;
 
                 case 'contact':
-                    result = result + '<br> 25 Martiou str 112,Patras,Greece<br>\ ' +
+                    result = result + '<br>	25 Martiou str 112,Patras,Greece<br>\ ' +
                        'Tel: &nbsp&nbsp&nbsp(+30)6980950995<br>\
                         Skype: &nbspodys_lamtzidis<br>\
                         Mail: <a href="mailto:odyslam@gmail.com">&nbsp&nbspodyslam@gmail.com</a><br> ';
@@ -40,13 +40,13 @@ $(document).keyup(
                     break;
 
                 case 'skills':
-                    result = result + '<br> Languages:<br>\
-                                            &nbsp&nbspFrench:&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbspConversational (B2)<br>\
-                                            &nbsp&nbspEnglish:&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbspProfficient (C2)<br>\
-                                            &nbsp&nbspGreek:&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbspNative <br>\
-                                        Techical Skills:<br>\
-                                            &nbsp&nbspPython:&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp|########&nbsp&nbsp|80%<br>\
-                                            &nbsp&nbspC:&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp|######&nbsp&nbsp&nbsp&nbsp|50%<br>\
+                    result = result + '<br>	Languages:<br>\
+											&nbsp&nbspFrench:&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbspConversational (B2)<br>\
+											&nbsp&nbspEnglish:&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbspProfficient (C2)<br>\
+											&nbsp&nbspGreek:&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbspNative <br>\
+										Techical Skills:<br>\
+											&nbsp&nbspPython:&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp|########&nbsp&nbsp|80%<br>\
+											&nbsp&nbspC:&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp|######&nbsp&nbsp&nbsp&nbsp|50%<br>\
                                             &nbsp&nbspHTML&CSS:&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp|#####&nbsp&nbsp&nbsp&nbsp&nbsp|50%<br>\
                                             &nbsp&nbspJavascript:&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp|######&nbsp&nbsp&nbsp&nbsp|60%<br>\
                                             &nbsp&nbspPhotoshop/Illustrator|#####&nbsp&nbsp&nbsp&nbsp&nbsp|40%<br>\
@@ -56,7 +56,7 @@ $(document).keyup(
                     break;
 
                 case 'education':
-                    result = result + '<br> 2014 - Current: Electrical Engineering & Computer Science, University of Patras,Greece<br>\
+                    result = result + '<br>	2014 - Current: Electrical Engineering & Computer Science, University of Patras,Greece<br>\
                                             &nbsp&nbsp GPA: 7.42/10<br>\
                                             &nbsp&nbsp Member of numerous student organisations (IEEE,BEST,EESTEC)<br>\
                                             &nbsp&nbsp Executive officer at Mindspace Patras, the first Entrepreneurship club in UoP<br>\
@@ -67,21 +67,21 @@ $(document).keyup(
                 case 'info':
                     var birthday = +new Date('1996-05-15');
                     var age = ((Date.now() - birthday) / (31557600000));
-                    result = result + '<br> Surname: Odyssefs(Odysseas)<br>\
-                                        Name: Lamtzidis<br>\
-                                        Profession: Electrical Engineering Student<br>\
-                                        Age: ' + age.toFixed() + '<br>\
-                                        Nationality: Greek<br>\
-                                        Permits: B<br>\
-                                        Resume: <a href="assets/cv.pdf" target = "_blank">pdf&larr;</a><br>';
+                    result = result + '<br>	Surname: Odyssefs(Odysseas)<br>\
+										Name: Lamtzidis<br>\
+										Profession: Electrical Engineering Student<br>\
+										Age: ' + age.toFixed() + '<br>\
+										Nationality: Greek<br>\
+										Permits: B<br>\
+										Resume: <a href="assets/cv.pdf" target = "_blank">pdf&larr;</a><br>';
                     break;
 
                 case 'experience':
                     result = result + '<br>April 2016 - current<br>\
-                                            &nbsp&nbspSocial Media Manager, PatrasIQ<br>\
-                                                &nbsp&nbsp Managing the online brand/promotion of Patras IQ during, after the event and throughout the year <br>\
-                                            April 2015 - 2015 April<br>\
-                                                &nbsp&nbsp Online presence and promotion of Patras IQ Exhibition before and during the event<br>';
+											&nbsp&nbspSocial Media Manager, PatrasIQ<br>\
+												&nbsp&nbsp Managing the online brand/promotion of Patras IQ during, after the event and throughout the year <br>\
+											April 2015 - 2015 April<br>\
+												&nbsp&nbsp Online presence and promotion of Patras IQ Exhibition before and during the event<br>';
                     break;
 
                 case 'clear':
@@ -90,8 +90,8 @@ $(document).keyup(
 
                 case 'social':
                     result = result + '<br> <a href="https://gr.linkedin.com/in/lamtzidisodysseas" target = "_blank">LinkedIn &larr;</a><br>\
-                                        <a href="https://github.com/OdysLam" target = "_blank">GitHub &larr;</a><br>\
-                                        <a href="https://www.facebook.com/odysseas.lamtzidis" target = "_blank">facebook &larr;</a><br>';
+										<a href="https://github.com/OdysLam" target = "_blank">GitHub &larr;</a><br>\
+										<a href="https://www.facebook.com/odysseas.lamtzidis" target = "_blank">facebook &larr;</a><br>';
                     break;
 
                 case 'projects':
