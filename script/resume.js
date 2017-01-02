@@ -52,7 +52,13 @@ $(document).keyup(
                                             &nbsp&nbspPhotoshop/Illustrator|#####&nbsp&nbsp&nbsp&nbsp&nbsp|40%<br>\
                                             &nbsp&nbspJekyll&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp|#####&nbsp&nbsp&nbsp&nbsp&nbsp|50%<br>\
                                         Attributes:<br>\
-                                  <br>';
+                                            &nbsp&nbspInitiative:&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp|########&nbsp&nbsp|80%<br>\
+                                            &nbsp&nbspLeadership:&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp|######&nbsp&nbsp&nbsp&nbsp|70%<br>\
+                                            &nbsp&nbspManagement:&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp|#######&nbsp&nbsp&nbsp|70%<br>\
+                                            &nbsp&nbspTeamwork:&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp|######&nbsp&nbsp&nbsp&nbsp|60%<br>\
+                                            &nbsp&nbspCreativity:&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp|#########&nbsp|90%<br>\
+                                            &nbsp&nbspCommunication:&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp|#######&nbsp&nbsp&nbsp|70%<br>\
+                                            &nbsp&nbspLearning-Agility:&nbsp&nbsp&nbsp&nbsp|########&nbsp&nbsp|80%<br> ';
                     break;
 
                 case 'education':
@@ -61,19 +67,19 @@ $(document).keyup(
                                             &nbsp&nbsp Member of numerous student organisations (IEEE,BEST,EESTEC)<br>\
                                             &nbsp&nbsp Executive officer at Mindspace Patras, the first Entrepreneurship club in UoP<br>\
                                             2011-2014 High School Diploma, Experimental High School of Evangelic<br>\
-                                            &nbsp&nbsp Grade: 19.5 | Panhellenic examinations for university entry: 18.706/20.000<br>'
+                                            &nbsp&nbsp Grade: 19.5 | Panhellenic examinations for university entry: 18.706/20.000<br>';
                     break;
 
                 case 'info':
                     var birthday = +new Date('1996-05-15');
                     var age = ((Date.now() - birthday) / (31557600000));
-                    result = result + '<br>	Surname: Odyssefs(Odysseas)<br>\
-										Name: Lamtzidis<br>\
-										Profession: Electrical Engineering Student<br>\
-										Age: ' + age.toFixed() + '<br>\
-										Nationality: Greek<br>\
-										Permits: B<br>\
-										Resume: <a href="assets/cv.pdf" target = "_blank">pdf&larr;</a><br>';
+                    result = result + '<br>	Surname:&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbspOdyssefs(Odysseas)<br>\
+										    Name:&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbspLamtzidis<br>\
+										    Profession:&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbspElectrical Engineering Student<br>\
+										    Age:&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp' + age.toFixed() + '<br>\
+										    Nationality:&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbspGreek<br>\
+										    Permits:&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbspB<br>\
+										    Resumé:&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<a href="assets/cv.pdf" target = "_blank">pdf&larr;</a><br>';
                     break;
 
                 case 'experience':
