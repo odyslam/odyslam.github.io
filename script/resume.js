@@ -2,14 +2,19 @@ $(document).ready(
     function() {
         $("#terminal").focus();
         result = '<br>';
-    }
-)
+        $(".updates").typed({
+                strings: ["hello visitor", "my name is odysseas","i will be your guide","please feel free to read about my projects","see you later","type help for a command list"],
+                typeSpeed: 20,
+                backDelay: 700,
+                showCursor:false,
+            });
+    })
 
 $(document).keyup(
     function(e) {
         if (e.keyCode == 13) {
             var result = $('#label').html();
-            var root = "guest@rasberry ~ $ ";
+            var root = "guest@raspberry ~ $ ";
             var tmp = $("#terminal").val().toLowerCase();
             root = root + tmp;
             $('#terminal').val('');
@@ -26,14 +31,14 @@ $(document).keyup(
 										clear &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp Clear the console<br>\
 										social &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp Show a list of available social media accounts<br>\
 										projects &nbsp&nbsp&nbsp&nbsp&nbsp Show a list of the available past projects<br>\
-										about &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp Show info about this site<br>';
+										about &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp Show info about this site ';
                     break;
 
                 case 'contact':
                     result = result + '<br>	25 Martiou str 112,Patras,Greece<br>\ ' +
                        'Tel: &nbsp&nbsp&nbsp(+30)6980950995<br>\
                         Skype: &nbspodys_lamtzidis<br>\
-                        Mail: <a href="mailto:odyslam@gmail.com">&nbsp&nbspodyslam@gmail.com</a><br>';
+                        Mail: <a href="mailto:odyslam@gmail.com">&nbsp&nbspodyslam@gmail.com</a><br> ';
 
 
 
@@ -58,7 +63,7 @@ $(document).keyup(
                                             &nbsp&nbspTeamwork:&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp|######&nbsp&nbsp&nbsp&nbsp|60%<br>\
                                             &nbsp&nbspCreativity:&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp|#########&nbsp|90%<br>\
                                             &nbsp&nbspCommunication:&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp|#######&nbsp&nbsp&nbsp|70%<br>\
-                                            &nbsp&nbspLearning-Agility:&nbsp&nbsp&nbsp&nbsp|########&nbsp&nbsp|80%<br>';
+                                            &nbsp&nbspLearning-Agility:&nbsp&nbsp&nbsp&nbsp|########&nbsp&nbsp|80%<br> ';
                     break;
 
                 case 'education':
@@ -112,7 +117,8 @@ $(document).keyup(
 
 
                 case 'about':
-                    result = result + '<br>This site was made with &hearts; by me, based on terminal resume by Kevin Grillet<br>';
+                    result = result + '<br>&nbspThis site was made with &hearts; by me, based on terminal resume by Kevin Grillet<br>\
+                                           &nbspTyped.js is used,please leave a star @<a href="http://www.mattboldt.com/demos/typed-js/" target ="_blank">Mattboldt&larr;</a>';
 
                 case '':
                     result = result;
