@@ -1,10 +1,10 @@
 $(document).ready(
     function() {
         $("#terminal").focus();
-        result = '<br>';
+        result = '<br> ';
         $(".updates").typed({
                 strings: ["hello visitor", "my name is odysseas","i will be your guide","please feel free to read about my projects","see you later","type help for a command list"],
-                typeSpeed: 20,
+                typeSpeed: 21,
                 backDelay: 700,
                 showCursor:false,
             });
