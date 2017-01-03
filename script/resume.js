@@ -26,14 +26,14 @@ $(document).keyup(
 										clear &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp Clear the console<br>\
 										social &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp Show a list of available social media accounts<br>\
 										projects &nbsp&nbsp&nbsp&nbsp&nbsp Show a list of the available past projects<br>\
-										about &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp Show info about this site ';
+										about &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp Show info about this site<br>';
                     break;
 
                 case 'contact':
                     result = result + '<br>	25 Martiou str 112,Patras,Greece<br>\ ' +
                        'Tel: &nbsp&nbsp&nbsp(+30)6980950995<br>\
                         Skype: &nbspodys_lamtzidis<br>\
-                        Mail: <a href="mailto:odyslam@gmail.com">&nbsp&nbspodyslam@gmail.com</a><br> ';
+                        Mail: <a href="mailto:odyslam@gmail.com">&nbsp&nbspodyslam@gmail.com</a><br>';
 
 
 
@@ -58,7 +58,7 @@ $(document).keyup(
                                             &nbsp&nbspTeamwork:&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp|######&nbsp&nbsp&nbsp&nbsp|60%<br>\
                                             &nbsp&nbspCreativity:&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp|#########&nbsp|90%<br>\
                                             &nbsp&nbspCommunication:&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp|#######&nbsp&nbsp&nbsp|70%<br>\
-                                            &nbsp&nbspLearning-Agility:&nbsp&nbsp&nbsp&nbsp|########&nbsp&nbsp|80%<br> ';
+                                            &nbsp&nbspLearning-Agility:&nbsp&nbsp&nbsp&nbsp|########&nbsp&nbsp|80%<br>';
                     break;
 
                 case 'education':
@@ -79,7 +79,7 @@ $(document).keyup(
 										    Age:&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp' + age.toFixed() + '<br>\
 										    Nationality:&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbspGreek<br>\
 										    Permits:&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbspB<br>\
-										    Resumé:&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<a href="assets/cv.pdf" target = "_blank">pdf&larr;</a><br>';
+										    Resumé:&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<a href="assets/cv.pdf" target = "_blank">pdf&larr;</a><br>';
                     break;
 
                 case 'experience':
@@ -112,7 +112,7 @@ $(document).keyup(
 
 
                 case 'about':
-                    result = result + '<br>This site was made with &hearts; by me, based on terminal resume by Kevin Grillet';
+                    result = result + '<br>This site was made with &hearts; by me, based on terminal resume by Kevin Grillet<br>';
 
                 case '':
                     result = result;
