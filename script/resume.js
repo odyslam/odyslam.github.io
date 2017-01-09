@@ -121,7 +121,7 @@ $(document).keyup(
                 case 'about':
                     result = result + '<br>&nbspThis site was made with &hearts; by me, based on terminal resume by Kevin Grillet<br>\
                                            &nbspTyped.js is used,please leave a star @<a href="http://www.mattboldt.com/demos/typed-js/" target ="_blank">Mattboldt&larr;</a>';
-                case 'blog'
+		case 'blog':
                      window.open('www.odyslam.me/blog/', '_self'); 
 
                 case '':
