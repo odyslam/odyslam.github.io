@@ -26,12 +26,14 @@ $(document).keyup(
 										contact &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp Show contact information<br>\
 										skills &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp Show a list available skills.<br>\
 										education  &nbsp&nbsp&nbsp&nbsp Show a list of available Degrees<br>\
-										info &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp Show general info about the creator<br>\
+										info &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp Show general info about me<br>\
 										experience &nbsp&nbsp&nbsp Show a list of available experience<br>\
 										clear &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp Clear the console<br>\
 										social &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp Show a list of available social media accounts<br>\
 										projects &nbsp&nbsp&nbsp&nbsp&nbsp Show a list of the available past projects<br>\
+                                        blog &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp Navigate my personal technology blog<br>\
 										about &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp Show info about this site ';
+                                        
                     break;
 
                 case 'contact':
@@ -119,6 +121,8 @@ $(document).keyup(
                 case 'about':
                     result = result + '<br>&nbspThis site was made with &hearts; by me, based on terminal resume by Kevin Grillet<br>\
                                            &nbspTyped.js is used,please leave a star @<a href="http://www.mattboldt.com/demos/typed-js/" target ="_blank">Mattboldt&larr;</a>';
+                case 'blog'
+                     window.open('www.odyslam.me/blog/', '_self'); 
 
                 case '':
                     result = result;
