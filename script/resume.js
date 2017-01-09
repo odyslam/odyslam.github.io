@@ -123,6 +123,7 @@ $(document).keyup(
                                            &nbspTyped.js is used,please leave a star @<a href="http://www.mattboldt.com/demos/typed-js/" target ="_blank">Mattboldt&larr;</a>';
 		case 'blog':
                      window.open('www.odyslam.me/blog/', '_self'); 
+			break;
 
                 case '':
                     result = result;
