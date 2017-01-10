@@ -1,5 +1,5 @@
 body {
-    background-color: #000000;
+    background-color: #121111;
 }
 
 p {
@@ -27,7 +27,7 @@ a:hover {
     font-family: monospace;
     font-size: 11pt;
     color: white;
-    background: #000000;
+    background: #121111;
     border: none;
     padding: 0px;
     outline: none;
