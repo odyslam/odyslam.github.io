@@ -31,7 +31,7 @@ $(document).keyup(
 										clear &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp Clear the console<br>\
 										social &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp Show a list of available social media accounts<br>\
 										projects &nbsp&nbsp&nbsp&nbsp&nbsp Show a list of the available past projects<br>\
-                                        					blog(WIP) &nbsp&nbsp&nbsp&nbsp Navigate my personal technology blog<br>\
+                                        blog &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp Navigate my personal technology blog<br>\
 										about &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp Show info about this site ';
                                         
                     break;
