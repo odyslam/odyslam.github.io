@@ -7,27 +7,11 @@
     <atom:link href="http://odyslam.me/blog/feed.xml" rel="self" type="application/rss+xml" />
     
       <item>
-        <title>Introducing chalk</title>
-        <description>Chalk is a high quality, completely customizable, performant and 100% free blog template for Jekyll.</description>
-        <pubDate>Mon, 17 Oct 2016 00:00:00 +0300</pubDate>
-        <link>http://odyslam.me/blog/posts/introducing-chalk</link>
-        <guid isPermaLink="true">http://odyslam.me/blog/posts/introducing-chalk</guid>
-      </item>
-    
-      <item>
-        <title>How to configure Chalk</title>
-        <description>Learn more about the config file for Chalk and how to set it up properly.</description>
-        <pubDate>Sun, 16 Oct 2016 00:00:00 +0300</pubDate>
-        <link>http://odyslam.me/blog/posts/configuring-chalk</link>
-        <guid isPermaLink="true">http://odyslam.me/blog/posts/configuring-chalk</guid>
-      </item>
-    
-      <item>
-        <title>Chalk sample post with all elements</title>
-        <description>Have a look at all the predesigned elements you can use in Chalk.</description>
-        <pubDate>Sat, 15 Oct 2016 00:00:00 +0300</pubDate>
-        <link>http://odyslam.me/blog/posts/chalk-sample-post-with-all-elements</link>
-        <guid isPermaLink="true">http://odyslam.me/blog/posts/chalk-sample-post-with-all-elements</guid>
+        <title>Introduction</title>
+        <description>What, Why, Who?</description>
+        <pubDate>Sun, 15 Jan 2017 00:00:00 +0200</pubDate>
+        <link>http://odyslam.me/blog/posts/introduction</link>
+        <guid isPermaLink="true">http://odyslam.me/blog/posts/introduction</guid>
       </item>
     
   </channel>
