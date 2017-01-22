@@ -1,0 +1,239 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <title>blog.py | Here comes Jekyll</title>
+  <meta name="description" content="How to build static sites in a matter of minutes">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <link rel="shortcut icon" href="assets/aperture.ico" type="image/x-icon" />
+  <meta property="og:title" content="Here comes Jekyll">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="http://odyslam.me/blog/posts/here-comes-jekyll">
+  <meta property="og:description" content="How to build static sites in a matter of minutes">
+  <meta property="og:site_name" content="blog.py">
+  <meta property="og:image" content="http://odyslam.me/blog/assets/jekyll.jpg">
+
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:url" content="http://odyslam.me/blog/posts/here-comes-jekyll">
+  <meta name="twitter:title" content="Here comes Jekyll">
+  <meta name="twitter:description" content="How to build static sites in a matter of minutes">
+  <meta name="twitter:image" content="http://odyslam.me/blog/assets/jekyll.jpg">
+
+  <script src="https://use.fontawesome.com/2dc7ca4a99.js"></script>
+  <link rel="apple-touch-icon" href="/blog/assets/apple-touch-icon.png">
+  <link href="http://odyslam.me/blog/feed.xml" type="application/rss+xml" rel="alternate" title="blog.py Last 10 blog posts" />
+
+  
+    <link type="text/css" rel="stylesheet" href="/blog/assets/dark.css">
+  
+</head>
+
+<body>
+  <main role="main">
+    <div class="grid grid-centered">
+      <div class="grid-cell">
+        <nav class="header-nav reveal">
+  <a href="/blog/" class="header-logo" title="blog.py">blog.py</a>
+  <ul class="header-links">
+    
+      <li>
+        <a href="http://odyslam.me" title="Back to Terminal">
+          <i class="fa fa-terminal" aria-hidden="true"></i>
+        </a>
+      </li>
+    
+    
+    
+      <li>
+        <a href="https://www.facebook.com/odysseas.lamtzidis" target="_blank" title="Facebook">
+          <span class="icon icon-social-facebook"></span>
+        </a>
+      </li>
+    
+    
+      <li>
+        <a href="https://github.com/OdysLam" target="_blank" title="GitHub">
+          <span class="icon icon-social-github"></span>
+        </a>
+      </li>
+    
+    
+    
+    
+      <li>
+        <a href="https://www.linkedin.com/in/lamtzidisodysseas" target="_blank" title="LinkedIn">
+          <span class="icon icon-social-linkedin"></span>
+        </a>
+      </li>
+    
+    
+    
+      <li>
+        <a href="mailto:odyslam@gmail.com" title="Email">
+          <span class="icon icon-at"></span>
+        </a>
+      </li>
+    
+    
+  </ul>
+</nav>
+
+        <article class="article reveal">
+          <header class="article-header">
+            <h1>Here comes Jekyll</h1>
+            <p>How to build static sites in a matter of minutes</p>
+            <div class="article-list-footer">
+              <span class="article-list-date">
+                January 19, 2017
+              </span>
+              <span class="article-list-divider">-</span>
+              <span class="article-list-minutes">
+                
+                
+                  4 minute read
+                
+              </span>
+              <span class="article-list-divider">-</span>
+              <div class="article-list-tags">
+                
+                  <a href="/blog/tag/web">web</a>
+                
+                  <a href="/blog/tag/jekyll">jekyll</a>
+                
+              </div>
+            </div>
+          </header>
+
+          <div class="article-content">
+            <p><a href="/blog/assets/jekyll.jpg" class="fluidbox-trigger">
+  <img src="/blog/assets/jekyll.jpg" alt="Jekyll" />
+</a></p>
+
+<p>I believe that I had to kick-start this blog with  some info and tips for this <em>awesome</em> platform since it helped me to create my first blog over 2 years ago while I was learning my first html/css and is also behind this very blog.</p>
+
+<p>But first things first, what is Jekyll?</p>
+
+<p>It’s a simple static blog-aware website generator. It uses dynamic components like layouts and templates to create fully functional ready-to-host sites. Moreover it is written in Ruby, a quite new and <em>kewl</em> language that is especially famous for its web capabilities (Ruby on Rails).</p>
+
+<p>At this point, someone could argue that <strong>wordpress</strong> does the same thing …well not quite:</p>
+
+<p>Wordpress is a complete software suit where you can browse themes/templates/plugins, and apply them to your site, it’s quite easy but it also relies on back-end code and database management, so you can’t host the site to any static website server and you have to maintain a Content Management System even for a simple blog or landing page.</p>
+
+<p>On the other hand, as we can find at Jekyll’s site:</p>
+<blockquote>
+  <p>Jekyll is a simple, blog-aware, static site generator. It takes a template directory containing raw text files in various formats, runs it through a converter (like Markdown) and our Liquid renderer, and spits out a complete, ready-to-publish static website suitable for serving with your favourite web server. Jekyll also happens to be the engine behind GitHub Pages, which means you can use Jekyll to host your project’s page, blog, or website from GitHub’s servers for free.</p>
+</blockquote>
+
+<p>So, in order to use Jekyll we need to configure a theme. A theme is basically a set of special files(html-css-js) that will serve as the basis for each and every page (called templates).</p>
+
+<h3 id="example-theme">Example Theme:</h3>
+
+<p><a href="/blog/assets/chalk.jpg" class="fluidbox-trigger">
+  <img src="/blog/assets/chalk.jpg" alt="chalk-theme" />
+</a></p>
+
+<p>I say special, because they incorporate Jekyll variables and other elements that make them to adjust automatically based on the settings in the YAML configuration file.</p>
+
+<p>The YAML file is the cornerstone of each site. Each theme has its own and its content varies, according to what the theme can offer. In this file you simply fill in your site’s details (such is base_url, social media accounts, etc) and Jekyll takes care of everything else.</p>
+
+<p>Example:</p>
+
+<figure class="highlight"><pre><code class="language-yml" data-lang="yml"><span class="c1"># Mandatory settings</span>
+
+<span class="s">baseurl</span><span class="pi">:</span> <span class="s">/</span>
+<span class="s">name</span><span class="pi">:</span> <span class="s">Chalk</span>
+<span class="s">paginate</span><span class="pi">:</span> <span class="s">25</span>
+<span class="s">paginate_path</span><span class="pi">:</span> <span class="s2">"</span><span class="s">/posts/page/:num/"</span>
+<span class="s">url</span><span class="pi">:</span> <span class="s">http://chalk.nielsenramon.com</span> <span class="c1"># add site url http://example.com/</span>
+<span class="s">blog_theme</span><span class="pi">:</span> <span class="s">light</span> <span class="c1"># Or use dark</span></code></pre></figure>
+
+<p>Now, you either need to know web-programming and create your own theme or just use a finished free jekyll theme created by someone else.
+You can find tons <a href="http://jekyllthemes.org/">here</a>, <a href="http://themes.jekyllrc.org/">here</a> and <a href="https://jekyllthemes.io/">here</a>.</p>
+
+<p>Each theme has instructions on how to install and configure it. Νοte that <em>simpler themes are less possible to encounter problems</em> during installation.</p>
+
+<p>Also <em>simple themes are easier to fiddle with</em> and change them according to your liking.The more you know about programming, the more you will be able to change the theme and custom-tailor it to your needs.</p>
+
+<p>Lastly, you need to populate the posts folder that lives in each site directory with <a href="http://lifehacker.com/5943320/what-is-markdown-and-why-is-it-better-for-my-to-do-lists-and-notes">markdown</a> files that Jekyll will turn to html.</p>
+
+<p>When I created my first blog, in order to make a change, I literally changed lines of code and see what happened.
+Inarguably that was quite stupid and time-consuming.
+If you want to change stuff, please just head over to <a href="https://www.codecademy.com/">codeacademy</a> and learn some basic html/css.</p>
+
+<h3 id="for-unix-based-systems-macos-linux-bsd">For Unix-based systems (macOS, linux, BSD)</h3>
+
+<p>After you have found the desirable theme, please head over to the <a href="https://jekyllrb.com/docs/home/">docs</a> and follow the instructions in order to install and configure Jekyll to your system. It’s quite simple and you could have your site up and running in a couple of <em>hours</em> (since it’s the first time).</p>
+
+<h3 id="for-windows">For Windows</h3>
+<p>Although there is a guide for windows <a href="https://jekyllrb.com/docs/windows/">here</a>, coding in windows is not the best idea since most things don’t run natively and you will need extra steps.I strongly suggest to use a Unix based systems. Especially for those who want to get into programming, linux is a must.</p>
+
+<h3 id="lastly">Lastly</h3>
+<p>Note that this post is not meant to serve as a complete guide but as a start for your own search.</p>
+
+<p>If you encounter any problem or have any question don’t hesitate to comment in the post, I will try to be as helpful as possible.</p>
+
+<p>Also Google is your best friend, for any problem you encounter, somewhere, someone encountered the exact same problem, posted about it and someone else replied with the answer.</p>
+
+<p>Until the next posts, cheers!</p>
+
+          </div>
+
+          <div class="article-share">
+            
+            <a href="" title="Share on Twitter" onclick="window.open('https://twitter.com/home?status=Here comes Jekyll - http://odyslam.me/blog/posts/here-comes-jekyll ', 'newwindow', 'width=500, height=225'); return false;">
+              <span class="icon icon-social-twitter"></span>
+            </a>
+            <a href="" title="Share on Facebook" onclick="window.open('https://www.facebook.com/sharer/sharer.php?u=http://odyslam.me/blog/posts/here-comes-jekyll', 'newwindow', 'width=500, height=500'); return false;">
+              <span class="icon icon-social-facebook"></span>
+            </a>
+            <a href="" title="Share on Google+" onclick="window.open('https://plus.google.com/share?url=http://odyslam.me/blog/posts/here-comes-jekyll', 'newwindow', 'width=550, height=400'); return false;">
+              <span class="icon icon-social-googleplus"></span>
+            </a>
+          </div>
+
+          
+            <div id="disqus_thread" class="article-comments"></div>
+            <script>
+              (function() {
+                  var d = document, s = d.createElement('script');
+                  s.src = '//odyslam-me.disqus.com/embed.js';
+                  s.setAttribute('data-timestamp', +new Date());
+                  (d.head || d.body).appendChild(s);
+              })();
+            </script>
+            <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+          
+        </article>
+        <footer class="footer reveal">
+  <p>
+    blog.py uses the chalk theme made by Nielsen Ramon. 2016 copyright and stuff.
+  </p>
+</footer>
+
+      </div>
+    </div>
+  </main>
+  <script type="text/javascript" src="/blog/assets/vendor.js"></script>
+<script type="text/javascript" src="/blog/assets/application.js"></script>
+
+<script src="https://ajax.googleapis.com/ajax/libs/webfont/1.6.16/webfont.js"></script>
+<script>
+  WebFont.load({
+    google: {
+      families: ['Cormorant Garamond:700', 'Lato:300,400,700']
+    }
+  });
+</script>
+
+
+  <script>
+    window.ga=function(){ga.q.push(arguments)};ga.q=[];ga.l=+new Date;
+    ga('create','UA-90109813-1','auto');ga('send','pageview')
+  </script>
+  <script src="https://www.google-analytics.com/analytics.js" async defer></script>
+
+
+</body>
+</html>
