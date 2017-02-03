@@ -3,7 +3,7 @@ $(document).ready(
         $("#terminal").focus();
         result = '<br> ';
         $(".updates").typed({
-                strings: ["hello visitor", "my name is odysseas","this animation is a cool js library I found online","please feel free to read about my projects","type help for a command list"],
+                strings: ["hello visitor", "my name is odysseas","welcome to my site","please feel free to read about my projects","type help for a command list"],
                 typeSpeed: 21,
                 backDelay: 700,
                 showCursor:false,
