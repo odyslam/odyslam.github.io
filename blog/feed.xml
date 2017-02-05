@@ -7,6 +7,14 @@
     <atom:link href="http://odyslam.me/blog/feed.xml" rel="self" type="application/rss+xml" />
     
       <item>
+        <title>Facebook Bots 101</title>
+        <description>Bots for dummies, for you and me</description>
+        <pubDate>Fri, 03 Feb 2017 00:00:00 +0200</pubDate>
+        <link>http://odyslam.me/blog/posts/facebook-bots-101</link>
+        <guid isPermaLink="true">http://odyslam.me/blog/posts/facebook-bots-101</guid>
+      </item>
+    
+      <item>
         <title>Here comes Jekyll</title>
         <description>How to build static sites in a matter of minutes</description>
         <pubDate>Thu, 19 Jan 2017 00:00:00 +0200</pubDate>
