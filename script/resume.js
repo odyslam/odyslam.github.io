@@ -40,7 +40,7 @@ $(document).keyup(
                     result = result + '<br>	25 Martiou str 112,Patras,Greece<br>\ ' +
                        'Tel: &nbsp&nbsp&nbsp(+30)6980950995<br>\
                         Skype: &nbspodys_lamtzidis<br>\
-                        Mail: <a href="mailto:odyslam@gmail.com">&nbsp&nbspodyslam@gmail.com</a><br> ';
+                        Mail: <a href="mailto:hi@odyslam.me">&nbsp&nbsphi@odyslam.me</a><br> ';
 
 
 
