@@ -3,7 +3,7 @@ $(document).ready(
         $("#terminal").focus();
         result = '<br> ';
         $(".updates").typed({
-                strings: ["hello visitor", "my name is odysseas","welcome to my site","please feel free to read about my projects","type help for a command list"],
+                strings: ["hello visitor", "my name is odysseas","type help for a command list"],
                 typeSpeed: 21,
                 backDelay: 700,
                 showCursor:false,
@@ -108,8 +108,8 @@ $(document).keyup(
                     break;
 
                 case 'projects':
-                    result = result + '<br>&nbsp&nbspGlados: A personal smart-home project | <a href ="/assets/glados.pdf" target = "_blank">Presentation&larr;</a> , <a href="https://github.com/OdysLam/GLaDOS-project" target = "_blank">Github&larr; |</a><br>\
-                                           &nbsp&nbspThis site | <a href = "https://github.com/OdysLam/odyslam.github.io" target = "_blank">Github&larr;</a><br>';
+                    result = result + '<br>Glados: A personal smart-home project | <a href ="/assets/glados.pdf" target = "_blank">Presentation&larr;</a> , <a href="https://github.com/OdysLam/GLaDOS-project" target = "_blank">Github&larr; |</a><br>\
+                                           This site | <a href = "https://github.com/OdysLam/odyslam.github.io" target = "_blank">Github&larr;</a><br>';
 
                     break;
 
@@ -119,8 +119,8 @@ $(document).keyup(
 
 
                 case 'about':
-                    result = result + '<br>&nbspThis site was made with &hearts; by me, based on terminal resume by Kevin Grillet<br>\
-                                           &nbspTyped.js is used,please leave a star @<a href="http://www.mattboldt.com/demos/typed-js/" target ="_blank">Mattboldt&larr;</a>';
+                    result = result + '<br>This site was made with &hearts; by me, based on terminal resume by Kevin Grillet<br>\
+                                           Typed.js is used,please leave a star @<a href="http://www.mattboldt.com/demos/typed-js/" target ="_blank">Mattboldt&larr;</a>';
 			    break;
 		case 'blog':
                      window.open('/blog/', '_self'); 
