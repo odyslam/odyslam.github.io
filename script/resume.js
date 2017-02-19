@@ -14,9 +14,10 @@ $(document).keyup(
     function(e) {
         if (e.keyCode == 13) {
             var result = $('#label').html();
-            result = result.replace(/</g, "&lt;").replace(/>/g, "&gt;"); /* prevent XSS attacks */
             var root = "guest@raspberry ~ $ ";
             var tmp = $("#terminal").val().toLowerCase();
+            tmp = tmp.replace(/</g, "&lt;").replace(/>/g, "&gt;"); /* prevent XSS attacks */
+
             root = root + tmp;
             $('#terminal').val('');
             result = result + root;
