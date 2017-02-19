@@ -1,5 +1,6 @@
 body {
     background-color: #121111;
+    -webkit-text-size-adjust: 100%;
 }
 
 p {
