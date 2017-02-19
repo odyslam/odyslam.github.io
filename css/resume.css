@@ -14,7 +14,7 @@ a:hover {
 
 .console {
     font-family: monospace;
-    font-size: 1.5vw;
+    font-size: 2.6vmin;
     display:block;
     margin-left:0;
     color: white;
@@ -25,7 +25,7 @@ a:hover {
 
 #terminal {
     font-family: monospace;
-    font-size: 1.5vw;
+    font-size: 2.6vmin;
     color: white;
     background: #121111;
     border: none;
