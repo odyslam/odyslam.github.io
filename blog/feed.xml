@@ -7,6 +7,14 @@
     <atom:link href="http://odyslam.me/blog/feed.xml" rel="self" type="application/rss+xml" />
     
       <item>
+        <title>Control Spotify via REST</title>
+        <description>In other words, my first shareable python scirpt</description>
+        <pubDate>Fri, 28 Apr 2017 00:00:00 +0300</pubDate>
+        <link>http://odyslam.me/blog/posts/spotify-api</link>
+        <guid isPermaLink="true">http://odyslam.me/blog/posts/spotify-api</guid>
+      </item>
+    
+      <item>
         <title>Facebook Bots 101</title>
         <description>Bots for dummies, for you and me</description>
         <pubDate>Fri, 03 Feb 2017 00:00:00 +0200</pubDate>
