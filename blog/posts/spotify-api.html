@@ -119,32 +119,32 @@
 
 <p>Simply clone the <a href="https://github.com/OdysLam/spotify-local-http-api">repo</a> and follow the instructions!</p>
 
-<h2 id="how-does-it-works">How does it work?</h2>
+<h2 id="how-does-it-work">How does it work?</h2>
 
-<p>While surfing the Internet I discovered <a href="http://cgbystrom.com/articles/deconstructing-spotifys-builtin-http-server/">this</a> blog-post about an http-server behind every spotify client. 
-Apparently, in order to use the spotify-play button, found on many websites, there is a “secret” server that is listening for commands. So, all you have to do is to <em>emulate</em> them!</p>
+<p>While surfing the Internet I discovered <a href="http://cgbystrom.com/articles/deconstructing-spotifys-builtin-http-server/">this</a> blog post. It talked about an http-server behind every spotify client. 
+Apparently, in order to use the spotify-play button, found on many websites, there is a “secret” server that is listening for commands. So, all you have to do is to find the proper requests and make them.</p>
 
-<p>Thankfuly, the blogger had done the job for us, creating a simple script that creates the right tokens and send the proper commands.</p>
+<p>Thankfully, the blogger had done the job for us, creating a simple script that builds the right tokens and send the proper commands.</p>
 
-<p>And when I thought that I had finally found a way to automate my spotify device (after searching for a year for a method), shit hit the fan.</p>
+<p>And when I thought that I had finally found a way to automate my spotify device (after searching for a year for a method), I encountered yet another obstacle.</p>
 
-<p>To my surprise,the spotify server was only accessible from the computer from which was running.</p>
+<p>To my surprise,the spotify server was only accessible from the computer from which was running, i.e <em>localhost</em>.</p>
 
 <p></p>
 <iframe src="//giphy.com/embed/EvI2hOThzExNe" width="480" height="255.35999999999999" frameborder="0" class="giphy-embed" allowfullscreen=""></iframe>
 <p></p>
 
-<p>But, then it hit me again. Why not deploy my own REST server, relaying the commands to spotify. The concept was quite easy, thanks to <a href="http://flask.pocoo.org/">flask</a>.</p>
+<p>But, then it hit me again. Why not deploy my own REST server on the same device, that will listen for commands that I define and then simply make proper requests. The concept was quite easy, thanks to <a href="http://flask.pocoo.org/">flask</a>.</p>
 
-<p><strong>Flask</strong> is a micro-framework for web developement. You can create simple applications in a breeze, and for the needs of the project, the default dev server that comes bundled with flask suffice.</p>
+<p><strong>Flask</strong> is a cool micro-framework for web development. You can create simple web applications in a breeze, and for the needs of the project, the default development server that comes bundled is more than enough.</p>
 
 <h2 id="some-code">Some Code:</h2>
 
-<p>The core is the decorator <code class="highlighter-rouge">@app.route('string')</code> that decorates the function that will run each time the string route is accessed.</p>
+<p>The core of every flask app is the decorator <code class="highlighter-rouge">@app.route('string')</code> that decorates the function that will run each time the string route is accessed.</p>
 
-<p>If we type <code class="highlighter-rouge">http://ip.of.server:port/play</code> in the browser , we activate the <code class="highlighter-rouge">@app.route(/play).</code></p>
+<p>If we type <code class="highlighter-rouge">http://ip.of.server:port/play</code> in the browser , we activate the function under <code class="highlighter-rouge">@app.route(/play).</code></p>
 
-<p>In my server when we enter play, we must also put the URI of the playlist/song that we want to play.If ‘uri’ is empty, meaning I typed <code class="highlighter-rouge">/play</code> and not <code class="highlighter-rouge">/play/uri</code>, it return an error.</p>
+<p>When we enter the play command we must also put the URI of the playlist/song that we want to play. If <code class="highlighter-rouge">uri</code> is empty, meaning I typed <code class="highlighter-rouge">/play</code> and not <code class="highlighter-rouge">/play/uri</code>, it return an error.</p>
 
 <figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="nd">@app.route</span><span class="p">(</span><span class="s">'/'</span><span class="p">)</span>
 <span class="k">def</span> <span class="nf">index</span><span class="p">():</span>
@@ -169,7 +169,7 @@ Apparently, in order to use the spotify-play button, found on many websites, the
 
 <h2 id="what-about-the-spotify-script">What about the spotify script?</h2>
 
-<p>Well, better not to dwell in the spotify script, it simply defines the right structure of the requests that spotify needs in order to be controlled. There should be more commands , like <code class="highlighter-rouge">/shuffle.json</code>, but I didn’t have time to experiment.</p>
+<p>Well, better not to dwell in the spotify script, it simply defines the right structure of the requests that spotify needs in order to be controlled. There should be more commands , like <code class="highlighter-rouge">/shuffle.json</code>, but I still haven’t looked into it.</p>
 
 <p>Please do feel free to experiment and enrich the server with more commands!</p>
 
@@ -208,7 +208,7 @@ Apparently, in order to use the spotify-play button, found on many websites, the
         </article>
         <footer class="footer reveal">
   <p>
-    blog.py uses the chalk theme made by Nielsen Ramon. 2016 copyright and stuff.
+    blog.py, 2017 no copyright and stuff. 
   </p>
 </footer>
 
