@@ -72,7 +72,7 @@ $(document).keyup(
 
                 case 'education':
                     result = result + '<br>	2014 - Current: Electrical Engineering & Computer Science, University of Patras,Greece<br>\
-                                            &nbsp&nbsp GPA: 7.42/10<br>\
+                                            &nbsp&nbsp GPA: 7.2/10<br>\
                                             &nbsp&nbsp Member of numerous student organisations (IEEE,BEST,EESTEC)<br>\
                                             &nbsp&nbsp Executive officer at Mindspace Patras, the first Entrepreneurship club in UoP<br>\
                                             2011-2014 High School Diploma, Experimental High School of Evangelic<br>\
@@ -111,7 +111,8 @@ $(document).keyup(
 
                 case 'projects':
                     result = result + '<br>Glados: A personal smart-home project | <a href ="/assets/glados.pdf" target = "_blank">Presentation&larr;</a> , <a href="https://github.com/OdysLam/GLaDOS-project" target = "_blank">Github&larr; |</a><br>\
-                                           This site | <a href = "https://github.com/OdysLam/odyslam.github.io" target = "_blank">Github&larr;</a><br>';
+                                           This site | <a href = "https://github.com/OdysLam/odyslam.github.io" target = "_blank">Github&larr; |</a><br>\
+                                           Spotify local RESTful API | <a href = "https://github.com/OdysLam/spotify-local-http-api" target = "_blank">Github&larr; |</a><br>';
 
                     break;
 
