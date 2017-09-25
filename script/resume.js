@@ -147,7 +147,7 @@ $(document).ready(
         $("#terminal").focus();
         result = '<br> ';
         $(".updates").typed({
-            strings: ["hello visitor","to navigate, click or type the commands","use sk<span class = \"nav_button\">help</span> for a Command List"],
+            strings: ["hello visitor","to navigate, click or type the commands","use <span class = \"nav_button\">help</span> for a Command List"],
             typeSpeed: 50,
             backDelay: 800,
             showCursor: false,
