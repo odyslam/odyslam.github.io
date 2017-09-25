@@ -150,8 +150,8 @@ $(document).ready(
         result = '<br> ';
         $(".updates").typed({
             strings: ["hello visitor","to navigate, click or type the commands","type or click <span class = \"nav_button\">help</span> for a Command List"],
-            typeSpeed: 60,
-            backDelay: 800,
+            typeSpeed: 25,
+            backDelay: 500,
             showCursor: false,
             callback : function(){
                 console.log("typed completed")
