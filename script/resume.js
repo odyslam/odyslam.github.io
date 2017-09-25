@@ -129,6 +129,8 @@ $(document).keyup(
 
                 result = result + '<br>';
                 $('#label').html(result);
+                //needed to clear older binds
+                $('.nav_button').unbind();
                 $(".nav_button").click(function(){
                     var value = $(this).text();
                     console.log(value);
