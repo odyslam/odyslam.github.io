@@ -63,7 +63,7 @@ $(document).keyup(
                     case 'education':
                         result = result + '<br>	2014 - Current: Electrical Engineering & Computer Science, University of Patras,Greece<br>\
                                             &nbsp&nbsp GPA: 7.2/10<br>\
-                                            &nbsp&nbsp Member of numerous student organisations (IEEE,BEST,EESTEC)<br>\
+                                            &nbsp&nbsp Thesis (2017 - Current): Precision Agriculture using RFID technology, part of AgrioIot program<br>\
                                             &nbsp&nbsp Executive officer at Mindspace Patras, the first Entrepreneurship club in UoP<br>\
                                             2011-2014 High School Diploma, Experimental High School of Evangelic<br>\
                                             &nbsp&nbsp Grade: 19.5 | Panhellenic examinations for university entry: 18.706/20.000<br>';
@@ -100,7 +100,7 @@ $(document).keyup(
                         break;
 
                     case 'projects':
-                        result = result + '<br>Glados: A personal smart-home project | <a href ="/assets/glados.pdf" target = "_blank">Presentation&larr;</a> , <a href="https://github.com/OdysLam/GLaDOS-project" target = "_blank">Github&larr; |</a><br>\
+                        result = result + '<br>Glados: A personal smart-home project | <a href ="/assets/glados_paper.pdf" target = "_blank">Paper&larr;</a> , <a href="https://github.com/OdysLam/GLaDOS-project" target = "_blank">Github&larr; |</a><br>\
                                            This site | <a href = "https://github.com/OdysLam/odyslam.github.io" target = "_blank">Github&larr; |</a><br>\
                                            Spotify local RESTful API | <a href = "https://github.com/OdysLam/spotify-local-http-api" target = "_blank">Github&larr; |</a><br>';
 
@@ -133,7 +133,6 @@ $(document).keyup(
                 $('.nav_button').unbind();
                 $(".nav_button").click(function(){
                     var value = $(this).text();
-                    console.log(value);
                     $('#terminal').val(value);
                     var e = jQuery.Event('keyup');
                     e.keyCode = 13;
