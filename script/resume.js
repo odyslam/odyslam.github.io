@@ -100,7 +100,7 @@ $(document).keyup(
                         break;
 
                     case 'projects':
-                        result = result + '<br>Glados: A personal smart-home project | <a href ="/assets/glados_paper.pdf" target = "_blank">Paper&larr;</a> , <a href="https://github.com/OdysLam/GLaDOS-project" target = "_blank">Github&larr; |</a><br>\
+                        result = result + '<br>Glados: A DIY smart-home project | <a href ="/assets/glados_paper.pdf" target = "_blank">Paper&larr;</a> , <a href="https://github.com/OdysLam/GLaDOS-project" target = "_blank">Github&larr; |</a><br>\
                                            This site | <a href = "https://github.com/OdysLam/odyslam.github.io" target = "_blank">Github&larr; |</a><br>\
                                            Spotify local RESTful API | <a href = "https://github.com/OdysLam/spotify-local-http-api" target = "_blank">Github&larr; |</a><br>';
 
