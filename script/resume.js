@@ -13,17 +13,17 @@ $(document).keyup(
 
                 switch (tmp) {
                     case 'help':
-                        result = result + '<br>	<span class = "nav_button">help</span> &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp Show a list of available commands<br>\
-										<span class = "nav_button">contact</span> &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp Show contact information<br>\
-										<span class = "nav_button">skills</span> &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp Show a list available skills.<br>\
-										<span class = "nav_button">education</span>  &nbsp&nbsp&nbsp&nbsp Show a list of available Degrees<br>\
-										<span class = "nav_button">info</span> &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp Show general info about me<br>\
-										<span class = "nav_button">experience</span> &nbsp&nbsp&nbsp Show a list of available experience<br>\
-										<span class = "nav_button">clear</span> &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp Clear the console<br>\
-										<span class = "nav_button">social</span> &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp Show a list of available social media<br>\
-										<span class = "nav_button">projects</span> &nbsp&nbsp&nbsp&nbsp&nbsp Show a list of the available past projects<br>\
-                                        <span class = "nav_button">blog</span> &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp Navigate my personal technology blog<br>\
-										<span class = "nav_button">about</span> &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp Show info about this site ';
+                        result = result + '<br>	<span style="cursor:pointer" class = "nav_button">help</span> &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp Show a list of available commands<br>\
+										<span style="cursor:pointer" class = "nav_button">contact</span> &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp Show contact information<br>\
+										<span style="cursor:pointer" class = "nav_button">skills</span> &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp Show a list available skills.<br>\
+										<span style="cursor:pointer" class = "nav_button">education</span>  &nbsp&nbsp&nbsp&nbsp Show a list of available Degrees<br>\
+										<span style="cursor:pointer" class = "nav_button">info</span> &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp Show general info about me<br>\
+										<span style="cursor:pointer" class = "nav_button">experience</span> &nbsp&nbsp&nbsp Show a list of available experience<br>\
+										<span style="cursor:pointer" class = "nav_button">clear</span> &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp Clear the console<br>\
+										<span style="cursor:pointer" class = "nav_button">social</span> &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp Show a list of available social media<br>\
+										<span style="cursor:pointer" class = "nav_button">projects</span> &nbsp&nbsp&nbsp&nbsp&nbsp Show a list of the available past projects<br>\
+                                        <span style="cursor:pointer" class = "nav_button">blog</span> &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp Navigate my personal technology blog<br>\
+										<span style="cursor:pointer" class = "nav_button">about</span> &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp Show info about this site ';
 
                         break;
 
@@ -123,7 +123,7 @@ $(document).keyup(
                         result = result;
                         break;
                     default:
-                        result = result + '<br> -bash: ' + tmp + ' is not a known command, please type or click <span class = "nav_button">help</span> <br>';
+                        result = result + '<br> -bash: ' + tmp + ' is not a known command, please type/click <span style="cursor:pointer" class = "nav_button">help</span> <br>';
                         break;''
                 }
 
@@ -148,7 +148,7 @@ $(document).ready(
         $("#terminal").focus();
         result = '<br> ';
         $(".updates").typed({
-            strings: ["hello visitor","to navigate, click or type the commands","type or click <span class = \"nav_button\">help</span> for a Command List"],
+            strings: ["hello visitor","to navigate, click/type the commands","type/click <span style=\"cursor:pointer\" class = \"nav_button\">help</span> for a Command List"],
             typeSpeed: 25,
             backDelay: 500,
             showCursor: false,
