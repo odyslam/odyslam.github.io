@@ -1,15 +1,16 @@
+var root = 'ip@raspberry ~ $ ';
+
 $(document).keyup(
         function(e) {
             if (e.keyCode == 13) {
                 console.log("event triggered");
                 var result = $('#label').html();
-                var root = "guest@raspberry ~ $ ";
+
                 var tmp = $("#terminal").val().toLowerCase();
                 tmp = tmp.replace(/</g, "&lt;").replace(/>/g, "&gt;"); /* prevent XSS attacks */
-
-                root = root + tmp;
+                var rootTemp = root + tmp;
                 $('#terminal').val('');
-                result = result + root;
+                result = result + rootTemp;
 
                 switch (tmp) {
                     case 'help':
@@ -82,11 +83,9 @@ $(document).keyup(
                         break;
 
                     case 'experience':
-                        result = result + '<br>April 2016 - current<br>\
+                        result = result + '<br>April 2016 - September 2017<br>\
 											&nbsp&nbspSocial Media Manager, PatrasIQ<br>\
-												&nbsp&nbsp Managing the online brand/promotion of Patras IQ during, after the event and throughout the year <br>\
-											April 2015 - 2015 April<br>\
-												&nbsp&nbsp Online presence and promotion of Patras IQ Exhibition before and during the event<br>';
+												&nbsp&nbsp Managing the online brand/promotion of Patras IQ during, after the event and throughout the year <br>';
                         break;
 
                     case 'clear':
@@ -146,6 +145,11 @@ $(document).keyup(
 $(document).ready(
     function() {
         $("#terminal").focus();
+        $.getJSON('https://ipinfo.io/json', function(data) {
+            ip = data['ip'];
+            root = ip + '@raspberry ~ $ ';
+            $('#user').html(root);
+        });
         result = '<br> ';
         $(".updates").typed({
             strings: ["hello visitor","to navigate, click/type the commands","type/click <span style=\"cursor:pointer\" class = \"nav_button\">help</span> for a Command List"],
