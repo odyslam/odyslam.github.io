@@ -75,21 +75,24 @@ $(document).keyup(
 
                     case 'projects':
                         result = result + '&nbsp <br>\
-                                       <br>Glados: A DIY smart-home project | <a href = "/assets/glados_pres.pdf" target = "_blank">Presentation&larr;</a>, <a href ="/assets/glados_paper.pdf" target = "_blank">Paper&larr;</a>, <a href="https://github.com/OdysLam/GLaDOS-project" target = "_blank">Github&larr; |</a><br>\
+                                       <br>Education & Research || Published Research, Tutorials, etc. , 2017-  |  <a href = "https://www.researchgate.net/profile/Odysseas_Lamtzidis" target = "_blank">ResearchGate&larr; |</a><br>\
                                            &nbsp <br>\
-                                           Odyslam.me | <a href = "https://github.com/OdysLam/odyslam.github.io" target = "_blank">Github&larr; |</a><br>\
+                                           Dimitra || 1st Prize CruiseInn, 2018  | <a href = "/assets/dimitra_cruiseinn18.pdf" target = "_blank">CruseInn Pitch-Deck(Greek)&larr;, <a href = "https://getcruiseinn.com/" target = "_blank">CruiseInn&larr; |</a><br>\
                                            &nbsp <br>\
-                                           Business Card | <a href = "/assets/biz_card.pdf" target = "_blank">Pdf&larr; |</a><br>\
+                                           Pangea || 1st Prize MIT Bootcamp on I&E, 2018  | <a href = "/assets/pangea_bootcamp18.pdf" target = "_blank">Bootcamp Pitch-Deck&larr;, <a href = "http://bootcamp.mit.edu/entrepreneurship/" target = "_blank">Bootcamp&larr; |</a><br>\
                                            &nbsp <br>\
-                                           Spotify local RESTful API | <a href = "https://github.com/OdysLam/spotify-local-http-api" target = "_blank">Github&larr; |</a><br>\
+                                           Odyssey to MIT || A crowdfunding Campaign, 2018  | <a href = "https://www.giveandfund.com/giveandfund/project/odysseytomit" target = "_blank"> Site&larr;, <a href ="https://www.facebook.com/odysseytomit" target = "_blank">Facebook Page&larr;</a> |</a><br>\
                                            &nbsp <br>\
-                                           Mindspace | <a href = "https://www.mindspace.gr" target = "_blank">Mindspace&larr; |</a><br>\
+                                           Business Card || My business card\'s design, 2018  | <a href = "/assets/biz_card.pdf" target = "_blank">Pdf&larr;, <a href = "/assets/biz_card.ai" target = "_blank">Illustator&larr; |</a><br>\
                                            &nbsp <br>\
-                                           Odyssey to MIT: A crowdfunding Campaign  | <a href = "https://www.giveandfund.com/giveandfund/project/odysseytomit" target = "_blank"> Site&larr;, <a href ="https://www.facebook.com/odysseytomit" target = "_blank">Facebook Page&larr;</a> |</a><br>\
+                                           Spotify API || Control spotify via HTTP calls, 2017  | <a href = "https://github.com/OdysLam/spotify-local-http-api" target = "_blank">Github&larr; |</a><br>\
                                            &nbsp <br>\
-                                           Research | <a href = "https://www.google.gr" target = "_blank">TBA&larr; |</a><br>\
+                                           Odyslam.me || This website, 2016-  | <a href = "https://github.com/OdysLam/odyslam.github.io" target = "_blank">Github&larr; |</a><br>\
                                            &nbsp <br>\
-                                           Pangea | <a href = "https://www.google.gr" target = "_blank">TBA&larr; |</a><br>';
+                                           Mindspace || Founded Patras Chapter, 2016  | <a href = "https://www.mindspace.gr" target = "_blank">Mindspace&larr; |</a><br>\
+                                           &nbsp <br>\
+                                           Glados V1 || A DIY smart-home project, 2015-2017  | <a href = "/assets/glados_pres.pdf" target = "_blank">Presentation&larr;</a>, <a href="https://github.com/OdysLam/GLaDOS-project" target = "_blank">Github&larr; |</a><br>\
+                                           &nbsp <br>\ ';
 
                         break;
 
