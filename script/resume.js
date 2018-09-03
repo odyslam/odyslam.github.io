@@ -108,7 +108,7 @@ $(document).keyup(
                         break;
 
                     case 'exit':
-                        window.open('','_self').close();
+                        window.open('https://www.google.gr','_self');
                         break;
 
 
