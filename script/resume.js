@@ -1,4 +1,5 @@
 var root = 'ip@raspberry ~ $ ';
+var ip;
 
 $(document).keyup(
         function(e) {
@@ -18,19 +19,21 @@ $(document).keyup(
                                         &nbsp <br>\
                                         <span style="cursor:pointer" class = "nav_button">help</span> &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp List of available commands<br>\
 										&nbsp <br>\
-										<span style="cursor:pointer" class = "nav_button">info</span> &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp Odysseas Resumé<br>\
+										<span style="cursor:pointer" class = "nav_button">info</span> &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp Information & Resumé<br>\
 										&nbsp <br>\
 										<span style="cursor:pointer" class = "nav_button">contact</span> &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp Contact information<br>\
 										&nbsp <br>\
-										<span style="cursor:pointer" class = "nav_button">social media</span> &nbsp List of available social media<br>\
+										<span style="cursor:pointer" class = "nav_button">social media</span> &nbsp Available social media<br>\
                                         &nbsp <br>\
-										<span style="cursor:pointer" class = "nav_button">projects</span> &nbsp&nbsp&nbsp&nbsp&nbsp Odysseas portofolio <br>\
+										<span style="cursor:pointer" class = "nav_button">projects</span> &nbsp&nbsp&nbsp&nbsp&nbsp Odysseas portfolio <br>\
                                         &nbsp <br>\
                                         <span style="cursor:pointer" class = "nav_button">blog</span> &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp Navigate the blog<br>\
                                         &nbsp <br>\
-                                        <span style="cursor:pointer" class = "nav_button">about</span> &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp Info about this site <br>\
+                                        <span style="cursor:pointer" class = "nav_button">about</span> &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp About this site <br>\
                                         &nbsp <br>\
                                         <span style="cursor:pointer" class = "nav_button">clear</span> &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp Clear the console<br>\
+                                        &nbsp <br>\
+                                        <span style="cursor:pointer" class = "nav_button">Exit</span> &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp Exit this terminal<br>\
 										 ';
 
                         break;
@@ -77,19 +80,27 @@ $(document).keyup(
                         result = result + '&nbsp <br>\
                                        <br>Education & Research || Published Research, Tutorials, etc. , 2017-  |  <a href = "https://www.researchgate.net/profile/Odysseas_Lamtzidis" target = "_blank">ResearchGate&larr; |</a><br>\
                                            &nbsp <br>\
+                                           &nbsp <br>\
                                            Dimitra || 1st Prize CruiseInn, 2018  | <a href = "/assets/dimitra_cruiseinn18.pdf" target = "_blank">CruseInn Pitch-Deck(Greek)&larr;, <a href = "https://getcruiseinn.com/" target = "_blank">CruiseInn&larr; |</a><br>\
+                                           &nbsp <br>\
                                            &nbsp <br>\
                                            Pangea || 1st Prize MIT Bootcamp on I&E, 2018  | <a href = "/assets/pangea_bootcamp18.pdf" target = "_blank">Bootcamp Pitch-Deck&larr;, <a href = "http://bootcamp.mit.edu/entrepreneurship/" target = "_blank">Bootcamp&larr; |</a><br>\
                                            &nbsp <br>\
+                                           &nbsp <br>\
                                            Odyssey to MIT || A crowdfunding Campaign, 2018  | <a href = "https://www.giveandfund.com/giveandfund/project/odysseytomit" target = "_blank"> Site&larr;, <a href ="https://www.facebook.com/odysseytomit" target = "_blank">Facebook Page&larr;</a> |</a><br>\
                                            &nbsp <br>\
-                                           Business Card || My business card\'s design, 2018  | <a href = "/assets/biz_card.pdf" target = "_blank">Pdf&larr;, <a href = "/assets/biz_card.ai" target = "_blank">Illustator&larr; |</a><br>\
+                                           &nbsp <br>\
+                                           Business Card || My business card\'s design, 2018  | <a href = "/assets/biz_card.pdf" target = "_blank">Pdf&larr;, <a href = "https://drive.google.com/file/d/1CX0Qs97vnFbP5KL7ZpTtoAbqrjVDQG9y/view?usp=sharing target = "_blank">Illustator&larr; |</a><br>\
+                                           &nbsp <br>\
                                            &nbsp <br>\
                                            Spotify API || Control spotify via HTTP calls, 2017  | <a href = "https://github.com/OdysLam/spotify-local-http-api" target = "_blank">Github&larr; |</a><br>\
                                            &nbsp <br>\
+                                           &nbsp <br>\
                                            Odyslam.me || This website, 2016-  | <a href = "https://github.com/OdysLam/odyslam.github.io" target = "_blank">Github&larr; |</a><br>\
                                            &nbsp <br>\
+                                           &nbsp <br>\
                                            Mindspace || Founded Patras Chapter, 2016  | <a href = "https://www.mindspace.gr" target = "_blank">Mindspace&larr; |</a><br>\
+                                           &nbsp <br>\
                                            &nbsp <br>\
                                            Glados V1 || A DIY smart-home project, 2015-2017  | <a href = "/assets/glados_pres.pdf" target = "_blank">Presentation&larr;</a>, <a href="https://github.com/OdysLam/GLaDOS-project" target = "_blank">Github&larr; |</a><br>\
                                            &nbsp <br>\ ';
@@ -97,7 +108,7 @@ $(document).keyup(
                         break;
 
                     case 'exit':
-                        void window.close();
+                        window.open('','_self').close();
                         break;
 
 
@@ -113,7 +124,7 @@ $(document).keyup(
                         result = result;
                         break;
                     default:
-                        result = result + '<br> -bash: ' + tmp + ' is not a known command, please type/click <span style="cursor:pointer" class = "nav_button">help</span> <br>';
+                        result = result + '<br> -bash: ' + tmp + ' is incorrect or forbidden for IP:<' + ip + '>, please type or click <span style="cursor:pointer" class = "nav_button">help</span> <br>';
                         break;''
                 }
 
@@ -143,7 +154,7 @@ $(document).ready(
         });
         result = '<br> ';
         $(".updates").typed({
-            strings: ["hello visitor","to navigate, click/type the commands","type/click <span style=\"cursor:pointer\" class = \"nav_button\">help</span> for a Command List"],
+            strings: ["hello visitor","to navigate, click or type the commands","type or click <span style=\"cursor:pointer\" class = \"nav_button\">help</span> for a Command List"],
             typeSpeed: 25,
             backDelay: 500,
             showCursor: false,
