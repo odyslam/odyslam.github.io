@@ -192,6 +192,14 @@ $(document).ready(
                 });
             }
         });
+        /// fetch appropriate analytics object ///
+        if ("ga" in window) {
+            tracker = ga.getAll()[0];
+            if (tracker)
+                tracker.send("event", "Test", "Test GA");
+        }
+        ///
+        // Add cv tracking//
         $('#cv').click(function () {
             ga('send', 'event', 'CV', 'click');
 
