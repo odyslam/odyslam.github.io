@@ -1,5 +1,7 @@
 var root = 'ip@raspberry ~ $ ';
 var ip;
+var commandHistory = [];
+var commandHistoryCounter = 1;
 
 (function (i, s, o, g, r, a, m) {
     i['GoogleAnalyticsObject'] = r;
@@ -14,8 +16,15 @@ var ip;
 })(window, document, 'script', 'https://www.google-analytics.com/analytics.js', 'ga');
 
 ga('create', 'UA-90109813-1', 'auto');
+ga(function (tracker) {
+    var clientId = tracker.get('clientId');
+    console.log(clientId);
+});
 ga('send', 'pageview');
 
+/// fetch appropriate analytics object ///
+
+///
 $(document).keyup(
     function (e) {
         if (e.keyCode == 13) {
@@ -28,12 +37,15 @@ $(document).keyup(
             $('#terminal').val('');
             result = result + rootTemp;
             ga('send', {
-                hitType: 'type',
+                    hitType: 'event',
                 eventCategory: 'terminal',
                 eventAction: 'keystroke',
-                eventLabel: tmp
-            });
-            console.log(tmp);
+                    eventLabel: tmp,
+                    eventValue: 1
+                }
+            );
+            commandHistory.push(tmp);
+            commandHistoryCounter = commandHistory.length;
             switch (tmp) {
                 case 'help':
                     result = result + ' &nbsp <br>\
@@ -160,9 +172,44 @@ $(document).keyup(
                 e.keyCode = 13;
                 $('.console').trigger(e);
             });
+            $('#cv').unbind();
+            $('#cv').click(function () {
+                ga('send', {
+                        hitType: 'event',
+                        eventCategory: 'cv',
+                        eventAction: 'Click',
+                        eventLabel: "Clicked on PDF",
+                        eventValue: 1
+                    }
+                );
+                console.log("clicked on cv")
+
+            })
+
             $('html, body').animate({
                 scrollTop: $("#terminal").offset().top
             }, 1);
+        }
+        else if (e.keyCode == 38) {
+            console.log("up arrow was pressed")
+            commandHistoryCounter -= 1;
+            if (commandHistoryCounter < 0) {
+                commandHistoryCounter = 0;
+            }
+            htmp = commandHistory[commandHistoryCounter];
+            $('#terminal').val(htmp);
+        }
+        else if (e.keyCode == 40) {
+            commandHistoryCounter += 1;
+            if (commandHistoryCounter > commandHistory.length - 1) {
+                commandHistoryCounter = commandHistory.length;
+                $('#terminal').val("");
+                return ""
+
+            }
+            htmp = commandHistory[commandHistoryCounter];
+            $('#terminal').val(htmp);
+
         }
     }
 )
@@ -192,18 +239,8 @@ $(document).ready(
                 });
             }
         });
-        /// fetch appropriate analytics object ///
-        if ("ga" in window) {
-            tracker = ga.getAll()[0];
-            if (tracker)
-                tracker.send("event", "Test", "Test GA");
-        }
-        ///
-        // Add cv tracking//
-        $('#cv').click(function () {
-            ga('send', 'event', 'CV', 'click');
 
-        })
+        // Add cv tracking//
 
 
     })
