@@ -30,7 +30,7 @@ $(document).keyup(
             ga('send', {
                 hitType: 'type',
                 eventCategory: 'terminal',
-                eventAction: 'type',
+                eventAction: 'keystroke',
                 eventLabel: tmp
             });
             console.log(tmp);
