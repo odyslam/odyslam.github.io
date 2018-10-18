@@ -1,18 +1,31 @@
 var root = 'ip@raspberry ~ $ ';
 var ip;
 
+(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+        (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+ga('create', 'UA-90109813-1', 'auto');
+ga('send', 'pageview');
+
 $(document).keyup(
         function(e) {
             if (e.keyCode == 13) {
                 console.log("event triggered");
                 var result = $('#label').html();
-
                 var tmp = $("#terminal").val().toLowerCase();
                 tmp = tmp.replace(/</g, "&lt;").replace(/>/g, "&gt;"); /* prevent XSS attacks */
                 var rootTemp = root + tmp;
                 $('#terminal').val('');
                 result = result + rootTemp;
-
+                ga('send', {
+                    hitType: 'type',
+                    eventCategory: 'terminal',
+                    eventAction: 'type',
+                    eventLabel: tmp
+                });
+               // console.log(tmp);
                 switch (tmp) {
                     case 'help':
                         result = result + ' &nbsp <br>\
@@ -33,7 +46,7 @@ $(document).keyup(
                                         &nbsp <br>\
                                         <span style="cursor:pointer" class = "nav_button">clear</span> &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp Clear the console<br>\
                                         &nbsp <br>\
-                                        <span style="cursor:pointer" class = "nav_button">Exit</span> &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp Exit this terminal<br>\
+                                        <span style="cursor:pointer" class = "nav_button">Exit</span> &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp Exit this terminal<br>\
 										 ';
 
                         break;
@@ -56,7 +69,7 @@ $(document).keyup(
 										    Age:&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp' + age.toFixed() + '<br>\
 										    Nationality:&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbspGreek<br>\
 										    Driving permits:&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbspB<br>\
-										    Resumé:&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<a href="assets/cv.pdf" target = "_blank">pdf&larr;</a><br>';
+										    Resumé:&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<a id="cv" href="assets/cv.pdf" target = "_blank">pdf&larr;</a><br>';
                         break;
 
                     case 'clear':
@@ -155,7 +168,7 @@ $(document).ready(
         result = '<br> ';
         $(".updates").typed({
             strings: ["hello visitor","to navigate, click or type the commands","type or click <span style=\"cursor:pointer\" class = \"nav_button\">help</span> for a Command List"],
-            typeSpeed: 25,
+            typeSpeed: 15,
             backDelay: 500,
             showCursor: false,
             callback : function(){
@@ -170,6 +183,12 @@ $(document).ready(
                 });
             }
         });
+        $('#cv').click(function(){
+            ga('send', 'event', 'CV', 'click');
+
+        })
+
+
     })
 
 
