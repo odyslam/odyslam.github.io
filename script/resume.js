@@ -1,21 +1,42 @@
 var root = 'ip@raspberry ~ $ ';
 var ip;
 
+(function (i, s, o, g, r, a, m) {
+    i['GoogleAnalyticsObject'] = r;
+    i[r] = i[r] || function () {
+            (i[r].q = i[r].q || []).push(arguments)
+        }, i[r].l = 1 * new Date();
+    a = s.createElement(o),
+        m = s.getElementsByTagName(o)[0];
+    a.async = 1;
+    a.src = g;
+    m.parentNode.insertBefore(a, m)
+})(window, document, 'script', 'https://www.google-analytics.com/analytics.js', 'ga');
+
+ga('create', 'UA-90109813-1', 'auto');
+ga('send', 'pageview');
+
 $(document).keyup(
-        function(e) {
-            if (e.keyCode == 13) {
-                console.log("event triggered");
-                var result = $('#label').html();
-
-                var tmp = $("#terminal").val().toLowerCase();
-                tmp = tmp.replace(/</g, "&lt;").replace(/>/g, "&gt;"); /* prevent XSS attacks */
-                var rootTemp = root + tmp;
-                $('#terminal').val('');
-                result = result + rootTemp;
-
-                switch (tmp) {
-                    case 'help':
-                        result = result + ' &nbsp <br>\
+    function (e) {
+        if (e.keyCode == 13) {
+            console.log("event triggered");
+            var result = $('#label').html();
+            var tmp = $("#terminal").val().toLowerCase();
+            tmp = tmp.replace(/</g, "&lt;").replace(/>/g, "&gt;");
+            /* prevent XSS attacks */
+            var rootTemp = root + tmp;
+            $('#terminal').val('');
+            result = result + rootTemp;
+            ga('send', {
+                hitType: 'type',
+                eventCategory: 'terminal',
+                eventAction: 'type',
+                eventLabel: tmp
+            });
+            console.log(tmp);
+            switch (tmp) {
+                case 'help':
+                    result = result + ' &nbsp <br>\
                                         &nbsp <br>\
                                         <span style="cursor:pointer" class = "nav_button">help</span> &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp List of available commands<br>\
 										&nbsp <br>\
@@ -33,38 +54,37 @@ $(document).keyup(
                                         &nbsp <br>\
                                         <span style="cursor:pointer" class = "nav_button">clear</span> &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp Clear the console<br>\
                                         &nbsp <br>\
-                                        <span style="cursor:pointer" class = "nav_button">Exit</span> &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp Exit this terminal<br>\
+                                        <span style="cursor:pointer" class = "nav_button">Exit</span> &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp Exit this terminal<br>\
 										 ';
 
-                        break;
+                    break;
 
-                    case 'contact':
-                        result = result + '<br>	25 Martiou str 112,Patras,Greece<br>\ ' +
-                            'Tel: &nbsp&nbsp&nbsp(+30)6980950995<br>\
-                        Skype: &nbspodys_lamtzidis<br>\
-                        Mail: <a href="mailto:hi@odyslam.me">&nbsp&nbsphi@odyslam.me</a><br> ';
+                case 'contact':
+                    result = result + '<br>	25 Martiou str 112,Patras,Greece<br>\ ' +
+                        'Tel: &nbsp&nbsp&nbsp(+30)6980950995<br>\
+                    Skype: &nbspodys_lamtzidis<br>\
+                    Mail: <a href="mailto:hi@odyslam.me">&nbsp&nbsphi@odyslam.me</a><br> ';
 
 
+                    break;
 
-                        break;
-
-                    case 'info':
-                        var birthday = +new Date('1996-05-15');
-                        var age = ((Date.now() - birthday) / (31557600000));
-                        result = result + '<br>	Surname:&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbspLamtzidis<br>\
+                case 'info':
+                    var birthday = +new Date('1996-05-15');
+                    var age = ((Date.now() - birthday) / (31557600000));
+                    result = result + '<br>	Surname:&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbspLamtzidis<br>\
 										    Name:&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbspOdyssefs(Odysseas)<br>\
 										    Age:&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp' + age.toFixed() + '<br>\
 										    Nationality:&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbspGreek<br>\
 										    Driving permits:&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbspB<br>\
-										    Resumé:&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<a href="assets/cv.pdf" target = "_blank">pdf&larr;</a><br>';
-                        break;
+										    Resumé:&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<a id="cv" href="assets/cv.pdf" target = "_blank">pdf&larr;</a><br>';
+                    break;
 
-                    case 'clear':
-                        result = '';
-                        break;
+                case 'clear':
+                    result = '';
+                    break;
 
-                    case 'social media':
-                        result = result + '&nbsp <br>\
+                case 'social media':
+                    result = result + '&nbsp <br>\
                                         <br> <a href="https://gr.linkedin.com/in/lamtzidisodysseas" target = "_blank">LinkedIn &larr;</a><br>\
                                         &nbsp <br>\
 										<a href="https://github.com/OdysLam" target = "_blank">GitHub &larr;</a><br>\
@@ -74,10 +94,10 @@ $(document).keyup(
 										<a href="https://www.instagram.com/odysseytomit/" target = "_blank">Instagram &larr;</a><br>\
 										&nbsp <br>\
 										<a href="https://www.facebook.com/odysseas.lamtzidis" target = "_blank">Odyssey to MIT facebook &larr;</a><br>';
-                        break;
+                    break;
 
-                    case 'projects':
-                        result = result + '&nbsp <br>\
+                case 'projects':
+                    result = result + '&nbsp <br>\
                                        <br>Education & Research || Published Research, Tutorials, etc. , 2017-  |  <a href = "https://www.researchgate.net/profile/Odysseas_Lamtzidis" target = "_blank">ResearchGate&larr; |</a><br>\
                                            &nbsp <br>\
                                            &nbsp <br>\
@@ -105,45 +125,47 @@ $(document).keyup(
                                            Glados V1 || A DIY smart-home project, 2015-2017  | <a href = "/assets/glados_pres.pdf" target = "_blank">Presentation&larr;</a>, <a href="https://github.com/OdysLam/GLaDOS-project" target = "_blank">Github&larr; |</a><br>\
                                            &nbsp <br>\ ';
 
-                        break;
+                    break;
 
-                    case 'exit':
-                        window.open('https://www.google.gr','_self');
-                        break;
+                case 'exit':
+                    window.open('https://www.google.gr', '_self');
+                    break;
 
 
-                    case 'about':
-                        result = result + '<br>This site was made with &hearts; by me, based on terminal resume by Kevin Grillet<br>\
+                case 'about':
+                    result = result + '<br>This site was made with &hearts; by me, based on terminal resume by Kevin Grillet<br>\
                                            Typed.js is used,please leave a star @<a href="http://www.mattboldt.com/demos/typed-js/" target ="_blank">Mattboldt&larr;</a>';
-                        break;
-                    case 'blog':
-                        window.open('/blog/', '_self');
-                        break;
+                    break;
+                case 'blog':
+                    window.open('/blog/', '_self');
+                    break;
 
-                    case '':
-                        result = result;
-                        break;
-                    default:
-                        result = result + '<br> -bash: ' + tmp + ' is incorrect or forbidden for IP:<' + ip + '>, please type or click <span style="cursor:pointer" class = "nav_button">help</span> <br>';
-                        break;''
-                }
-
-                result = result + '<br>';
-                $('#label').html(result);
-                //needed to clear older binds
-                $('.nav_button').unbind();
-                $(".nav_button").click(function(){
-                    var value = $(this).text();
-                    $('#terminal').val(value);
-                    var e = jQuery.Event('keyup');
-                    e.keyCode = 13;
-                    $('.console').trigger(e);
-                });
-                $('html, body').animate({scrollTop: $("#terminal").offset().top
-                }, 1);
+                case '':
+                    result = result;
+                    break;
+                default:
+                    result = result + '<br> -bash: ' + tmp + ' is incorrect or forbidden for IP:<' + ip + '>, please type or click <span style="cursor:pointer" class = "nav_button">help</span> <br>';
+                    break;
+                    ''
             }
+
+            result = result + '<br>';
+            $('#label').html(result);
+            //needed to clear older binds
+            $('.nav_button').unbind();
+            $(".nav_button").click(function () {
+                var value = $(this).text();
+                $('#terminal').val(value);
+                var e = jQuery.Event('keyup');
+                e.keyCode = 13;
+                $('.console').trigger(e);
+            });
+            $('html, body').animate({
+                scrollTop: $("#terminal").offset().top
+            }, 1);
         }
-    )
+    }
+)
 $(document).ready(
     function() {
         $("#terminal").focus();
@@ -155,7 +177,7 @@ $(document).ready(
         result = '<br> ';
         $(".updates").typed({
             strings: ["hello visitor","to navigate, click or type the commands","type or click <span style=\"cursor:pointer\" class = \"nav_button\">help</span> for a Command List"],
-            typeSpeed: 25,
+            typeSpeed: 15,
             backDelay: 500,
             showCursor: false,
             callback : function(){
@@ -170,11 +192,15 @@ $(document).ready(
                 });
             }
         });
+        $('#cv').click(function () {
+            ga('send', 'event', 'CV', 'click');
+
+        })
+
+
     })
 
 
-
-
-    /**
-     * Created by Odys on 28/12/2016.
-     */
+/**
+ * Created by Odys on 28/12/2016.
+ */
