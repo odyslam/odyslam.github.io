@@ -3,6 +3,7 @@ var ip;
 var commandHistory = [];
 var commandHistoryCounter = 1;
 
+
 (function (i, s, o, g, r, a, m) {
     i['GoogleAnalyticsObject'] = r;
     i[r] = i[r] || function () {
@@ -110,7 +111,11 @@ $(document).keyup(
 
                 case 'projects':
                     result = result + '&nbsp <br>\
-                                       <br>Education & Research || Published Research, Tutorials, etc. , 2017-  |  <a href = "https://www.researchgate.net/profile/Odysseas_Lamtzidis" target = "_blank">ResearchGate&larr; |</a><br>\
+                                        &nbsp <br>\
+                                           Jfdo.it || Founder & Website Design, 2018 | <a href = "https://jfdo.it" target = "_blank">Website&larr; |</a><br>\
+                                           &nbsp <br>\
+                                           &nbsp <br>\
+                                           Education & Research || Published Research, Tutorials, etc. , 2017-  |  <a href = "https://www.researchgate.net/profile/Odysseas_Lamtzidis" target = "_blank">ResearchGate&larr; |</a><br>\
                                            &nbsp <br>\
                                            &nbsp <br>\
                                            Dimitra || 1st Prize CruiseInn, 2018  | <a href = "/assets/dimitra_cruiseinn18.pdf" target = "_blank">CruseInn Pitch-Deck(Greek)&larr;, <a href = "https://getcruiseinn.com/" target = "_blank">CruiseInn&larr; |</a><br>\
@@ -135,7 +140,7 @@ $(document).keyup(
                                            &nbsp <br>\
                                            &nbsp <br>\
                                            Glados V1 || A DIY smart-home project, 2015-2017  | <a href = "/assets/glados_pres.pdf" target = "_blank">Presentation&larr;</a>, <a href="https://github.com/OdysLam/GLaDOS-project" target = "_blank">Github&larr; |</a><br>\
-                                           &nbsp <br>\ ';
+                                           &nbsp <br>';
 
                     break;
 
@@ -149,7 +154,7 @@ $(document).keyup(
                                            Typed.js is used,please leave a star @<a href="http://www.mattboldt.com/demos/typed-js/" target ="_blank">Mattboldt&larr;</a>';
                     break;
                 case 'blog':
-                    window.open('/blog/', '_self');
+                    window.open('https://medium.com/@odysseaslamtzidis', '_blank');
                     break;
 
                 case '':
@@ -222,6 +227,22 @@ $(document).ready(
             $('#user').html(root);
         });
         result = '<br> ';
+        $.getJSON('announcement.json', function (data) {
+            read = data['read'];
+
+            if (read) {
+
+                $('#ann_row1').html(data['row1']);
+                $('#ann_row2').html(data['row2']);
+                $('#ann_row3').html(data['row3']);
+                $('#ann_row4').html(data['row4']);
+            }
+
+            else {
+                $("#announcement").hide();
+            }
+            $('#user').html(root);
+        });
         $(".updates").typed({
             strings: ["hello visitor","to navigate, click or type the commands","type or click <span style=\"cursor:pointer\" class = \"nav_button\">help</span> for a Command List"],
             typeSpeed: 15,
