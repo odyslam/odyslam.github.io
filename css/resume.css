@@ -14,7 +14,7 @@ a:hover {
 }
 
 #announcement.hidden {
-    visibility: hidden;
+    display: none;
 }
 
 .console {
