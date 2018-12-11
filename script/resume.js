@@ -227,7 +227,7 @@ $(document).ready(
             $('#user').html(root);
         });
         result = '<br> ';
-        $.getJSON('announcement.json', function (data) {
+        $.getJSON('http://odyslam.me/script/announcement.json', function (data) {
             read = data['read'];
 
             if (read) {
