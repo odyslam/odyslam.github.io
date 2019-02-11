@@ -231,10 +231,7 @@ $(document).ready(
             read = data['read'];
 
             if (read) {
-                $('#ann_row1').html(data['row1']);
-                $('#ann_row2').html(data['row2']);
-                $('#ann_row3').html(data['row3']);
-                $('#ann_row4').html(data['row4']);
+                $('#announcement').html(data['text']);
                 $("#announcement").show();
             }
             else {
