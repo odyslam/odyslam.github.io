@@ -107,6 +107,9 @@ $(document).keyup(
                                           <span class="project_name"> Diploma Thesis </span> ||  An IoT Edge-as-a-service (Eaas) Distributed Architecture & Reference Implementation, 2019 | <a href = "https://www.researchgate.net/publication/336564357_An_IoT_Edge-as-a-service_Eaas_Distributed_Architecture_Reference_Implementation" target = "_blank">Thesis&larr;</a>, <a href = "https://github.com/OdysLam/thesis-master" target = "_blank">Github&larr;</a> |<br>\
                                            &nbsp <br>\
                                            &nbsp <br>\
+                                           <span class="project_name"> TedX talk </span> || I am not making a Project, I am making my Future, 2019 | <a href = "https://www.youtube.com/watch?v=yn1NsY7LVxM" target = "_blank">Youtube&larr;</a> |<br>\
+                                           &nbsp <br>\
+                                           &nbsp <br>\
                                            <span class="project_name"> Jfdo.it </span> || Founder & Website Design, 2018 | <a href = "https://jfdo.it" target = "_blank">Website&larr;</a> |<br>\
                                            &nbsp <br>\
                                            &nbsp <br>\
@@ -212,7 +215,7 @@ $(document).keyup(
 )
 $(document).ready(
     function() {
-        $("#terminal").focus();
+        $(".root").hide();
         $.getJSON('https://ipinfo.io/json', function(data) {
             ip = data['ip'];
             root = ip + '@raspberry ~ $ ';
@@ -237,26 +240,34 @@ $(document).ready(
             }
             $('#user').html(root);
         });
-        $(".updates").typed({
-            strings: ["hello visitor", "welcome to my little corner in the Internet... ^1000 thank you for coming :)", "to navigate, click on the commands or simply type them in the terminal ^100", "type or click <span style=\"cursor:pointer\" class = \"nav_button\">help</span> for a command list"],
-            typeSpeed: 7,
-            backDelay: 700,
+        // Add cv tracking//
+        $(".version").typed({
+            strings: ["$python site_terminal.py <br>...<br>..."],
+            typeSpeed: 50,
+            backDelay: 900,
             showCursor: false,
-            callback : function(){
-                console.log("typed completed")
-                $(".nav_button").click(function(){
-                    var value = $(this).text();
-                    console.log(value);
-                    $('#terminal').val(value);
-                    var e = jQuery.Event('keyup');
-                    e.keyCode = 13;
-                    $('.console').trigger(e);
+            callback: function () {
+                $(".updates").typed({
+                    strings: ["hello visitor", "welcome to my little corner in the Internet, thank you for coming :)", "to navigate, click on the commands or simply type them in the terminal that will appear", "type or click <span style=\"cursor:pointer\" class = \"nav_button\">help</span> for a command list, click <<<a href=\"/assets/odysseasLamtzidis.vcf\" download>HERE<a/>>> to add me to your contacts"],
+                    typeSpeed: 30,
+                    backDelay: 900,
+                    showCursor: false,
+                    callback: function () {
+                        $(".root").show();
+                        $("#terminal").focus();
+                        console.log("typed completed")
+                        $(".nav_button").click(function () {
+                            var value = $(this).text();
+                            console.log(value);
+                            $('#terminal').val(value);
+                            var e = jQuery.Event('keyup');
+                            e.keyCode = 13;
+                            $('.console').trigger(e);
+                        });
+                    }
                 });
             }
         });
-
-        // Add cv tracking//
-
 
     })
 
