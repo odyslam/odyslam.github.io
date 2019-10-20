@@ -53,30 +53,23 @@ $(document).keyup(
                                         &nbsp <br>\
                                         <span style="cursor:pointer" class = "nav_button">help</span> &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp List of available commands<br>\
 										&nbsp <br>\
-										<span style="cursor:pointer" class = "nav_button">info</span> &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp Information & Resumé<br>\
-										&nbsp <br>\
-										<span style="cursor:pointer" class = "nav_button">contact</span> &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp Contact information<br>\
+										<span style="cursor:pointer" class = "nav_button">info</span> &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp Resumé & contact info<br>\
 										&nbsp <br>\
 										<span style="cursor:pointer" class = "nav_button">social media</span> &nbsp Available social media<br>\
                                         &nbsp <br>\
-										<span style="cursor:pointer" class = "nav_button">projects</span> &nbsp&nbsp&nbsp&nbsp&nbsp Odysseas portfolio <br>\
+										<span style="cursor:pointer" class = "nav_button">projects</span> &nbsp&nbsp&nbsp&nbsp&nbsp My portfolio <br>\
                                         &nbsp <br>\
                                         <span style="cursor:pointer" class = "nav_button">blog</span> &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp Navigate the blog<br>\
                                         &nbsp <br>\
-                                        <span style="cursor:pointer" class = "nav_button">about</span> &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp About this site <br>\
-                                        &nbsp <br>\
                                         <span style="cursor:pointer" class = "nav_button">clear</span> &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp Clear the console<br>\
-                                        &nbsp <br>\
-                                        <span style="cursor:pointer" class = "nav_button">Exit</span> &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp Exit this terminal<br>\
 										 ';
-
                     break;
 
-                case 'contact':
-                    result = result + '<br>	25 Martiou str 112,Patras,Greece<br>\ ' +
-                        'Tel: &nbsp&nbsp&nbsp(+30)6980950995<br>\
-                    Skype: &nbspodys_lamtzidis<br>\
-                    Mail: <a href="mailto:hi@odyslam.me">&nbsp&nbsphi@odyslam.me</a><br> ';
+                    // case 'contact':
+                    //     result = result + '<br>	25 Martiou str 112,Patras,Greece<br>\ ' +
+                    //         'Tel: &nbsp&nbsp&nbsp(+30)6980950995<br>\
+                    //     Skype: &nbspodys_lamtzidis<br>\
+                    //     Mail: <a href="mailto:hi@odyslam.me">&nbsp&nbsphi@odyslam.me</a><br> ';
 
 
                     break;
@@ -87,8 +80,7 @@ $(document).keyup(
                     result = result + '<br>	Surname:&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbspLamtzidis<br>\
 										    Name:&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbspOdyssefs(Odysseas)<br>\
 										    Age:&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp' + age.toFixed() + '<br>\
-										    Nationality:&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbspGreek<br>\
-										    Driving permits:&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbspB<br>\
+										    Mail:&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp <a href="mailto:hi@odyslam.me">&nbsp&nbsphi@odyslam.me</a><br> \
 										    Resumé:&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<a class = "link" id="cv" href="assets/cv.pdf" target = "_blank">pdf&larr;</a><br>';
                     break;
 
@@ -98,7 +90,7 @@ $(document).keyup(
 
                 case 'social media':
                     result = result + '&nbsp <br>\
-                                        <br> <a href="https://gr.linkedin.com/in/lamtzidisodysseas" target = "_blank">LinkedIn &larr;</a><br>\
+                                        <br> <a href="https://gr.linkedin.com/in/odysseaslamtzidis" target = "_blank">LinkedIn &larr;</a><br>\
                                         &nbsp <br>\
 										<a href="https://github.com/OdysLam" target = "_blank">GitHub &larr;</a><br>\
 										&nbsp <br>\
@@ -112,47 +104,47 @@ $(document).keyup(
                 case 'projects':
                     result = result + '&nbsp <br>\
                                         &nbsp <br>\
-                                           Jfdo.it || Founder & Website Design, 2018 | <a href = "https://jfdo.it" target = "_blank">Website&larr; |</a><br>\
+                                          <span class="project_name"> Diploma Thesis </span> ||  An IoT Edge-as-a-service (Eaas) Distributed Architecture & Reference Implementation, 2019 | <a href = "https://www.researchgate.net/publication/336564357_An_IoT_Edge-as-a-service_Eaas_Distributed_Architecture_Reference_Implementation" target = "_blank">Thesis&larr;, <a href = "https://github.com/OdysLam/thesis-master" target = "_blank">Github&larr; | </a><br>\
                                            &nbsp <br>\
                                            &nbsp <br>\
-                                           Education & Research || Published Research, Tutorials, etc. , 2017-  |  <a href = "https://www.researchgate.net/profile/Odysseas_Lamtzidis" target = "_blank">ResearchGate&larr; |</a><br>\
+                                           <span class="project_name"> Jfdo.it </span> || Founder & Website Design, 2018 | <a href = "https://jfdo.it" target = "_blank">Website&larr; |</a><br>\
                                            &nbsp <br>\
                                            &nbsp <br>\
-                                           Dimitra || 1st Prize CruiseInn, 2018  | <a href = "/assets/dimitra_cruiseinn18.pdf" target = "_blank">CruseInn Pitch-Deck(Greek)&larr;, <a href = "https://getcruiseinn.com/" target = "_blank">CruiseInn&larr; |</a><br>\
+                                           <span class="project_name"> Education & Research </span> || Published Research, Tutorials, etc. , 2017-  |  <a href = "https://www.researchgate.net/profile/Odysseas_Lamtzidis" target = "_blank">ResearchGate&larr; |</a><br>\
                                            &nbsp <br>\
                                            &nbsp <br>\
-                                           Pangea || 1st Prize MIT Bootcamp on I&E, 2018  | <a href = "/assets/pangea_bootcamp18.pdf" target = "_blank">Bootcamp Pitch-Deck&larr;, <a href = "http://bootcamp.mit.edu/entrepreneurship/" target = "_blank">Bootcamp&larr; |</a><br>\
+                                           <span class="project_name"> Dimitra </span> || 1st Prize CruiseInn, 2018  | <a href = "/assets/dimitra_cruiseinn18.pdf" target = "_blank">CruseInn Pitch-Deck(Greek)&larr;, <a href = "https://getcruiseinn.com/" target = "_blank">CruiseInn&larr; |</a><br>\
                                            &nbsp <br>\
                                            &nbsp <br>\
-                                           Odyssey to MIT || A crowdfunding Campaign, 2018  | <a href = "https://www.giveandfund.com/giveandfund/project/odysseytomit" target = "_blank"> Site&larr;, <a href ="https://www.facebook.com/odysseytomit" target = "_blank">Facebook Page&larr;</a> |</a><br>\
+                                           <span class="project_name"> Pangea </span> || 1st Prize MIT Bootcamp on I&E, 2018  | <a href = "/assets/pangea_bootcamp18.pdf" target = "_blank">Bootcamp Pitch-Deck&larr;, <a href = "http://bootcamp.mit.edu/entrepreneurship/" target = "_blank">Bootcamp&larr; |</a><br>\
                                            &nbsp <br>\
                                            &nbsp <br>\
-                                           Business Card || My business card\'s design, 2018  | <a href = "/assets/biz_card.pdf" target = "_blank">Pdf&larr;, <a href = "https://drive.google.com/file/d/1CX0Qs97vnFbP5KL7ZpTtoAbqrjVDQG9y/view?usp=sharing target = "_blank">Illustator&larr; |</a><br>\
+                                           <span class="project_name"> Odyssey to MIT </span> || A crowdfunding Campaign, 2018  | <a href = "https://www.giveandfund.com/giveandfund/project/odysseytomit" target = "_blank"> Site&larr;, <a href ="https://www.facebook.com/odysseytomit" target = "_blank">Facebook Page&larr;</a> |</a><br>\
                                            &nbsp <br>\
                                            &nbsp <br>\
-                                           Spotify API || Control spotify via HTTP calls, 2017  | <a href = "https://github.com/OdysLam/spotify-local-http-api" target = "_blank">Github&larr; |</a><br>\
+                                           <span class="project_name"> Business Card </span> || My business card\'s design, 2018  | <a href = "/assets/biz_card.pdf" target = "_blank">Pdf&larr;, <a href = "https://drive.google.com/file/d/1CX0Qs97vnFbP5KL7ZpTtoAbqrjVDQG9y/view?usp=sharing target = "_blank">Illustator&larr; |</a><br>\
                                            &nbsp <br>\
                                            &nbsp <br>\
-                                           Odyslam.me || This website, 2016-  | <a href = "https://github.com/OdysLam/odyslam.github.io" target = "_blank">Github&larr; |</a><br>\
+                                           <span class="project_name"> Spotify API </span> || Control spotify via HTTP calls, 2017  | <a href = "https://github.com/OdysLam/spotify-local-http-api" target = "_blank">Github&larr; |</a><br>\
                                            &nbsp <br>\
                                            &nbsp <br>\
-                                           Mindspace || Founded Patras Chapter, 2016  | <a href = "https://www.mindspace.gr" target = "_blank">Mindspace&larr; |</a><br>\
+                                           <span class="project_name"> Odyslam.me </span> || This website, 2016-  | <a href = "https://github.com/OdysLam/odyslam.github.io" target = "_blank">Github&larr; |</a><br>\
                                            &nbsp <br>\
                                            &nbsp <br>\
-                                           Glados V1 || A DIY smart-home project, 2015-2017  | <a href = "/assets/glados_pres.pdf" target = "_blank">Presentation&larr;</a>, <a href="https://github.com/OdysLam/GLaDOS-project" target = "_blank">Github&larr; |</a><br>\
+                                           <span class="project_name"> Mindspace </span> || Founded Patras Chapter, 2016  | <a href = "https://www.mindspace.gr" target = "_blank">Mindspace&larr; |</a><br>\
+                                           &nbsp <br>\
+                                           &nbsp <br>\
+                                           <span class="project_name"> Glados V1 </span> || A DIY smart-home project, 2015-2017  | <a href = "/assets/glados_pres.pdf" target = "_blank">Presentation&larr;</a>, <a href="https://github.com/OdysLam/GLaDOS-project" target = "_blank">Github&larr; |</a><br>\
                                            &nbsp <br>';
 
                     break;
-
-                case 'exit':
-                    window.open('https://www.google.gr', '_self');
-                    break;
-
-
-                case 'about':
-                    result = result + '<br>This site was made with &hearts; by me, based on terminal resume by Kevin Grillet<br>\
-                                           Typed.js is used,please leave a star @<a href="http://www.mattboldt.com/demos/typed-js/" target ="_blank">Mattboldt&larr;</a>';
-                    break;
+                // case 'exit':
+                //     window.open('https://www.google.gr', '_self');
+                //     break;
+                // case 'about':
+                //     result = result + '<br>This site was made with &hearts; by me, based on terminal resume by Kevin Grillet<br>\
+                //                            Typed.js is used,please leave a star @<a href="http://www.mattboldt.com/demos/typed-js/" target ="_blank">Mattboldt&larr;</a>';
+                //     break;
                 case 'blog':
                     window.open('https://medium.com/@odysseaslamtzidis', '_blank');
                     break;
@@ -161,7 +153,7 @@ $(document).keyup(
                     result = result;
                     break;
                 default:
-                    result = result + '<br> -bash: ' + tmp + ' is incorrect or forbidden for IP:<' + ip + '>, please type or click <span style="cursor:pointer" class = "nav_button">help</span> <br>';
+                    result = result + '<br> -bash: "' + tmp + '" is incorrect or forbidden for IP:<' + ip + '>, please type or click <span style="cursor:pointer" class = "nav_button">help</span> <br>';
                     break;
                     ''
             }
@@ -227,9 +219,15 @@ $(document).ready(
             $('#user').html(root);
         });
         result = '<br> ';
-        $.getJSON('http://odyslam.me/script/announcement.json', function (data) {
+        var command = window.location.hash.substr(1);
+        if (command != "") {
+            $('#terminal').val(command);
+            e = $.Event('keyup');
+            e.keyCode = 13; // enter
+            $(document).trigger(e);
+        }
+        $.getJSON('/announcement.json', function (data) {
             read = data['read'];
-
             if (read) {
                 $('#announcement').html(data['text']);
                 $("#announcement").show();
@@ -240,9 +238,9 @@ $(document).ready(
             $('#user').html(root);
         });
         $(".updates").typed({
-            strings: ["hello visitor","to navigate, click or type the commands","type or click <span style=\"cursor:pointer\" class = \"nav_button\">help</span> for a Command List"],
-            typeSpeed: 15,
-            backDelay: 500,
+            strings: ["hello visitor", "welcome to my little corner in the Internet... ^1000 thank you for coming :)", "to navigate, click on the commands or simply type them in the terminal ^100", "type or click <span style=\"cursor:pointer\" class = \"nav_button\">help</span> for a command list"],
+            typeSpeed: 7,
+            backDelay: 700,
             showCursor: false,
             callback : function(){
                 console.log("typed completed")
