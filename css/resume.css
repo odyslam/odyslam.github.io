@@ -7,7 +7,6 @@ p {
     display: inline;
 }
 
-a,
 a:hover {
     color: white;
     text-decoration: none;
@@ -52,7 +51,16 @@ a:hover {
     color: lightcoral;
 }
 
+a:link {
+    color: white;
+    text-decoration: underline;
 
+}
+
+a:visited {
+    color: white;
+    text-decoration: underline;
+}
 .link {
     text-decoration: underline;
 }
