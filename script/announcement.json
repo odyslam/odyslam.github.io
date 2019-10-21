@@ -1,7 +1,7 @@
 {
-  "read": false,
-  "row1": " I have amazing news",
-  "row2": " I am nominated as person of the year ",
-  "row3": " Vote for me <a href = \"https://www.prosopaxronias.gr/?section=3577&language=el_GR \" target = \"_blank\">here&larr; </a>",
-  "row4": "Thank you so much!"
+  "read": true,
+  "row1": "LFW",
+  "row2": "Actively looking for new job offers",
+  "row3": "",
+  "row4": ""
 }

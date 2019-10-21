@@ -7,7 +7,6 @@ p {
     display: inline;
 }
 
-a,
 a:hover {
     color: white;
     text-decoration: none;
@@ -34,7 +33,7 @@ a:hover {
     font-size: 2.7vmin;
     font-weight: bold;
     font-family: monospace;
-    color:white;
+    color: white;
     }
 
 #terminal {
@@ -48,6 +47,20 @@ a:hover {
     word-wrap: break-word;
 }
 
+.project_name {
+    color: lightcoral;
+}
+
+a:link {
+    color: white;
+    text-decoration: underline;
+
+}
+
+a:visited {
+    color: white;
+    text-decoration: underline;
+}
 .link {
     text-decoration: underline;
 }
