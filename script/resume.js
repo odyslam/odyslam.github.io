@@ -244,14 +244,14 @@ $(document).ready(
         // Add cv tracking//
         $(".version").typed({
             strings: ["$python site_terminal.py <br>...<br>..."],
-            typeSpeed: 40,
-            backDelay: 900,
+            typeSpeed: 5,
+            backDelay: 600,
             showCursor: false,
             callback: function () {
                 $(".updates").typed({
                     strings: ["hello visitor", "welcome to my little corner in the Internet, thank you for coming :)", "to navigate, click on the commands or simply type them in the terminal that will appear", "type or click <span style=\"cursor:pointer\" class = \"nav_button\">help</span> for a command list. Click <<<a href=\"/assets/odysseasLamtzidis.vcf\" download>HERE<a/>>> to add me to your contacts"],
-                    typeSpeed: 20,
-                    backDelay: 900,
+                    typeSpeed: 5,
+                    backDelay: 600,
                     showCursor: false,
                     callback: function () {
                         $(".root").show();
