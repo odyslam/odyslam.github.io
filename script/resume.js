@@ -51,15 +51,15 @@ $(document).keyup(
                 case 'help':
                     result = result + ' &nbsp <br>\
                                         &nbsp <br>\
-                                        <span style="cursor:pointer" class = "nav_button">help</span> &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp List of available commands<br>\
-										&nbsp <br>\
-										<span style="cursor:pointer" class = "nav_button">info</span> &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp Resumé & contact info<br>\
-										&nbsp <br>\
+                                        <span style="cursor:pointer" class = "nav_button">projects</span> &nbsp&nbsp&nbsp&nbsp&nbsp My portfolio <br>\
+                                        &nbsp <br>\
+                                        <span style="cursor:pointer" class = "nav_button">info</span> &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp Resumé & contact info<br>\
+                                        &nbsp <br>\
 										<span style="cursor:pointer" class = "nav_button">social media</span> &nbsp Available social media<br>\
                                         &nbsp <br>\
-										<span style="cursor:pointer" class = "nav_button">projects</span> &nbsp&nbsp&nbsp&nbsp&nbsp My portfolio <br>\
-                                        &nbsp <br>\
                                         <span style="cursor:pointer" class = "nav_button">blog</span> &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp Navigate the blog<br>\
+                                        &nbsp <br>\
+                                        <span style="cursor:pointer" class = "nav_button">help</span> &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp List of available commands<br>\
                                         &nbsp <br>\
                                         <span style="cursor:pointer" class = "nav_button">clear</span> &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp Clear the console<br>\
 										 ';
@@ -216,7 +216,8 @@ $(document).keyup(
 )
 $(document).ready(
     function() {
-        $(".root").hide();
+        // $(".root").hide();
+        $("#terminal").focus();
         $.getJSON('https://ipinfo.io/json', function(data) {
             ip = data['ip'];
             root = ip + '@raspberry ~ $ ';
@@ -244,27 +245,28 @@ $(document).ready(
         // Add cv tracking//
         $(".version").typed({
             strings: ["$python site_terminal.py <br>...<br>..."],
-            typeSpeed: 40,
-            backDelay: 900,
+            typeSpeed: 5,
+            backDelay: 600,
             showCursor: false,
             callback: function () {
                 $(".updates").typed({
-                    strings: ["hello visitor", "welcome to my little corner in the Internet, thank you for coming :)", "to navigate, click on the commands or simply type them in the terminal that will appear", "type or click <span style=\"cursor:pointer\" class = \"nav_button\">help</span> for a command list. Click <<<a href=\"/assets/odysseasLamtzidis.vcf\" download>HERE<a/>>> to add me to your contacts"],
-                    typeSpeed: 20,
-                    backDelay: 900,
+                    strings: ["hello visitor, thank you for coming :)", "to navigate, click on the commands or type them in the field and press enter", "type <span style=\"cursor:pointer\" class = \"nav_button\">help</span> for a command list. Click <<<a href=\"/assets/odysseasLamtzidis.vcf\" download>HERE<a/>>> to add me to your contacts"],
+                    typeSpeed: 5,
+                    backDelay: 600,
                     showCursor: false,
                     callback: function () {
-                        $(".root").show();
+                        // $(".root").show();
                         $("#terminal").focus();
                         console.log("typed completed")
-                        $(".nav_button").click(function () {
-                            var value = $(this).text();
-                            console.log(value);
-                            $('#terminal').val(value);
-                            var e = jQuery.Event('keyup');
-                            e.keyCode = 13;
-                            $('.console').trigger(e);
-                        });
+                        // $(".nav_button").click(function () {
+                        //     var value = $(this).text();
+                        //     console.log(value);
+                        //     $('#terminal').val(value);
+                        //     var e = jQuery.Event('keyup');
+                        //     e.keyCode = 13;
+                        //     $('.console').trigger(e);
+                        // });
+
                     }
                 });
             }
