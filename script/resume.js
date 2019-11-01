@@ -218,6 +218,9 @@ $(document).ready(
     function() {
         // $(".root").hide();
         $("#terminal").focus();
+        if (window.matchMedia("(max-width: 767px)").matches) {
+            $("#terminal").val("< TAP HERE to type >");
+        }
         $.getJSON('https://ipinfo.io/json', function(data) {
             ip = data['ip'];
             root = ip + '@raspberry ~ $ ';
@@ -250,9 +253,9 @@ $(document).ready(
             showCursor: false,
             callback: function () {
                 $(".updates").typed({
-                    strings: ["hello visitor, thank you for coming :)", "to navigate, click on the commands or type them in the field and press enter", "type <span style=\"cursor:pointer\" class = \"nav_button\">help</span> for a command list. Click <<<a href=\"/assets/odysseasLamtzidis.vcf\" download>HERE<a/>>> to add me to your contacts"],
+                    strings: ["hello visitor, thank you for coming <br> \\ (•◡•) / ", "to navigate, click on the commands or type them in the field and press enter", "type (or tap on it) <span style=\"cursor:pointer\" class = \"nav_button\">help</span> for a command list. <br> Click <<<a href=\"/assets/odysseasLamtzidis.vcf\" download>HERE<a/>>> to add me to your contacts."],
                     typeSpeed: 5,
-                    backDelay: 600,
+                    backDelay: 800,
                     showCursor: false,
                     callback: function () {
                         // $(".root").show();
