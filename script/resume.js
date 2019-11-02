@@ -80,7 +80,7 @@ $(document).keyup(
                     result = result + '<br>	Surname:&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbspLamtzidis<br>\
 										    Name:&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbspOdyssefs(Odysseas)<br>\
 										    Age:&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp' + age.toFixed() + '<br>\
-										    Mail:&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp <a href="mailto:hi@odyslam.me">&nbsp&nbsphi@odyslam.me</a><br> \
+										    Mail:&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<a href="mailto:hi@odyslam.me">hi@odyslam.me</a><br> \
 										    Resumé:&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<a class = "link" id="cv" href="assets/cv.pdf" target = "_blank">pdf&larr;</a><br>';
                     break;
 
@@ -219,7 +219,7 @@ $(document).ready(
         // $(".root").hide();
         $("#terminal").focus();
         if (window.matchMedia("(max-width: 767px)").matches) {
-            $("#terminal").val("< TAP HERE to type >");
+            $("#terminal").attr("placeholder", "< TAP HERE to type >");
         }
         $.getJSON('https://ipinfo.io/json', function(data) {
             ip = data['ip'];
@@ -234,17 +234,18 @@ $(document).ready(
             e.keyCode = 13; // enter
             $(document).trigger(e);
         }
-        $.getJSON('/announcement.json', function (data) {
-            read = data['read'];
-            if (read) {
-                $('#announcement').html(data['text']);
-                $("#announcement").show();
-            }
-            else {
-                $("#announcement").hide();
-            }
-            $('#user').html(root);
-        });
+        // $.getJSON('/announcement.json', function (data) {
+        //     read = data['read'];
+        //     if (read) {
+        //         $('#announcement').html(data['text']);
+        //         $("#announcement").show();
+        //     }
+        //     else {
+        //         $("#announcement").hide();
+        //     }
+        //
+        // });
+        $('#user').html(root);
         // Add cv tracking//
         $(".version").typed({
             strings: ["$python site_terminal.py <br>...<br>..."],
@@ -253,7 +254,7 @@ $(document).ready(
             showCursor: false,
             callback: function () {
                 $(".updates").typed({
-                    strings: ["hello visitor, thank you for coming <br> \\ (•◡•) / ", "to navigate, click on the commands or type them in the field and press enter", "type (or tap on it) <span style=\"cursor:pointer\" class = \"nav_button\">help</span> for a command list. <br> Click <<<a href=\"/assets/odysseasLamtzidis.vcf\" download>HERE<a/>>> to add me to your contacts."],
+                    strings: ["hello visitor, thank you for coming <br> \\ (•◡•) / ", "to navigate, click on the commands or type them in the field and press enter", "type (or tap/click on it) <span style=\"cursor:pointer\" class = \"nav_button\">help</span> for a command list <br> Click <<<a href=\"/assets/odysseasLamtzidis.vcf\" download>HERE<a/>>> to add me to your contacts. "],
                     typeSpeed: 5,
                     backDelay: 800,
                     showCursor: false,
@@ -261,14 +262,14 @@ $(document).ready(
                         // $(".root").show();
                         $("#terminal").focus();
                         console.log("typed completed")
-                        // $(".nav_button").click(function () {
-                        //     var value = $(this).text();
-                        //     console.log(value);
-                        //     $('#terminal').val(value);
-                        //     var e = jQuery.Event('keyup');
-                        //     e.keyCode = 13;
-                        //     $('.console').trigger(e);
-                        // });
+                        $(".nav_button").click(function () {
+                            var value = $(this).text();
+                            console.log(value);
+                            $('#terminal').val(value);
+                            var e = jQuery.Event('keyup');
+                            e.keyCode = 13;
+                            $('.console').trigger(e);
+                        });
 
                     }
                 });
