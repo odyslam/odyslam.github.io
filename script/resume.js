@@ -111,7 +111,7 @@ $(document).keyup(
                                            <span class="project_name"> TedX talk </span> || Speaker: "I am not making a Project, I am making my Future", 2019 | <a href = "https://www.youtube.com/watch?v=yn1NsY7LVxM" target = "_blank">Youtube&larr;</a> |<br>\
                                            &nbsp <br>\
                                            &nbsp <br>\
-                                           <span class="project_name"> Jfdo.it </span> || Founder,Website Design, 2018 | <a href = "https://jfdo.it" target = "_blank">Website&larr;</a> |<br>\
+                                           <span class="project_name"> Jfdo.it </span> || Co-founder,Website Design, 2018 | <a href = "https://jfdo.it" target = "_blank">Website&larr;</a> |<br>\
                                            &nbsp <br>\
                                            &nbsp <br>\
                                            <span class="project_name"> Algorithms in python </span> || CSMA, PIM1 packet scheduling, 2019 | <a href = "https://github.com/OdysLam/PIM1_packet_scheduling_sim" target = "_blank">PIM1 Github&larr;</a>, <a href = "https://github.com/OdysLam/csma_simulation" target = "_blank">CSMA Github&larr;</a> |<br>\
