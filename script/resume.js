@@ -264,7 +264,7 @@ $(document).ready(
             showCursor: false,
             callback: function () {
                 $(".updates").typed({
-                    strings: ["hello visitor, thank you for coming <br> \\ (•◡•) / ", "to navigate, click on the commands or type them in the field and press enter", "type (or tap/click on it) <span style=\"cursor:pointer\" class = \"nav_button\">help</span> for a command list <br> Click <<<a href=\"/assets/odysseasLamtzidis.vcf\" download>HERE<a/>>> to add me to your contacts. "],
+                    strings: ["hello visitor, thank you for coming <br> \\ (•◡•) / ", "to navigate, click on the commands or type them in the field and press enter", "type or tap/click on <span style=\"cursor:pointer\" class = \"nav_button\">help</span> for a command list. <br> <br> Click/Tap <a href=\"/assets/odysseasLamtzidis.vcf\" download>here<a/> to add me to your contacts. "],
                     typeSpeed: 5,
                     backDelay: 800,
                     showCursor: false,
