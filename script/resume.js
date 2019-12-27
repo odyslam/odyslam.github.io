@@ -56,7 +56,7 @@ $(document).keyup(
                                         &nbsp <br>\
                                         <span style="cursor:pointer" class = "nav_button">cv</span> &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp Resumé <br>\
                                         &nbsp <br>\
-										<span style="cursor:pointer" class = "nav_button">social media</span> &nbsp Available social media<br>\
+										<span style="cursor:pointer" class = "nav_button">contact</span> &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp Get in touch & social media<br>\
                                         &nbsp <br>\
                                         <span style="cursor:pointer" class = "nav_button">blog</span> &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp Navigate the blog<br>\
                                         &nbsp <br>\
@@ -86,24 +86,26 @@ $(document).keyup(
                 //     break;
 
                 case 'cv':
-                    window.open('https://odyslam.me/assets/cv.pdf', '_blank');
+                    window.open('https://odyslam.me/assets/cv.pdf');
                     break;
 
                 case 'clear':
                     result = '';
                     break;
-
                 case 'social media':
+                case 'contact':
                     result = result + '&nbsp <br>\
+                                        <br> Mail: <a href="mailto:hi@odyslam.me">hi@odyslam.me</a><br> \
                                         <br> <a href="https://gr.linkedin.com/in/odysseaslamtzidis" target = "_blank">LinkedIn &larr;</a><br>\
                                         &nbsp <br>\
 										<a href="https://github.com/OdysLam" target = "_blank">GitHub &larr;</a><br>\
 										&nbsp <br>\
-										<a href="https://www.facebook.com/odysseas.lamtzidis" target = "_blank">facebook &larr;</a><br>\
+										<a href="https://www.facebook.com/odysseas.lamtzidis" target = "_blank">Facebook &larr;</a><br>\
 										&nbsp <br>\
-										<a href="https://www.instagram.com/odysseytomit/" target = "_blank">Instagram &larr;</a><br>\
+										<a href="https://twitter.com/" target = "_blank">Twitter &larr;</a><br>\
 										&nbsp <br>\
 										<a href="https://www.facebook.com/odysseas.lamtzidis" target = "_blank">Odyssey to MIT facebook &larr;</a><br>';
+
                     break;
 
                 case 'projects':
@@ -115,7 +117,7 @@ $(document).keyup(
                                            <span class="project_name"> TedX talk </span> || Speaker: "I am not making a Project, I am making my Future", 2019 | <a href = "https://www.youtube.com/watch?v=yn1NsY7LVxM" target = "_blank">Youtube&larr;</a> |<br>\
                                            &nbsp <br>\
                                            &nbsp <br>\
-                                           <span class="project_name"> Jfdo.it </span> || Co-founder,Website Design, 2018 | <a href = "https://jfdo.it" target = "_blank">Website&larr;</a> |<br>\
+                                           <span class="project_name"> Jfdo.it </span> || Co-founder,Website Design, 2018 | <a href = "https://www.facebook.com/jfdoitgreece/" target = "_blank">Facebook Page&larr;</a> |<br>\
                                            &nbsp <br>\
                                            &nbsp <br>\
                                            <span class="project_name"> Algorithms in python </span> || CSMA, PIM1 packet scheduling, 2019 | <a href = "https://github.com/OdysLam/PIM1_packet_scheduling_sim" target = "_blank">PIM1 Github&larr;</a>, <a href = "https://github.com/OdysLam/csma_simulation" target = "_blank">CSMA Github&larr;</a> |<br>\
@@ -145,7 +147,7 @@ $(document).keyup(
                                            <span class="project_name"> Spotify API </span> || Control spotify via HTTP calls, 2017  | <a href = "https://github.com/OdysLam/spotify-local-http-api" target = "_blank">Github&larr;</a> |<br>\
                                            &nbsp <br>\
                                            &nbsp <br>\
-                                           <span class="project_name"> odyslam.me </span> || Website design, 2016-  | <a href = "https://github.com/OdysLam/odyslam.github.io" target = "_blank">Github&larr;</a> |<br>\
+                                           <span class="project_name"> odyslam.me </span> || Website design (plain html, css, js), 2016-  | <a href = "https://github.com/OdysLam/odyslam.github.io" target = "_blank">Github&larr;</a> |<br>\
                                            &nbsp <br>\
                                            &nbsp <br>\
                                            <span class="project_name"> Mindspace </span> || Founded Patras Chapter, 2016  | <a href = "https://www.mindspace.gr" target = "_blank">Mindspace&larr;</a> |<br>\
@@ -268,7 +270,7 @@ $(document).ready(
             showCursor: false,
             callback: function () {
                 $(".updates").typed({
-                    strings: ["hello visitor, thank you for coming <br> \\ (•◡•) / ", "to navigate, click on the commands or type them in the field and press enter", "type or tap/click on <span style=\"cursor:pointer\" class = \"nav_button\">help</span> for a command list. <br> <br> Click/Tap <a href=\"/assets/odysseasLamtzidis.vcf\" download>here<a/> to add me to your contacts. "],
+                    strings: ["hello visitor, thank you for coming <br> \\ (•◡•) / ", "to navigate, click on the commands or type them in the field and press enter", "type or tap/click on <span style=\"cursor:pointer\" class = \"nav_button\">help</span> for a command list. <br> <br> Click/Tap <strong> <a href=\"/assets/odysseasLamtzidis.vcf\" download>here</a></strong> to add me to your contacts. "],
                     typeSpeed: 5,
                     backDelay: 800,
                     showCursor: false,
