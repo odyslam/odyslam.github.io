@@ -86,7 +86,7 @@ $(document).keyup(
                 //     break;
 
                 case 'cv':
-                    window.open('https://odyslam.me/assets/cv.pdf');
+                    window.open('https://drive.google.com/file/d/1MzsVfta6Z4rvUjhV6DgLMsSf-7HZ0u5Y/view?usp=sharing');
                     break;
 
                 case 'clear':
@@ -126,19 +126,19 @@ $(document).keyup(
                                            <span class="project_name"> Research </span> || Blockchain, IoT, Edge Computing, 2017-  |  <a href = "https://www.researchgate.net/profile/Odysseas_Lamtzidis" target = "_blank">ResearchGate&larr;</a> |<br>\
                                            &nbsp <br>\
                                            &nbsp <br>\
-                                           <span class="project_name"> Dimitra </span> || 1st Prize CruiseInn, 2018  | <a href = "/assets/dimitra_cruiseinn18.pdf" target = "_blank">Pitch-Deck(Greek)&larr;</a>, <a href = "https://getcruiseinn.com/" target = "_blank">Website&larr;</a> |<br>\
+                                           <span class="project_name"> Dimitra </span> || 1st Prize CruiseInn, 2018  | <a href = "https://drive.google.com/file/d/1h6mkVHH19j6bi9vz554u0zDWgZ_mjvxZ/view?usp=sharing" target = "_blank">Pitch-Deck(Greek)&larr;</a>, <a href = "https://getcruiseinn.com/" target = "_blank">Website&larr;</a> |<br>\
                                            &nbsp <br>\
                                            &nbsp <br>\
-                                           <span class="project_name"> Pangea </span> || 1st Prize MIT Bootcamp on I&E, 2018  | <a href = "/assets/pangea_bootcamp18.pdf" target = "_blank">Pitch-Deck&larr;</a>, <a href = "http://bootcamp.mit.edu/entrepreneurship/" target = "_blank">Website&larr;</a> |<br>\
+                                           <span class="project_name"> Pangea </span> || 1st Prize MIT Bootcamp on I&E, 2018  | <a href = "https://drive.google.com/file/d/11SiR5wHD3Wjt2farQqgu-_9M0GtPUjfA/view?usp=sharing" target = "_blank">Pitch-Deck&larr;</a>, <a href = "http://bootcamp.mit.edu/entrepreneurship/" target = "_blank">Website&larr;</a> |<br>\
                                            &nbsp <br>\
                                            &nbsp <br>\
                                            <span class="project_name"> Odyssey to MIT </span> || A crowdfunding Campaign, 2018  | <a href = "https://www.giveandfund.com/giveandfund/project/odysseytomit" target = "_blank"> Website&larr;</a>, <a href ="https://www.facebook.com/odysseytomit" target = "_blank">Facebook Page&larr;</a> |</a><br>\
                                            &nbsp <br>\
                                            &nbsp <br>\
-                                           <span class="project_name"> PCB Schematics</span> || Custom Hardware for Glados, 2017  | <a href = "/assets/pcb_schematics.jpg" target = "_blank">PCB schematics&larr;</a>, <a href="https://github.com/OdysLam/GLaDOS_v0.3/tree/master/esp8266" target = "_blank">Github&larr;</a> |<br>\
+                                           <span class="project_name"> PCB Schematics</span> || Custom Hardware for Glados, 2017  | <a href = "https://drive.google.com/open?id=1Ah3GNz6tP9Qe7FgqIsXfSEbVoB679r2a" target = "_blank">PCB schematics&larr;</a>, <a href="https://github.com/OdysLam/GLaDOS_v0.3/tree/master/esp8266" target = "_blank">Github&larr;</a> |<br>\
                                            &nbsp <br>\
                                            &nbsp <br>\
-                                           <span class="project_name"> Business Card </span> || My business card\'s design in .ai, 2017-2018  | <a href = "/assets/biz_card.pdf" target = "_blank">Pdf&larr;</a>, <a href = "https://drive.google.com/file/d/1CX0Qs97vnFbP5KL7ZpTtoAbqrjVDQG9y/view?usp=sharing" target = "_blank">Google drive&larr;</a> |<br>\
+                                           <span class="project_name"> Business Card </span> || My business card\'s design in .ai, 2017-2018  | <a href = "https://drive.google.com/file/d/1RDQpPyf1z4UmsFrdnLf-f936VHfds-ha/view?usp=sharing" target = "_blank">Pdf&larr;</a>, <a href = "https://drive.google.com/file/d/1CX0Qs97vnFbP5KL7ZpTtoAbqrjVDQG9y/view?usp=sharing" target = "_blank">Google drive&larr;</a> |<br>\
                                            &nbsp <br>\
                                            &nbsp <br>\
                                            <span class="project_name"> Resume </span> || My Resume\'s design in .ai, 2017-  | <a href = "https://drive.google.com/file/d/1npfkuPQy-fsQYBuPj_dKJl22qTCMjxER/view?usp=sharing" target = "_blank">Google drive&larr;</a> |<br>\
@@ -153,7 +153,7 @@ $(document).keyup(
                                            <span class="project_name"> Mindspace </span> || Founded Patras Chapter, 2016  | <a href = "https://www.mindspace.gr" target = "_blank">Mindspace&larr;</a> |<br>\
                                            &nbsp <br>\
                                            &nbsp <br>\
-                                           <span class="project_name"> Glados V2 </span> || A DIY smart-home project, 2015-2017  | <a href = "/assets/glados_pres.pdf" target = "_blank">Presentation&larr;</a>, <a href="https://github.com/OdysLam/GLaDOS-project" target = "_blank">Github&larr;</a> |<br>\
+                                           <span class="project_name"> Glados V2 </span> || A DIY smart-home project, 2015-2017  | <a href = "https://drive.google.com/file/d/1SE4gu0brIZ9us1Fc9s-h08gvER4Vtnhi/view?usp=sharing" target = "_blank">Presentation&larr;</a>, <a href="https://github.com/OdysLam/GLaDOS-project" target = "_blank">Github&larr;</a> |<br>\
                                            &nbsp <br>';
 
                     break;
