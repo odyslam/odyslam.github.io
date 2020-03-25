@@ -58,21 +58,22 @@ $(document).keyup(
                                         &nbsp <br>\
 										<span style="cursor:pointer" class = "nav_button">contact</span> &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp Get in touch & social media<br>\
                                         &nbsp <br>\
-                                        <span style="cursor:pointer" class = "nav_button">blog</span> &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp Navigate the blog<br>\
+                                        <span style="cursor:pointer" class = "nav_button">blog</span> &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<br>\
                                         &nbsp <br>\
                                         <span style="cursor:pointer" class = "nav_button">help</span> &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp List of available commands<br>\
                                         &nbsp <br>\
                                         <span style="cursor:pointer" class = "nav_button">clear</span> &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp Clear the console<br>\
+                                        &nbsp <br>\
+                                        <span style="cursor:pointer" class = "nav_button">about</span> &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp About<br>\
 										 ';
                     break;
 
-                    // case 'contact':
-                    //     result = result + '<br>	25 Martiou str 112,Patras,Greece<br>\ ' +
-                    //         'Tel: &nbsp&nbsp&nbsp(+30)6980950995<br>\
-                    //     Skype: &nbspodys_lamtzidis<br>\
-                    //     Mail: <a href="mailto:hi@odyslam.me">&nbsp&nbsphi@odyslam.me</a><br> ';
-
-
+                    case 'about':
+                        result = result + '<br>	This website was made with <3 by Odysseas Lamtzidis for ODYSLAM IKE P.C. <br>\
+                        It serves as a portfolio of Odysseas Lamtzidis as managing partner of ODYSLAM IKE P.C and provides information about the company. <br>\
+                        Address1: Vasilissis Sofias 20, 17121. Nea Smyrni, Athens, Greece <br>\
+                        Address2: The Internet <br>\
+                        Mail: <a href="mailto:hi@odyslam.me">hi@odyslam.me</a><br>';
                     break;
 
                 // case 'resume':
@@ -165,7 +166,7 @@ $(document).keyup(
                 //                            Typed.js is used,please leave a star @<a href="http://www.mattboldt.com/demos/typed-js/" target ="_blank">Mattboldt&larr;</a>';
                 //     break;
                 case 'blog':
-                    window.open('https://medium.com/@odysseaslamtzidis', '_blank');
+                    window.open('/blog/', '_blank');
                     break;
 
                 case '':
@@ -200,14 +201,14 @@ $(document).keyup(
                 );
                 console.log("clicked on cv")
 
-            })
+            });
 
             $('html, body').animate({
                 scrollTop: $("#terminal").offset().top
             }, 1);
         }
         else if (e.keyCode == 38) {
-            console.log("up arrow was pressed")
+            console.log("up arrow was pressed");
             commandHistoryCounter -= 1;
             if (commandHistoryCounter < 0) {
                 commandHistoryCounter = 0;
@@ -229,7 +230,7 @@ $(document).keyup(
 
         }
     }
-)
+);
 $(document).ready(
     function() {
         // $(".root").hide();
@@ -265,19 +266,19 @@ $(document).ready(
         // Add cv tracking//
         $(".version").typed({
             strings: ["$python site_terminal.py <br>...<br>..."],
-            typeSpeed: 5,
+            typeSpeed: 3,
             backDelay: 600,
             showCursor: false,
             callback: function () {
                 $(".updates").typed({
-                    strings: ["hello visitor, thank you for coming <br> \\ (•◡•) / ", "to navigate, click on the commands or type them in the field and press enter", "type or tap/click on <span style=\"cursor:pointer\" class = \"nav_button\">help</span> for a command list. <br> <br> Click/Tap <strong> <a href=\"/assets/odysseasLamtzidis.vcf\" download>here</a></strong> to add me to your contacts. "],
-                    typeSpeed: 5,
-                    backDelay: 800,
+                    strings: ["hello visitor, thank you for coming <br> \\ (•◡•) / ","This website runs on an actual Raspberry pi, powered by <a href = \"https://Balena.io\" target = \"_blank\">Balena.io </a>.... Isn't that awesome ʘ‿ʘ ?" , "to navigate, click on the commands or type them in the field and press enter", "type or tap/click on <span style=\"cursor:pointer\" class = \"nav_button\">help</span> for a command list. <br> <br> Click/Tap <strong> <a href=\"/assets/odysseasLamtzidis.vcf\" download>here</a></strong> to add me to your contacts. "],
+                    typeSpeed: 3,
+                    backDelay: 1000,
                     showCursor: false,
                     callback: function () {
                         // $(".root").show();
                         $("#terminal").focus();
-                        console.log("typed completed")
+                        console.log("typed completed");
                         $(".nav_button").click(function () {
                             var value = $(this).text();
                             console.log(value);
@@ -292,7 +293,7 @@ $(document).ready(
             }
         });
 
-    })
+    });
 
 
 /**
