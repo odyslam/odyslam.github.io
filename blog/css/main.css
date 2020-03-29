@@ -1,18 +1,19 @@
 body {
     border-top: 1px dashed rgba(255,255,255,0.5);
-    background-color: #000000;
+    background-color: #121111;
     margin: 0 auto;
     padding: 0;
     font-family: monospace;
-    font-size: 14px;
-    line-height: unset !important;
-    color: rgba(255,255,255,0.6);
+    font-size: 16px;
+    word-spacing: normal;
+    letter-spacing: normal;
+    line-height: 22px !important;
+    color: rgb(219, 218, 218);
     text-align: center;
     //width: 800px;
 }
 h1 {
   color: rgba(236, 236, 234, 0.7);
-  font-size: 24px;
   font-family: monospace;
   font-weight: bold;
 }
@@ -52,8 +53,8 @@ a {
     margin-bottom: 10px;
 }
 .menu ul {
-    margin-top: 12px;
-    margin-bottom: 12px;
+    margin-top: 16px;
+    margin-bottom: 16px;
     padding-left: 0px;
 }
 .menu ul li {
@@ -84,8 +85,8 @@ pre {
     border-radius: 3px;
     overflow:auto;
 		font-family: monospace;
-		font-size: 12px;
-		color: rgba(255,255,255,0.4);
+		font-size: 16px;
+		color: rgb(211, 211, 211);
 }
 img {
     width: 80%;
@@ -156,7 +157,7 @@ table a {
 .highlight .gh { color: #999999 } /* Generic.Heading */
 .highlight .gi { color: #000000; background-color: #ddffdd } /* Generic.Inserted */
 .highlight .gi .x { color: #000000; background-color: #aaffaa } /* Generic.Inserted.Specific */
-.highlight .go { color: #888888 } /* Generic.Output */
+.highlight .go { color: #afafaf } /* Generic.Output */
 .highlight .gp { color: #555555 } /* Generic.Prompt */
 .highlight .gs { font-weight: bold } /* Generic.Strong */
 .highlight .gu { color: #aaaaaa } /* Generic.Subheading */
@@ -176,7 +177,7 @@ table a {
 .highlight .ne { color: #990000; font-weight: bold } /* Name.Exception */
 .highlight .nf { color: #990000; font-weight: bold } /* Name.Function */
 .highlight .nn { color: #555555 } /* Name.Namespace */
-.highlight .nt { color: #000080 } /* Name.Tag */
+.highlight .nt { color: #ffffff } /* Name.Tag */
 .highlight .nv { color: #008080 } /* Name.Variable */
 .highlight .ow { font-weight: bold } /* Operator.Word */
 .highlight .w { color: #bbbbbb } /* Text.Whitespace */
@@ -221,5 +222,10 @@ table a {
 blockquote {
   border-left: unset;
 margin: unset;
-    font-size: 12px;
+    font-size: 14px;
+}
+
+.highlighter-rouge {
+    color: #ffffff;
+    background-color: #4b4b4b;
 }
