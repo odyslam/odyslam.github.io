@@ -1,0 +1,271 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <title>blog.py | Facebook Bots 101</title>
+  <meta name="description" content="Bots for dummies, for you and me">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <meta property="og:title" content="Facebook Bots 101">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="http://odyslam.me/blog/posts/facebook-bots-101">
+  <meta property="og:description" content="Bots for dummies, for you and me">
+  <meta property="og:site_name" content="blog.py">
+  <meta property="og:image" content="http://odyslam.me/blog/assets/bot_og.png">
+
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:url" content="http://odyslam.me/blog/posts/facebook-bots-101">
+  <meta name="twitter:title" content="Facebook Bots 101">
+  <meta name="twitter:description" content="Bots for dummies, for you and me">
+  <meta name="twitter:image" content="http://odyslam.me/blog/assets/bot_og.png">
+
+  <script src="https://use.fontawesome.com/2dc7ca4a99.js"></script>
+  <link rel="shortcut icon" href="/blog/assets/favicon.ico" type="image/x-icon" />
+  <link rel="apple-touch-icon" href="/blog/assets/apple-touch-icon.png">
+  <link href="http://odyslam.me/blog/feed.xml" type="application/rss+xml" rel="alternate" title="blog.py Last 10 blog posts" />
+
+  
+    <link type="text/css" rel="stylesheet" href="/blog/assets/dark.css">
+  
+</head>
+
+<body>
+  <main role="main">
+    <div class="grid grid-centered">
+      <div class="grid-cell">
+        <nav class="header-nav reveal">
+  <a href="/blog/" class="header-logo" title="blog.py">blog.py</a>
+  <ul class="header-links">
+    
+      <li>
+        <a href="http://odyslam.me" title="Back to Terminal">
+          <i class="fa fa-terminal" aria-hidden="true"></i>
+        </a>
+      </li>
+    
+    
+    
+      <li>
+        <a href="https://www.facebook.com/odysseas.lamtzidis" target="_blank" title="Facebook">
+          <span class="icon icon-social-facebook"></span>
+        </a>
+      </li>
+    
+    
+      <li>
+        <a href="https://github.com/OdysLam" target="_blank" title="GitHub">
+          <span class="icon icon-social-github"></span>
+        </a>
+      </li>
+    
+    
+    
+    
+      <li>
+        <a href="https://www.linkedin.com/in/lamtzidisodysseas" target="_blank" title="LinkedIn">
+          <span class="icon icon-social-linkedin"></span>
+        </a>
+      </li>
+    
+    
+    
+      <li>
+        <a href="mailto:hi@odyslam.me" title="Email">
+          <span class="icon icon-at"></span>
+        </a>
+      </li>
+    
+    
+  </ul>
+</nav>
+
+        <article class="article reveal">
+          <header class="article-header">
+            <h1>Facebook Bots 101</h1>
+            <p>Bots for dummies, for you and me</p>
+            <div class="article-list-footer">
+              <span class="article-list-date">
+                February 3, 2017
+              </span>
+              <span class="article-list-divider">-</span>
+              <span class="article-list-minutes">
+                
+                
+                  6 minute read
+                
+              </span>
+              <span class="article-list-divider">-</span>
+              <div class="article-list-tags">
+                
+                  <a href="/blog/tag/web">web</a>
+                
+                  <a href="/blog/tag/python">python</a>
+                
+                  <a href="/blog/tag/facebook-bot">facebook-bot</a>
+                
+              </div>
+            </div>
+          </header>
+
+          <div class="article-content">
+            <p>Hello [guest_name]</p>
+
+<p>In this post I want to talk about facebook bots, a relatively new concept that was launched by facebook. The idea is that messenger, apart being a platform used for communication, it can be a platform where business can offer their products or services.</p>
+
+<p><a href="/blog/assets/bot_intro.jpg" class="fluidbox-trigger">
+  <img src="/blog/assets/bot_intro.jpg" alt="Jekyll" />
+</a></p>
+
+<p>Facebook facilitated the creation of bots, automated messenger services that can communicate in a natural way with customers. Bots are used worldwide to order airplane tickets, cinema tickets or just stay up to date with the latest news. More specifically, in greece, delivery.gr also launched the first <a href="https://www.delivery.gr/messenger.html">bot</a> from which you can order food,pretty neat huh?</p>
+
+<p>The cornerstone of this concept is that the interaction between the human and the bot is conducted in the most natural way possible. For this end, facebook also launched it’s free initiative wit.ai, a Natural Language Processor(NLP) which can be used by any developer for his application.</p>
+
+<p>A NLP is crucial for the bot’s operation as it is responsible for converting a message to structured data to be used by the application. This usually uses Machine Learning, demanding a data center, since to achieve speed and efficiency it needs considerable resources. Most services like wit.ai are accessible via a http (REST) api. Meaning that you send you message to the server, it is processed according to the rules/training you have set for your bot and it returns that appropriate data.</p>
+
+<h2 id="but-what-i-have-to-do-with-bots">But what I have to do with bots?</h2>
+
+<p></p>
+<p></p>
+<iframe src="//giphy.com/embed/lHWElKkBmoI1i" width="480" height="288" frameborder="0" class="giphy-embed" allowfullscreen=""></iframe>
+<p></p>
+<p>I have developed a smart-home assistant, where I have automated a bunch of tasks like boiler-heating, various lights as well as my apartment’s door. All these are controlled through a web interface, accessible in the local network or by 3rd party apps.</p>
+
+<p>Although it’s quite handy, the controls didn’t feel natural and I was looking to add other means as well. The first that crossed my mind was voice control. But, it’s quite tricky to be able to control it from every room. As an intermediate stage, I thought of implementing a facebook bot which can be easily controlled via the messenger app in my phone.</p>
+
+<p>First problem that I encountered was that facebook bots need to be hosted on a server with a static domain name/ip, making things complicated if you want to host it locally since in Greece most ISP provide dynamic ip. Thankfully, python came to the rescue, with a library which emulates the browser and uses a facebook profile to send/receive messages.</p>
+
+<p>This execution technically is <strong>NOT</strong> a facebook bot, since we are using a normal facebook profile ,while facebook bots are tied to a facebook page and they are configured quite differently.</p>
+
+<p>My application was rudimentary, I simple created a facebook account and used this library to receive and send messages through that profile, creating a facebook bot of sorts. As my NLP, I used wit.ai since it was free and astonishingly accurate, even with <em>greek</em>.</p>
+
+<h2 id="lets-get-started">Let’s get Started</h2>
+
+<p>First order of business is to configure fbchat, the python library that we use to communicate with facebook. Note that this library is based on an older version of the site and data-handling, so there are features of fbchat that are bugged and cannot be used. This library is more of proof_of_concept, than a reliable application and serves as a stepping stone in order to understand the logic behind bots and conversation handling, without dwelling in the setup of an actual facebook bot.</p>
+
+<p>Head to the <a href="https://github.com/carpedm20/fbchat">githube page</a>, follow the instructions and the walkthrough to get the gist of the library.</p>
+
+<p>We will make a script that listens for any new facebook message. Whenever it receives one, it will check the author whether he is the verified owner and the will proceed to send the message to the wit api in order to be translated to data.</p>
+
+<p>Before we continue and introduce wit, let’s clear some things about fbchat and the parts that we are going to use.</p>
+
+<p>Mainly we will use the <code class="highlighter-rouge">bot.listen()</code>  and <code class="highlighter-rouge">on_message()</code> function.</p>
+
+<figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="kn">import</span> <span class="nn">fbchat</span>
+<span class="c">#subclass fbchat.Client and override required methods</span>
+<span class="k">class</span> <span class="nc">EchoBot</span><span class="p">(</span><span class="n">fbchat</span><span class="o">.</span><span class="n">Client</span><span class="p">):</span>
+
+    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span><span class="n">email</span><span class="p">,</span> <span class="n">password</span><span class="p">,</span> <span class="n">debug</span><span class="o">=</span><span class="bp">True</span><span class="p">,</span> <span class="n">user_agent</span><span class="o">=</span><span class="bp">None</span><span class="p">):</span>
+        <span class="n">fbchat</span><span class="o">.</span><span class="n">Client</span><span class="o">.</span><span class="n">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span><span class="n">email</span><span class="p">,</span> <span class="n">password</span><span class="p">,</span> <span class="n">debug</span><span class="p">,</span> <span class="n">user_agent</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">on_message</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">mid</span><span class="p">,</span> <span class="n">author_id</span><span class="p">,</span> <span class="n">author_name</span><span class="p">,</span> <span class="n">message</span><span class="p">,</span> <span class="n">metadata</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">markAsDelivered</span><span class="p">(</span><span class="n">author_id</span><span class="p">,</span> <span class="n">mid</span><span class="p">)</span> <span class="c">#mark delivered</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">markAsRead</span><span class="p">(</span><span class="n">author_id</span><span class="p">)</span> <span class="c">#mark read</span>
+
+        <span class="k">print</span><span class="p">(</span><span class="s">"</span><span class="si">%</span><span class="s">s said: </span><span class="si">%</span><span class="s">s"</span><span class="o">%</span><span class="p">(</span><span class="n">author_id</span><span class="p">,</span> <span class="n">message</span><span class="p">))</span>
+
+        <span class="c">#if you are not the author, echo</span>
+        <span class="k">if</span> <span class="nb">str</span><span class="p">(</span><span class="n">author_id</span><span class="p">)</span> <span class="o">!=</span> <span class="nb">str</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">uid</span><span class="p">):</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">send</span><span class="p">(</span><span class="n">author_id</span><span class="p">,</span><span class="n">message</span><span class="p">)</span>
+
+<span class="n">bot</span> <span class="o">=</span> <span class="n">EchoBot</span><span class="p">(</span><span class="s">"&lt;email&gt;"</span><span class="p">,</span> <span class="s">"&lt;password&gt;"</span><span class="p">)</span>
+<span class="n">bot</span><span class="o">.</span><span class="n">listen</span><span class="p">()</span></code></pre></figure>
+
+<p>We create a class and we inherit all the methods of the Client object. We do that because we want to customise some of it’s methods, such as <code class="highlighter-rouge">on_message()</code> without messing with the core code.</p>
+
+<p>This particular function triggers whenever bot receives OR sends a message, thus in order to filter out our messages, we need to be sure that the <code class="highlighter-rouge">author._id</code>  is not the bot’s.This translates in python as follows: <code class="highlighter-rouge">str(author_id) != str.(seld.uid)</code>. We are forced to convert the id’s to str as they are byte format.</p>
+
+<p>Also  <strong>note</strong>  that <code class="highlighter-rouge">author_name</code> is deprecated and currently returns as <code class="highlighter-rouge">None</code>, so we only know his id. Moreover, id’s are not session bound and could possible change while our bot listens for messages. So, in order to check if the author is valid, we need to have a pre-defined list of valid names and periodically create a list with their respective id’s, using this method:</p>
+
+<figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="n">friends</span> <span class="o">=</span> <span class="n">client</span><span class="o">.</span><span class="n">getUsers</span><span class="p">(</span><span class="s">"FRIEND'S NAME"</span><span class="p">)</span>  <span class="c"># return a list of names</span>
+<span class="n">friend</span> <span class="o">=</span> <span class="n">friends</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span></code></pre></figure>
+
+<p>In my bot, I used the following approach:</p>
+
+<figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="bp">self</span><span class="o">.</span><span class="n">authorised_names</span> <span class="o">=</span> <span class="p">[</span><span class="s">"&lt;name&gt;"</span><span class="p">]</span>
+<span class="k">def</span> <span class="nf">authorised_update</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">authorised_id</span><span class="o">.</span><span class="n">clear</span><span class="p">()</span> <span class="c">#dictionary with names:id</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">authorised_idrev</span><span class="o">.</span><span class="n">clear</span><span class="p">()</span> <span class="c">#dictionary with id:names</span>
+        <span class="k">for</span> <span class="n">name</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">authorised_names</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">authorised_id</span><span class="p">[</span><span class="n">name</span><span class="p">]</span> <span class="o">=</span> <span class="nb">str</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">getUsers</span><span class="p">(</span><span class="n">name</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">uid</span><span class="p">)</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">authorised_idrev</span><span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">authorised_id</span><span class="p">[</span><span class="n">name</span><span class="p">]]</span> <span class="o">=</span> <span class="n">name</span>
+            <span class="k">if</span> <span class="n">name</span> <span class="ow">not</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">conversations</span><span class="p">:</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">conversations</span><span class="p">[</span><span class="n">name</span><span class="p">]</span> <span class="o">=</span> <span class="mi">0</span> <span class="c">#we use this dictionary to keep track of the conversations</span>
+
+        <span class="n">Timer</span><span class="p">(</span><span class="mi">30</span> <span class="o">*</span> <span class="mi">60</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">authorised_update</span><span class="p">,</span> <span class="p">[])</span><span class="o">.</span><span class="n">start</span><span class="p">()</span> <span class="c">#Timer is a method from the threading library.</span></code></pre></figure>
+
+<p>Note that I recently found that now messages from non-friend profiles go to the <em>“message request”</em>  folder. Thus our bot - which is based on an older version of facebook- will check messages that come from friends profiles. If we want our bot to  only receive messages from a certain number of people, we can simply befriend only them!</p>
+
+<p>As you can see, our method greatly limits our options and it’s reliability is uncertain, never the less it’s fairly straight-forward and quite handy as a tutorial.</p>
+
+<p>The <code class="highlighter-rouge">fbchat.Client()</code> script is quite well-written, if you feel confident enough, give it a try and explore what works and what not, don’t forget to check the <a href="https://github.com/carpedm20/fbchat/issues"><strong>github’s page</strong></a> issues tab as well.</p>
+
+<p>Now that we have understood the basics of fbchat, in the next post I will introduce wit.ai and we will see how a NLP works.</p>
+
+<p>Until then, Cheers!</p>
+
+<p>If you want to check my bot’s source code, head <a href="https://github.com/OdysLam/GLaDOS-project">here</a></p>
+
+<iframe src="//giphy.com/embed/3o7qDEq2bMbcbPRQ2c" width="480" height="333" frameborder="0" class="giphy-embed" allowfullscreen=""></iframe>
+<p><a href="http://giphy.com/gifs/mic-drop-peace-out-obama-3o7qDEq2bMbcbPRQ2c"></a></p>
+
+
+          </div>
+
+          <div class="article-share">
+            
+            <a href="" title="Share on Twitter" onclick="window.open('https://twitter.com/home?status=Facebook Bots 101 - http://odyslam.me/blog/posts/facebook-bots-101 ', 'newwindow', 'width=500, height=225'); return false;">
+              <span class="icon icon-social-twitter"></span>
+            </a>
+            <a href="" title="Share on Facebook" onclick="window.open('https://www.facebook.com/sharer/sharer.php?u=http://odyslam.me/blog/posts/facebook-bots-101', 'newwindow', 'width=500, height=500'); return false;">
+              <span class="icon icon-social-facebook"></span>
+            </a>
+            <a href="" title="Share on Google+" onclick="window.open('https://plus.google.com/share?url=http://odyslam.me/blog/posts/facebook-bots-101', 'newwindow', 'width=550, height=400'); return false;">
+              <span class="icon icon-social-googleplus"></span>
+            </a>
+          </div>
+
+          
+            <div id="disqus_thread" class="article-comments"></div>
+            <script>
+              (function() {
+                  var d = document, s = d.createElement('script');
+                  s.src = '//odyslam-me.disqus.com/embed.js';
+                  s.setAttribute('data-timestamp', +new Date());
+                  (d.head || d.body).appendChild(s);
+              })();
+            </script>
+            <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+          
+        </article>
+        <footer class="footer reveal">
+  <p>
+    blog.py, 2017 no copyright and stuff. 
+  </p>
+</footer>
+
+      </div>
+    </div>
+  </main>
+  <script type="text/javascript" src="/blog/assets/vendor.js"></script>
+<script type="text/javascript" src="/blog/assets/application.js"></script>
+
+<script src="https://ajax.googleapis.com/ajax/libs/webfont/1.6.16/webfont.js"></script>
+<script>
+  WebFont.load({
+    google: {
+      families: ['Cormorant Garamond:700', 'Lato:300,400,700']
+    }
+  });
+</script>
+
+
+  <script>
+    window.ga=function(){ga.q.push(arguments)};ga.q=[];ga.l=+new Date;
+    ga('create','UA-90109813-1','auto');ga('send','pageview')
+  </script>
+  <script src="https://www.google-analytics.com/analytics.js" async defer></script>
+
+
+</body>
+</html>
