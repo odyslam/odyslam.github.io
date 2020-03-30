@@ -165,7 +165,7 @@ $(document).keyup(
                 //                            Typed.js is used,please leave a star @<a href="http://www.mattboldt.com/demos/typed-js/" target ="_blank">Mattboldt&larr;</a>';
                 //     break;
                 case 'blog':
-                    window.open('/blog/');
+                    window.location.href="/blog/";;
                     break;
 
                 case '':
