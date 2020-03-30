@@ -5,8 +5,8 @@
     <description></description>
     <link>https://odyslam.me/blog/</link>
     <atom:link href="https://odyslam.me/blog/feed.xml" rel="self" type="application/rss+xml" />
-    <pubDate>Mon, 30 Mar 2020 22:14:08 +0300</pubDate>
-    <lastBuildDate>Mon, 30 Mar 2020 22:14:08 +0300</lastBuildDate>
+    <pubDate>Mon, 30 Mar 2020 22:33:17 +0300</pubDate>
+    <lastBuildDate>Mon, 30 Mar 2020 22:33:17 +0300</lastBuildDate>
     <generator>Jekyll v4.0.0</generator>
     
       <item>
@@ -92,9 +92,13 @@
 
 &lt;h1 id=&quot;why&quot;&gt;Why&lt;/h1&gt;
 
-&lt;p&gt;A while back I discovered &lt;a href=&quot;https://netdata.cloud&quot;&gt;Netdata&lt;/a&gt; and I was truly fascinated by it’s take on system monitoring for two main reasons. It was extremely lightweight, something of great usefulness to me, an IoT enthusiast, as it proved to be a  very useful tool to debug IoT devices, such as the Raspberry pi. On a Raspberry pi zero W, it consumes as little as 10% of the cpu, without any optimization whatsoever and update frequency of 1 second. &lt;strong&gt;Crazy huh?&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;A while back I discovered &lt;a href=&quot;https://netdata.cloud&quot;&gt;Netdata&lt;/a&gt; and I was truly fascinated by it’s take on system monitoring for two main reasons. It was extremely lightweight, something of great usefulness to me, an IoT enthusiast, as it proved to be a  very useful tool to debug IoT devices, such as the Raspberry pi.&lt;/p&gt;
 
-&lt;p&gt;Another aspect that I enjoyed as a newcomer to the world of &lt;em&gt;Devops&lt;/em&gt; was the intrinsic easiness of both the installation and customization of the platform. It’s truly a &lt;em&gt;fire and forget&lt;/em&gt; application that is configured and programmed in such as way that the default settings will be adequate for a large number of users, myself included. This fascination and the fact that I had just finished my Integrated Master’s diploma ,(thus looking to break into the startup world), led me to contribute a bit of docs and code, as a good open source citizen.&lt;/p&gt;
+&lt;p&gt;On a Raspberry pi zero W, it consumes as little as 10% of the cpu, without any optimization whatsoever and update frequency of 1 second. &lt;strong&gt;Crazy huh?&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;Another aspect that I enjoyed as a newcomer to the world of &lt;em&gt;Devops&lt;/em&gt; was the intrinsic easiness of both the installation and customization of the platform. It’s truly a &lt;em&gt;fire and forget&lt;/em&gt; application that is configured and programmed in such as way that the default settings will be adequate for a large number of users, myself included.&lt;/p&gt;
+
+&lt;p&gt;This fascination and the fact that I had just finished my Integrated Master’s diploma ,(thus looking to break into the startup world), led me to contribute a bit of docs and code, as a good open source citizen.&lt;/p&gt;
 
 &lt;p&gt;Wanting to dig further, I was extremely fortunate to be introduced to a sys-admin at the University of Patras, named Spiros. Spiros and I, installed and configured Netdata on a production server for the University of Patras. This post is an attempt to distill what we learned.&lt;/p&gt;
 
