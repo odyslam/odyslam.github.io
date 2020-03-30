@@ -58,7 +58,7 @@ $(document).keyup(
                                         &nbsp <br>\
 										<span style="cursor:pointer" class = "nav_button">contact</span> &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp Get in touch & social media<br>\
                                         &nbsp <br>\
-                                        <span style="cursor:pointer" class = "nav_button">blog</span> &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<br>\
+                                        <span style="cursor:pointer" class = "nav_button">blog</span> &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbspMy personal blog, mainly about tech<br>\
                                         &nbsp <br>\
                                         <span style="cursor:pointer" class = "nav_button">help</span> &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp List of available commands<br>\
                                         &nbsp <br>\
@@ -165,7 +165,7 @@ $(document).keyup(
                 //                            Typed.js is used,please leave a star @<a href="http://www.mattboldt.com/demos/typed-js/" target ="_blank">Mattboldt&larr;</a>';
                 //     break;
                 case 'blog':
-                    window.open('/blog/', '_blank');
+                    window.open('/blog/');
                     break;
 
                 case '':
