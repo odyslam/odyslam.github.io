@@ -70,7 +70,6 @@ $(document).keyup(
 
                     case 'about':
                         result = result + '<br>	This website was made with <3 by Odysseas Lamtzidis for ODYSLAM IKE P.C. <br>\
-                        It serves as a portfolio of Odysseas Lamtzidis as managing partner of ODYSLAM IKE P.C and provides information about the company. <br>\
                         Address1: Vasilissis Sofias 20, 17121. Nea Smyrni, Athens, Greece <br>\
                         Address2: The Internet <br>\
                         Mail: <a href="mailto:hi@odyslam.me">hi@odyslam.me</a><br>';
