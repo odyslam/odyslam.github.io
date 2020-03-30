@@ -3,10 +3,10 @@
   <channel>
     <title>blog.py</title>
     <description></description>
-    <link>https://odyslam.me/</link>
-    <atom:link href="https://odyslam.me/feed.xml" rel="self" type="application/rss+xml" />
-    <pubDate>Mon, 30 Mar 2020 20:56:03 +0300</pubDate>
-    <lastBuildDate>Mon, 30 Mar 2020 20:56:03 +0300</lastBuildDate>
+    <link>https://odyslam.me/blog/</link>
+    <atom:link href="https://odyslam.me/blog/feed.xml" rel="self" type="application/rss+xml" />
+    <pubDate>Mon, 30 Mar 2020 21:17:14 +0300</pubDate>
+    <lastBuildDate>Mon, 30 Mar 2020 21:17:14 +0300</lastBuildDate>
     <generator>Jekyll v4.0.0</generator>
     
       <item>
@@ -882,8 +882,8 @@ curl &lt;span class=&quot;nt&quot;&gt;-fsSL&lt;/span&gt; https://download.docker
 &lt;h1 id=&quot;comments&quot;&gt;Comments&lt;/h1&gt;
 </description>
         <pubDate>Mon, 30 Mar 2020 00:00:00 +0300</pubDate>
-        <link>https://odyslam.me/blog/Netdata-installation-production-web-server/</link>
-        <guid isPermaLink="true">https://odyslam.me/blog/Netdata-installation-production-web-server/</guid>
+        <link>https://odyslam.me/blog/blog/Netdata-installation-production-web-server/</link>
+        <guid isPermaLink="true">https://odyslam.me/blog/blog/Netdata-installation-production-web-server/</guid>
         
         <category>2020</category>
         
