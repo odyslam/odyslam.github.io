@@ -5,12 +5,12 @@
     <description></description>
     <link>https://odyslam.me/blog/</link>
     <atom:link href="https://odyslam.me/blog/feed.xml" rel="self" type="application/rss+xml" />
-    <pubDate>Wed, 01 Apr 2020 16:40:35 +0300</pubDate>
-    <lastBuildDate>Wed, 01 Apr 2020 16:40:35 +0300</lastBuildDate>
+    <pubDate>Thu, 02 Apr 2020 21:57:14 +0300</pubDate>
+    <lastBuildDate>Thu, 02 Apr 2020 21:57:14 +0300</lastBuildDate>
     <generator>Jekyll v4.0.0</generator>
     
       <item>
-        <title>How to install Netdata in a Production Web Server (Nginx, PHP-fpm, MariaDB)</title>
+        <title>Netdata tutorial for Production Web Server (Nginx, PHP-fpm, MariaDB)</title>
         <description>&lt;p&gt;Created: Dec 05, 2019 | Updated: Jan 12, 2020 | Document Version: 0.3
 &lt;br /&gt;
 &lt;br /&gt;&lt;/p&gt;
