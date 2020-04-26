@@ -5,8 +5,8 @@
     <description></description>
     <link>https://odyslam.me/blog/</link>
     <atom:link href="https://odyslam.me/blog/feed.xml" rel="self" type="application/rss+xml" />
-    <pubDate>Sun, 26 Apr 2020 15:30:53 +0300</pubDate>
-    <lastBuildDate>Sun, 26 Apr 2020 15:30:53 +0300</lastBuildDate>
+    <pubDate>Sun, 26 Apr 2020 15:34:15 +0300</pubDate>
+    <lastBuildDate>Sun, 26 Apr 2020 15:34:15 +0300</lastBuildDate>
     <generator>Jekyll v4.0.0</generator>
     
       <item>
@@ -364,10 +364,14 @@ git clone https://repo
 
 &lt;p&gt;On the other hand, there are 2 environment variables that can be set using &lt;code class=&quot;highlighter-rouge&quot;&gt;balena dashboard&lt;/code&gt; and when the &lt;code class=&quot;highlighter-rouge&quot;&gt;nginx&lt;/code&gt; container reloads, it will pick them up.&lt;/p&gt;
 
-&lt;div class=&quot;language-shell highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;SYNC_WEBSITE: If this environment variable is &lt;span class=&quot;nb&quot;&gt;set &lt;/span&gt;to &lt;span class=&quot;s2&quot;&gt;&quot;1&quot;&lt;/span&gt;, the container will always download the latest version of the website every &lt;span class=&quot;nb&quot;&gt;time &lt;/span&gt;it restarts.
-
-CERTBOT_FORCED: If this environment variable is &lt;span class=&quot;nb&quot;&gt;set &lt;/span&gt;to &lt;span class=&quot;s2&quot;&gt;&quot;1&quot;&lt;/span&gt;, the container will always request a new certification every &lt;span class=&quot;nb&quot;&gt;time &lt;/span&gt;it restarts. If the current certification is still valid, it will simply inform the user that the certification is up-to-date and will exit.
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;ol&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;strong&gt;SYNC_WEBSITE:&lt;/strong&gt; If this environment variable is set to “1”, the container will always download the latest version of the website every time it restarts.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;strong&gt;CERTBOT_FORCED:&lt;/strong&gt; If this environment variable is set to “1”, the container will always request a new certification every time it restarts. If the current certification is still valid, it will simply inform the user that the certification is up-to-date and will exit.&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ol&gt;
 
 &lt;p&gt;You can read more about &lt;code class=&quot;highlighter-rouge&quot;&gt;environment variables&lt;/code&gt; in balena, in the &lt;a href=&quot;https://www.balena.io/docs/learn/manage/serv-vars/&quot;&gt;documentation&lt;/a&gt;.
 You can read more about &lt;code class=&quot;highlighter-rouge&quot;&gt;build-time secrets&lt;/code&gt; in balena, in the &lt;a href=&quot;https://www.balena.io/docs/learn/more/masterclasses/cli-masterclass/#81-build-time-secrets&quot;&gt;documentation&lt;/a&gt;.&lt;/p&gt;

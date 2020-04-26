@@ -503,10 +503,14 @@ git clone https://repo
 
 <p>On the other hand, there are 2 environment variables that can be set using <code class="highlighter-rouge">balena dashboard</code> and when the <code class="highlighter-rouge">nginx</code> container reloads, it will pick them up.</p>
 
-<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code>SYNC_WEBSITE: If this environment variable is <span class="nb">set </span>to <span class="s2">"1"</span>, the container will always download the latest version of the website every <span class="nb">time </span>it restarts.
-
-CERTBOT_FORCED: If this environment variable is <span class="nb">set </span>to <span class="s2">"1"</span>, the container will always request a new certification every <span class="nb">time </span>it restarts. If the current certification is still valid, it will simply inform the user that the certification is up-to-date and will exit.
-</code></pre></div></div>
+<ol>
+  <li>
+    <p><strong>SYNC_WEBSITE:</strong> If this environment variable is set to “1”, the container will always download the latest version of the website every time it restarts.</p>
+  </li>
+  <li>
+    <p><strong>CERTBOT_FORCED:</strong> If this environment variable is set to “1”, the container will always request a new certification every time it restarts. If the current certification is still valid, it will simply inform the user that the certification is up-to-date and will exit.</p>
+  </li>
+</ol>
 
 <p>You can read more about <code class="highlighter-rouge">environment variables</code> in balena, in the <a href="https://www.balena.io/docs/learn/manage/serv-vars/">documentation</a>.
 You can read more about <code class="highlighter-rouge">build-time secrets</code> in balena, in the <a href="https://www.balena.io/docs/learn/more/masterclasses/cli-masterclass/#81-build-time-secrets">documentation</a>.</p>
