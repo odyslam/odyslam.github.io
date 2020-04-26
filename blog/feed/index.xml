@@ -5,8 +5,8 @@
     <description></description>
     <link>https://odyslam.me/blog/</link>
     <atom:link href="https://odyslam.me/blog/feed.xml" rel="self" type="application/rss+xml" />
-    <pubDate>Sun, 26 Apr 2020 19:39:31 +0300</pubDate>
-    <lastBuildDate>Sun, 26 Apr 2020 19:39:31 +0300</lastBuildDate>
+    <pubDate>Sun, 26 Apr 2020 21:52:50 +0300</pubDate>
+    <lastBuildDate>Sun, 26 Apr 2020 21:52:50 +0300</lastBuildDate>
     <generator>Jekyll v4.0.0</generator>
     
       <item>
@@ -519,7 +519,7 @@ method=auto
 
 &lt;p&gt;Since we are building a server, we need to allow people to be able to connect to our Raspberry Pi. Normally a home router will block all ingoing connections (connections that are not initiated from a device inside the local network), thus we need to create a rule and tell the router that each connection that is made to a specific &lt;strong&gt;port&lt;/strong&gt; should be &lt;strong&gt;forwarded&lt;/strong&gt; to the same &lt;strong&gt;port&lt;/strong&gt; of the &lt;strong&gt;Raspberry&lt;/strong&gt;.&lt;/p&gt;
 
-&lt;p&gt;This is because when someone attempts to connect to our &lt;strong&gt;IP&lt;/strong&gt;, in essence, he tries to connect to our &lt;em&gt;router&lt;/em&gt; since it functions as the gateway that stands between the Internet and our local network. Thus we want to tell the &lt;em&gt;router&lt;/em&gt; that any time someone tries to continue to the ports that we will specify, in essence, he wants to connect to our server, thus the router must forward the connection to the Raspberry pi.&lt;/p&gt;
+&lt;p&gt;When someone attempts to connect to the &lt;strong&gt;IP&lt;/strong&gt; that is assigned to your home connection, in essence he connects to the &lt;em&gt;router&lt;/em&gt;, as the &lt;em&gt;router&lt;/em&gt; functions as the gateway between the outer network (the Internet) and the local network (LAN). Thus we want to tell the &lt;em&gt;router&lt;/em&gt; that any time someone tries to continue to some specific port, in essence, he wants to connect to our server, thus the router must forward the connection to the Raspberry pi.&lt;/p&gt;
 
 &lt;p&gt;In other words, we need to forward &lt;strong&gt;ports&lt;/strong&gt; &lt;code class=&quot;highlighter-rouge&quot;&gt;80&lt;/code&gt; and &lt;code class=&quot;highlighter-rouge&quot;&gt;443&lt;/code&gt; to the Raspberry pi.&lt;/p&gt;
 
@@ -626,15 +626,15 @@ balena push bananas
 
 &lt;p&gt;The field &lt;code class=&quot;highlighter-rouge&quot;&gt;&amp;lt;commit message&amp;gt;&lt;/code&gt; must be replaced with a commit message for the addition to the &lt;code class=&quot;highlighter-rouge&quot;&gt;GitHub&lt;/code&gt; repository, just like you did when you uploaded the files using the website of &lt;code class=&quot;highlighter-rouge&quot;&gt;GitHub&lt;/code&gt;.&lt;/p&gt;
 
-&lt;p&gt;Before you can you can use the script, you have to open the file using your favorit text editor and replace the following fields:&lt;/p&gt;
+&lt;p&gt;Before you can you can use the script, you have to open the file using your favorite text editor and replace the following fields:&lt;/p&gt;
 
-&lt;div class=&quot;language-shell highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;c&quot;&gt;# If you use &lt;/span&gt;
-&lt;span class=&quot;nb&quot;&gt;export &lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;J_OUTPUT&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; Absolute path to the directory of the website&lt;span class=&quot;s1&quot;&gt;'s source files
+&lt;div class=&quot;language-shell highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;
+&lt;span class=&quot;c&quot;&gt;# export J_OUTPUT= Absolute path to the directory of the website's source files&lt;/span&gt;
 
-export REPO = Absolute path to the directory of the website'&lt;/span&gt;s &lt;span class=&quot;nb&quot;&gt;source &lt;/span&gt;files
+&lt;span class=&quot;c&quot;&gt;# export REPO = Absolute path to the directory of the website's source files&lt;/span&gt;
 
-&lt;span class=&quot;nb&quot;&gt;export &lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;DEV_UUID&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; UUID of the device, can be found from the device&lt;span class=&quot;s1&quot;&gt;'s dashboard
-&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;span class=&quot;c&quot;&gt;# export DEV_UUID= UUID of the device, can be found from the device's dashboard&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
 &lt;h1 id=&quot;comments&quot;&gt;Comments&lt;/h1&gt;
 

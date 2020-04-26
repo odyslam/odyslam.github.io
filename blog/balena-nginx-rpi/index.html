@@ -672,7 +672,7 @@ method=auto
 
 <p>Since we are building a server, we need to allow people to be able to connect to our Raspberry Pi. Normally a home router will block all ingoing connections (connections that are not initiated from a device inside the local network), thus we need to create a rule and tell the router that each connection that is made to a specific <strong>port</strong> should be <strong>forwarded</strong> to the same <strong>port</strong> of the <strong>Raspberry</strong>.</p>
 
-<p>This is because when someone attempts to connect to our <strong>IP</strong>, in essence, he tries to connect to our <em>router</em> since it functions as the gateway that stands between the Internet and our local network. Thus we want to tell the <em>router</em> that any time someone tries to continue to the ports that we will specify, in essence, he wants to connect to our server, thus the router must forward the connection to the Raspberry pi.</p>
+<p>When someone attempts to connect to the <strong>IP</strong> that is assigned to your home connection, in essence he connects to the <em>router</em>, as the <em>router</em> functions as the gateway between the outer network (the Internet) and the local network (LAN). Thus we want to tell the <em>router</em> that any time someone tries to continue to some specific port, in essence, he wants to connect to our server, thus the router must forward the connection to the Raspberry pi.</p>
 
 <p>In other words, we need to forward <strong>ports</strong> <code class="highlighter-rouge">80</code> and <code class="highlighter-rouge">443</code> to the Raspberry pi.</p>
 
@@ -779,15 +779,15 @@ balena push bananas
 
 <p>The field <code class="highlighter-rouge">&lt;commit message&gt;</code> must be replaced with a commit message for the addition to the <code class="highlighter-rouge">GitHub</code> repository, just like you did when you uploaded the files using the website of <code class="highlighter-rouge">GitHub</code>.</p>
 
-<p>Before you can you can use the script, you have to open the file using your favorit text editor and replace the following fields:</p>
+<p>Before you can you can use the script, you have to open the file using your favorite text editor and replace the following fields:</p>
 
-<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># If you use </span>
-<span class="nb">export </span><span class="nv">J_OUTPUT</span><span class="o">=</span> Absolute path to the directory of the website<span class="s1">'s source files
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
+<span class="c"># export J_OUTPUT= Absolute path to the directory of the website's source files</span>
 
-export REPO = Absolute path to the directory of the website'</span>s <span class="nb">source </span>files
+<span class="c"># export REPO = Absolute path to the directory of the website's source files</span>
 
-<span class="nb">export </span><span class="nv">DEV_UUID</span><span class="o">=</span> UUID of the device, can be found from the device<span class="s1">'s dashboard
-</span></code></pre></div></div>
+<span class="c"># export DEV_UUID= UUID of the device, can be found from the device's dashboard</span>
+</code></pre></div></div>
 
 <h1 id="comments">Comments</h1>
 
