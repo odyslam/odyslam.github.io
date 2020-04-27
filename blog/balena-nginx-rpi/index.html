@@ -213,7 +213,7 @@
       <li><a href="#installing-the-software">Installing the Software</a>
         <ul>
           <li><a href="#jekyll">Jekyll</a></li>
-          <li><a href="#installing-nginx-in-balena">Installing nginx-in-balena</a></li>
+          <li><a href="#installing-the-server-on-the-device">Installing the server on the device</a></li>
         </ul>
       </li>
       <li><a href="#configuring-the-software">Configuring the Software</a>
@@ -223,7 +223,7 @@
           <li><a href="#ddiclient-configuration">ddiclient configuration</a></li>
         </ul>
       </li>
-      <li><a href="#configuring-the-environment">Configuring the environment</a>
+      <li><a href="#configuring-the-local-network">Configuring the local network</a>
         <ul>
           <li><a href="#static-ip">Static IP</a></li>
           <li><a href="#port-forwarding">Port Forwarding</a></li>
@@ -456,22 +456,9 @@
 
 <p>3) <strong>Congratulations!</strong> You have your very first project on Github!</p>
 
-<h3 id="installing-nginx-in-balena">Installing nginx-in-balena</h3>
+<h3 id="installing-the-server-on-the-device">Installing the server on the device</h3>
 
-<p>To install the software, we did all the heavy lifting for you. We aggregated all the relevant software and made sure that it can support the Raspberry pi 4 with a balenaOS 64bit. You only have to go download a local copy of the project:</p>
-
-<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
-git clone https://repo
-
-<span class="nb">cd </span>repo
-
-</code></pre></div></div>
-
-<p>We are now into the project’s directory. <strong>Let’s configure it!</strong></p>
-
-<blockquote>
-  <p>Possibly, the same software will run without problems on a Raspberry pi 3 with either 32 or 64 bit OS. If you test it successfully on a Raspberry pi 3, please do leave a comment and we will update the blog-post accordingly.</p>
-</blockquote>
+<p>Well, you don’t have to do anything. The software is already shipped ready to be installed directly on the device. Jump to the next section in order to download it locally, change some configuration based on your setup and then ship it!</p>
 
 <h2 id="configuring-the-software">Configuring the Software</h2>
 
@@ -526,13 +513,15 @@ git clone https://repo
   </li>
 </ol>
 
-<p>You can read more about <code class="highlighter-rouge">environment variables</code> in balena, in the <a href="https://www.balena.io/docs/learn/manage/serv-vars/">documentation</a>.
-You can read more about <code class="highlighter-rouge">build-time secrets</code> in balena, in the <a href="https://www.balena.io/docs/learn/more/masterclasses/cli-masterclass/#81-build-time-secrets">documentation</a>.</p>
+<ul>
+  <li>You can read more about <code class="highlighter-rouge">environment variables</code> in balena, in the <a href="https://www.balena.io/docs/learn/manage/serv-vars/">documentation</a>.</li>
+  <li>You can read more about <code class="highlighter-rouge">build-time secrets</code> in balena, in the <a href="https://www.balena.io/docs/learn/more/masterclasses/cli-masterclass/#81-build-time-secrets">documentation</a>.</li>
+</ul>
 
 <h3 id="nginx-configuration">nginx configuration</h3>
 
 <ol>
-  <li>Run the commands bellow to generate a private key that will be used by nginx for <em>SSL</em> related functionality. As it might take some minutes, go ahead and read about it in this <a href="https://security.stackexchange.com/questions/94390/whats-the-purpose-of-dh-parameters">Stack Overflow Question</a>. Welcome to the world of <em>cryptography</em>.</li>
+  <li>Run the commands bellow to generate a private key that will be used by nginx for <em>SSL</em> related functionality. As it might take some minutes, go ahead and read some information about it in this <a href="https://security.stackexchange.com/questions/94390/whats-the-purpose-of-dh-parameters">Stack Overflow Question</a>.</li>
 </ol>
 
 <div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
@@ -594,9 +583,14 @@ server_name www.example.com example.com;
   </li>
 </ol>
 
-<h2 id="configuring-the-environment">Configuring the environment</h2>
+<h2 id="configuring-the-local-network">Configuring the local network</h2>
 
-<p>It’s time to move on configuring our environment. In our case we need to allow ingoing connections from the router and make sure that the server will always have a <code class="highlighter-rouge">static ip</code> in the local network.</p>
+<p>In order for this project to succeed we need to do 2 things:</p>
+
+<ol>
+  <li>Set the raspberry pi to have a static ip in the local network. This will ensure that the router will always know what’s the correct IP for the server.</li>
+  <li>Set the router to allow connections from the Internet that are intended for the server. In other words, allow users to access our web-page!</li>
+</ol>
 
 <h3 id="static-ip">Static IP</h3>
 
@@ -734,7 +728,7 @@ balena push bananas
 
 <h3 id="updating-your-certificates">Updating your certificates</h3>
 
-<p>You are very organized and want to plan ahead? Sure, cerbot will email you a couple of days before your certificates are invalidated so you can renew.</p>
+<p>You are very organized and want to plan ahead? No problem, certbot will automatically send you an e-mail when the certifications are about to expire.</p>
 
 <p>When you receive that e-mail, you only need to:</p>
 
@@ -778,6 +772,22 @@ balena push bananas
 <p><code class="highlighter-rouge">./deploy-dev-local.sh "&lt;commit message&gt;"</code></p>
 
 <p>The field <code class="highlighter-rouge">&lt;commit message&gt;</code> must be replaced with a commit message for the addition to the <code class="highlighter-rouge">GitHub</code> repository, just like you did when you uploaded the files using the website of <code class="highlighter-rouge">GitHub</code>.</p>
+
+<p>This script does the following things:</p>
+
+<ol>
+  <li>Builds the Jekyll website and outputs it to a pre-determined directory</li>
+  <li>Commits the changed source files to the website’s local repository</li>
+  <li>Pushes the new local repository to the remote website’s repository at Github</li>
+  <li><code class="highlighter-rouge">SSH</code> into the hostOS of the device, assuming it runs a development image, and then it <code class="highlighter-rouge">SSH</code> into the <code class="highlighter-rouge">nginx</code> container</li>
+  <li>Runs the <code class="highlighter-rouge">update-blog.sh</code> script, which in turns:
+    <ol>
+      <li>Downloads the website’s source files from the remote Github repository (the one we just uploaded to)</li>
+      <li>Replaces the old website with the new source files</li>
+    </ol>
+  </li>
+  <li>Now, Nginx serves the new website</li>
+</ol>
 
 <p>Before you can you can use the script, you have to open the file using your favorite text editor and replace the following fields:</p>
 

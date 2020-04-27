@@ -5,8 +5,8 @@
     <description></description>
     <link>https://odyslam.me/blog/</link>
     <atom:link href="https://odyslam.me/blog/feed.xml" rel="self" type="application/rss+xml" />
-    <pubDate>Sun, 26 Apr 2020 21:56:38 +0300</pubDate>
-    <lastBuildDate>Sun, 26 Apr 2020 21:56:38 +0300</lastBuildDate>
+    <pubDate>Mon, 27 Apr 2020 18:37:16 +0300</pubDate>
+    <lastBuildDate>Mon, 27 Apr 2020 18:37:16 +0300</lastBuildDate>
     <generator>Jekyll v4.0.0</generator>
     
       <item>
@@ -60,7 +60,7 @@
       &lt;li&gt;&lt;a href=&quot;#installing-the-software&quot;&gt;Installing the Software&lt;/a&gt;
         &lt;ul&gt;
           &lt;li&gt;&lt;a href=&quot;#jekyll&quot;&gt;Jekyll&lt;/a&gt;&lt;/li&gt;
-          &lt;li&gt;&lt;a href=&quot;#installing-nginx-in-balena&quot;&gt;Installing nginx-in-balena&lt;/a&gt;&lt;/li&gt;
+          &lt;li&gt;&lt;a href=&quot;#installing-the-server-on-the-device&quot;&gt;Installing the server on the device&lt;/a&gt;&lt;/li&gt;
         &lt;/ul&gt;
       &lt;/li&gt;
       &lt;li&gt;&lt;a href=&quot;#configuring-the-software&quot;&gt;Configuring the Software&lt;/a&gt;
@@ -70,7 +70,7 @@
           &lt;li&gt;&lt;a href=&quot;#ddiclient-configuration&quot;&gt;ddiclient configuration&lt;/a&gt;&lt;/li&gt;
         &lt;/ul&gt;
       &lt;/li&gt;
-      &lt;li&gt;&lt;a href=&quot;#configuring-the-environment&quot;&gt;Configuring the environment&lt;/a&gt;
+      &lt;li&gt;&lt;a href=&quot;#configuring-the-local-network&quot;&gt;Configuring the local network&lt;/a&gt;
         &lt;ul&gt;
           &lt;li&gt;&lt;a href=&quot;#static-ip&quot;&gt;Static IP&lt;/a&gt;&lt;/li&gt;
           &lt;li&gt;&lt;a href=&quot;#port-forwarding&quot;&gt;Port Forwarding&lt;/a&gt;&lt;/li&gt;
@@ -303,22 +303,9 @@
 
 &lt;p&gt;3) &lt;strong&gt;Congratulations!&lt;/strong&gt; You have your very first project on Github!&lt;/p&gt;
 
-&lt;h3 id=&quot;installing-nginx-in-balena&quot;&gt;Installing nginx-in-balena&lt;/h3&gt;
+&lt;h3 id=&quot;installing-the-server-on-the-device&quot;&gt;Installing the server on the device&lt;/h3&gt;
 
-&lt;p&gt;To install the software, we did all the heavy lifting for you. We aggregated all the relevant software and made sure that it can support the Raspberry pi 4 with a balenaOS 64bit. You only have to go download a local copy of the project:&lt;/p&gt;
-
-&lt;div class=&quot;language-shell highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;
-git clone https://repo
-
-&lt;span class=&quot;nb&quot;&gt;cd &lt;/span&gt;repo
-
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;We are now into the project’s directory. &lt;strong&gt;Let’s configure it!&lt;/strong&gt;&lt;/p&gt;
-
-&lt;blockquote&gt;
-  &lt;p&gt;Possibly, the same software will run without problems on a Raspberry pi 3 with either 32 or 64 bit OS. If you test it successfully on a Raspberry pi 3, please do leave a comment and we will update the blog-post accordingly.&lt;/p&gt;
-&lt;/blockquote&gt;
+&lt;p&gt;Well, you don’t have to do anything. The software is already shipped ready to be installed directly on the device. Jump to the next section in order to download it locally, change some configuration based on your setup and then ship it!&lt;/p&gt;
 
 &lt;h2 id=&quot;configuring-the-software&quot;&gt;Configuring the Software&lt;/h2&gt;
 
@@ -373,13 +360,15 @@ git clone https://repo
   &lt;/li&gt;
 &lt;/ol&gt;
 
-&lt;p&gt;You can read more about &lt;code class=&quot;highlighter-rouge&quot;&gt;environment variables&lt;/code&gt; in balena, in the &lt;a href=&quot;https://www.balena.io/docs/learn/manage/serv-vars/&quot;&gt;documentation&lt;/a&gt;.
-You can read more about &lt;code class=&quot;highlighter-rouge&quot;&gt;build-time secrets&lt;/code&gt; in balena, in the &lt;a href=&quot;https://www.balena.io/docs/learn/more/masterclasses/cli-masterclass/#81-build-time-secrets&quot;&gt;documentation&lt;/a&gt;.&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;You can read more about &lt;code class=&quot;highlighter-rouge&quot;&gt;environment variables&lt;/code&gt; in balena, in the &lt;a href=&quot;https://www.balena.io/docs/learn/manage/serv-vars/&quot;&gt;documentation&lt;/a&gt;.&lt;/li&gt;
+  &lt;li&gt;You can read more about &lt;code class=&quot;highlighter-rouge&quot;&gt;build-time secrets&lt;/code&gt; in balena, in the &lt;a href=&quot;https://www.balena.io/docs/learn/more/masterclasses/cli-masterclass/#81-build-time-secrets&quot;&gt;documentation&lt;/a&gt;.&lt;/li&gt;
+&lt;/ul&gt;
 
 &lt;h3 id=&quot;nginx-configuration&quot;&gt;nginx configuration&lt;/h3&gt;
 
 &lt;ol&gt;
-  &lt;li&gt;Run the commands bellow to generate a private key that will be used by nginx for &lt;em&gt;SSL&lt;/em&gt; related functionality. As it might take some minutes, go ahead and read about it in this &lt;a href=&quot;https://security.stackexchange.com/questions/94390/whats-the-purpose-of-dh-parameters&quot;&gt;Stack Overflow Question&lt;/a&gt;. Welcome to the world of &lt;em&gt;cryptography&lt;/em&gt;.&lt;/li&gt;
+  &lt;li&gt;Run the commands bellow to generate a private key that will be used by nginx for &lt;em&gt;SSL&lt;/em&gt; related functionality. As it might take some minutes, go ahead and read some information about it in this &lt;a href=&quot;https://security.stackexchange.com/questions/94390/whats-the-purpose-of-dh-parameters&quot;&gt;Stack Overflow Question&lt;/a&gt;.&lt;/li&gt;
 &lt;/ol&gt;
 
 &lt;div class=&quot;language-shell highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;
@@ -441,9 +430,14 @@ server_name www.example.com example.com;
   &lt;/li&gt;
 &lt;/ol&gt;
 
-&lt;h2 id=&quot;configuring-the-environment&quot;&gt;Configuring the environment&lt;/h2&gt;
+&lt;h2 id=&quot;configuring-the-local-network&quot;&gt;Configuring the local network&lt;/h2&gt;
 
-&lt;p&gt;It’s time to move on configuring our environment. In our case we need to allow ingoing connections from the router and make sure that the server will always have a &lt;code class=&quot;highlighter-rouge&quot;&gt;static ip&lt;/code&gt; in the local network.&lt;/p&gt;
+&lt;p&gt;In order for this project to succeed we need to do 2 things:&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;Set the raspberry pi to have a static ip in the local network. This will ensure that the router will always know what’s the correct IP for the server.&lt;/li&gt;
+  &lt;li&gt;Set the router to allow connections from the Internet that are intended for the server. In other words, allow users to access our web-page!&lt;/li&gt;
+&lt;/ol&gt;
 
 &lt;h3 id=&quot;static-ip&quot;&gt;Static IP&lt;/h3&gt;
 
@@ -581,7 +575,7 @@ balena push bananas
 
 &lt;h3 id=&quot;updating-your-certificates&quot;&gt;Updating your certificates&lt;/h3&gt;
 
-&lt;p&gt;You are very organized and want to plan ahead? Sure, cerbot will email you a couple of days before your certificates are invalidated so you can renew.&lt;/p&gt;
+&lt;p&gt;You are very organized and want to plan ahead? No problem, certbot will automatically send you an e-mail when the certifications are about to expire.&lt;/p&gt;
 
 &lt;p&gt;When you receive that e-mail, you only need to:&lt;/p&gt;
 
@@ -625,6 +619,22 @@ balena push bananas
 &lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;./deploy-dev-local.sh &quot;&amp;lt;commit message&amp;gt;&quot;&lt;/code&gt;&lt;/p&gt;
 
 &lt;p&gt;The field &lt;code class=&quot;highlighter-rouge&quot;&gt;&amp;lt;commit message&amp;gt;&lt;/code&gt; must be replaced with a commit message for the addition to the &lt;code class=&quot;highlighter-rouge&quot;&gt;GitHub&lt;/code&gt; repository, just like you did when you uploaded the files using the website of &lt;code class=&quot;highlighter-rouge&quot;&gt;GitHub&lt;/code&gt;.&lt;/p&gt;
+
+&lt;p&gt;This script does the following things:&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;Builds the Jekyll website and outputs it to a pre-determined directory&lt;/li&gt;
+  &lt;li&gt;Commits the changed source files to the website’s local repository&lt;/li&gt;
+  &lt;li&gt;Pushes the new local repository to the remote website’s repository at Github&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;SSH&lt;/code&gt; into the hostOS of the device, assuming it runs a development image, and then it &lt;code class=&quot;highlighter-rouge&quot;&gt;SSH&lt;/code&gt; into the &lt;code class=&quot;highlighter-rouge&quot;&gt;nginx&lt;/code&gt; container&lt;/li&gt;
+  &lt;li&gt;Runs the &lt;code class=&quot;highlighter-rouge&quot;&gt;update-blog.sh&lt;/code&gt; script, which in turns:
+    &lt;ol&gt;
+      &lt;li&gt;Downloads the website’s source files from the remote Github repository (the one we just uploaded to)&lt;/li&gt;
+      &lt;li&gt;Replaces the old website with the new source files&lt;/li&gt;
+    &lt;/ol&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Now, Nginx serves the new website&lt;/li&gt;
+&lt;/ol&gt;
 
 &lt;p&gt;Before you can you can use the script, you have to open the file using your favorite text editor and replace the following fields:&lt;/p&gt;
 
