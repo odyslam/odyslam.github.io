@@ -236,6 +236,7 @@
           <li><a href="#updating-your-certificates">Updating your certificates</a></li>
           <li><a href="#push-new-content-to-the-website">Push new content to the website</a></li>
           <li><a href="#push-new-content-to-the-website---for-advanced-users">Push new content to the website - For advanced users</a></li>
+          <li><a href="#finally-a-use-case">Finally, a use-case</a></li>
         </ul>
       </li>
     </ul>
@@ -354,7 +355,7 @@
 
 <p><code class="highlighter-rouge">Netdata</code> is a monitoring agent that runs on the device, aggregates, visualizes and presents various data about the operation of the machine. From fairly simple, such as <code class="highlighter-rouge">RAM</code> usage, to more complicated such as <code class="highlighter-rouge">CPU interrupts</code>. Moreover, it has collectors for specific apps that can auto-detect if it’s running and start gathering data.</p>
 
-<p>Although Netdata is fairly complex and customizable, we will be using it because:</p>
+<p>We will be using Netdata because:</p>
 
 <ol>
   <li>
@@ -664,9 +665,7 @@ method=auto
 
 <h3 id="port-forwarding">Port Forwarding</h3>
 
-<p>Since we are building a server, we need to allow people to be able to connect to our Raspberry Pi. Normally a home router will block all ingoing connections (connections that are not initiated from a device inside the local network), thus we need to create a rule and tell the router that each connection that is made to a specific <strong>port</strong> should be <strong>forwarded</strong> to the same <strong>port</strong> of the <strong>Raspberry</strong>.</p>
-
-<p>When someone attempts to connect to the <strong>IP</strong> that is assigned to your home connection, in essence he connects to the <em>router</em>, as the <em>router</em> functions as the gateway between the outer network (the Internet) and the local network (LAN). Thus we want to tell the <em>router</em> that any time someone tries to continue to some specific port, in essence, he wants to connect to our server, thus the router must forward the connection to the Raspberry pi.</p>
+<p>When someone attempts to connect to the <strong>IP</strong> that is assigned to your home connection, in essence he connects to the <em>router</em>, as the <em>router</em> functions as the gateway between the outer network (the Internet) and the local network (LAN). Thus we want to tell the <em>router</em> that any time someone tries to continue to some specific port, in reality, he wants to connect to our server, thus the router must forward the connection to the Raspberry pi.</p>
 
 <p>In other words, we need to forward <strong>ports</strong> <code class="highlighter-rouge">80</code> and <code class="highlighter-rouge">443</code> to the Raspberry pi.</p>
 
@@ -798,8 +797,19 @@ balena push bananas
 
 <span class="c"># export DEV_UUID= UUID of the device, can be found from the device's dashboard</span>
 </code></pre></div></div>
+<h3 id="finally-a-use-case">Finally, a use-case</h3>
 
-<h1 id="comments">Comments</h1>
+<p>In case you want to see how this setup works, you can see bellow the repositories for this website.</p>
+
+<p>In essence, I have 3 working repositories:</p>
+
+<ol>
+  <li><code class="highlighter-rouge">balena-nginx</code>: The source files for the setup of the webserver. <a href="https://odyslam.me/blog/balena-nginx-rpi/">Link</a></li>
+  <li><code class="highlighter-rouge">clyell</code>: Fork from an original Jekyll theme which I have modified extensively. This repository has all the files that are built using  <code class="highlighter-rouge">Jekyll</code> and the output is the blog of my website.<a href="https://github.com/OdysLam/clyell">Link</a></li>
+  <li><code class="highlighter-rouge">odyslam.github.io</code>: Repository which holds the source files of my website. This is the repository that is downloaded to the webserver. It consists of the main website which is a plain <code class="highlighter-rouge">html</code>, <code class="highlighter-rouge">CSS</code>, <code class="highlighter-rouge">JS</code> website built by hand and the <code class="highlighter-rouge">/blog</code> part which is built using Jekyll from the <code class="highlighter-rouge">clyell</code> repository.<a href="https://github.com/OdysLam/odyslam.github.io">Link</a>
+    <h1 id="comments">Comments</h1>
+  </li>
+</ol>
 
 
   </article>

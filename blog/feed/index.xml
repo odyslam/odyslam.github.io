@@ -5,8 +5,8 @@
     <description></description>
     <link>https://odyslam.me/blog/</link>
     <atom:link href="https://odyslam.me/blog/feed.xml" rel="self" type="application/rss+xml" />
-    <pubDate>Mon, 27 Apr 2020 18:37:16 +0300</pubDate>
-    <lastBuildDate>Mon, 27 Apr 2020 18:37:16 +0300</lastBuildDate>
+    <pubDate>Fri, 01 May 2020 17:29:00 +0300</pubDate>
+    <lastBuildDate>Fri, 01 May 2020 17:29:00 +0300</lastBuildDate>
     <generator>Jekyll v4.0.0</generator>
     
       <item>
@@ -83,6 +83,7 @@
           &lt;li&gt;&lt;a href=&quot;#updating-your-certificates&quot;&gt;Updating your certificates&lt;/a&gt;&lt;/li&gt;
           &lt;li&gt;&lt;a href=&quot;#push-new-content-to-the-website&quot;&gt;Push new content to the website&lt;/a&gt;&lt;/li&gt;
           &lt;li&gt;&lt;a href=&quot;#push-new-content-to-the-website---for-advanced-users&quot;&gt;Push new content to the website - For advanced users&lt;/a&gt;&lt;/li&gt;
+          &lt;li&gt;&lt;a href=&quot;#finally-a-use-case&quot;&gt;Finally, a use-case&lt;/a&gt;&lt;/li&gt;
         &lt;/ul&gt;
       &lt;/li&gt;
     &lt;/ul&gt;
@@ -201,7 +202,7 @@
 
 &lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;Netdata&lt;/code&gt; is a monitoring agent that runs on the device, aggregates, visualizes and presents various data about the operation of the machine. From fairly simple, such as &lt;code class=&quot;highlighter-rouge&quot;&gt;RAM&lt;/code&gt; usage, to more complicated such as &lt;code class=&quot;highlighter-rouge&quot;&gt;CPU interrupts&lt;/code&gt;. Moreover, it has collectors for specific apps that can auto-detect if it’s running and start gathering data.&lt;/p&gt;
 
-&lt;p&gt;Although Netdata is fairly complex and customizable, we will be using it because:&lt;/p&gt;
+&lt;p&gt;We will be using Netdata because:&lt;/p&gt;
 
 &lt;ol&gt;
   &lt;li&gt;
@@ -511,9 +512,7 @@ method=auto
 
 &lt;h3 id=&quot;port-forwarding&quot;&gt;Port Forwarding&lt;/h3&gt;
 
-&lt;p&gt;Since we are building a server, we need to allow people to be able to connect to our Raspberry Pi. Normally a home router will block all ingoing connections (connections that are not initiated from a device inside the local network), thus we need to create a rule and tell the router that each connection that is made to a specific &lt;strong&gt;port&lt;/strong&gt; should be &lt;strong&gt;forwarded&lt;/strong&gt; to the same &lt;strong&gt;port&lt;/strong&gt; of the &lt;strong&gt;Raspberry&lt;/strong&gt;.&lt;/p&gt;
-
-&lt;p&gt;When someone attempts to connect to the &lt;strong&gt;IP&lt;/strong&gt; that is assigned to your home connection, in essence he connects to the &lt;em&gt;router&lt;/em&gt;, as the &lt;em&gt;router&lt;/em&gt; functions as the gateway between the outer network (the Internet) and the local network (LAN). Thus we want to tell the &lt;em&gt;router&lt;/em&gt; that any time someone tries to continue to some specific port, in essence, he wants to connect to our server, thus the router must forward the connection to the Raspberry pi.&lt;/p&gt;
+&lt;p&gt;When someone attempts to connect to the &lt;strong&gt;IP&lt;/strong&gt; that is assigned to your home connection, in essence he connects to the &lt;em&gt;router&lt;/em&gt;, as the &lt;em&gt;router&lt;/em&gt; functions as the gateway between the outer network (the Internet) and the local network (LAN). Thus we want to tell the &lt;em&gt;router&lt;/em&gt; that any time someone tries to continue to some specific port, in reality, he wants to connect to our server, thus the router must forward the connection to the Raspberry pi.&lt;/p&gt;
 
 &lt;p&gt;In other words, we need to forward &lt;strong&gt;ports&lt;/strong&gt; &lt;code class=&quot;highlighter-rouge&quot;&gt;80&lt;/code&gt; and &lt;code class=&quot;highlighter-rouge&quot;&gt;443&lt;/code&gt; to the Raspberry pi.&lt;/p&gt;
 
@@ -645,8 +644,19 @@ balena push bananas
 
 &lt;span class=&quot;c&quot;&gt;# export DEV_UUID= UUID of the device, can be found from the device's dashboard&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;h3 id=&quot;finally-a-use-case&quot;&gt;Finally, a use-case&lt;/h3&gt;
 
-&lt;h1 id=&quot;comments&quot;&gt;Comments&lt;/h1&gt;
+&lt;p&gt;In case you want to see how this setup works, you can see bellow the repositories for this website.&lt;/p&gt;
+
+&lt;p&gt;In essence, I have 3 working repositories:&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;balena-nginx&lt;/code&gt;: The source files for the setup of the webserver. &lt;a href=&quot;https://odyslam.me/blog/balena-nginx-rpi/&quot;&gt;Link&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;clyell&lt;/code&gt;: Fork from an original Jekyll theme which I have modified extensively. This repository has all the files that are built using  &lt;code class=&quot;highlighter-rouge&quot;&gt;Jekyll&lt;/code&gt; and the output is the blog of my website.&lt;a href=&quot;https://github.com/OdysLam/clyell&quot;&gt;Link&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;odyslam.github.io&lt;/code&gt;: Repository which holds the source files of my website. This is the repository that is downloaded to the webserver. It consists of the main website which is a plain &lt;code class=&quot;highlighter-rouge&quot;&gt;html&lt;/code&gt;, &lt;code class=&quot;highlighter-rouge&quot;&gt;CSS&lt;/code&gt;, &lt;code class=&quot;highlighter-rouge&quot;&gt;JS&lt;/code&gt; website built by hand and the &lt;code class=&quot;highlighter-rouge&quot;&gt;/blog&lt;/code&gt; part which is built using Jekyll from the &lt;code class=&quot;highlighter-rouge&quot;&gt;clyell&lt;/code&gt; repository.&lt;a href=&quot;https://github.com/OdysLam/odyslam.github.io&quot;&gt;Link&lt;/a&gt;
+    &lt;h1 id=&quot;comments&quot;&gt;Comments&lt;/h1&gt;
+  &lt;/li&gt;
+&lt;/ol&gt;
 
 </description>
         <pubDate>Wed, 22 Apr 2020 00:00:00 +0300</pubDate>
