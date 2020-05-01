@@ -270,7 +270,7 @@ $(document).ready(
             showCursor: false,
             callback: function () {
                 $(".updates").typed({
-                    strings: ["hello visitor, thank you for coming <br> \\ (•◡•) / ","This website runs on an actual Raspberry pi, powered by <a href = \"https://Balena.io\" target = \"_blank\">Balena.io </a>.... Isn't that awesome ʘ‿ʘ ?" , "to navigate, click on the commands or type them in the field and press enter", "type or tap/click on <span style=\"cursor:pointer\" class = \"nav_button\">help</span> for a command list. <br> <br> Click/Tap <strong> <a href=\"/assets/odysseasLamtzidis.vcf\" download>here</a></strong> to add me to your contacts. "],
+                    strings: ["hello visitor, thank you for coming <br> \\ (•◡•) / " , "to navigate, click on the commands or type them in the field and press enter", "type or tap/click on <span style=\"cursor:pointer\" class = \"nav_button\">help</span> for a command list. <br> <br> Click/Tap <strong> <a href=\"/assets/odysseasLamtzidis.vcf\" download>here</a></strong> to add me to your contacts. "],
                     typeSpeed: 3,
                     backDelay: 1000,
                     showCursor: false,
