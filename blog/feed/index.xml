@@ -5,8 +5,8 @@
     <description></description>
     <link>https://odyslam.me/blog/</link>
     <atom:link href="https://odyslam.me/blog/feed.xml" rel="self" type="application/rss+xml" />
-    <pubDate>Tue, 09 Jun 2020 13:22:37 +0300</pubDate>
-    <lastBuildDate>Tue, 09 Jun 2020 13:22:37 +0300</lastBuildDate>
+    <pubDate>Tue, 09 Jun 2020 13:24:58 +0300</pubDate>
+    <lastBuildDate>Tue, 09 Jun 2020 13:24:58 +0300</lastBuildDate>
     <generator>Jekyll v4.0.0</generator>
     
       <item>
@@ -649,30 +649,22 @@ balena push bananas
 &lt;p&gt;In case you want to see how this setup works, here is my setup divided into 3 repositories:&lt;/p&gt;
 
 &lt;ol&gt;
-  &lt;li&gt;
-    &lt;table&gt;
-      &lt;tbody&gt;
-        &lt;tr&gt;
-          &lt;td&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;balena-nginx&lt;/code&gt;: The source files for the setup of the webserver.&lt;/td&gt;
-          &lt;td&gt; &lt;/td&gt;
-          &lt;td&gt;&lt;a href=&quot;https://github.com/balena-io-playground/balena-nginx&quot;&gt;Link&lt;/a&gt;&lt;/td&gt;
-        &lt;/tr&gt;
-      &lt;/tbody&gt;
-    &lt;/table&gt;
+  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;balena-nginx&lt;/code&gt;: The source files for the setup of the webserver.
+    &lt;ol&gt;
+      &lt;li&gt;&lt;a href=&quot;https://github.com/balena-io-playground/balena-nginx&quot;&gt;Github Repository&lt;/a&gt;&lt;/li&gt;
+    &lt;/ol&gt;
   &lt;/li&gt;
-  &lt;li&gt;
-    &lt;table&gt;
-      &lt;tbody&gt;
-        &lt;tr&gt;
-          &lt;td&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;clyell&lt;/code&gt;: Fork from a Jekyll theme which I have modified extensively. This repository has all the files that are used by  &lt;code class=&quot;highlighter-rouge&quot;&gt;Jekyll&lt;/code&gt; engine to create the source files of my blog.&lt;/td&gt;
-          &lt;td&gt; &lt;/td&gt;
-          &lt;td&gt;&lt;a href=&quot;https://github.com/OdysLam/clyell&quot;&gt;Link&lt;/a&gt;&lt;/td&gt;
-        &lt;/tr&gt;
-      &lt;/tbody&gt;
-    &lt;/table&gt;
+  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;clyell&lt;/code&gt;: Fork from a Jekyll theme which I have modified extensively. This repository has all the files that are used by  &lt;code class=&quot;highlighter-rouge&quot;&gt;Jekyll&lt;/code&gt; engine to create the source files of my blog.
+    &lt;ol&gt;
+      &lt;li&gt;&lt;a href=&quot;https://github.com/OdysLam/clyell&quot;&gt;Github Repository&lt;/a&gt;&lt;/li&gt;
+    &lt;/ol&gt;
   &lt;/li&gt;
-  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;odyslam.github.io&lt;/code&gt;: Repository which holds the source files of my entire website. This is the repository that is downloaded to the webserver. It consists of the main website which is a plain &lt;code class=&quot;highlighter-rouge&quot;&gt;html&lt;/code&gt;, &lt;code class=&quot;highlighter-rouge&quot;&gt;CSS&lt;/code&gt;, &lt;code class=&quot;highlighter-rouge&quot;&gt;JS&lt;/code&gt; website built by hand and the &lt;code class=&quot;highlighter-rouge&quot;&gt;/blog&lt;/code&gt; directory which is built by Jekyll from the files of the &lt;code class=&quot;highlighter-rouge&quot;&gt;clyell&lt;/code&gt; repository.|| &lt;a href=&quot;https://github.com/OdysLam/odyslam.github.io&quot;&gt;Link&lt;/a&gt;
-    &lt;h1 id=&quot;comments&quot;&gt;Comments&lt;/h1&gt;
+  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;odyslam.github.io&lt;/code&gt;: Repository which holds the source files of my entire website. This is the repository that is downloaded to the webserver. It consists of the main website which is a plain &lt;code class=&quot;highlighter-rouge&quot;&gt;html&lt;/code&gt;, &lt;code class=&quot;highlighter-rouge&quot;&gt;CSS&lt;/code&gt;, &lt;code class=&quot;highlighter-rouge&quot;&gt;JS&lt;/code&gt; website built by hand and the &lt;code class=&quot;highlighter-rouge&quot;&gt;/blog&lt;/code&gt; directory which is built by Jekyll from the files of the &lt;code class=&quot;highlighter-rouge&quot;&gt;clyell&lt;/code&gt; repository.
+    &lt;ol&gt;
+      &lt;li&gt;&lt;a href=&quot;https://github.com/OdysLam/odyslam.github.io&quot;&gt;Github Repository&lt;/a&gt;
+        &lt;h1 id=&quot;comments&quot;&gt;Comments&lt;/h1&gt;
+      &lt;/li&gt;
+    &lt;/ol&gt;
   &lt;/li&gt;
 &lt;/ol&gt;
 
