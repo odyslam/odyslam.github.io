@@ -5,8 +5,8 @@
     <description></description>
     <link>https://odyslam.me/blog/</link>
     <atom:link href="https://odyslam.me/blog/feed.xml" rel="self" type="application/rss+xml" />
-    <pubDate>Tue, 09 Jun 2020 13:24:58 +0300</pubDate>
-    <lastBuildDate>Tue, 09 Jun 2020 13:24:58 +0300</lastBuildDate>
+    <pubDate>Tue, 14 Jul 2020 11:24:37 +0300</pubDate>
+    <lastBuildDate>Tue, 14 Jul 2020 11:24:37 +0300</lastBuildDate>
     <generator>Jekyll v4.0.0</generator>
     
       <item>
@@ -637,7 +637,7 @@ balena push bananas
 
 &lt;p&gt;Before you can you can use the script, you have to open the file using your favorite text editor and replace the following fields:&lt;/p&gt;
 
-&lt;div class=&quot;language-shell highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;
+&lt;div class=&quot;language-shell highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt; 
 &lt;span class=&quot;c&quot;&gt;# export J_OUTPUT= Absolute path to the directory of the website's source files&lt;/span&gt;
 
 &lt;span class=&quot;c&quot;&gt;# export REPO = Absolute path to the directory of the website's source files&lt;/span&gt;
