@@ -5,8 +5,8 @@
     <description></description>
     <link>https://odyslam.me/blog/</link>
     <atom:link href="https://odyslam.me/blog/feed.xml" rel="self" type="application/rss+xml" />
-    <pubDate>Tue, 14 Jul 2020 11:36:03 +0300</pubDate>
-    <lastBuildDate>Tue, 14 Jul 2020 11:36:03 +0300</lastBuildDate>
+    <pubDate>Sat, 18 Jul 2020 17:23:48 +0300</pubDate>
+    <lastBuildDate>Sat, 18 Jul 2020 17:23:48 +0300</lastBuildDate>
     <generator>Jekyll v4.0.0</generator>
     
       <item>
@@ -88,7 +88,6 @@
       &lt;/li&gt;
     &lt;/ul&gt;
   &lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;#comments&quot;&gt;Comments&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;h2 id=&quot;static-website&quot;&gt;Static Website&lt;/h2&gt;
@@ -113,7 +112,7 @@
 
 &lt;p&gt;As we are &lt;em&gt;lazy&lt;/em&gt;, we don’t want to write a blog website from scratch, as it would entail considerable overhead for each new post we want to make. What we want, is a framework that will have a certain &lt;em&gt;theme&lt;/em&gt; and which will generate the static files of the blog &lt;strong&gt;for us&lt;/strong&gt;, allowing us to focus solely on the content of the blog.&lt;/p&gt;
 
-&lt;p&gt;Luckily for us, there is a very easy-to-use framework, called &lt;strong&gt;Jekyll&lt;/strong&gt;. It was created by Github’s co-founder Tom Preston-Werner. As we read from the project’s &lt;a href=&quot;https://github.com/jekyll/jekyll&quot;&gt;repository&lt;/a&gt; &lt;code class=&quot;highlighter-rouge&quot;&gt;readme.md&lt;/code&gt;:&lt;/p&gt;
+&lt;p&gt;Luckily for us, there is a very easy-to-use framework, called &lt;strong&gt;Jekyll&lt;/strong&gt;. It was created by Github’s co-founder Tom Preston-Werner. As we read from the project’s &lt;a href=&quot;https://github.com/jekyll/jekyll&quot;&gt;repository&lt;/a&gt; &lt;strong&gt;README&lt;/strong&gt;:&lt;/p&gt;
 
 &lt;blockquote&gt;
   &lt;p&gt;Jekyll is a simple, blog-aware, static site generator perfect for personal, project, or organization sites. Think of it like a file-based CMS, without all the complexity. Jekyll takes your content, renders Markdown and Liquid templates, and spits out a complete, static website ready to be served by Apache, Nginx or another web server. Jekyll is the engine behind &lt;a href=&quot;https://pages.github.com/&quot;&gt;GitHub Pages&lt;/a&gt;, which you can use to host sites right from your GitHub repositories.&lt;/p&gt;
@@ -188,7 +187,7 @@
 
 &lt;p&gt;&lt;img src=&quot;https://i.imgur.com/Mp9pB7M.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
 
-&lt;p&gt;&lt;strong&gt;Disclaimer&lt;/strong&gt;: I work at balena.io in the product team.  Thus, you &lt;em&gt;could&lt;/em&gt; say that I am a bit biased.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Disclaimer&lt;/strong&gt;: I worked at balena.io in the product team.  Thus, you &lt;em&gt;could&lt;/em&gt; say that I am a bit biased.&lt;/p&gt;
 
 &lt;h2 id=&quot;complimentary-software&quot;&gt;Complimentary Software:&lt;/h2&gt;
 
@@ -205,12 +204,8 @@
 &lt;p&gt;We will be using Netdata because:&lt;/p&gt;
 
 &lt;ol&gt;
-  &lt;li&gt;
-    &lt;p&gt;It’s super light (about 5% CPU consumption) and thus ideal for the constraint nature of a Raspberry pi 4.&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;It can auto-detect &lt;code class=&quot;highlighter-rouge&quot;&gt;nginx&lt;/code&gt; and start gathering data using the &lt;code class=&quot;highlighter-rouge&quot;&gt;stub_page&lt;/code&gt; of the webserver. You can read more about &lt;code class=&quot;highlighter-rouge&quot;&gt;stub_page&lt;/code&gt; &lt;a href=&quot;https://easyengine.io/tutorials/nginx/status-page/&quot;&gt;here&lt;/a&gt;.&lt;/p&gt;
-  &lt;/li&gt;
+  &lt;li&gt;It’s super light (about 5% CPU consumption) and thus ideal for the constraint nature of a Raspberry pi 4.&lt;/li&gt;
+  &lt;li&gt;It can auto-detect &lt;code class=&quot;highlighter-rouge&quot;&gt;nginx&lt;/code&gt; and start gathering data using the &lt;code class=&quot;highlighter-rouge&quot;&gt;stub_page&lt;/code&gt; of the webserver. You can read more about &lt;code class=&quot;highlighter-rouge&quot;&gt;stub_page&lt;/code&gt; &lt;a href=&quot;https://easyengine.io/tutorials/nginx/status-page/&quot;&gt;here&lt;/a&gt;.&lt;/li&gt;
 &lt;/ol&gt;
 
 &lt;h2 id=&quot;architecture&quot;&gt;Architecture&lt;/h2&gt;
@@ -220,15 +215,9 @@
 &lt;h3 id=&quot;components&quot;&gt;Components&lt;/h3&gt;
 
 &lt;ol&gt;
-  &lt;li&gt;
-    &lt;p&gt;&lt;strong&gt;webserver:&lt;/strong&gt; Runs the &lt;code class=&quot;highlighter-rouge&quot;&gt;nginx&lt;/code&gt; service and the &lt;code class=&quot;highlighter-rouge&quot;&gt;certbot&lt;/code&gt; for SSL generation&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;&lt;strong&gt;ddclient:&lt;/strong&gt; Runs the &lt;code class=&quot;highlighter-rouge&quot;&gt;ddiclient&lt;/code&gt; service&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;&lt;strong&gt;netdata monitoring:&lt;/strong&gt; Runs an instance of &lt;a href=&quot;https://github.com/netdata/netdata&quot;&gt;Netdata Monitoring software&lt;/a&gt; to overview the load of the server.&lt;/p&gt;
-  &lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;webserver:&lt;/strong&gt; Runs the &lt;code class=&quot;highlighter-rouge&quot;&gt;nginx&lt;/code&gt; service and the &lt;code class=&quot;highlighter-rouge&quot;&gt;certbot&lt;/code&gt; for SSL generation&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;ddclient:&lt;/strong&gt; Runs the &lt;code class=&quot;highlighter-rouge&quot;&gt;ddiclient&lt;/code&gt; service&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;netdata monitoring:&lt;/strong&gt; Runs an instance of &lt;a href=&quot;https://github.com/netdata/netdata&quot;&gt;Netdata Monitoring software&lt;/a&gt; to overview the load of the server.&lt;/li&gt;
 &lt;/ol&gt;
 
 &lt;h1 id=&quot;lets-get-to-it&quot;&gt;Let’s get to it&lt;/h1&gt;
@@ -251,18 +240,9 @@
 &lt;p&gt;Before going forward, we assume that:&lt;/p&gt;
 
 &lt;ol&gt;
-  &lt;li&gt;
-    &lt;p&gt;You have balena-CLI installed&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;You have balena-etcher installed&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;You have logged in balena-CLI&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;You have logged in balena dashboard&lt;/p&gt;
-  &lt;/li&gt;
+  &lt;li&gt;You have balena-CLI installed&lt;/li&gt;
+  &lt;li&gt;You have balena-etcher installed&lt;/li&gt;
+  &lt;li&gt;You have logged in balena dashboard&lt;/li&gt;
 &lt;/ol&gt;
 
 &lt;h2 id=&quot;installing-the-software&quot;&gt;Installing the Software&lt;/h2&gt;
@@ -272,37 +252,27 @@
 &lt;p&gt;Although this blog post focuses mainly on setting up a balena-powered raspberry pi webserver, we want to give some insight into how to create a website in the first place.&lt;/p&gt;
 
 &lt;ol&gt;
-  &lt;li&gt;
-    &lt;p&gt;&lt;strong&gt;Visit&lt;/strong&gt; Jekyll’s website and follow the &lt;a href=&quot;https://jekyllrb.com/docs/&quot;&gt;Get started guide&lt;/a&gt;.&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;Get yourself familiar with the Jekyll templating engine&lt;/p&gt;
-  &lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Visit&lt;/strong&gt; Jekyll’s website and follow the &lt;a href=&quot;https://jekyllrb.com/docs/&quot;&gt;Get started guide&lt;/a&gt;.&lt;/li&gt;
+  &lt;li&gt;Get yourself familiar with the Jekyll templating engine&lt;/li&gt;
   &lt;li&gt;&lt;strong&gt;Search&lt;/strong&gt; for a Jekyll theme that is appealing to you:
     &lt;ol&gt;
       &lt;li&gt;&lt;a href=&quot;http://jekyllthemes.org/&quot;&gt;http://jekyllthemes.org/&lt;/a&gt;&lt;/li&gt;
       &lt;li&gt;&lt;a href=&quot;https://jekyllthemes.io/&quot;&gt;https://jekyllthemes.io/&lt;/a&gt;&lt;/li&gt;
     &lt;/ol&gt;
   &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;&lt;strong&gt;Download&lt;/strong&gt; the theme locally and configure it according to the &lt;strong&gt;theme’s&lt;/strong&gt; and &lt;strong&gt;Jekyll’s documentation&lt;/strong&gt;.&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;&lt;strong&gt;Build&lt;/strong&gt; the website according to the &lt;strong&gt;theme’s documentation&lt;/strong&gt;, the &lt;code class=&quot;highlighter-rouge&quot;&gt;source files&lt;/code&gt; will be placed in a directory called &lt;code class=&quot;highlighter-rouge&quot;&gt;_site&lt;/code&gt;.&lt;/p&gt;
-  &lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Download&lt;/strong&gt; the theme locally and configure it according to the &lt;strong&gt;theme’s&lt;/strong&gt; and &lt;strong&gt;Jekyll’s documentation&lt;/strong&gt;.&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Build&lt;/strong&gt; the website according to the &lt;strong&gt;theme’s documentation&lt;/strong&gt;, the &lt;code class=&quot;highlighter-rouge&quot;&gt;source files&lt;/code&gt; will be placed in a directory called &lt;code class=&quot;highlighter-rouge&quot;&gt;_site&lt;/code&gt;.&lt;/li&gt;
   &lt;li&gt;Upload the files inside &lt;code class=&quot;highlighter-rouge&quot;&gt;_site&lt;/code&gt; to a &lt;em&gt;Github Repository&lt;/em&gt;.&lt;/li&gt;
 &lt;/ol&gt;
 
 &lt;p&gt;&lt;br /&gt;
-&lt;strong&gt;Disclaimer:&lt;/strong&gt; If you haven’t used Github again:
-&lt;br /&gt;
-&lt;br /&gt;&lt;/p&gt;
+&lt;strong&gt;Disclaimer:&lt;/strong&gt; If you haven’t used Github again:&lt;/p&gt;
 
-&lt;p&gt;1) Follow ths &lt;a href=&quot;https://help.github.com/en/enterprise/2.13/user/articles/creating-a-new-repository&quot;&gt;guide&lt;/a&gt; to create a new &lt;code class=&quot;highlighter-rouge&quot;&gt;repository&lt;/code&gt; to Github.&lt;/p&gt;
-
-&lt;p&gt;2) Follow this &lt;a href=&quot;https://help.github.com/en/github/managing-files-in-a-repository/adding-a-file-to-a-repository&quot;&gt;guide&lt;/a&gt; to upload all your website’s source files to the &lt;code class=&quot;highlighter-rouge&quot;&gt;repository&lt;/code&gt; you just created. Simply drag and drop all of them as it is shown in the guide.&lt;/p&gt;
-
-&lt;p&gt;3) &lt;strong&gt;Congratulations!&lt;/strong&gt; You have your very first project on Github!&lt;/p&gt;
+&lt;ol&gt;
+  &lt;li&gt;Follow this &lt;a href=&quot;https://help.github.com/en/enterprise/2.13/user/articles/creating-a-new-repository&quot;&gt;guide&lt;/a&gt; to create a new &lt;code class=&quot;highlighter-rouge&quot;&gt;repository&lt;/code&gt; to Github.&lt;/li&gt;
+  &lt;li&gt;Follow this &lt;a href=&quot;https://help.github.com/en/github/managing-files-in-a-repository/adding-a-file-to-a-repository&quot;&gt;guide&lt;/a&gt; to upload all your website’s source files to the &lt;code class=&quot;highlighter-rouge&quot;&gt;repository&lt;/code&gt; you just created.&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Congratulations!&lt;/strong&gt; You have your very first project on Github!&lt;/li&gt;
+&lt;/ol&gt;
 
 &lt;h3 id=&quot;installing-the-server-on-the-device&quot;&gt;Installing the server on the device&lt;/h3&gt;
 
@@ -337,15 +307,10 @@
 &lt;/ol&gt;
 
 &lt;div class=&quot;language-shell highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nv&quot;&gt;REPO_ZIP_URL&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;https://github.com/OdysLam/odyslam.github.io/archive/master.zip
-
 &lt;span class=&quot;nv&quot;&gt;REPO_NAME&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;odyslam.github.io
-
 &lt;span class=&quot;nv&quot;&gt;CERTBOT_MAIL&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;hi@odyslam.me
-
 &lt;span class=&quot;nv&quot;&gt;CERTBOT_DOMAIN_1&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;www.example.com
-
 &lt;span class=&quot;nv&quot;&gt;CERTBOT_DOMAIN_2&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;example.com
-
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
 &lt;p&gt;This environment variables are not expected to change while the server runs, thus we prefer to define them at build time.&lt;/p&gt;
@@ -372,32 +337,26 @@
   &lt;li&gt;Run the commands bellow to generate a private key that will be used by nginx for &lt;em&gt;SSL&lt;/em&gt; related functionality. As it might take some minutes, go ahead and read some information about it in this &lt;a href=&quot;https://security.stackexchange.com/questions/94390/whats-the-purpose-of-dh-parameters&quot;&gt;Stack Overflow Question&lt;/a&gt;.&lt;/li&gt;
 &lt;/ol&gt;
 
-&lt;div class=&quot;language-shell highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;
-&lt;span class=&quot;nb&quot;&gt;cd &lt;/span&gt;nginx
-
+&lt;div class=&quot;language-shell highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nb&quot;&gt;cd &lt;/span&gt;nginx
 openssl dhparam &lt;span class=&quot;nt&quot;&gt;-out&lt;/span&gt; dhparam.pem 2048
-
 &lt;span class=&quot;nb&quot;&gt;cd&lt;/span&gt; ..
-
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
 &lt;ol&gt;
   &lt;li&gt;Using a text editor, open &lt;code class=&quot;highlighter-rouge&quot;&gt;nginx.conf&lt;/code&gt; which will find the &lt;code class=&quot;highlighter-rouge&quot;&gt;nginx&lt;/code&gt; directory. Head over to the following excerpt and replace the &lt;code class=&quot;highlighter-rouge&quot;&gt;www.example.com&lt;/code&gt; and &lt;code class=&quot;highlighter-rouge&quot;&gt;example.com&lt;/code&gt; with your domain name.&lt;/li&gt;
 &lt;/ol&gt;
 
-&lt;div class=&quot;language-conf highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;
-&lt;span class=&quot;n&quot;&gt;server&lt;/span&gt; {
+&lt;div class=&quot;language-conf highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;n&quot;&gt;server&lt;/span&gt; {
 &lt;span class=&quot;n&quot;&gt;listen&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;443&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;ssl&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;http2&lt;/span&gt;;
 &lt;span class=&quot;n&quot;&gt;server_name&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;www&lt;/span&gt;.&lt;span class=&quot;n&quot;&gt;example&lt;/span&gt;.&lt;span class=&quot;n&quot;&gt;com&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;example&lt;/span&gt;.&lt;span class=&quot;n&quot;&gt;com&lt;/span&gt;
-
+...
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
 &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;server {
-
 listen 80;
 listen [::]:80;
 server_name www.example.com example.com;
-
+...
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
 &lt;p&gt;If you want to read more about the &lt;code class=&quot;highlighter-rouge&quot;&gt;nginx&lt;/code&gt; configuration file and what the various fields mean, you can read more about it here:&lt;/p&gt;
@@ -460,75 +419,50 @@ server_name www.example.com example.com;
   &lt;li&gt;
     &lt;p&gt;Replace the field &lt;code class=&quot;highlighter-rouge&quot;&gt;ROUTER_IP&lt;/code&gt; with the &lt;code class=&quot;highlighter-rouge&quot;&gt;IP&lt;/code&gt; of the router.&lt;/p&gt;
   &lt;/li&gt;
-  &lt;li&gt;Replace the field &lt;code class=&quot;highlighter-rouge&quot;&gt;DEVICE_IP&lt;/code&gt; with the &lt;code class=&quot;highlighter-rouge&quot;&gt;IP&lt;/code&gt; of your balena device with a small change. Change the digits after the last &lt;code class=&quot;highlighter-rouge&quot;&gt;.&lt;/code&gt; to &lt;code class=&quot;highlighter-rouge&quot;&gt;100&lt;/code&gt;.&lt;/li&gt;
-  &lt;li&gt;Close the text editor.&lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Replace the field &lt;code class=&quot;highlighter-rouge&quot;&gt;DEVICE_IP&lt;/code&gt; with the &lt;code class=&quot;highlighter-rouge&quot;&gt;IP&lt;/code&gt; of your balena device with a small change. Change the digits after the last &lt;code class=&quot;highlighter-rouge&quot;&gt;.&lt;/code&gt; to &lt;code class=&quot;highlighter-rouge&quot;&gt;100&lt;/code&gt;.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Close the text editor.&lt;/p&gt;
+  &lt;/li&gt;
 &lt;/ol&gt;
 
 &lt;p&gt;Here is an example, note that here the &lt;code class=&quot;highlighter-rouge&quot;&gt;IP&lt;/code&gt; has the format &lt;code class=&quot;highlighter-rouge&quot;&gt;192.168.1.X&lt;/code&gt;&lt;/p&gt;
 
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;
-[connection]
-
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;[connection]
 id=my-ethernet
-
 type=ethernet
-
 interface-name=eth0
-
 permissions=
-
 secondaries=
 
-  
-
 [ethernet]
-
 mac-address-blacklist=
 
-  
-
 [ipv4]
-
 #This is the important line
 address1=192.168.1.100/24,192.168.1.1 
-
 dns=8.8.8.8;8.8.4.4;
-
 dns-search=
-
 method=manual
 
-  
-
 [ipv6]
-
 addr-gen-mode=stable-privacy
-
 dns-search=
-
 method=auto
-
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
 &lt;h3 id=&quot;port-forwarding&quot;&gt;Port Forwarding&lt;/h3&gt;
 
-&lt;p&gt;When someone attempts to connect to the &lt;strong&gt;IP&lt;/strong&gt; that is assigned to your home connection, in essence he connects to the &lt;em&gt;router&lt;/em&gt;, as the &lt;em&gt;router&lt;/em&gt; functions as the gateway between the outer network (the Internet) and the local network (LAN). Thus we want to tell the &lt;em&gt;router&lt;/em&gt; that any time someone tries to continue to some specific port, in reality, he wants to connect to our server, thus the router must forward the connection to the Raspberry pi (the web server).&lt;/p&gt;
+&lt;p&gt;When someone attempts to connect to the &lt;strong&gt;IP&lt;/strong&gt; that is assigned to your home connection, in essence he/she connects to the &lt;em&gt;router&lt;/em&gt;, as it functions as the gateway between the outer network (the Internet) and the local network (LAN). Thus we want to tell the &lt;em&gt;router&lt;/em&gt; that any time someone tries to continue to some specific port, in reality, he/she wants to connect to our server, thus the router must forward the connection to the Raspberry pi (the web server).&lt;/p&gt;
 
 &lt;p&gt;In other words, we need to forward &lt;strong&gt;ports&lt;/strong&gt; &lt;code class=&quot;highlighter-rouge&quot;&gt;80&lt;/code&gt; and &lt;code class=&quot;highlighter-rouge&quot;&gt;443&lt;/code&gt; to the Raspberry pi.&lt;/p&gt;
 
 &lt;ol&gt;
-  &lt;li&gt;
-    &lt;p&gt;&lt;strong&gt;Visit&lt;/strong&gt; &lt;a href=&quot;https://portforward.com/&quot;&gt;portforward&lt;/a&gt;&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;Find your router&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;Follow instructions and forward the ports to the device’s IP&lt;/p&gt;
-  &lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Visit&lt;/strong&gt; &lt;a href=&quot;https://portforward.com/&quot;&gt;portforward&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;Find your router&lt;/li&gt;
+  &lt;li&gt;Follow instructions and forward the ports to the device’s IP&lt;/li&gt;
 &lt;/ol&gt;
-
-&lt;p&gt;We are almost there, let’s deploy the device.&lt;/p&gt;
 
 &lt;h2 id=&quot;deploy&quot;&gt;Deploy&lt;/h2&gt;
 
@@ -537,31 +471,16 @@ method=auto
 &lt;h3 id=&quot;deploy-the-project-to-the-device&quot;&gt;Deploy the project to the device&lt;/h3&gt;
 
 &lt;ol&gt;
-  &lt;li&gt;
-    &lt;p&gt;Open balenaCloud and create a new application for &lt;code class=&quot;highlighter-rouge&quot;&gt;Raspberry pi 4&lt;/code&gt;. You can name it whatever you want. We will assume that you name it &lt;code class=&quot;highlighter-rouge&quot;&gt;bananas&lt;/code&gt;.&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;Download an &lt;code class=&quot;highlighter-rouge&quot;&gt;development&lt;/code&gt; image for that application. Don’t bother filling in your &lt;code class=&quot;highlighter-rouge&quot;&gt;wifi&lt;/code&gt; credentials, we will be using &lt;code class=&quot;highlighter-rouge&quot;&gt;ethernet&lt;/code&gt; as &lt;code class=&quot;highlighter-rouge&quot;&gt;wifi&lt;/code&gt; is not very reliable for a webserver.&lt;/p&gt;
-
-    &lt;p&gt;&lt;img src=&quot;https://media.giphy.com/media/5hc2bkC60heU/giphy.gif&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;Burn the image using the best image format app in the world, &lt;strong&gt;balena-etcher&lt;/strong&gt;.&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;Pull out the sd card and re-insert it in the computer. Copy the file named &lt;code class=&quot;highlighter-rouge&quot;&gt;static-ip&lt;/code&gt; we created earlier into the &lt;code class=&quot;highlighter-rouge&quot;&gt;system-connections&lt;/code&gt; directory of the sd card.&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;Insert the card into the Raspberry pi and connect it to power.&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;Go to the &lt;code class=&quot;highlighter-rouge&quot;&gt;balena-nginx&lt;/code&gt; directory, where your &lt;code class=&quot;highlighter-rouge&quot;&gt;docker-compose.yaml&lt;/code&gt; is located, and push the project&lt;/p&gt;
-  &lt;/li&gt;
+  &lt;li&gt;Open balenaCloud and create a new application for &lt;code class=&quot;highlighter-rouge&quot;&gt;Raspberry pi 4&lt;/code&gt;. You can name it whatever you want. We will assume that you name it &lt;code class=&quot;highlighter-rouge&quot;&gt;bananas&lt;/code&gt;.&lt;/li&gt;
+  &lt;li&gt;Download an &lt;code class=&quot;highlighter-rouge&quot;&gt;development&lt;/code&gt; image for that application. Don’t bother filling in your &lt;code class=&quot;highlighter-rouge&quot;&gt;wifi&lt;/code&gt; credentials, we will be using &lt;code class=&quot;highlighter-rouge&quot;&gt;ethernet&lt;/code&gt; as &lt;code class=&quot;highlighter-rouge&quot;&gt;wifi&lt;/code&gt; is not very reliable for a webserver.
+ &lt;img src=&quot;https://media.giphy.com/media/5hc2bkC60heU/giphy.gif&quot; alt=&quot;&quot; /&gt;&lt;/li&gt;
+  &lt;li&gt;Burn the image using the best image format app in the world, &lt;strong&gt;balena-etcher&lt;/strong&gt;.&lt;/li&gt;
+  &lt;li&gt;Pull out the sd card and re-insert it in the computer. Copy the file named &lt;code class=&quot;highlighter-rouge&quot;&gt;static-ip&lt;/code&gt; we created earlier into the &lt;code class=&quot;highlighter-rouge&quot;&gt;system-connections&lt;/code&gt; directory of the sd card.&lt;/li&gt;
+  &lt;li&gt;Insert the card into the Raspberry pi and connect it to power.&lt;/li&gt;
+  &lt;li&gt;Go to the &lt;code class=&quot;highlighter-rouge&quot;&gt;balena-nginx&lt;/code&gt; directory, where your &lt;code class=&quot;highlighter-rouge&quot;&gt;docker-compose.yaml&lt;/code&gt; is located, and push the project&lt;/li&gt;
 &lt;/ol&gt;
 
-&lt;div class=&quot;language-shell highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;
-balena push bananas
-
+&lt;div class=&quot;language-shell highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;balena push bananas
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
 &lt;h3 id=&quot;generating-the-ssl-certificate&quot;&gt;Generating the SSL certificate&lt;/h3&gt;
@@ -637,34 +556,30 @@ balena push bananas
 
 &lt;p&gt;Before you can you can use the script, you have to open the file using your favorite text editor and replace the following fields:&lt;/p&gt;
 
-&lt;div class=&quot;language-shell highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt; 
-&lt;span class=&quot;c&quot;&gt;# export J_OUTPUT= Absolute path to the directory of the website's source files&lt;/span&gt;
-
+&lt;div class=&quot;language-shell highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;c&quot;&gt;# export J_OUTPUT= Absolute path to the directory of the website's source files&lt;/span&gt;
 &lt;span class=&quot;c&quot;&gt;# export REPO = Absolute path to the directory of the website's source files&lt;/span&gt;
-
 &lt;span class=&quot;c&quot;&gt;# export DEV_UUID= UUID of the device, can be found from the device's dashboard&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
 &lt;h3 id=&quot;finally-a-use-case&quot;&gt;Finally, a use-case&lt;/h3&gt;
 
 &lt;p&gt;In case you want to see how this setup works, here is my setup divided into 3 repositories:&lt;/p&gt;
 
 &lt;ol&gt;
   &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;balena-nginx&lt;/code&gt;: The source files for the setup of the webserver.
-    &lt;ol&gt;
+    &lt;ul&gt;
       &lt;li&gt;&lt;a href=&quot;https://github.com/balena-io-playground/balena-nginx&quot;&gt;Github Repository&lt;/a&gt;&lt;/li&gt;
-    &lt;/ol&gt;
+    &lt;/ul&gt;
   &lt;/li&gt;
   &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;clyell&lt;/code&gt;: Fork from a Jekyll theme which I have modified extensively. This repository has all the files that are used by  &lt;code class=&quot;highlighter-rouge&quot;&gt;Jekyll&lt;/code&gt; engine to create the source files of my blog.
-    &lt;ol&gt;
+    &lt;ul&gt;
       &lt;li&gt;&lt;a href=&quot;https://github.com/OdysLam/clyell&quot;&gt;Github Repository&lt;/a&gt;&lt;/li&gt;
-    &lt;/ol&gt;
+    &lt;/ul&gt;
   &lt;/li&gt;
   &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;odyslam.github.io&lt;/code&gt;: Repository which holds the source files of my entire website. This is the repository that is downloaded to the webserver. It consists of the main website which is a plain &lt;code class=&quot;highlighter-rouge&quot;&gt;html&lt;/code&gt;, &lt;code class=&quot;highlighter-rouge&quot;&gt;CSS&lt;/code&gt;, &lt;code class=&quot;highlighter-rouge&quot;&gt;JS&lt;/code&gt; website built by hand and the &lt;code class=&quot;highlighter-rouge&quot;&gt;/blog&lt;/code&gt; directory which is built by Jekyll from the files of the &lt;code class=&quot;highlighter-rouge&quot;&gt;clyell&lt;/code&gt; repository.
-    &lt;ol&gt;
-      &lt;li&gt;&lt;a href=&quot;https://github.com/OdysLam/odyslam.github.io&quot;&gt;Github Repository&lt;/a&gt;
-        &lt;h1 id=&quot;comments&quot;&gt;Comments&lt;/h1&gt;
-      &lt;/li&gt;
-    &lt;/ol&gt;
+    &lt;ul&gt;
+      &lt;li&gt;&lt;a href=&quot;https://github.com/OdysLam/odyslam.github.io&quot;&gt;Github Repository&lt;/a&gt;&lt;/li&gt;
+    &lt;/ul&gt;
   &lt;/li&gt;
 &lt;/ol&gt;
 
