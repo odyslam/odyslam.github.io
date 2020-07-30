@@ -5,8 +5,8 @@
     <description></description>
     <link>https://odyslam.me/blog/</link>
     <atom:link href="https://odyslam.me/blog/feed.xml" rel="self" type="application/rss+xml" />
-    <pubDate>Sat, 18 Jul 2020 17:23:48 +0300</pubDate>
-    <lastBuildDate>Sat, 18 Jul 2020 17:23:48 +0300</lastBuildDate>
+    <pubDate>Thu, 30 Jul 2020 17:27:16 +0300</pubDate>
+    <lastBuildDate>Thu, 30 Jul 2020 17:27:16 +0300</lastBuildDate>
     <generator>Jekyll v4.0.0</generator>
     
       <item>
@@ -18,77 +18,6 @@
 &lt;p&gt;We will start with some introductory terms to get a lay of the land and then we will continue with the tutorial itself.&lt;/p&gt;
 
 &lt;p&gt;If you are familiar with the relevant terms (&lt;em&gt;IP, Domain Name&lt;/em&gt;, etc.), go ahead and jump to &lt;a href=&quot;#lets-get-to-it&quot;&gt;Let’s get to it&lt;/a&gt;.&lt;/p&gt;
-
-&lt;h1 id=&quot;table-of-contents&quot;&gt;Table of Contents&lt;/h1&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;&lt;a href=&quot;#introduction&quot;&gt;Introduction&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;#table-of-contents&quot;&gt;Table of Contents&lt;/a&gt;
-    &lt;ul&gt;
-      &lt;li&gt;&lt;a href=&quot;#static-website&quot;&gt;Static Website&lt;/a&gt;&lt;/li&gt;
-      &lt;li&gt;&lt;a href=&quot;#webserver&quot;&gt;Webserver&lt;/a&gt;&lt;/li&gt;
-      &lt;li&gt;&lt;a href=&quot;#blogging-software---jekyll&quot;&gt;Blogging software - Jekyll&lt;/a&gt;&lt;/li&gt;
-      &lt;li&gt;&lt;a href=&quot;#domain&quot;&gt;Domain&lt;/a&gt;
-        &lt;ul&gt;
-          &lt;li&gt;&lt;a href=&quot;#whats-an-ip&quot;&gt;What’s an IP&lt;/a&gt;&lt;/li&gt;
-          &lt;li&gt;&lt;a href=&quot;#but-what-it-has-to-do-with-domains&quot;&gt;But what it has to do with domains?&lt;/a&gt;&lt;/li&gt;
-          &lt;li&gt;&lt;a href=&quot;#dynamic-ips-aka-the-plot-thickens&quot;&gt;Dynamic IPs aka “The Plot Thickens”&lt;/a&gt;&lt;/li&gt;
-          &lt;li&gt;&lt;a href=&quot;#wait-a-minute-i-dont-have-a-domain-name&quot;&gt;Wait a minute, I don’t have a domain name&lt;/a&gt;&lt;/li&gt;
-        &lt;/ul&gt;
-      &lt;/li&gt;
-      &lt;li&gt;&lt;a href=&quot;#balenaio&quot;&gt;balena.io&lt;/a&gt;
-        &lt;ul&gt;
-          &lt;li&gt;&lt;a href=&quot;#so-whats-the-deal-exactly&quot;&gt;So what’s the deal, exactly?&lt;/a&gt;&lt;/li&gt;
-        &lt;/ul&gt;
-      &lt;/li&gt;
-      &lt;li&gt;&lt;a href=&quot;#complimentary-software&quot;&gt;Complimentary Software:&lt;/a&gt;
-        &lt;ul&gt;
-          &lt;li&gt;&lt;a href=&quot;#certbot&quot;&gt;Certbot&lt;/a&gt;&lt;/li&gt;
-          &lt;li&gt;&lt;a href=&quot;#netdata&quot;&gt;Netdata&lt;/a&gt;&lt;/li&gt;
-        &lt;/ul&gt;
-      &lt;/li&gt;
-      &lt;li&gt;&lt;a href=&quot;#architecture&quot;&gt;Architecture&lt;/a&gt;
-        &lt;ul&gt;
-          &lt;li&gt;&lt;a href=&quot;#components&quot;&gt;Components&lt;/a&gt;&lt;/li&gt;
-        &lt;/ul&gt;
-      &lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;#lets-get-to-it&quot;&gt;Let’s get to it&lt;/a&gt;
-    &lt;ul&gt;
-      &lt;li&gt;&lt;a href=&quot;#provisioning-the-device&quot;&gt;Provisioning the Device&lt;/a&gt;&lt;/li&gt;
-      &lt;li&gt;&lt;a href=&quot;#installing-the-software&quot;&gt;Installing the Software&lt;/a&gt;
-        &lt;ul&gt;
-          &lt;li&gt;&lt;a href=&quot;#jekyll&quot;&gt;Jekyll&lt;/a&gt;&lt;/li&gt;
-          &lt;li&gt;&lt;a href=&quot;#installing-the-server-on-the-device&quot;&gt;Installing the server on the device&lt;/a&gt;&lt;/li&gt;
-        &lt;/ul&gt;
-      &lt;/li&gt;
-      &lt;li&gt;&lt;a href=&quot;#configuring-the-software&quot;&gt;Configuring the Software&lt;/a&gt;
-        &lt;ul&gt;
-          &lt;li&gt;&lt;a href=&quot;#environment-variables&quot;&gt;Environment Variables&lt;/a&gt;&lt;/li&gt;
-          &lt;li&gt;&lt;a href=&quot;#nginx-configuration&quot;&gt;nginx configuration&lt;/a&gt;&lt;/li&gt;
-          &lt;li&gt;&lt;a href=&quot;#ddiclient-configuration&quot;&gt;ddiclient configuration&lt;/a&gt;&lt;/li&gt;
-        &lt;/ul&gt;
-      &lt;/li&gt;
-      &lt;li&gt;&lt;a href=&quot;#configuring-the-local-network&quot;&gt;Configuring the local network&lt;/a&gt;
-        &lt;ul&gt;
-          &lt;li&gt;&lt;a href=&quot;#static-ip&quot;&gt;Static IP&lt;/a&gt;&lt;/li&gt;
-          &lt;li&gt;&lt;a href=&quot;#port-forwarding&quot;&gt;Port Forwarding&lt;/a&gt;&lt;/li&gt;
-        &lt;/ul&gt;
-      &lt;/li&gt;
-      &lt;li&gt;&lt;a href=&quot;#deploy&quot;&gt;Deploy&lt;/a&gt;
-        &lt;ul&gt;
-          &lt;li&gt;&lt;a href=&quot;#deploy-the-project-to-the-device&quot;&gt;Deploy the project to the device&lt;/a&gt;&lt;/li&gt;
-          &lt;li&gt;&lt;a href=&quot;#generating-the-ssl-certificate&quot;&gt;Generating the SSL certificate&lt;/a&gt;&lt;/li&gt;
-          &lt;li&gt;&lt;a href=&quot;#updating-your-certificates&quot;&gt;Updating your certificates&lt;/a&gt;&lt;/li&gt;
-          &lt;li&gt;&lt;a href=&quot;#push-new-content-to-the-website&quot;&gt;Push new content to the website&lt;/a&gt;&lt;/li&gt;
-          &lt;li&gt;&lt;a href=&quot;#push-new-content-to-the-website---for-advanced-users&quot;&gt;Push new content to the website - For advanced users&lt;/a&gt;&lt;/li&gt;
-          &lt;li&gt;&lt;a href=&quot;#finally-a-use-case&quot;&gt;Finally, a use-case&lt;/a&gt;&lt;/li&gt;
-        &lt;/ul&gt;
-      &lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
 
 &lt;h2 id=&quot;static-website&quot;&gt;Static Website&lt;/h2&gt;
 
@@ -606,82 +535,6 @@ method=auto
         <description>&lt;p&gt;Created: Dec 05, 2019 | Updated: Jan 12, 2020 | Document Version: 0.3
 &lt;br /&gt;
 &lt;br /&gt;&lt;/p&gt;
-&lt;h1 id=&quot;table-of-contents&quot;&gt;Table of Contents&lt;/h1&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;&lt;a href=&quot;#table-of-contents&quot;&gt;Table of Contents&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;#why&quot;&gt;Why&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;#introduction&quot;&gt;Introduction&lt;/a&gt;
-    &lt;ul&gt;
-      &lt;li&gt;&lt;a href=&quot;#so-what-netdata-does&quot;&gt;So what Netdata does?&lt;/a&gt;&lt;/li&gt;
-      &lt;li&gt;&lt;a href=&quot;#how-netdata-collectors-work&quot;&gt;How netdata collectors work:&lt;/a&gt;&lt;/li&gt;
-      &lt;li&gt;&lt;a href=&quot;#requirements-for-the-use-case&quot;&gt;Requirements for the use-case&lt;/a&gt;&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;#installation&quot;&gt;Installation&lt;/a&gt;
-    &lt;ul&gt;
-      &lt;li&gt;&lt;a href=&quot;#netdata&quot;&gt;Netdata&lt;/a&gt;&lt;/li&gt;
-      &lt;li&gt;&lt;a href=&quot;#firewall-issues&quot;&gt;Firewall issues&lt;/a&gt;&lt;/li&gt;
-      &lt;li&gt;&lt;a href=&quot;#installation-using-package-manager&quot;&gt;Installation using Package Manager&lt;/a&gt;&lt;/li&gt;
-      &lt;li&gt;&lt;a href=&quot;#nginx-proxy---security-alert&quot;&gt;Nginx Proxy - Security Alert&lt;/a&gt;&lt;/li&gt;
-      &lt;li&gt;&lt;a href=&quot;#necessary-libraries&quot;&gt;Necessary Libraries&lt;/a&gt;
-        &lt;ul&gt;
-          &lt;li&gt;&lt;a href=&quot;#updateinstall-either-python-27-or-python-31&quot;&gt;Update/Install either Python 2.7+ or Python 3.1+&lt;/a&gt;&lt;/li&gt;
-        &lt;/ul&gt;
-      &lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;#important-note-on-python-version&quot;&gt;Important Note on Python Version&lt;/a&gt;
-    &lt;ul&gt;
-      &lt;li&gt;&lt;a href=&quot;#install-pip-python-package-manager&quot;&gt;Install PiP (Python Package Manager)&lt;/a&gt;&lt;/li&gt;
-      &lt;li&gt;&lt;a href=&quot;#install-collector-libraries&quot;&gt;Install Collector Libraries:&lt;/a&gt;
-        &lt;ul&gt;
-          &lt;li&gt;&lt;a href=&quot;#ubuntu&quot;&gt;Ubuntu&lt;/a&gt;&lt;/li&gt;
-          &lt;li&gt;&lt;a href=&quot;#centos&quot;&gt;CentOS&lt;/a&gt;&lt;/li&gt;
-        &lt;/ul&gt;
-      &lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;#netdata-configuration&quot;&gt;Netdata Configuration&lt;/a&gt;
-    &lt;ul&gt;
-      &lt;li&gt;&lt;a href=&quot;#general-configuration&quot;&gt;General Configuration&lt;/a&gt;&lt;/li&gt;
-      &lt;li&gt;&lt;a href=&quot;#collectors-data-collection&quot;&gt;Collectors (Data Collection)&lt;/a&gt;
-        &lt;ul&gt;
-          &lt;li&gt;&lt;a href=&quot;#general-information&quot;&gt;General Information&lt;/a&gt;&lt;/li&gt;
-          &lt;li&gt;&lt;a href=&quot;#chosen-collectors&quot;&gt;Chosen Collectors:&lt;/a&gt;&lt;/li&gt;
-          &lt;li&gt;&lt;a href=&quot;#notes-on-editing-the-configuration-files&quot;&gt;Notes on editing the configuration files:&lt;/a&gt;&lt;/li&gt;
-          &lt;li&gt;&lt;a href=&quot;#db-engine&quot;&gt;DB engine&lt;/a&gt;&lt;/li&gt;
-        &lt;/ul&gt;
-      &lt;/li&gt;
-      &lt;li&gt;&lt;a href=&quot;#health--alarms&quot;&gt;Health &amp;amp; Alarms&lt;/a&gt;
-        &lt;ul&gt;
-          &lt;li&gt;&lt;a href=&quot;#notifications&quot;&gt;Notifications&lt;/a&gt;&lt;/li&gt;
-          &lt;li&gt;&lt;a href=&quot;#email-configuration&quot;&gt;Email Configuration&lt;/a&gt;&lt;/li&gt;
-        &lt;/ul&gt;
-      &lt;/li&gt;
-      &lt;li&gt;&lt;a href=&quot;#streaming&quot;&gt;Streaming&lt;/a&gt;
-        &lt;ul&gt;
-          &lt;li&gt;&lt;a href=&quot;#master-node&quot;&gt;Master Node&lt;/a&gt;&lt;/li&gt;
-          &lt;li&gt;&lt;a href=&quot;#slave-node&quot;&gt;Slave Node&lt;/a&gt;&lt;/li&gt;
-        &lt;/ul&gt;
-      &lt;/li&gt;
-      &lt;li&gt;&lt;a href=&quot;#registry&quot;&gt;Registry&lt;/a&gt;&lt;/li&gt;
-      &lt;li&gt;&lt;a href=&quot;#backends-long-term-storage&quot;&gt;Backends (Long-term Storage)&lt;/a&gt;
-        &lt;ul&gt;
-          &lt;li&gt;&lt;a href=&quot;#prometheus-installation&quot;&gt;Prometheus Installation&lt;/a&gt;&lt;/li&gt;
-          &lt;li&gt;&lt;a href=&quot;#prometheus-configuration&quot;&gt;Prometheus Configuration&lt;/a&gt;&lt;/li&gt;
-          &lt;li&gt;&lt;a href=&quot;#test-prometheus&quot;&gt;Test Prometheus&lt;/a&gt;&lt;/li&gt;
-          &lt;li&gt;&lt;a href=&quot;#prometheus-service&quot;&gt;Prometheus Service&lt;/a&gt;&lt;/li&gt;
-          &lt;li&gt;&lt;a href=&quot;#prometheus-and-high-availability&quot;&gt;Prometheus and High-Availability&lt;/a&gt;&lt;/li&gt;
-          &lt;li&gt;&lt;a href=&quot;#grafana&quot;&gt;Grafana&lt;/a&gt;&lt;/li&gt;
-        &lt;/ul&gt;
-      &lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;#acknowledgement&quot;&gt;Acknowledgement&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;#comments&quot;&gt;Comments&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
 &lt;h1 id=&quot;why&quot;&gt;Why&lt;/h1&gt;
 
 &lt;p&gt;A while back I discovered &lt;a href=&quot;https://netdata.cloud&quot;&gt;Netdata&lt;/a&gt; and I was truly fascinated by it’s take on system monitoring for two main reasons. It was extremely lightweight, something of great usefulness to me, an IoT enthusiast, as it proved to be a  very useful tool to debug IoT devices, such as the Raspberry pi.&lt;/p&gt;
@@ -704,9 +557,9 @@ method=auto
 
 &lt;ul&gt;
   &lt;li&gt;&lt;strong&gt;Per second&lt;/strong&gt; data collection for all metrics.&lt;/li&gt;
-  &lt;li&gt;Collection &amp;amp; Visualisation of metrics from &lt;strong&gt;all possible&lt;/strong&gt; sources&lt;/li&gt;
+  &lt;li&gt;Collection &amp;amp; Visualization of metrics from &lt;strong&gt;all possible&lt;/strong&gt; sources&lt;/li&gt;
   &lt;li&gt;Meaningful presentation of metrics, optimised for visual anomaly detection&lt;/li&gt;
-  &lt;li&gt;&lt;strong&gt;Preconfigured&lt;/strong&gt;, fire (install) and forget!&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Pre-configured&lt;/strong&gt;, fire (install) and forget!&lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;blockquote&gt;
@@ -776,7 +629,7 @@ method=auto
 
 &lt;p&gt;There are multiple ways to install netdata, but the user is advised to use the one-line script that is provided by netdata. According to the requirements, this is the optimal route.&lt;/p&gt;
 
-&lt;p&gt;With the one-liner below, you install netdata and all the dependencies. You also agree that Netdata will aggregate anonymous statistics (such as OS version) that is necessary for rapid product development and discovery (prioritise OS binaries, decide features etc.)&lt;/p&gt;
+&lt;p&gt;With the one-liner below, you install netdata and all the dependencies. You also agree that Netdata will aggregate anonymous statistics (such as OS version) that is necessary for rapid product development and discovery (prioritize OS binaries, decide features etc.)&lt;/p&gt;
 
 &lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;bash &amp;lt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;curl &lt;span class=&quot;nt&quot;&gt;-Ss&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;https://my-netdata.io/kickstart.sh]&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;https://my-netdata.io/kickstart.sh&lt;span class=&quot;o&quot;&gt;))&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;--no-updates&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;--stable-channel&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
@@ -793,7 +646,7 @@ method=auto
 
 &lt;h2 id=&quot;firewall-issues&quot;&gt;Firewall issues&lt;/h2&gt;
 
-&lt;p&gt;If you can’t connect, it’s possible that you have a firewall installed and that you have to open the port &lt;code class=&quot;highlighter-rouge&quot;&gt;19999&lt;/code&gt;.  Belowdav you can find relevant information and commands for Ubuntu &amp;amp; CentOS.&lt;/p&gt;
+&lt;p&gt;If you can’t connect, it’s possible that you have a firewall installed and that you have to open the port &lt;code class=&quot;highlighter-rouge&quot;&gt;19999&lt;/code&gt;.  Below you can find relevant information and commands for Ubuntu &amp;amp; CentOS.&lt;/p&gt;
 
 &lt;p&gt;&lt;strong&gt;Ubuntu:&lt;/strong&gt;&lt;/p&gt;
 
@@ -1192,7 +1045,7 @@ pip &lt;span class=&quot;nb&quot;&gt;install &lt;/span&gt;mysqlclient
       &lt;/li&gt;
     &lt;/ol&gt;
   &lt;/li&gt;
-  &lt;li&gt;For the initial testing period we wont’t be editing anything else. You can return later to customise it according to your specific needs.&lt;/li&gt;
+  &lt;li&gt;For the initial testing period we won’t be editing anything else. You can return later to customise it according to your specific needs.&lt;/li&gt;
   &lt;li&gt;Since both the machines belong to the same secured network, we won’t be needing authentication and TLS support.&lt;/li&gt;
 &lt;/ol&gt;
 
@@ -1285,7 +1138,7 @@ pip &lt;span class=&quot;nb&quot;&gt;install &lt;/span&gt;mysqlclient
 
 &lt;p&gt;To enable long-term historic data we will be using the backends functionality of netdata. According to the requirements, we will be using Prometheus to grab data from the Master Node and save it in a time-series long term database.&lt;/p&gt;
 
-&lt;p&gt;In essence, we will point &lt;strong&gt;Prometheus&lt;/strong&gt; to &lt;strong&gt;netdata&lt;/strong&gt; in order to fetch data and &lt;strong&gt;Grafana&lt;/strong&gt; to &lt;strong&gt;Prometheus&lt;/strong&gt; in order to visualise them.&lt;/p&gt;
+&lt;p&gt;In essence, we will point &lt;strong&gt;Prometheus&lt;/strong&gt; to &lt;strong&gt;netdata&lt;/strong&gt; in order to fetch data and &lt;strong&gt;Grafana&lt;/strong&gt; to &lt;strong&gt;Prometheus&lt;/strong&gt; in order to visualize them.&lt;/p&gt;
 
 &lt;p&gt;We will set the Prometheus sampling at 3m, since for historic data 1s accuracy is not required.&lt;/p&gt;
 
