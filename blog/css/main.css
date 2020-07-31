@@ -3,7 +3,7 @@ body {
     background-color: #ffffff;
     margin-bottom: 1em;
     font-family: monospace;
-    font-size: 1.75em;
+    font-size: 18px;
     line-height: 25px !important;
     color: rgb(0, 0, 0);
     text-align: center;
@@ -39,9 +39,9 @@ footer {
     color: rgba(37, 37, 37, 0.7);
     font-weight: lighter; 
     //width: 60%;
-    border-top: dashed 1px rgba(37, 37, 37, 0.7);
+    /* border-top: dashed 1px rgba(37, 37, 37, 0.7); */
     margin: 20px auto 15px;
-    padding-top: 10px;
+    /* padding-top: 10px; */
 }
 header {
     margin-top: 25px;
