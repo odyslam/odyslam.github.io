@@ -5,8 +5,8 @@
     <description></description>
     <link>https://odyslam.me/blog/</link>
     <atom:link href="https://odyslam.me/blog/feed.xml" rel="self" type="application/rss+xml" />
-    <pubDate>Fri, 31 Jul 2020 13:00:04 +0300</pubDate>
-    <lastBuildDate>Fri, 31 Jul 2020 13:00:04 +0300</lastBuildDate>
+    <pubDate>Fri, 31 Jul 2020 13:02:00 +0300</pubDate>
+    <lastBuildDate>Fri, 31 Jul 2020 13:02:00 +0300</lastBuildDate>
     <generator>Jekyll v4.0.0</generator>
     
       <item>
@@ -173,6 +173,8 @@ My gihub Portfolio ☝️&lt;/p&gt;
         <category>self-improvement</category>
         
         <category>career</category>
+        
+        <category>greek</category>
         
         
       </item>
@@ -689,11 +691,11 @@ method=auto
         
         <category>tutorial</category>
         
+        <category>nginx</category>
+        
         <category>balena</category>
         
-        <category>technology</category>
-        
-        <category>nginx</category>
+        <category>english</category>
         
         
       </item>
@@ -1507,6 +1509,10 @@ curl &lt;span class=&quot;nt&quot;&gt;-fsSL&lt;/span&gt; https://download.docker
         <category>tutorial</category>
         
         <category>technology</category>
+        
+        <category>netdata</category>
+        
+        <category>english</category>
         
         
       </item>
