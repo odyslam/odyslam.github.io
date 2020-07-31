@@ -104,8 +104,8 @@ pre {
 		color: rgb(32, 32, 32);
 }
 img {
-    width: 80%;
-    margin-left: 10%;
+    width: 100%;
+    /* margin-left: 10%; */
     border: 1px dashed rgba(37, 37, 37, 0.7);
     padding: 5px;
     -webkit-border-radius: 3px;

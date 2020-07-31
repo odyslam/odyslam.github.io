@@ -5,13 +5,15 @@
     <description></description>
     <link>https://odyslam.me/blog/</link>
     <atom:link href="https://odyslam.me/blog/feed.xml" rel="self" type="application/rss+xml" />
-    <pubDate>Fri, 31 Jul 2020 15:45:11 +0300</pubDate>
-    <lastBuildDate>Fri, 31 Jul 2020 15:45:11 +0300</lastBuildDate>
+    <pubDate>Fri, 31 Jul 2020 16:40:47 +0300</pubDate>
+    <lastBuildDate>Fri, 31 Jul 2020 16:40:47 +0300</lastBuildDate>
     <generator>Jekyll v4.0.0</generator>
     
       <item>
-        <title>From the Greek University to a startup - Part 1 [GR]</title>
-        <description>&lt;h1 id=&quot;disclaimer&quot;&gt;Disclaimer&lt;/h1&gt;
+        <title>From the Greek University to a startup -  Part 1 [GR]</title>
+        <description>&lt;p&gt;&lt;img src=&quot;https://i.imgur.com/OAeoTWb.png&quot; alt=&quot;intro image&quot; /&gt;&lt;/p&gt;
+
+&lt;h1 id=&quot;disclaimer&quot;&gt;Disclaimer&lt;/h1&gt;
 
 &lt;p&gt;This is part of a blog-post series that is intended for Greek university students and recent graduates. Thus I wrote them in greek to maximise impact. I might translate them for future reference.&lt;/p&gt;
 
@@ -165,8 +167,8 @@ My github Portfolio ☝️ (κάνε κλικ για να μεγαλώσει η 
 &lt;p&gt;Ευχαριστώ για την ανάγνωση&lt;/p&gt;
 </description>
         <pubDate>Fri, 31 Jul 2020 00:00:00 +0300</pubDate>
-        <link>https://odyslam.me/blog/greek-uni-startup/</link>
-        <guid isPermaLink="true">https://odyslam.me/blog/greek-uni-startup/</guid>
+        <link>https://odyslam.me/blog/from-greek-uni-to-startup/</link>
+        <guid isPermaLink="true">https://odyslam.me/blog/from-greek-uni-to-startup/</guid>
         
         <category>2020</category>
         
