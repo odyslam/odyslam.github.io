@@ -5,8 +5,8 @@
     <description></description>
     <link>https://odyslam.me/blog/</link>
     <atom:link href="https://odyslam.me/blog/feed.xml" rel="self" type="application/rss+xml" />
-    <pubDate>Tue, 04 Aug 2020 14:44:32 +0300</pubDate>
-    <lastBuildDate>Tue, 04 Aug 2020 14:44:32 +0300</lastBuildDate>
+    <pubDate>Tue, 04 Aug 2020 18:24:43 +0300</pubDate>
+    <lastBuildDate>Tue, 04 Aug 2020 18:24:43 +0300</lastBuildDate>
     <generator>Jekyll v4.0.0</generator>
     
       <item>
@@ -105,7 +105,7 @@ Image: We start as &lt;a href=&quot;https://www.youtube.com/watch?v=Otgm8oxEy_w&
 &lt;p&gt;Μια διαφορετική φιλοσοφία έχουν οι startups. Πολύ συχνά μιλάς με τον CEO ή υψηλόβαθμα στελέχη και η συνέντευξη παίρνει μορφή συζήτησης. &lt;/p&gt;
 
 &lt;blockquote&gt;
-  &lt;p&gt;Τι νομίζεις για αυτό; Έχουμε αυτό το προιον Χ, έχεις καμιά ιδέα πως θα το έκανες καλύτερο;&lt;/p&gt;
+  &lt;p&gt;Τι νομίζεις για αυτό; Έχουμε αυτό το προϊόν Χ, έχεις καμιά ιδέα πως θα το έκανες καλύτερο;&lt;/p&gt;
 &lt;/blockquote&gt;
 
 &lt;p&gt;Έτσι καταλαβαίνουν πιο αποδοτικά (και πιο ποιοτικά) τις γνώσεις, την οξυδέρκεια και την όρεξη του υποψηφίου. Το μικρό τους μέγεθος και η ελαχιστοποίηση του ρίσκου, τους οδηγούν σε μια διαδικασία καλύτερη, αν και δύσκολα εφαρμόσιμη σε μια εταιρεία εκατοντάδων ή χιλιάδων ανθρώπων.&lt;/p&gt;
@@ -806,7 +806,7 @@ method=auto
     &lt;ul&gt;
       &lt;li&gt;Period: 1 year&lt;/li&gt;
       &lt;li&gt;Granularity: (average)5min&lt;/li&gt;
-      &lt;li&gt;Data points: cpu, net traffic, ram (systemwide, per application)&lt;/li&gt;
+      &lt;li&gt;Data points: cpu, net traffic, ram (system-wide, per application)&lt;/li&gt;
     &lt;/ul&gt;
   &lt;/li&gt;
   &lt;li&gt;&lt;strong&gt;System:&lt;/strong&gt; Ubuntu 18.04.3 LTS&lt;/li&gt;
