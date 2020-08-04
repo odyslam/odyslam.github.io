@@ -112,9 +112,9 @@ img {
     -moz-border-radius: 3px;
     border-radius: 3px;
 }
-img:active{
+/* img:active{
     transform: scale(2);
-}
+} */
 iframe {
     width: 750px;
     height: 400px;
