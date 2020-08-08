@@ -10,8 +10,8 @@ body {
     //width: 900px;
 }
 p {
-    margin-top: 1.2em;
-    margin-bottom: 1em;
+    padding-top: 1.2em;
+    /* padding-bottom: 1em; */
 }
 li{
     margin: 0.75em 0;
@@ -59,7 +59,7 @@ a {
     text-decoration: none;
     text-decoration: underline ;
     font-weight: lighter;
-    color: black;
+    color: darkblue;
 }
 .menu {
     border-top: 1px dashed rgba(37, 37, 37, 0.7);
@@ -241,15 +241,18 @@ table a {
 
 blockquote{
     font-size: 1em;
-    background: #f9f9f9;
+    background: #eeeeee;
     border-left: 10px solid #ccc;
+    /* border-right: 10px solid #ccc;  */
     margin-top: 2em;
-    padding: 0 10px !important;
-    quotes: "\201C""\201D""\2018""\2019";
+    padding: 0px 10px !important;
+    /* quotes: "\201C""\201D""\2018""\2019"; */
     line-height: 1.4;
-    margin-bottom: 2em;
+    /* margin-bottom: 2em; */
   }
-  
+blockquote p {
+    padding: 0.5em 0px;
+}
 
 .highlighter-rouge {
     color: #313131;
