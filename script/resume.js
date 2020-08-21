@@ -177,19 +177,6 @@ $(document).keyup(
                 e.keyCode = 13;
                 $('.console').trigger(e);
             });
-            $('#cv').unbind();
-            $('#cv').click(function () {
-                ga('send', {
-                        hitType: 'event',
-                        eventCategory: 'cv',
-                        eventAction: 'Click',
-                        eventLabel: "Clicked on PDF",
-                        eventValue: 1
-                    }
-                );
-                console.log("clicked on cv")
-
-            });
 
             $('html, body').animate({
                 scrollTop: $("#terminal").offset().top
@@ -254,13 +241,13 @@ $(document).ready(
         // Add cv tracking//
         $(".version").typed({
             strings: ["$python site_terminal.py <br>...<br>..."],
-            typeSpeed: 3,
+            typeSpeed: 1,
             backDelay: 600,
             showCursor: false,
             callback: function () {
                 $(".updates").typed({
-                    strings: ["hello visitor, thank you for coming <br> \\ (•◡•) / " , "to navigate, click on the commands or type them in the field and press enter", "type or tap/click on <span style=\"cursor:pointer\" class = \"nav_button\">help</span> for a command list. <br> <br> Click/Tap <strong> <a href=\"/assets/odysseasLamtzidis.vcf\" download>here</a></strong> to add me to your contacts. "],
-                    typeSpeed: 3,
+                    strings: ["hello visitor, thank you for coming <br> \\ (•◡•) / " , "type or click on <span style=\"cursor:pointer\" class = \"nav_button\">help</span> for a command list"],
+                    typeSpeed: 1,
                     backDelay: 1000,
                     showCursor: false,
                     callback: function () {
