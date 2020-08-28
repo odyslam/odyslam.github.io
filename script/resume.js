@@ -211,7 +211,10 @@ $(document).ready(
         // $(".root").hide();
         $("#terminal").focus();
         if (window.matchMedia("(max-width: 767px)").matches) {
-            $("#terminal").attr("placeholder", "< TAP HERE to type >");
+            $("#terminal").attr("placeholder", "TAP HERE to type ");
+        }
+        else{
+            $("#terminal").attr("placeholder", "CLICK HERE to type ");
         }
         $.getJSON('https://ipinfo.io/json', function(data) {
             ip = data['ip'];
@@ -254,6 +257,7 @@ $(document).ready(
                         // $(".root").show();
                         $("#terminal").focus();
                         console.log("typed completed");
+                        // register click event
                         $(".nav_button").click(function () {
                             var value = $(this).text();
                             console.log(value);
