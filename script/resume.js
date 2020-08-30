@@ -249,7 +249,7 @@ $(document).ready(
             showCursor: false,
             callback: function () {
                 $(".updates").typed({
-                    strings: ["hello visitor, thank you for coming <br> \\ (•◡•) / " , "type or click on <span style=\"cursor:pointer\" class = \"nav_button\">help</span> for a command list"],
+                    strings: ["hello visitor, thank you for coming <br> \\ (•◡•) / " , "type help or tap on <span style=\"cursor:pointer\" class = \"nav_button\">help</span> for a command list"],
                     typeSpeed: 1,
                     backDelay: 1000,
                     showCursor: false,
