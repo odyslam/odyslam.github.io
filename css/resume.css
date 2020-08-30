@@ -39,7 +39,8 @@ a:hover {
 
 #terminal {
     font-family: monospace;
-    font-size: 18px;
+    width:30em; 
+    font-size:0.9em;
     color: white;
     background: #121111;
     border: none;

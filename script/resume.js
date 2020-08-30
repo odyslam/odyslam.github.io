@@ -211,10 +211,10 @@ $(document).ready(
         // $(".root").hide();
         $("#terminal").focus();
         if (window.matchMedia("(max-width: 767px)").matches) {
-            $("#terminal").attr("placeholder", "TAP HERE to type ");
+            $("#terminal").attr("placeholder", "tap here, type command, tap RETURN");
         }
         else{
-            $("#terminal").attr("placeholder", "CLICK HERE to type ");
+            $("#terminal").attr("placeholder", "click here, type command, press ENTER");
         }
         $.getJSON('https://ipinfo.io/json', function(data) {
             ip = data['ip'];
