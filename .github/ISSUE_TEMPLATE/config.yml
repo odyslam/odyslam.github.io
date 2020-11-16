@@ -9,6 +9,3 @@ contact_links:
   - name: Help
     url: https://netdata.cloud/community
     about: If you are unsure where to start, visit our community page!
-  - name: Question
-    url: https://community.netdata.cloud/question
-    about: We offer community-driven support on our Community forums
