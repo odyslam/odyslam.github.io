@@ -1,5 +1,6 @@
 blank_issues_enabled: false
 contact_links:
-  - name: Question
-    url: https://community.netdata.cloud
-    about: We offer community-driven support on our Community forums
+  - name: Help
+    url: https://netdata.cloud/community
+    about: If you are unsure where to start, visit our community page
+
