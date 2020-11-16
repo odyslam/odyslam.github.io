@@ -1,6 +1,11 @@
 blank_issues_enabled: false
 contact_links:
+  - name: Submit a Feature Request:
+    url: https://community.netdata.cloud
+    about: Make a feature request for Netdata Cloud or Netdata Agent
   - name: Help
     url: https://netdata.cloud/community
-    about: If you are unsure where to start, visit our community page
-
+    about: If you are unsure where to start, visit our community page!
+  - name: Question
+    url: https://community.netdata.cloud
+    about: We offer community-driven support on our Community forums
