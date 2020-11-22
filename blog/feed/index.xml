@@ -5,12 +5,167 @@
     <description></description>
     <link>https://odyslam.me/blog/</link>
     <atom:link href="https://odyslam.me/blog/feed.xml" rel="self" type="application/rss+xml" />
-    <pubDate>Sun, 22 Nov 2020 17:02:58 +0200</pubDate>
-    <lastBuildDate>Sun, 22 Nov 2020 17:02:58 +0200</lastBuildDate>
+    <pubDate>Sun, 22 Nov 2020 17:29:12 +0200</pubDate>
+    <lastBuildDate>Sun, 22 Nov 2020 17:29:12 +0200</lastBuildDate>
     <generator>Jekyll v4.0.0</generator>
     
       <item>
-        <title>Developer Relations and Community CRMs&quot;</title>
+        <title>Migrating from Nodebb to Discourse</title>
+        <description>&lt;p&gt;&lt;img src=&quot;https://i.imgur.com/hWeP9ld.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;h1 id=&quot;migrating-from-nodebb-to-discourse&quot;&gt;Migrating from Nodebb to Discourse&lt;/h1&gt;
+
+&lt;h1 id=&quot;some-background&quot;&gt;Some background&lt;/h1&gt;
+
+&lt;p&gt;When I joined Netdata in early August, we had just released our forum, based on Nodebb.&lt;/p&gt;
+
+&lt;p&gt;According to Nodebb creators:&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;NodeBB is a next-generation discussion platform that utilizes web sockets for instant interactions and real-time notifications. NodeBB forums have many modern features out of the box such as social network integration and streaming
+discussions.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;The premise of a well-engineered product was proven true, as nodebb is an extremely pleasant software to work with, offering a modern technological stack which is easily extensible and using npm to vendor it’s plugins.&lt;/p&gt;
+
+&lt;p&gt;On top of that, the plugins can be installed without rebuilding the forum, meaning that you can swap them on-the-fly. Great!&lt;/p&gt;
+
+&lt;p&gt;The reason we chose to move-out of Nodebb is that although the project is awesome and the community is vivid, it’s also not very popular as Discourse. This translates to Discourse having a greater number of available plugins and themes. Our community quickly grew with new requirements that would be hard to accommodate&lt;/p&gt;
+
+&lt;p&gt;This means that in order to bring the forums up to shape, there is more manual work and maintenance required. Which would have been great, since the choice of customization is really wonderful, but Netdata is running a skeleton crew at the moment. Thus whatever development I need, I will do it myself, limiting considerably the time I can invest.&lt;/p&gt;
+
+&lt;p&gt;Moreover, as I have now spent considerable time in Discourse, while I do prefer some elements of NodeBB, such as the technology stack or the plugin system, Discourse as a whole offers much more control and options.&lt;/p&gt;
+
+&lt;p&gt;All in all, there is a reason while the grand majority of forums look identical nowadays.&lt;/p&gt;
+
+&lt;h2 id=&quot;the-migration&quot;&gt;The migration&lt;/h2&gt;
+
+&lt;p&gt;In order to migrate, the good folks at Discourse, with the &lt;a href=&quot;https://meta.discourse.org/t/importing-nodebb-mongodb-to-discourse/126553/11&quot;&gt;help of the community&lt;/a&gt;, have released a migration tool which parses the MongoDB/Redis database of Nodebb and extracts what can be extracted.&lt;/p&gt;
+
+&lt;p&gt;Although the process seemed to be easy, there are a few gotchas which I learned the hard way.&lt;/p&gt;
+
+&lt;p&gt;1) You have to build Discourse from source. As it’s a great piece of monolithic software on Ruby, it’s not as trivial as one would have hoped. 
+    1) MacOS is not playing nice with Ruby, avoid to reduce unneeded complexity.
+    2) Go for Ubuntu and prepare to spend quite some time in order to setup everything.
+2) When dumping the MongoDB database, make sure you save everything on the correct directory. In case of a hosted NodeBB, make sure that you request the &lt;strong&gt;entirety&lt;/strong&gt; of the dump. I spent quite some time trying to figure out why the migration did not work, partly because I requested half the dump.
+3) In case you encounter the ` don’t know what to do with file, skipping&lt;code class=&quot;highlighter-rouge&quot;&gt; error, this means that you are using a newer version of mongorestore which has a slightly  different syntax.
+	1) Try &lt;/code&gt;mongorestore -d &lt;database_name&gt; /directory`
+	2) This will restore the database in a newly created database called `&lt;database_name&gt;`.
+	3) Make sure you change the `nodebb.rb` line concerning the connection to the MongoDB to include the database you defined above: `@client = adapter.new('mongodb://127.0.0.1:27017/&lt;database_name&gt;'')`
+4) It is possible that there are some bad state in MongoDB which might break the migration script. Let's see an example of what I encountered in the following section.&lt;/database_name&gt;&lt;/database_name&gt;&lt;/database_name&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;the-culprit-is-314&quot;&gt;The culprit is 3.14&lt;/h2&gt;
+
+&lt;p&gt;During my community management time, I would get some bad states in the forum, meaning that some topics would be created but would be impossible to be retrieved after their creation, resulting to a 404 instead.&lt;/p&gt;
+
+&lt;p&gt;As there were already discussions about the migration, I did not spend time to pin down the issue, as it was very very intermitent.&lt;/p&gt;
+
+&lt;p&gt;After some time, I discovered that the reason for this was the keyword &lt;code class=&quot;highlighter-rouge&quot;&gt;Raspberry pi&lt;/code&gt;. Our forum software did not like this keyword and would result to a bad state every single time.&lt;/p&gt;
+
+&lt;p&gt;Again, I did not elect to debug the issue, as there were far more pressing issues at hand in regards to managing the Netdata community.&lt;/p&gt;
+
+&lt;h3 id=&quot;we-found-it&quot;&gt;We found it!&lt;/h3&gt;
+
+&lt;p&gt;After talking with the good folks at NodeBB for this migration, I informed them of the bug, in case they wanted to dig deeper to evaluate if this is a wider problem or specific to my instance. They were very happy to investigate, and indeed they found the culprit.&lt;/p&gt;
+
+&lt;p&gt;They use a specific regex on their reverse proxy that checks for common file extensions that they don’t serve. One of these files is &lt;code class=&quot;highlighter-rouge&quot;&gt;.asp&lt;/code&gt; which without the ^ or $ qualifier can match with &lt;code class=&quot;highlighter-rouge&quot;&gt;raspberry pi&lt;/code&gt;. By updating their rules, they were able to fix this.&lt;/p&gt;
+
+&lt;h2 id=&quot;the-migration-1&quot;&gt;The migration&lt;/h2&gt;
+
+&lt;p&gt;Unknowingly to me, this “technical debt” would come back to haunt me during the migration test run that I performed before finalizing our decision.&lt;/p&gt;
+
+&lt;p&gt;For some reason, the migration script was unable to perform the migration and would crash. With the help of some debugging “print” statements  that I put in the script, I found that when the script would fetch a topic, it would then start fetching it’s posts.&lt;/p&gt;
+
+&lt;p&gt;Then, at a particular topic it would crush. When I tried to fetch that topic manually using the MongoDB CLI, I succeeded But, when I tried to fetch the first post, the CLI tool could not find it in the database.&lt;/p&gt;
+
+&lt;p&gt;Bingo!&lt;/p&gt;
+
+&lt;p&gt;Apparently, for the “Raspberry pi” topics, while the topic existed, the post did not, resulting in a &lt;code class=&quot;highlighter-rouge&quot;&gt;nul&lt;/code&gt; return for &lt;code class=&quot;highlighter-rouge&quot;&gt;post_id&lt;/code&gt; and the crashing of the whole script. In Nodebb, the &lt;code class=&quot;highlighter-rouge&quot;&gt;post_id&lt;/code&gt; of the first post is the &lt;code class=&quot;highlighter-rouge&quot;&gt;mainPID&lt;/code&gt;.&lt;/p&gt;
+
+&lt;p&gt;In NodeBB the first post of a topic has the same ID as the topic. Here is the data structure of the bad topic:&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&quot;language-JSON&quot;&gt;{
+    &quot;_id&quot;: ObjectId(&quot;5f621635d53e46aab957f13b&quot;),
+    &quot;_key&quot;: &quot;topic:99&quot;,
+    &quot;cid&quot;: 3,
+    &quot;lastposttime&quot;: 1600263733946,
+    &quot;mainPid&quot;: 0,
+    &quot;postcount&quot;: 0,
+    &quot;slug&quot;: &quot;99/monitor-pi-hole-and-a-raspberry-pi-with-netdata&quot;,
+    &quot;tid&quot;: 99,
+    &quot;timestamp&quot;: 1600263733946,
+    &quot;title&quot;: &quot;Monitor Pi-hole (and a Raspberry Pi) with Netdata&quot;,
+    &quot;uid&quot;: 3,
+    &quot;viewcount&quot;: 2,
+    &quot;thumb&quot;: &quot;&quot;,
+    &quot;deleted&quot;: 1,
+    &quot;deletedTimestamp&quot;: 1600263902138,
+    &quot;deleterUid&quot;: 37,
+    &quot;mergeIntoTid&quot;: 100,
+    &quot;mergedTimestamp&quot;: 1600263902160,
+    &quot;mergerUid&quot;: 37
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;To resolve this, again using the appropriate print statements, I found that the script initially brings a list of all the topics in the database, and then begins to parse them and extract the information it requires (content, date, etc.).&lt;/p&gt;
+
+&lt;p&gt;Here is the function in &lt;code class=&quot;highlighter-rouge&quot;&gt;mongo.rb&lt;/code&gt;&lt;/p&gt;
+&lt;div class=&quot;language-ruby highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;topics&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;offset&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;page_size&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;2000&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+      &lt;span class=&quot;n&quot;&gt;topic_keys&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;mongo&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;find&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;ss&quot;&gt;_key: &lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'topics:tid'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;).&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;skip&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;offset&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;).&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;limit&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;page_size&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;).&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;pluck&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;ss&quot;&gt;:value&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+
+      &lt;span class=&quot;n&quot;&gt;topic_keys&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;map&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;|&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;topic_key&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;|&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;topic&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;topic_key&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;end&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;Thus, I assumed that if I removed the particular topic from that list of available topics, even if it exists in the database, the script will not try to import it.&lt;/p&gt;
+
+&lt;p&gt;I ran: &lt;code class=&quot;highlighter-rouge&quot;&gt;db.objects.find({_key:&quot;topics:tid&quot;})&lt;/code&gt; which returned a large number of documents, like this one: &lt;code class=&quot;highlighter-rouge&quot;&gt;{ &quot;_id&quot; : ObjectId(&quot;5fb48402d53e46aab9f70b07&quot;), &quot;_key&quot; : &quot;topics:tid&quot;, &quot;value&quot; : &quot;198&quot;, &quot;score&quot; : 1605665794715 }&lt;/code&gt;.&lt;/p&gt;
+
+&lt;p&gt;Thus, I needed to delete the document with &lt;code class=&quot;highlighter-rouge&quot;&gt;&quot;value&quot;:&quot;99&quot;&lt;/code&gt;.&lt;/p&gt;
+
+&lt;p&gt;I ran &lt;code class=&quot;highlighter-rouge&quot;&gt;db.objects.remove({_key:&quot;topics:tid&quot;, &quot;value&quot;: &quot;99&quot;})&lt;/code&gt; and voila, the migration script was able to progress normally.&lt;/p&gt;
+
+&lt;p&gt;In case you are interested, you can find the database schema on the NodeBB &lt;a href=&quot;https://docs.nodebb.org/development/database-structure/&quot;&gt;website&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;Here are the steps for the migration in a bite-sized format:&lt;/p&gt;
+&lt;ol&gt;
+  &lt;li&gt;Import mongodump into local instance of Mongo.&lt;/li&gt;
+  &lt;li&gt;Build Discourse from source and setup the discourse instance.&lt;/li&gt;
+  &lt;li&gt;Run script which exports data from mongo, transforms them and import them to PostgreSQL.&lt;/li&gt;
+  &lt;li&gt;Export Discourse instance through the Admin panel and import it to the production server.
+    &lt;ol&gt;
+      &lt;li&gt;In case you are using a Hosted version of Discourse, you will need to contact support in order to restore the uploaded backup.&lt;/li&gt;
+    &lt;/ol&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Make modifications and prepare forum for production use.&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h1 id=&quot;final-words&quot;&gt;Final words&lt;/h1&gt;
+
+&lt;p&gt;A last problem that I encountered during the migration was related with the profile pictures that the script tried to import. Apparently some were pulled from the Internet and used some special characters which the script could not parse in a secure manner.&lt;/p&gt;
+
+&lt;p&gt;As with the &lt;a href=&quot;https://www.investopedia.com/terms/p/paretoprinciple.asp&quot;&gt;Pareto Principle&lt;/a&gt; of 80/20, I am pretty happy with a 80% of the perfect result. Thus, I simply &lt;em&gt;commented-out&lt;/em&gt; the profile picture functions and went on with my life.&lt;/p&gt;
+
+&lt;p&gt;Although this will result in a &lt;em&gt;worse&lt;/em&gt; user experience, as existing users will have to re-upload their profile pictures, the other option was not viable.&lt;/p&gt;
+
+&lt;p&gt;Due to creating the foundations of a Developer Relations program, I have to be ruthless with prioritization, something which I have not done particularly sucesful. But, as it’s a process, I learn, and thus I opted to go for the quick-and-dirty solution for this.&lt;/p&gt;
+
+&lt;p&gt;In the end, what really matters is to improve the experience of the community as a whole, making sure that it grows steadily&lt;/p&gt;
+</description>
+        <pubDate>Sun, 15 Nov 2020 00:00:00 +0200</pubDate>
+        <link>https://odyslam.me/blog/Migrating-from-Nodebb-to-Discourse/</link>
+        <guid isPermaLink="true">https://odyslam.me/blog/Migrating-from-Nodebb-to-Discourse/</guid>
+        
+        <category>2020</category>
+        
+        <category>developer-relations</category>
+        
+        <category>tutorial</category>
+        
+        
+      </item>
+    
+      <item>
+        <title>Developer Relations and Community CRMs</title>
         <description>&lt;p&gt;&lt;img src=&quot;https://thumbs.dreamstime.com/b/isometric-desktop-connected-to-servers-database-blue-back-background-data-center-concept-based-design-131817082.jpg&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
 
 &lt;h1 id=&quot;community-crms&quot;&gt;Community CRMs&lt;/h1&gt;
