@@ -5,8 +5,8 @@
     <description></description>
     <link>https://odyslam.me/blog/</link>
     <atom:link href="https://odyslam.me/blog/feed.xml" rel="self" type="application/rss+xml" />
-    <pubDate>Sun, 22 Nov 2020 17:29:12 +0200</pubDate>
-    <lastBuildDate>Sun, 22 Nov 2020 17:29:12 +0200</lastBuildDate>
+    <pubDate>Sun, 22 Nov 2020 17:34:10 +0200</pubDate>
+    <lastBuildDate>Sun, 22 Nov 2020 17:34:10 +0200</lastBuildDate>
     <generator>Jekyll v4.0.0</generator>
     
       <item>
@@ -44,15 +44,23 @@ discussions.&lt;/p&gt;
 
 &lt;p&gt;Although the process seemed to be easy, there are a few gotchas which I learned the hard way.&lt;/p&gt;
 
-&lt;p&gt;1) You have to build Discourse from source. As it’s a great piece of monolithic software on Ruby, it’s not as trivial as one would have hoped. 
-    1) MacOS is not playing nice with Ruby, avoid to reduce unneeded complexity.
-    2) Go for Ubuntu and prepare to spend quite some time in order to setup everything.
-2) When dumping the MongoDB database, make sure you save everything on the correct directory. In case of a hosted NodeBB, make sure that you request the &lt;strong&gt;entirety&lt;/strong&gt; of the dump. I spent quite some time trying to figure out why the migration did not work, partly because I requested half the dump.
-3) In case you encounter the ` don’t know what to do with file, skipping&lt;code class=&quot;highlighter-rouge&quot;&gt; error, this means that you are using a newer version of mongorestore which has a slightly  different syntax.
-	1) Try &lt;/code&gt;mongorestore -d &lt;database_name&gt; /directory`
-	2) This will restore the database in a newly created database called `&lt;database_name&gt;`.
-	3) Make sure you change the `nodebb.rb` line concerning the connection to the MongoDB to include the database you defined above: `@client = adapter.new('mongodb://127.0.0.1:27017/&lt;database_name&gt;'')`
-4) It is possible that there are some bad state in MongoDB which might break the migration script. Let's see an example of what I encountered in the following section.&lt;/database_name&gt;&lt;/database_name&gt;&lt;/database_name&gt;&lt;/p&gt;
+&lt;ol&gt;
+  &lt;li&gt;You have to build Discourse from source. As it’s a great piece of monolithic software on Ruby, it’s not as trivial as one would have hoped.
+    &lt;ol&gt;
+      &lt;li&gt;MacOS is not playing nice with Ruby, avoid to reduce unneeded complexity.&lt;/li&gt;
+      &lt;li&gt;Go for Ubuntu and prepare to spend quite some time in order to setup everything.&lt;/li&gt;
+    &lt;/ol&gt;
+  &lt;/li&gt;
+  &lt;li&gt;When dumping the MongoDB database, make sure you save everything on the correct directory. In case of a hosted NodeBB, make sure that you request the &lt;strong&gt;entirety&lt;/strong&gt; of the dump. I spent quite some time trying to figure out why the migration did not work, partly because I requested half the dump.&lt;/li&gt;
+  &lt;li&gt;In case you encounter the ` don’t know what to do with file, skipping` error, this means that you are using a newer version of mongorestore which has a slightly  different syntax.
+    &lt;ol&gt;
+      &lt;li&gt;Try &lt;code class=&quot;highlighter-rouge&quot;&gt;mongorestore -d &amp;lt;database_name&amp;gt; /directory&lt;/code&gt;&lt;/li&gt;
+      &lt;li&gt;This will restore the database in a newly created database called &lt;code class=&quot;highlighter-rouge&quot;&gt;&amp;lt;database_name&amp;gt;&lt;/code&gt;.&lt;/li&gt;
+      &lt;li&gt;Make sure you change the &lt;code class=&quot;highlighter-rouge&quot;&gt;nodebb.rb&lt;/code&gt; line concerning the connection to the MongoDB to include the database you defined above: &lt;code class=&quot;highlighter-rouge&quot;&gt;@client = adapter.new('mongodb://127.0.0.1:27017/&amp;lt;database_name&amp;gt;'')&lt;/code&gt;&lt;/li&gt;
+    &lt;/ol&gt;
+  &lt;/li&gt;
+  &lt;li&gt;It is possible that there are some bad state in MongoDB which might break the migration script. Let’s see an example of what I encountered in the following section.&lt;/li&gt;
+&lt;/ol&gt;
 
 &lt;h2 id=&quot;the-culprit-is-314&quot;&gt;The culprit is 3.14&lt;/h2&gt;
 
