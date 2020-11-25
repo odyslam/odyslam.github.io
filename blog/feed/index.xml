@@ -5,8 +5,8 @@
     <description></description>
     <link>https://odyslam.me/blog/</link>
     <atom:link href="https://odyslam.me/blog/feed.xml" rel="self" type="application/rss+xml" />
-    <pubDate>Tue, 24 Nov 2020 23:37:08 +0200</pubDate>
-    <lastBuildDate>Tue, 24 Nov 2020 23:37:08 +0200</lastBuildDate>
+    <pubDate>Wed, 25 Nov 2020 09:26:31 +0200</pubDate>
+    <lastBuildDate>Wed, 25 Nov 2020 09:26:31 +0200</lastBuildDate>
     <generator>Jekyll v4.0.0</generator>
     
       <item>
@@ -14,6 +14,10 @@
         <description>&lt;p&gt;&lt;img src=&quot;https://i.imgur.com/hWeP9ld.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
 
 &lt;h1 id=&quot;migrating-from-nodebb-to-discourse&quot;&gt;Migrating from Nodebb to Discourse&lt;/h1&gt;
+
+&lt;p&gt;In this blog post I note some interesting things that I discovered during the migration of the &lt;a href=&quot;https://community.netdata.cloud&quot;&gt;Netdata Community&lt;/a&gt; from Nodebb to Discourse. I encountered an interesting bug and I had to deviate a bit from the &lt;a href=&quot;https://meta.discourse.org/t/importing-nodebb-mongodb-to-discourse/126553/11&quot;&gt;“official” instructions&lt;/a&gt;, thus I thought it would be interesting to write some notes and share them.&lt;/p&gt;
+
+&lt;p&gt;Random stranger in the internet, I hope that this blog post saves you some time.&lt;/p&gt;
 
 &lt;h1 id=&quot;some-background&quot;&gt;Some background&lt;/h1&gt;
 
@@ -33,9 +37,9 @@
 
 &lt;p&gt;In other words, in order to bring the forums up to shape, there is more manual work and maintenance required in Nodebb than in Discourse. Which would have been great, since the choice of customization is really wonderful, but I am the only Developer Relations team member at the moment. Thus whatever development I need, I will do it myself, limiting considerably the time I can invest.&lt;/p&gt;
 
-&lt;p&gt;Moreover, as I have now spent considerable time in Discourse, while I do prefer some elements of NodeBB, such as the technology stack or the plugin system, Discourse as a whole offers much more control and options. It’s simply more mature.&lt;/p&gt;
+&lt;p&gt;Moreover, as I have now spent considerable time in Discourse, while I do prefer some elements of NodeBB, such as the technology stack or the plugin system; Discourse as a whole offers much more control and options.** It’s simply more mature.**&lt;/p&gt;
 
-&lt;p&gt;All in all, there is a reason while the grand majority of forums look identical nowadays, and the reason is that Discourse is hard to beat. (Although there are a couple of interesting options, maybe in another blog post)&lt;/p&gt;
+&lt;p&gt;All in all, there is a reason while the grand majority of forums look identical nowadays, and the reason is that Discourse is hard to beat. (Although there are a couple of interesting options oriented more for SaaS  products, maybe in another blog post)&lt;/p&gt;
 
 &lt;h2 id=&quot;the-migration&quot;&gt;The migration&lt;/h2&gt;
 
@@ -83,13 +87,17 @@
 
 &lt;p&gt;When I tried to test the migration, the script was unable to perform the migration and would crash, consistently and without giving much information. With the help of some debugging “print” statements that I put in the script, I found that the script would crash in area of topics import.&lt;/p&gt;
 
-&lt;p&gt;At first, it fetches a list of topics, then it starts pulling each topic from the database, and for each topic it pulls all it’s posts. It’s simple really. The script would crash when it it tried to pull the post of a particular topic, the one with the &lt;code class=&quot;highlighter-rouge&quot;&gt;raspberry pi&lt;/code&gt; keyword in it’s title.&lt;/p&gt;
+&lt;p&gt;At first, it fetches a list of topics, then it starts pulling each topic from the database, and for each topic it pulls all it’s posts.&lt;/p&gt;
 
-&lt;p&gt;When I tried to fetch the topic from the database, using MongoCLI, I was successful, but when I tried to fetch the first post, I couldn’t.&lt;/p&gt;
+&lt;p&gt;It’s simple really.&lt;/p&gt;
 
-&lt;p&gt;Bingo!&lt;/p&gt;
+&lt;p&gt;But, to my disappointment, the script would crash when it it tried to pull the post of a particular topic, the one with the &lt;code class=&quot;highlighter-rouge&quot;&gt;raspberry pi&lt;/code&gt; keyword in it’s title.&lt;/p&gt;
 
-&lt;p&gt;Apparently, for the &lt;code class=&quot;highlighter-rouge&quot;&gt;Raspberry pi&lt;/code&gt; topics, while the topic existed, the post did not, resulting in a &lt;code class=&quot;highlighter-rouge&quot;&gt;nul&lt;/code&gt; return for &lt;code class=&quot;highlighter-rouge&quot;&gt;post_id&lt;/code&gt; and the crashing of the whole script. In Nodebb, the &lt;code class=&quot;highlighter-rouge&quot;&gt;post_id&lt;/code&gt; of the first post of a topic, is the &lt;code class=&quot;highlighter-rouge&quot;&gt;mainPID&lt;/code&gt;.&lt;/p&gt;
+&lt;p&gt;When I tried to fetch the topic from the database, using MongoCLI, I was successful, but when I tried to fetch the first post of that particular topic, I couldn’t.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Bingo!&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;Apparently, for the &lt;code class=&quot;highlighter-rouge&quot;&gt;Raspberry pi&lt;/code&gt; topics, while the topic existed, the post did not, resulting in a &lt;code class=&quot;highlighter-rouge&quot;&gt;null&lt;/code&gt; return for &lt;code class=&quot;highlighter-rouge&quot;&gt;post_id&lt;/code&gt; and the crashing of the whole script. In Nodebb, the &lt;code class=&quot;highlighter-rouge&quot;&gt;post_id&lt;/code&gt; of the first post of a topic, is the &lt;code class=&quot;highlighter-rouge&quot;&gt;mainPID&lt;/code&gt;.&lt;/p&gt;
 
 &lt;p&gt;Here is the data structure of the bad topic:&lt;/p&gt;
 &lt;pre&gt;&lt;code class=&quot;language-JSON&quot;&gt;{
@@ -117,9 +125,9 @@
 &lt;p&gt;Now that I knew the exact problem, I had to think of a quick solution.&lt;/p&gt;
 
 &lt;p&gt;Here is the function in &lt;code class=&quot;highlighter-rouge&quot;&gt;mongo.rb&lt;/code&gt; that fetches the list of topics from MongoDB.&lt;/p&gt;
+
 &lt;div class=&quot;language-ruby highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;topics&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;offset&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;page_size&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;2000&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
       &lt;span class=&quot;n&quot;&gt;topic_keys&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;mongo&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;find&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;ss&quot;&gt;_key: &lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'topics:tid'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;).&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;skip&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;offset&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;).&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;limit&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;page_size&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;).&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;pluck&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;ss&quot;&gt;:value&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-
       &lt;span class=&quot;n&quot;&gt;topic_keys&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;map&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;|&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;topic_key&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;|&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;topic&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;topic_key&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
     &lt;span class=&quot;k&quot;&gt;end&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;

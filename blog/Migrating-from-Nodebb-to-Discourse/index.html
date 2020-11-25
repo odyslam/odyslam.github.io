@@ -174,6 +174,10 @@
 
 <h1 id="migrating-from-nodebb-to-discourse">Migrating from Nodebb to Discourse</h1>
 
+<p>In this blog post I note some interesting things that I discovered during the migration of the <a href="https://community.netdata.cloud">Netdata Community</a> from Nodebb to Discourse. I encountered an interesting bug and I had to deviate a bit from the <a href="https://meta.discourse.org/t/importing-nodebb-mongodb-to-discourse/126553/11">“official” instructions</a>, thus I thought it would be interesting to write some notes and share them.</p>
+
+<p>Random stranger in the internet, I hope that this blog post saves you some time.</p>
+
 <h1 id="some-background">Some background</h1>
 
 <p>When I joined Netdata in early August, we had just released our forum, based on Nodebb.</p>
@@ -192,9 +196,9 @@
 
 <p>In other words, in order to bring the forums up to shape, there is more manual work and maintenance required in Nodebb than in Discourse. Which would have been great, since the choice of customization is really wonderful, but I am the only Developer Relations team member at the moment. Thus whatever development I need, I will do it myself, limiting considerably the time I can invest.</p>
 
-<p>Moreover, as I have now spent considerable time in Discourse, while I do prefer some elements of NodeBB, such as the technology stack or the plugin system, Discourse as a whole offers much more control and options. It’s simply more mature.</p>
+<p>Moreover, as I have now spent considerable time in Discourse, while I do prefer some elements of NodeBB, such as the technology stack or the plugin system; Discourse as a whole offers much more control and options.** It’s simply more mature.**</p>
 
-<p>All in all, there is a reason while the grand majority of forums look identical nowadays, and the reason is that Discourse is hard to beat. (Although there are a couple of interesting options, maybe in another blog post)</p>
+<p>All in all, there is a reason while the grand majority of forums look identical nowadays, and the reason is that Discourse is hard to beat. (Although there are a couple of interesting options oriented more for SaaS  products, maybe in another blog post)</p>
 
 <h2 id="the-migration">The migration</h2>
 
@@ -242,13 +246,17 @@
 
 <p>When I tried to test the migration, the script was unable to perform the migration and would crash, consistently and without giving much information. With the help of some debugging “print” statements that I put in the script, I found that the script would crash in area of topics import.</p>
 
-<p>At first, it fetches a list of topics, then it starts pulling each topic from the database, and for each topic it pulls all it’s posts. It’s simple really. The script would crash when it it tried to pull the post of a particular topic, the one with the <code class="highlighter-rouge">raspberry pi</code> keyword in it’s title.</p>
+<p>At first, it fetches a list of topics, then it starts pulling each topic from the database, and for each topic it pulls all it’s posts.</p>
 
-<p>When I tried to fetch the topic from the database, using MongoCLI, I was successful, but when I tried to fetch the first post, I couldn’t.</p>
+<p>It’s simple really.</p>
 
-<p>Bingo!</p>
+<p>But, to my disappointment, the script would crash when it it tried to pull the post of a particular topic, the one with the <code class="highlighter-rouge">raspberry pi</code> keyword in it’s title.</p>
 
-<p>Apparently, for the <code class="highlighter-rouge">Raspberry pi</code> topics, while the topic existed, the post did not, resulting in a <code class="highlighter-rouge">nul</code> return for <code class="highlighter-rouge">post_id</code> and the crashing of the whole script. In Nodebb, the <code class="highlighter-rouge">post_id</code> of the first post of a topic, is the <code class="highlighter-rouge">mainPID</code>.</p>
+<p>When I tried to fetch the topic from the database, using MongoCLI, I was successful, but when I tried to fetch the first post of that particular topic, I couldn’t.</p>
+
+<p><strong>Bingo!</strong></p>
+
+<p>Apparently, for the <code class="highlighter-rouge">Raspberry pi</code> topics, while the topic existed, the post did not, resulting in a <code class="highlighter-rouge">null</code> return for <code class="highlighter-rouge">post_id</code> and the crashing of the whole script. In Nodebb, the <code class="highlighter-rouge">post_id</code> of the first post of a topic, is the <code class="highlighter-rouge">mainPID</code>.</p>
 
 <p>Here is the data structure of the bad topic:</p>
 <pre><code class="language-JSON">{
@@ -276,9 +284,9 @@
 <p>Now that I knew the exact problem, I had to think of a quick solution.</p>
 
 <p>Here is the function in <code class="highlighter-rouge">mongo.rb</code> that fetches the list of topics from MongoDB.</p>
+
 <div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">def</span> <span class="nf">topics</span><span class="p">(</span><span class="n">offset</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="n">page_size</span> <span class="o">=</span> <span class="mi">2000</span><span class="p">)</span>
       <span class="n">topic_keys</span> <span class="o">=</span> <span class="n">mongo</span><span class="p">.</span><span class="nf">find</span><span class="p">(</span><span class="ss">_key: </span><span class="s1">'topics:tid'</span><span class="p">).</span><span class="nf">skip</span><span class="p">(</span><span class="n">offset</span><span class="p">).</span><span class="nf">limit</span><span class="p">(</span><span class="n">page_size</span><span class="p">).</span><span class="nf">pluck</span><span class="p">(</span><span class="ss">:value</span><span class="p">)</span>
-
       <span class="n">topic_keys</span><span class="p">.</span><span class="nf">map</span> <span class="p">{</span> <span class="o">|</span><span class="n">topic_key</span><span class="o">|</span> <span class="n">topic</span><span class="p">(</span><span class="n">topic_key</span><span class="p">)</span> <span class="p">}</span>
     <span class="k">end</span>
 </code></pre></div></div>
