@@ -77,7 +77,7 @@ $(document).keyup(
                 case 'social media':
                 case 'contact':
                     result = result + '&nbsp <br>\
-                                        <br><a href="mailto:hi@odyslam.me">odyslam[at]gmail[dot]com</a><br> \
+                                        <br><odyslam[at]gmail[dot]com<br> \
                                         <br> <a href="https://gr.linkedin.com/in/odysseaslamtzidis" target = "_blank">LinkedIn &larr;</a><br>\
                                         &nbsp <br>\
 										<a href="https://github.com/OdysLam" target = "_blank">GitHub &larr;</a><br>\
