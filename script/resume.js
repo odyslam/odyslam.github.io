@@ -69,7 +69,7 @@ $(document).keyup(
                     case 'about':
                         result = result + '<br>	This website was made with <3 by Odysseas Lamtzidis  (ODYSLAM IKE P.C). <br>\
                         Address: The Internet <br>\
-                        Mail: <a href="mailto:hi@odyslam.me">odyslam@gmail.com</a><br>';
+                        Mail: odyslam[at]gmail[dot]com<br>';
                     break;
                 case 'clear':
                     result = '';
@@ -77,7 +77,7 @@ $(document).keyup(
                 case 'social media':
                 case 'contact':
                     result = result + '&nbsp <br>\
-                                        <br><a href="mailto:hi@odyslam.me">hi@odyslam.me</a><br> \
+                                        <br><a href="mailto:hi@odyslam.me">odyslam[at]gmail[dot]com</a><br> \
                                         <br> <a href="https://gr.linkedin.com/in/odysseaslamtzidis" target = "_blank">LinkedIn &larr;</a><br>\
                                         &nbsp <br>\
 										<a href="https://github.com/OdysLam" target = "_blank">GitHub &larr;</a><br>\
@@ -202,7 +202,7 @@ $(document).ready(
             showCursor: false,
             callback: function () {
                 $(".updates").typed({
-                    strings: ["hello visitor, welcome <br> \\ (•◡•) / " , "type help or tap on <span style=\"cursor:pointer\" class = \"nav_button\">help</span> for a command list"],
+                    strings: ["hello visitor, welcome \\ (•◡•) / " , "type help or tap on <span style=\"cursor:pointer\" class = \"nav_button\">help</span> for a command list"],
                     typeSpeed: 1,
                     backDelay: 1000,
                     showCursor: false,
