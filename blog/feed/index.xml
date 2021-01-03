@@ -3,10 +3,10 @@
   <channel>
     <title>blog.py</title>
     <description></description>
-    <link>https://odyslam.me/blog/</link>
-    <atom:link href="https://odyslam.me/blog/feed.xml" rel="self" type="application/rss+xml" />
-    <pubDate>Wed, 25 Nov 2020 09:26:31 +0200</pubDate>
-    <lastBuildDate>Wed, 25 Nov 2020 09:26:31 +0200</lastBuildDate>
+    <link>https://odyslam.com/blog/</link>
+    <atom:link href="https://odyslam.com/blog/feed.xml" rel="self" type="application/rss+xml" />
+    <pubDate>Sun, 03 Jan 2021 18:09:12 +0200</pubDate>
+    <lastBuildDate>Sun, 03 Jan 2021 18:09:12 +0200</lastBuildDate>
     <generator>Jekyll v4.0.0</generator>
     
       <item>
@@ -166,8 +166,8 @@
 &lt;p&gt;In the end, what really matters is to improve the experience of the community as a whole, making sure that it grows steadily.&lt;/p&gt;
 </description>
         <pubDate>Sun, 15 Nov 2020 00:00:00 +0200</pubDate>
-        <link>https://odyslam.me/blog/Migrating-from-Nodebb-to-Discourse/</link>
-        <guid isPermaLink="true">https://odyslam.me/blog/Migrating-from-Nodebb-to-Discourse/</guid>
+        <link>https://odyslam.com/blog/Migrating-from-Nodebb-to-Discourse/</link>
+        <guid isPermaLink="true">https://odyslam.com/blog/Migrating-from-Nodebb-to-Discourse/</guid>
         
         <category>2020</category>
         
@@ -366,9 +366,9 @@ Usage: very active
 
 &lt;h2 id=&quot;savannah&quot;&gt;Savannah&lt;/h2&gt;
 
-&lt;p&gt;Savannah is the brainchild of [Michael Hall](https://www.linkedin.com/in/mhall119/, Senior Community Manager at InfluxDB. I met Michael, during his time in the Linux Foundation, when I was an active member of the EdgeX Foundry community in my IoT years.&lt;/p&gt;
+&lt;p&gt;Savannah is the brainchild of &lt;a href=&quot;https://www.linkedin.com/in/mhall119/&quot;&gt;Michael Hall&lt;/a&gt;, Senior Community Manager at InfluxDB. I met Michael, during his time in the Linux Foundation, when I was an active member of the EdgeX Foundry community in my IoT years.&lt;/p&gt;
 
-&lt;p&gt;I met Michael again in the &lt;a href=&quot;https://devrelcollective.fun/&quot;&gt;DevRel collective&lt;/a&gt; slack and he was kind enough to invite me for a closed beta of SavannahHQ, a community CRM for Developer Advocates, by a Developer Advocate.&lt;/p&gt;
+&lt;p&gt;I met Michael again in the &lt;a href=&quot;https://devrelcollective.fun/&quot;&gt;DevRel collective&lt;/a&gt; slack and he was kind enough to invite me for a closed beta of SavannahHQ, a community CRM for Developer Relations, by a Developer Relations guy.&lt;/p&gt;
 
 &lt;p&gt;Savannah offers a great aggregate view of the various aspects of my community, integrating the Graphs inside the dashboard (in contrast with Orbit which are isolated). For some reason, this offers a greater user experience, with the product feeling much more coherent.&lt;/p&gt;
 
@@ -386,7 +386,7 @@ Usage: very active
   &lt;li&gt;Connections&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;p&gt;And offers a view of the community for each function, both in terms of the aggregate, but also in terms of distinct community members. For example, in the image bellow, we see the total number of conversations in the Netdata community, we see conversations by Tag (keyword-based) but also we see a list of community members, based on activity, engagement, etc.&lt;/p&gt;
+&lt;p&gt;It offers a view of the community for each function, both in terms of the aggregate, but also in terms of distinct community members. For example, in the image bellow, we see the total number of conversations in the Netdata community, we see conversations by Tag (keyword-based) but also we see a list of community members, based on activity, engagement, etc.&lt;/p&gt;
 
 &lt;p&gt;&lt;img src=&quot;https://i.imgur.com/fCMeBS0.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
 
@@ -432,8 +432,8 @@ Usage: very active
 &lt;p&gt;After all, community is everything.&lt;/p&gt;
 </description>
         <pubDate>Tue, 15 Sep 2020 00:00:00 +0300</pubDate>
-        <link>https://odyslam.me/blog/developer-relations-and-community-crms/</link>
-        <guid isPermaLink="true">https://odyslam.me/blog/developer-relations-and-community-crms/</guid>
+        <link>https://odyslam.com/blog/developer-relations-and-community-crms/</link>
+        <guid isPermaLink="true">https://odyslam.com/blog/developer-relations-and-community-crms/</guid>
         
         <category>2020</category>
         
@@ -474,8 +474,8 @@ Usage: very active
 
 </description>
         <pubDate>Tue, 15 Sep 2020 00:00:00 +0300</pubDate>
-        <link>https://odyslam.me/blog/the-lindy-effect/</link>
-        <guid isPermaLink="true">https://odyslam.me/blog/the-lindy-effect/</guid>
+        <link>https://odyslam.com/blog/the-lindy-effect/</link>
+        <guid isPermaLink="true">https://odyslam.com/blog/the-lindy-effect/</guid>
         
         <category>2020</category>
         
@@ -693,8 +693,8 @@ Image: We start as &lt;a href=&quot;https://www.youtube.com/watch?v=Otgm8oxEy_w&
 &lt;p&gt;(&lt;a href=&quot;/blog/from-greek-uni-to-startup-gr&quot;&gt;Part 1&lt;/a&gt;, &lt;a href=&quot;/blog/from-greek-uni-to-startup-part2-gr&quot;&gt;Part 2&lt;/a&gt;, &lt;a href=&quot;/blog/from-greek-uni-to-startup-part3-gr&quot;&gt;Part 3&lt;/a&gt;, &lt;a href=&quot;/blog/from-greek-uni-to-startup-part4-gr&quot;&gt;Part 4&lt;/a&gt;)&lt;/p&gt;
 </description>
         <pubDate>Sun, 06 Sep 2020 00:00:00 +0300</pubDate>
-        <link>https://odyslam.me/blog/from-greek-uni-to-startup-part4-gr/</link>
-        <guid isPermaLink="true">https://odyslam.me/blog/from-greek-uni-to-startup-part4-gr/</guid>
+        <link>https://odyslam.com/blog/from-greek-uni-to-startup-part4-gr/</link>
+        <guid isPermaLink="true">https://odyslam.com/blog/from-greek-uni-to-startup-part4-gr/</guid>
         
         <category>2020</category>
         
@@ -875,8 +875,8 @@ Image: We start as &lt;a href=&quot;https://www.youtube.com/watch?v=Otgm8oxEy_w&
 
 </description>
         <pubDate>Thu, 27 Aug 2020 00:00:00 +0300</pubDate>
-        <link>https://odyslam.me/blog/from-greek-uni-to-startup-part3-gr/</link>
-        <guid isPermaLink="true">https://odyslam.me/blog/from-greek-uni-to-startup-part3-gr/</guid>
+        <link>https://odyslam.com/blog/from-greek-uni-to-startup-part3-gr/</link>
+        <guid isPermaLink="true">https://odyslam.com/blog/from-greek-uni-to-startup-part3-gr/</guid>
         
         <category>2020</category>
         
@@ -998,8 +998,8 @@ Image: We start as &lt;a href=&quot;https://www.youtube.com/watch?v=Otgm8oxEy_w&
 &lt;p&gt;(&lt;a href=&quot;/blog/from-greek-uni-to-startup-gr&quot;&gt;Part 1&lt;/a&gt;, &lt;a href=&quot;/blog/from-greek-uni-to-startup-part2-gr&quot;&gt;Part 2&lt;/a&gt;, &lt;a href=&quot;/blog/from-greek-uni-to-startup-part3-gr&quot;&gt;Part 3&lt;/a&gt;, &lt;a href=&quot;/blog/from-greek-uni-to-startup-part4-gr&quot;&gt;Part 4&lt;/a&gt;)&lt;/p&gt;
 </description>
         <pubDate>Sun, 09 Aug 2020 00:00:00 +0300</pubDate>
-        <link>https://odyslam.me/blog/from-greek-uni-to-startup-part2-gr/</link>
-        <guid isPermaLink="true">https://odyslam.me/blog/from-greek-uni-to-startup-part2-gr/</guid>
+        <link>https://odyslam.com/blog/from-greek-uni-to-startup-part2-gr/</link>
+        <guid isPermaLink="true">https://odyslam.com/blog/from-greek-uni-to-startup-part2-gr/</guid>
         
         <category>2020</category>
         
@@ -1211,8 +1211,8 @@ My github Portfolio ☝️ (κάνε κλικ για να μεγαλώσει η 
 &lt;p&gt;(&lt;a href=&quot;/blog/from-greek-uni-to-startup-gr&quot;&gt;Part 1&lt;/a&gt;, &lt;a href=&quot;/blog/from-greek-uni-to-startup-part2-gr&quot;&gt;Part 2&lt;/a&gt;, &lt;a href=&quot;/blog/from-greek-uni-to-startup-part3-gr&quot;&gt;Part 3&lt;/a&gt;, &lt;a href=&quot;/blog/from-greek-uni-to-startup-part4-gr&quot;&gt;Part 4&lt;/a&gt; )&lt;/p&gt;
 </description>
         <pubDate>Fri, 31 Jul 2020 00:00:00 +0300</pubDate>
-        <link>https://odyslam.me/blog/from-greek-uni-to-startup-gr/</link>
-        <guid isPermaLink="true">https://odyslam.me/blog/from-greek-uni-to-startup-gr/</guid>
+        <link>https://odyslam.com/blog/from-greek-uni-to-startup-gr/</link>
+        <guid isPermaLink="true">https://odyslam.com/blog/from-greek-uni-to-startup-gr/</guid>
         
         <category>2020</category>
         
@@ -1426,8 +1426,8 @@ My github Portfolio ☝️ (Click for a larger image)&lt;/p&gt;
 
 </description>
         <pubDate>Fri, 31 Jul 2020 00:00:00 +0300</pubDate>
-        <link>https://odyslam.me/blog/from-greek-uni-to-startup-en/</link>
-        <guid isPermaLink="true">https://odyslam.me/blog/from-greek-uni-to-startup-en/</guid>
+        <link>https://odyslam.com/blog/from-greek-uni-to-startup-en/</link>
+        <guid isPermaLink="true">https://odyslam.com/blog/from-greek-uni-to-startup-en/</guid>
         
         <category>2020</category>
         
@@ -1668,7 +1668,7 @@ My github Portfolio ☝️ (Click for a larger image)&lt;/p&gt;
 
 &lt;div class=&quot;language-shell highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nv&quot;&gt;REPO_ZIP_URL&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;https://github.com/OdysLam/odyslam.github.io/archive/master.zip
 &lt;span class=&quot;nv&quot;&gt;REPO_NAME&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;odyslam.github.io
-&lt;span class=&quot;nv&quot;&gt;CERTBOT_MAIL&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;hi@odyslam.me
+&lt;span class=&quot;nv&quot;&gt;CERTBOT_MAIL&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;odyslam@gmail.com
 &lt;span class=&quot;nv&quot;&gt;CERTBOT_DOMAIN_1&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;www.example.com
 &lt;span class=&quot;nv&quot;&gt;CERTBOT_DOMAIN_2&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;example.com
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
@@ -1945,8 +1945,8 @@ method=auto
 
 </description>
         <pubDate>Wed, 22 Apr 2020 00:00:00 +0300</pubDate>
-        <link>https://odyslam.me/blog/balena-nginx-rpi/</link>
-        <guid isPermaLink="true">https://odyslam.me/blog/balena-nginx-rpi/</guid>
+        <link>https://odyslam.com/blog/balena-nginx-rpi/</link>
+        <guid isPermaLink="true">https://odyslam.com/blog/balena-nginx-rpi/</guid>
         
         <category>2020</category>
         
@@ -2762,8 +2762,8 @@ curl &lt;span class=&quot;nt&quot;&gt;-fsSL&lt;/span&gt; https://download.docker
 &lt;h1 id=&quot;comments&quot;&gt;Comments&lt;/h1&gt;
 </description>
         <pubDate>Mon, 30 Mar 2020 00:00:00 +0300</pubDate>
-        <link>https://odyslam.me/blog/Netdata-installation-production-web-server/</link>
-        <guid isPermaLink="true">https://odyslam.me/blog/Netdata-installation-production-web-server/</guid>
+        <link>https://odyslam.com/blog/Netdata-installation-production-web-server/</link>
+        <guid isPermaLink="true">https://odyslam.com/blog/Netdata-installation-production-web-server/</guid>
         
         <category>2020</category>
         
