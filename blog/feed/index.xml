@@ -5,8 +5,8 @@
     <description></description>
     <link>https://odyslam.com/blog/</link>
     <atom:link href="https://odyslam.com/blog/feed.xml" rel="self" type="application/rss+xml" />
-    <pubDate>Wed, 31 Mar 2021 10:09:24 +0300</pubDate>
-    <lastBuildDate>Wed, 31 Mar 2021 10:09:24 +0300</lastBuildDate>
+    <pubDate>Wed, 07 Apr 2021 20:59:23 +0300</pubDate>
+    <lastBuildDate>Wed, 07 Apr 2021 20:59:23 +0300</lastBuildDate>
     <generator>Jekyll v4.0.0</generator>
     
       <item>
@@ -554,8 +554,6 @@ Usage: very active
         <guid isPermaLink="true">https://odyslam.com/blog/the-lindy-effect/</guid>
         
         <category>2020</category>
-        
-        <category>english</category>
         
         <category>decision-making</category>
         
@@ -2031,8 +2029,6 @@ method=auto
         <category>nginx</category>
         
         <category>balena</category>
-        
-        <category>english</category>
         
         
       </item>
