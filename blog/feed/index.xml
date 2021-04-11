@@ -5,9 +5,54 @@
     <description></description>
     <link>https://odyslam.com/blog/</link>
     <atom:link href="https://odyslam.com/blog/feed.xml" rel="self" type="application/rss+xml" />
-    <pubDate>Wed, 07 Apr 2021 21:57:40 +0300</pubDate>
-    <lastBuildDate>Wed, 07 Apr 2021 21:57:40 +0300</lastBuildDate>
+    <pubDate>Sun, 11 Apr 2021 20:51:10 +0300</pubDate>
+    <lastBuildDate>Sun, 11 Apr 2021 20:51:10 +0300</lastBuildDate>
     <generator>Jekyll v4.0.0</generator>
+    
+      <item>
+        <title>How to Start a new Country, a Review</title>
+        <description>&lt;p&gt;&lt;img src=&quot;https://cdn.mos.cms.futurecdn.net/4b711fa900291f491b0bdbb79f37342d.jpg&quot; alt=&quot;&quot; /&gt;
+Cloud City from &lt;a href=&quot;https://bioshock.fandom.com/wiki/Columbia&quot;&gt;Bioshock Infinite&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://balajis.com/about/&quot;&gt;Balaji Srivansan&lt;/a&gt;, a prominent figure in the blockchain space and one of the few to correctly predict (unfortunately) the sheer size and results of the COVID-19 pandemic, has been talking about the Network State for quite some time.&lt;/p&gt;
+
+&lt;p&gt;A few days ago, he published a post on 1729, about &lt;a href=&quot;https://1729.com/how-to-start-a-new-country/&quot;&gt;kickstarting a new Country&lt;/a&gt;, first on the cloud and then in the physical work. A fascinating concept, even more so because it doesn’t require any alien or very avant-garde technology, it just brings together existing technologies, synthesizing them in a new way. In the world of technology, we could say that he is proposing a new stack, like the LAMP stack for web servers, but for starting a country. Sounds like fun, a refreshing take in a thousand years old issue, but from the perspective of a technologist, an engineer.&lt;/p&gt;
+
+&lt;p&gt;The promise of a new country is rather simple, a clean slate. A chance for old grievances to wither and die in the promise of a new world. Although Balaji doesn’t get into much detail on why we would want something like that, why we would want a new slate in the context of a country. 
+From my perspective, the promise is to unite people who feel that the national identity no longer serves them. Not in the utilitarian sense, but rather that it doesn’t appropriately describe their identity in a meaningful way. There is a larger issue at hand here since cultural conditioning is far more powerful than we like to admit. It’s extremely hard to pill off assumptions and ideas that we think of as our own but in reality, they were given to us through our upbringing in a particular society and time.&lt;/p&gt;
+
+&lt;p&gt;That being said, online communities have shown that people can meaningfully come together and create considerable value, while sharing a few of the attributes that are usually the crux of a country, such as a language, religion, and geographic location. The Internet has paved the way for a truly &lt;a href=&quot;https://en.wikipedia.org/wiki/Global_village&quot;&gt;global village&lt;/a&gt;. It’s interesting to think about notions such as &lt;a href=&quot;https://en.wikipedia.org/wiki/Self-determination&quot;&gt;self-determination&lt;/a&gt;, in the context of an online community that shares certain characteristics.&lt;/p&gt;
+
+&lt;p&gt;There are a couple of ways to start a new country, according to Balaji, from the usual suspects (e.g election, revolution, war) to more wacky ones (e.g space exploration). Cloud Countries is an interesting new concept, which takes the notion of an online community and adds a couple of missing layers to create the country stack. Although it starts online, the goal is to finally arrive at a point where that cloud country has application in the physical realm.  A number of geographical areas where people abide by the rules imposed by this cloud country.&lt;/p&gt;
+
+&lt;p&gt;Let’s see the stack:
+    - System: Open-source
+        - That means that is publicly auditable and anyone can raise issues or propose changes and improvements. We can think of it as the framework of a city-state in Ancient Greece, where almost everyone (excluding women and immigrants from other cities) participated in the commons. I like it.
+    - Internal Economy: Centered around remote work. For now, that limits us to knowledge workers professions, but robotics could pioneer in translating the remote-work into physical existence. Although I am a huge proponent of remote work, working remotely all my professional life, Ι have my reservations about this.
+    - This would mean, essentially,  that building a robot with remote manual controls is considerably easier than creating the AI required to control such a robot. I can foresee construction workers in the form of robots, but I am not sure if the AI will take &lt;em&gt;that much&lt;/em&gt; to catch up so that it makes sense to work as a remote construction worker. Again, I have exactly zero experience in robotics and I haven’t really followed the space, so I might be completely off here.
+    - Culture: Online, VR, and digital art. This I am buying. Seeing the meteoric rise and power of “memes” in pop culture, I can completely see a society where “Pepe” and the rest of the gang are as popular as BQQ on Sundays and dad jokes.&lt;br /&gt;
+    - Physical realm: A number of enclaves, sanctuary places that can range from apartments to whole buildings and acres of land. That again seems plausible, since embassies enjoy such privilege, but I can see sovereign countries fighting that, and why wouldn’t they. Imagine if anyone, at any point, could unilaterally say that their home is a sovereign entity and that slavery is OK in there. So, should anyone happen to be located there, the can’t be rescued by police or the army. If we are going to assume that every enclave, will also follow the laws and responsibilities of the nation state that it is located, I am not sure if we can really call it a sovereign entity. Sure, we can &lt;a href=&quot;https://en.wikipedia.org/wiki/Live_action_role-playing_game&quot;&gt;LARP&lt;/a&gt; all we want, but unless we can self-determine in that physical space, there is no substance, other than that anyone who is part of the cloud country can couch-surf in my apartment because it’s part of that country. Balaji here mentions Bitcoin, but I think this analogy can be improved. Bitcoin can’t be assaulted by men with gun. An apartment can. Intrinsically they are not the same, so other countries must agree not to use force to exert power of that piece of land. Hell, nation states are being kept in balance due to a constant arms race around the world. Greece and Turkey is a good example, where a literally bankrupt country (Greece) with rampant corruption, is “forced” to spend a lot of money on defence, not only because of special interests but because of a real threat against it’s sovereignty.&lt;/p&gt;
+
+&lt;p&gt;Then, the article proceeds to talk about the definition of a country, where it talks about numerical definitions (land, population) and societal (UN recognition). In my view, a nation is nothing more than a group of people who have agreed to cooperate and function as a unit. That means that they agree to a set of rules that they assume will help them live better lives, with a subgroup of people responsible for enforcing those rules. Although again, I am no expert, I see the different countries (city-state, empires, nation-state) as the same entity that just agrees to cluster around different shared attributes and at different states. In the end, it’s just how a group of people acknowledge themselves as part of something bigger, being that Athens, Thebes, the Russian Empire, or the European Union.   Of course, the self-determination of a particular group is only a part of the story, by changing the definition, you can also change the power structure and which class (subgroup) of people enjoy what benefits. As far as the subject at hand is concerned, I think that if enough people say that donkeys fly, then for all that it matters, they fly, at least as far as social issues are concerned. What I mean is that if enough people want to LARP in a cloud country, that could totally work, but that country would mostly resemble an order like the Masons, rather a country, as people’s main identity and obligation will be towards a sovereign country state.&lt;/p&gt;
+
+&lt;p&gt;Now, if we want an organization, let’s call it a country, where it’s the main source of responsibilities and benefits of certain people, that’s another story. I am not sure how online syndication can be translated into the physical world without the requirement of military defense against those who will want to exert force. Perhaps a powerful entity that can safeguard its sovereignty by threatening to return fire in the form of hacking could make sense. Simply put, if you harm or force my people on my ground, you get severely hacked to the point that essential infrastructure may not work. In other words, I can’t imagine nation-states respecting this sovereignty without fearing the repercussions of their actions.&lt;/p&gt;
+
+&lt;p&gt;Finally, a point that I would like to allude to is an ethical one. I am a strong believer in “&lt;a href=&quot;https://www.ttbook.org/interview/i-am-because-we-are-african-philosophy-ubuntu&quot;&gt;Ubuntu&lt;/a&gt;”, or rather that if the whole of society is doing better, then everyone is better. In other words, there is merit in having a strong social net and subside the basic education and healthcare of everyone. Of course that means that those who earn more will pay more in order to subsidize those who don’t earn as much. Moreover, the nation-state, let’s say Greece, has invested considerably in me in various ways. From the most obvious, as having “free” education and “free” healthcare, to the non-obvious, by providing a safe and organized society, parks to play in, roads to drive in, etc. I am not sure how ethical it would be of me, to simply say that since I don’t identify that much as Greek, but rather a citizen of the world, I will stop paying my fair due to the state and simply move on. In other words, I am not sure if I have paid back all the things that modern Greek society and it’s organized form, the Government, has offered me thus far.&lt;/p&gt;
+
+&lt;p&gt;It’s an interesting concept that I haven’t had time to reflect much on, but I find it fascinating that I get to think about things that most people, including myself, take for granted.  Why not envision a new kind of country, a new way of organizing ourselves, a new way of finding our tribe, in a world, where religion, geographic location, and language are not the center-pieces of our identity. Interestingly, Paul Graham has a very succinct &lt;a href=&quot;http://www.paulgraham.com/identity.html&quot;&gt;essay&lt;/a&gt; on identity.&lt;/p&gt;
+</description>
+        <pubDate>Sun, 11 Apr 2021 00:00:00 +0300</pubDate>
+        <link>https://odyslam.com/blog/how-to-start-a-new-country-review/</link>
+        <guid isPermaLink="true">https://odyslam.com/blog/how-to-start-a-new-country-review/</guid>
+        
+        <category>2021</category>
+        
+        <category>1729</category>
+        
+        <category>society</category>
+        
+        
+      </item>
     
       <item>
         <title>An introduction to Philosohpy by Jose Ortega y Gaset</title>
@@ -1345,221 +1390,6 @@ My github Portfolio ☝️ (κάνε κλικ για να μεγαλώσει η 
         <category>career</category>
         
         <category>greek</category>
-        
-        
-      </item>
-    
-      <item>
-        <title>From the Greek University to a startup -  Part 1 [EN]</title>
-        <description>&lt;p&gt;&lt;img src=&quot;https://i.imgur.com/OAeoTWb.png&quot; alt=&quot;intro image&quot; /&gt;
-Image: We start as &lt;a href=&quot;https://www.youtube.com/watch?v=Otgm8oxEy_w&quot; target=&quot;_blank&quot;&gt;this&lt;/a&gt;, but we want to become &lt;a href=&quot;https://www.youtube.com/watch?v=Vm4tx1O9GAc&quot; target=&quot;_blank&quot;&gt;this&lt;/a&gt;.&lt;/p&gt;
-
-&lt;h1 id=&quot;introduction&quot;&gt;Introduction&lt;/h1&gt;
-
-&lt;p&gt;I wanted to write this article for a long time, as I recently went through a very interesting process, where I had to transcend from the university to the world of employment, and more specifically, to the world of startups.&lt;/p&gt;
-
-&lt;p&gt;The requirements for this particular move are quite different from what a student would expect, and for a simple reason. Greek universities, apart from some exceptions, do not offer skills that are required in a professional setting, albeit offering theoretical knowledge of high quality. A student can study in a polytechnic school (school of engineering), but only a small number of courses will demand from the students to build something, or solve a real problem in a real environment.&lt;/p&gt;
-
-&lt;p&gt;In this article I will try to lay out some things that I learned in my effort to enter the world of high-tech startups and argue on the merits of such an endeavour, which is considerable harder vis-a-vis a more traditional technology enterprise.&lt;/p&gt;
-
-&lt;p&gt;As this article proved to be quite long, it will be cut into a blog post series. This is Part 1. Enjoy 🙃&lt;/p&gt;
-
-&lt;h1 id=&quot;high-tech-startups&quot;&gt;High-tech startups&lt;/h1&gt;
-
-&lt;p&gt;Startups do not have a strict definition, but we generally refer to the companies that solve a particular problem in an innovative way, in a de-facto uncertain environment. Innovation is not technological by necessity, but it could exist in the business plan, in the brand itself or in it’s general communication. Moreover, an important aspect of a startup is the exponential growth that it will have in case it starts gathering traction.&lt;/p&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://www.issuelab.org/resources/15236/15236.pdf&quot;&gt;Here&lt;/a&gt; you can find a very &lt;strong&gt;succinct&lt;/strong&gt; paper by Bill Aulet, professor at MIT regarding the differences of a startup and SMEs (Small-Medium Enterprise).&lt;/p&gt;
-
-&lt;p&gt;In Greece, while there are high-tech companies that offer a modern work environment with a startup-like culture (e.g beat, efood, skroutz), we will focus on 2 other types of companies:&lt;/p&gt;
-&lt;ul&gt;
-  &lt;li&gt;The companies that are located abroad Greece and hire remotely (e.g through &lt;a href=&quot;https://angel.co/&quot;&gt;AngeLlist&lt;/a&gt;). Ideally, we would like for them to be populated primarily by Greeks or at least have Greeks founders, as we tend to hire our own kin.&lt;/li&gt;
-  &lt;li&gt;The companies that are located in Greece, but their market is primarily outside of Greece. In other words, they are located here because their founders happened to be located here. Usually these companies do their product development in Greece and they sell worldwide (e.g &lt;a href=&quot;https://accusonus.com/&quot;&gt;Accusonus&lt;/a&gt;).&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;This way:&lt;/p&gt;
-&lt;ul&gt;
-  &lt;li&gt;The market (non-greek) offers no real limitations to the company (thus the growth can be considerable)&lt;/li&gt;
-  &lt;li&gt;These companies have access to worldwide talent&lt;/li&gt;
-  &lt;li&gt;These companies have a more international work culture&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;Which in turn, translates into 4 very specific &lt;strong&gt;advantages&lt;/strong&gt;:&lt;/p&gt;
-&lt;ul&gt;
-  &lt;li&gt;As the company will also hire from abroad, it will need to offer competitive salaries. Thus, even when the salary is adjusted for the cheap life cost of Greece, it will be considerable higher han the average greek salary. Moreover, the international market means that the company has the financial means to offer much more competitive salaries, in order to attract the best talent. On top of that, the international culture means that they understand that a well-payed employee is happier, more productive and in the end more loyal.&lt;/li&gt;
-  &lt;li&gt;In the company you will be confronted with people from all walks of life, from different cultures. It will be a much more educative experience, which is a primary objective at the start of our career.&lt;/li&gt;
-  &lt;li&gt;As startups are usually smaller (tens of employees), the roles and processes are quite fluid. You will be able to see many different aspects of a business and easily traverse towards the things that interest you most, often diverging from the original job description.&lt;/li&gt;
-  &lt;li&gt;&lt;strong&gt;Skin in the game&lt;/strong&gt;: As startups offer very high uncertainty in terms of job security, they tend to make up with stocks offerings. The idea is that as a bonus, you get some stocks of the company. In case the company is sold or goes public (IPO), you can become a millionaire overnight. But don’t get too excited, the chances are very very very small.&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;Naturally, these mean that the requirements are much &lt;strong&gt;greater&lt;/strong&gt;, as we now have to compete with talent from all around the world.&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;https://media2.giphy.com/media/GG2UAv9uRblny/giphy.gif?cid=ecf05e4773r56eq9eip1j8uh07sve72hlfluuwaz3mmkjq3l&amp;amp;rid=giphy.gif&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
-
-&lt;h2 id=&quot;how-to-find-greek-startups&quot;&gt;How to find greek startups?&lt;/h2&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;VC funds
-    &lt;ul&gt;
-      &lt;li&gt;&lt;a href=&quot;https://marathon.vc/jobs/&quot;&gt;Marathon&lt;/a&gt;&lt;/li&gt;
-      &lt;li&gt;&lt;a href=&quot;https://bigpi.vc/careers/&quot;&gt;Big Pi&lt;/a&gt;&lt;/li&gt;
-      &lt;li&gt;&lt;a href=&quot;https://uni.fund/our-portfolio/&quot;&gt;Uni.Fund&lt;/a&gt;&lt;/li&gt;
-      &lt;li&gt;&lt;a href=&quot;https://venturefriends.vc/careers/&quot;&gt;Venture Friends&lt;/a&gt;&lt;/li&gt;
-      &lt;li&gt;&lt;a href=&quot;https://metavallon.vc/&quot;&gt;Metavallon&lt;/a&gt;&lt;/li&gt;
-      &lt;li&gt;&lt;a href=&quot;https://velocitypartners.vc/portfolio/&quot;&gt;VelocityPartners&lt;/a&gt;&lt;/li&gt;
-      &lt;li&gt;&lt;a href=&quot;https://www.starttech.vc/startup-jobs/&quot;&gt;Starttech&lt;/a&gt;&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;Relevant Media (e.g &lt;a href=&quot;https://www.itspossible.gr/&quot;&gt;ItsPossible&lt;/a&gt;)&lt;/li&gt;
-  &lt;li&gt;People from the industry (e.g &lt;a href=&quot;https://twitter.com/startuppirategr?lang=en&quot;&gt;Greek Startup Pirate&lt;/a&gt;)&lt;/li&gt;
-  &lt;li&gt;Events (e.g &lt;a href=&quot;https://opencoffee.gr/&quot;&gt;OpenCoffee Athens&lt;/a&gt;)&lt;/li&gt;
-  &lt;li&gt;By creating an extensive network of people in the industry, using twitter and linkedin.&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h2 id=&quot;why-startups&quot;&gt;Why startups?&lt;/h2&gt;
-
-&lt;p&gt;Apart from the growth potential of a startup, what makes it such a special experience, is its environment. As the team is small and the product still in its infancy, as we have already discussed, we will have the opportunity to “see” a lot of different roles, receive a plethora of stimuli from many different disciplines. On top of that, I believe that the most important aspect of it all is that we get to see a product in the making. As individuals, we get to see our contribution materialize in front of us, experiencing the joy of creation, as craftsmen do. It enables us to devote ourselves to something, from the start to finish, thus creating  a connection with the end result.&lt;/p&gt;
-
-&lt;p&gt;This by itself has been &lt;a href=&quot;https://zapier.com/blog/master-your-work/&quot;&gt;proven&lt;/a&gt; to have a great effect on the happiness of a person. It’s why craftsmen spend countless hours in creating “useless” things (e.g swords), and it’s a state that we can’t fathom unless we experience it. Naturally, this experienced can be reached while creating our own project (e.g open-source) or writing some content for a blog. But, instead of only spending a handful of our time towards something that fulfilling, why not spend the entirety of it, including the time in our daily job.&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;https://interiordecoration.eu/wp-content/uploads/2019/03/Celebrate-Craftsmanship-With-The-Most-Exquisite-Italian-Arts-And-Crafts-1.jpg&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
-
-&lt;h1 id=&quot;what-i-learned&quot;&gt;What I learned&lt;/h1&gt;
-
-&lt;p&gt;The most interesting thing that I learned is that people do not expect juniors (0-2 years of experience) to have extended knowledge regarding their role, but rather they prefer to see more “secondary” attributes, such as passion for learning, initiative and problem solving.&lt;/p&gt;
-
-&lt;p&gt;You can see that throughout the hiring process, a process which is arguably different vis-a-vis the technology giants.&lt;/p&gt;
-
-&lt;p&gt;The latter have a more structured process to go through candidates, with relevant cognitive and knowledge tests. In my personal opinion, this process is a  paradox, because it creates stress to the candidates without really shedding light on their skills, as a junior should not be required to know by heart knowledge. Rather, he should know how to work, have general knowledge and be able to quickly find answers, while maintaining a constant &lt;strong&gt;passion&lt;/strong&gt;.&lt;/p&gt;
-
-&lt;p&gt;This last argument stands for any role, being in sales marketing or product development.&lt;/p&gt;
-
-&lt;p&gt;Even for more experienced positions, the new hiring paradigm gives emphasis to take-away projects and to the portfolio. The Internet can procure any information that is required, thus the importance now rests in the ability to be able quickly find the &lt;strong&gt;correct&lt;/strong&gt; answer and apply it to our problem accordingly.&lt;/p&gt;
-
-&lt;p&gt;Thus, startups have a different view on hiring, and you usually talk with the CEO of the company, where the interview is more chat-like.&lt;/p&gt;
-
-&lt;blockquote&gt;
-  &lt;p&gt;What do you think of that X ? We have a product Y, do you have any idea on how to improve it?&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;p&gt;This way, they understand more effectively (and qualitatively) your knowledge, intuition and “appetite” for challenges. Startups, due to their small size and small risk-tolerance (as far as hiring is concerned), prefer to have a more refined hiring process, which undeniably is hard to scale up without reducing its quality.&lt;/p&gt;
-
-&lt;p&gt;In other words, it’s not &lt;strong&gt;that&lt;/strong&gt; important to refine your knowledge on a particular subject, but rather refine your professional profile, your mindset and mental models, the way you approach and solve problems.&lt;/p&gt;
-
-&lt;h2 id=&quot;what-people-are-they-after&quot;&gt;What people are they after?&lt;/h2&gt;
-
-&lt;p&gt;Naturally, if you are an engineer, you are required to be familiar with the technologies that the company uses and ideally be comfortable with them. On the other hand, in product management, you are required to be familiar with the stages of a typical modern product development process, the best p In practices while also having a general mental model of the domain. In essence, you are required to know things that you can learn by reading 1-2 relevant books.&lt;/p&gt;
-
-&lt;blockquote&gt;
-  &lt;p&gt;&lt;a href=&quot;https://www.martzoukos.com/posts/jumping-into-product-management&quot;&gt;Here&lt;/a&gt; you can find some excellent book recommendations to kickstart a career in Product Management.&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;p&gt;&lt;em&gt;Perhaps, the most important attribute that they are looking for, is the mindset of “&lt;strong&gt;builder&lt;/strong&gt;”.&lt;/em&gt;&lt;/p&gt;
-
-&lt;p&gt;A person who knows how to find and build solutions for problems, to create value for others. A person, who knows how to learn efficiently and fast.&lt;/p&gt;
-
-&lt;p&gt;They know that your technical knowledge is limited.&lt;/p&gt;
-
-&lt;p&gt;But, will you stay awake for 3 days straight in order to find a solution for a particular problem?&lt;/p&gt;
-
-&lt;p&gt;Will you be up for any challenge they give you?&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;Passion&lt;/strong&gt; and &lt;strong&gt;Desire&lt;/strong&gt; are thus the main attributes that employers are looking for in juniors, especially in the fast paced environment of startups, as juniors constitute investment for the future of the company.&lt;/p&gt;
-
-&lt;p&gt;These 2 &lt;em&gt;vague&lt;/em&gt; attributes usually appear through other, more secondary, attributes which are more easily defined:&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;&lt;strong&gt;Initiative&lt;/strong&gt;: Have you taken the initiative to start something? Perhaps you had a problem and you decided to share your solution with the rest of the world. Perhaps you founded an organization. Initiative is very important as it showcases that should we are given a general direction or a problem, we can plow ahead and plot our course on our own.&lt;/li&gt;
-  &lt;li&gt;&lt;strong&gt;Learning Agility&lt;/strong&gt;: Have you taught yourself technologies? Have you participated in open-source projects or technological competitions?&lt;/li&gt;
-  &lt;li&gt;&lt;strong&gt;Problem Solving&lt;/strong&gt;: Do you see a narrow technological problem? Perhaps you see a sale or you understand holistically the challenge in front of you.&lt;/li&gt;
-  &lt;li&gt;&lt;strong&gt;Leadership&lt;/strong&gt;: Have you managed or led a team in the past?&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;Even if we have all those attributes, we still have a pertinent question to answer: How do we prove all these?&lt;/p&gt;
-
-&lt;h3 id=&quot;proof&quot;&gt;Proof&lt;/h3&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://i.imgur.com/VqhurI7.png&quot; target=&quot;_blank&quot;&gt;&lt;img src=&quot;https://i.imgur.com/VqhurI7.png&quot; alt=&quot;&quot; /&gt;&lt;/a&gt;
-&lt;br /&gt;
-My github Portfolio ☝️ (Click for a larger image)&lt;/p&gt;
-
-&lt;p&gt;As I said above, we need proof, a &lt;strong&gt;portfolio&lt;/strong&gt;, exactly like a photographer. Depending on the skills that we want to showcase, we will have to show different kind of proof.&lt;/p&gt;
-
-&lt;p&gt;For example, my Github portfolio is certainly not particularly impressive and should I wanted a developer position, I would probably be out of job, but:&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;It’s better than not having one in the first place. At least they know what I can do.&lt;/li&gt;
-  &lt;li&gt;There is a non-zero possibility that some of the projects will be valuable to others (e.g LaTeX source files of the Thesis).&lt;/li&gt;
-  &lt;li&gt;It showcases &lt;em&gt;just enough&lt;/em&gt; tech skills for the roles that I am after (Product Management).&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;Leadership and team-spirit are attributes that can be showcased by our participation to teams (e.g student organizations) and the output of those teams during our tenure. &lt;strong&gt;The creator culture&lt;/strong&gt; and problem solving can be showcased by our participation in technological projects. Do we approach them from a very narrow technological perspective or do we acknowledge that they are products that will probably be used by humans?&lt;/p&gt;
-
-&lt;p&gt;Did we start a project from zero or did we dimply participate in an existing one by contributing code? Did we contribute to the community by being an active member and creating content? Perhaps we spoke at events and conferences about certain technologies or skills, where we trained others to help them become successful.&lt;/p&gt;
-
-&lt;p&gt;&lt;em&gt;All the aforementioned constitute proof&lt;/em&gt;.&lt;/p&gt;
-
-&lt;p&gt;If you are an engineer, it’s very easy to start. Simply go to &lt;a href=&quot;https://github.com&quot;&gt;Github&lt;/a&gt; and upload all your projects. Use &lt;a href=&quot;https://pages.github.com&quot;&gt;github pages&lt;/a&gt; to create a portfolio and showcase your projects.&lt;/p&gt;
-
-&lt;p&gt;You don’t write code? No problem!&lt;/p&gt;
-
-&lt;p&gt;Simply find another problem to solve and create value. Perhaps you can chart a business strategy, perhaps you can create a design. Even though open-source code contributions are easier and more accessible, you simply have no excuse as you &lt;strong&gt;need&lt;/strong&gt; proof of your skills. If you don’t provide, they will simply hire another junior who will.&lt;/p&gt;
-
-&lt;blockquote&gt;
-  &lt;p&gt;If you don’t provide proof of your skills, they will simply hire another junior who will.&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;h3 id=&quot;bonus-points&quot;&gt;Bonus points&lt;/h3&gt;
-
-&lt;p&gt;The best strategy to increase the chances of a hire in a company or a project, is to provide value before they even hire us. Especially if we don’t have any prior experience in a company or a project.&lt;/p&gt;
-
-&lt;p&gt;For open-source projects, you can start with &lt;a href=&quot;https://up-for-grabs.net/#/&quot;&gt;Up for Grabs&lt;/a&gt; where you can find projects based on your skills and knowledge. You can also check &lt;a href=&quot;https://summerofcode.withgoogle.com/&quot;&gt;Google Summer of Code&lt;/a&gt;.&lt;/p&gt;
-
-&lt;p&gt;Some ideas for technical positions:&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;If the product of the company is open-sourced, go to github and start solving &lt;code class=&quot;highlighter-rouge&quot;&gt;issues&lt;/code&gt; and contributing &lt;code class=&quot;highlighter-rouge&quot;&gt;PRs&lt;/code&gt;. If the documentation is also on Github, contribute improvements in the examples, wording, etc.&lt;/li&gt;
-  &lt;li&gt;If the project is close-sourced, then start using it and try to solve a problem of yours with that product. Write about your experience, propose improvements and guide others that perhaps have the same problem as you.&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;&lt;/p&gt;
-
-&lt;h3 id=&quot;send-the-message&quot;&gt;Send the Message&lt;/h3&gt;
-
-&lt;p&gt;Often, even though we know that a certain person is the key to our goal, we are afraid to send the message and ask for their help. &lt;strong&gt;We simply expect the answer to be negative.&lt;/strong&gt;&lt;/p&gt;
-
-&lt;p&gt;But, people are usually much more keen to help that we think and are ready to offer us their help if we just ask for it. We simply need to respect their time, be very &lt;strong&gt;clear&lt;/strong&gt; on why we want their help, be &lt;strong&gt;specific&lt;/strong&gt; on the subject and our inquiry. It’s important to showcase that we have invested time in preparation for their help in order to emphasize that we &lt;strong&gt;respect&lt;/strong&gt; their time and effort.&lt;/p&gt;
-
-&lt;p&gt;For that reason, if you want to join a particular company, find people who work their and approach them (e.g through linkedin). Ask about the job, the challenges that the company and they personally face. Ask about the requirements for new hires, tell them how interested you are to join the team and ask for feedback in order to prepare better for the hiring process.&lt;/p&gt;
-
-&lt;p&gt;By asking about their challenges, we can work on those challenges and find solutions (even elementary). By creating value for those people, we can be certain that not only they will refer us to the hiring manager, but they will also let us know in case there is a future opening.&lt;/p&gt;
-
-&lt;p&gt;The reason is &lt;strong&gt;super simple&lt;/strong&gt;. Beside the quality of the proposed solution, we have showcased that we are like to give before we take. We help without expecting help in return. &lt;strong&gt;The mindset, our values, are usually more important than any skill&lt;/strong&gt;.&lt;/p&gt;
-
-&lt;p&gt;Moreover, the solution doesn’t have to be about a technical challenge. It can be about sales, a business plan, human resources or any other relevant domain.&lt;/p&gt;
-
-&lt;blockquote&gt;
-  &lt;p&gt;Everyone wants in their team a person who not only gives before he/she takes, but also gives without expecting anything in return.&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;h1 id=&quot;to-be-continued&quot;&gt;To be continued&lt;/h1&gt;
-
-&lt;p&gt;In the following post we will talk about network, how we create it and about resumé.&lt;/p&gt;
-
-&lt;p&gt;I would like to thank &lt;a href=&quot;https://www.linkedin.com/in/harry-touloupas/&quot;&gt;Charis Touloupas&lt;/a&gt; for his pertinent additions, &lt;a href=&quot;ttps://www.linkedin.com/in/entomprozis&quot;&gt;Vangelis Dobrozi&lt;/a&gt;, &lt;a href=&quot;https://www.linkedin.com/in/andronikos-kontos/?originalSubdomain=gr&quot;&gt;Andronikos Kontos&lt;/a&gt;, and &lt;a href=&quot;https://twitter.com/StartupPirateGR&quot;&gt;Greek Startup Pirate&lt;/a&gt; for their corrections.&lt;/p&gt;
-
-&lt;p&gt;If you found it even remotely interesting, please leave a comment or join the newsletter 🙏.&lt;/p&gt;
-
-</description>
-        <pubDate>Fri, 31 Jul 2020 00:00:00 +0300</pubDate>
-        <link>https://odyslam.com/blog/from-greek-uni-to-startup-en/</link>
-        <guid isPermaLink="true">https://odyslam.com/blog/from-greek-uni-to-startup-en/</guid>
-        
-        <category>2020</category>
-        
-        <category>self-improvement</category>
-        
-        <category>career</category>
-        
-        <category>english</category>
         
         
       </item>
