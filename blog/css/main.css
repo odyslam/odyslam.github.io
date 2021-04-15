@@ -3,7 +3,7 @@ body {
     background-color: #ffffff;
     margin-bottom: 1em;
     /* font-family: 'Roboto', sans-serif ; */
-    font-family: 'Roboto Mono', monospace;
+    font-family: 'Roboto', monospace;
     font-style: normal;
     font-size: 18px;
     /* line-height: 20px !important; */
@@ -17,7 +17,9 @@ p {
 }
 li{
     margin: 1em 0;
+    
   }
+
 h1 {
     margin-top: 1.8em;
     color: rgb(0, 0, 0);
@@ -63,11 +65,13 @@ a {
     text-decoration: underline ;
     font-weight: normal;
     color: darkblue;
+
 }
 .menu {
     border-top: 1px dashed rgba(37, 37, 37, 0.7);
     border-bottom: 1px dashed rgba(37, 37, 37, 0.7);
     margin-bottom: 10px;
+    font-family: 'Roboto Mono', monospace;
 }
 .menu ul {
     margin-top: 16px;
@@ -146,6 +150,7 @@ table {
     width: 100%;
     border-collapse: collapse;
     text-align: center;
+    
 }
 
 td {
@@ -159,6 +164,7 @@ caption {
 
 table a {
     color: black;
+    
 }
 /* End Table style */
 
@@ -226,6 +232,10 @@ table a {
 .highlight .il { color: #009999 } /* Literal.Number.Integer.Long */
 /* End Syntax highlighting styles */
 
+.posts {
+    font-family: 'Roboto Mono', monospace;
+}
+
 .comment {
     color: rgb(212, 212, 212);
 }
@@ -234,6 +244,7 @@ table a {
 }
 .string {
     color: black;
+    font-family: 'Roboto Mono', monospace;
 }
 .function {
     color: rgba(37, 37, 37, 0.7);
